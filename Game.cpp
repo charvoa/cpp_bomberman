@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:05:48 2015 Antoine Garcia
-// Last update Fri May  8 14:07:34 2015 Antoine Garcia
+// Last update Fri May  8 14:35:18 2015 Antoine Garcia
 //
 
 #include "Game.hh"
@@ -40,7 +40,9 @@ bool	Game::update()
 void	Game::draw()
 {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  _shader.bind();
   peekState()->draw(_clock, _shader);
+  _context.flush();
 }
 
 void	Game::run()
