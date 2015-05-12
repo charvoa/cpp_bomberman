@@ -5,15 +5,16 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:41:57 2015 Antoine Garcia
-// Last update Fri May  8 15:17:11 2015 Antoine Garcia
+// Last update Tue May 12 12:02:55 2015 Nicolas Charvoz
 //
 
 #ifndef MENU_HH_
 # define MENU_HH_
 
 #include "GameState.hh"
+#include "sdlglutils.h"
 
-class	Menu:public GameState
+class	Menu: public GameState
 {
 
 public:
