@@ -5,12 +5,13 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:41:57 2015 Antoine Garcia
-// Last update Tue May 12 14:32:32 2015 Nicolas Charvoz
+// Last update Wed May 13 04:40:37 2015 Antoine Garcia
 //
 
 #ifndef MENU_HH_
 # define MENU_HH_
 
+#include "./Sound/SoundManager.hh"
 #include "GameState.hh"
 
 class	Menu: public GameState
@@ -25,7 +26,7 @@ public:
   void drawButtons();
 
 private:
-
+  static Sound&	_sound;
 };
 
 #endif
