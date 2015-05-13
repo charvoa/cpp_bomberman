@@ -1,0 +1,80 @@
+BAREME
+
+Menus (0 / 1) :
+
+Enregistrement/chargement (0 / 1) :
+
+Victoire et defaite (0 / 0.5) :
+
+Scores (0.5 / 0.5) :
+
+2 joueurs (1 / 1) :
+
+Gameplay 2D (1 / 1) :
+
+Joueurs (1 / 1) :
+
+Maps (1 / 1) :
+
+Vue (1 / 1) :
+
+Deplacements (1 / 1) :
+
+Bombes (1 / 1) :
+
+Vitesse (1 / 1) :
+
+Joueurs (1.5 / 1.5) :
+
+Camera (0 / NaN) : (1 pt si unzoom)
+
+Items (0 / 1) :
+
+IA (0 / 1) :
+
+Spawn points (0 / 1) :
+
+Scores (0 / 1) :
+
+Fonctions C (0 / 0.5) : [PAS DE FONCTIONS C]
+
+Separation (0 / 1) : [SEPARER LES GRAPHISMES ET LE CORE]
+
+Metiers (0 / 1) :
+
+Manager des entites (0 / 2) : [MANAGER D'ENTITES]
+
+Messages (0 / 1) :
+
+Gestion des ressources (0 / 1) :
+
+
+--- MALUS ---
+Passages par copie (0 / 0) :
+
+Parametres non const (0 / 0) :
+
+Fonctions membres non const (0 / 0) :
+
+Fonctions de la libc (0 / 0) :
+
+STL (0 / 0) :
+
+Performances (0 / 0) :
+
+Performances-re (0 / 0) :
+
+Jouabilite (0 / 0) :
+
+--- BONUS ---
+Monstres (0 / 1) :
+
+Musique et sons (0 / 1) :
+
+Scripts (0 / 1.5) :
+
+Threads (0 / 2) :
+
+Reseau (0 / 3) :
+
+Autres Bonus (0 / 3) : [Camera dynamique, Moteur physique, Editeur de Maps]
