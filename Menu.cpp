@@ -5,12 +5,13 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Tue May 12 19:50:55 2015 Nicolas Charvoz
+// Last update Wed May 13 02:18:12 2015 Antoine Garcia
 //
 
 #include "Menu.hh"
 #include <OpenGL.hh>
 #include <iostream>
+#include <Texture.hh>
 
 Menu::Menu(Game *game)
 {
@@ -18,66 +19,71 @@ Menu::Menu(Game *game)
   std::cout << "Je suis dans le Menu" << std::endl;
 }
 
-GLuint LoadTexture(const char *filename)
-{
-  GLuint texture;
-  int width, height;
-  unsigned char *data;
-  FILE *file;
+// GLuint LoadTexture(const char *filename)
+// {
+//   GLuint texture;
+//   int width, height;
+//   unsigned char *data;
+//   FILE *file;
+//   bool	check;
+//   gdl::Texture	test;
+//   check = test.load(std::string(filename));
+//   std::cout << check << std::endl;
+//   // file = fopen( filename, "rb" );
+//   // if (file == NULL)
+//   //   return 0;
+//   // width = 1024;
+//   // height = 768;
+//   // data = (unsigned char *)malloc(width * height * 3);
+//   // fread(data, width * height * 3, 1, file);
+//   // fclose(file);
 
-  file = fopen( filename, "rb" );
-  if (file == NULL)
-    return 0;
-  width = 1024;
-  height = 768;
-  data = (unsigned char *)malloc(width * height * 3);
-  fread(data, width * height * 3, 1, file);
-  fclose(file);
+//   // for(int i = 0; i < width * height ; ++i)
+//   //   {
+//   //     int index = i*3;
+//   //     unsigned char B, R;
+//   //     B = data[index];
+//   //     R = data[index+2];
+//   //     data[index] = R;
+//   //     data[index+2] = B;
+//   //   }
+//   // glGenTextures(1, &texture);
+//   // glBindTexture(GL_TEXTURE_2D, texture);
+//   // glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE,GL_MODULATE);
+//   // glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+//   // 		   GL_LINEAR_MIPMAP_NEAREST);
 
-  for(int i = 0; i < width * height ; ++i)
-    {
-      int index = i*3;
-      unsigned char B, R;
-      B = data[index];
-      R = data[index+2];
-      data[index] = R;
-      data[index+2] = B;
-    }
-  glGenTextures(1, &texture);
-  glBindTexture(GL_TEXTURE_2D, texture);
-  glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE,GL_MODULATE);
-  glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-		   GL_LINEAR_MIPMAP_NEAREST);
-
-  glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-  glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,GL_REPEAT);
-  glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,GL_REPEAT);
-  gluBuild2DMipmaps(GL_TEXTURE_2D, 3, width, height,GL_RGB,
-		     GL_UNSIGNED_BYTE, data);
-  free(data);
-  return texture;
-}
+//   // glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+//   // glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,GL_REPEAT);
+//   // glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,GL_REPEAT);
+//   // gluBuild2DMipmaps(GL_TEXTURE_2D, 3, width, height,GL_RGB,
+//   // 		     GL_UNSIGNED_BYTE, data);
+//   // free(data);
+//   // return texture;
+//   test.bind();
+//   return test.getId();
+// }
 
 void Menu::drawBackground()
 {
-  GLuint texture = LoadTexture("./images/background.bmp");
+  gdl::Texture texture;
+  texture.load(std::string("./images/background.tga"));
 
   glEnable(GL_TEXTURE_2D);
-  glBindTexture(GL_TEXTURE_2D, texture);
-
+  texture.bind();
   glBegin(GL_QUADS);
 
   glTexCoord2d(0, 0);
-  glVertex2f(0, 768);
-
-  glTexCoord2d(0, 1);
   glVertex2f(0, 0);
 
-  glTexCoord2d(1, 1);
+  glTexCoord2d(1, 0);
   glVertex2f(1024, 0);
 
-  glTexCoord2d(1, 0);
+  glTexCoord2d(1, 1);
   glVertex2f(1024, 768);
+
+  glTexCoord2d(0, 1);
+  glVertex2f(0, 768);
 
   glEnd();
 }

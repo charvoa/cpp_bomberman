@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:05:48 2015 Antoine Garcia
-// Last update Fri May  8 14:35:18 2015 Antoine Garcia
+// Last update Wed May 13 02:16:04 2015 Antoine Garcia
 //
 
 #include "Game.hh"
@@ -17,7 +17,7 @@ Game::Game()
 
 bool	Game::initialize()
 {
-  if (!_context.start(800,600, "Bomberman !"))
+  if (!_context.start(1920,1080, "Bomberman !"))
     return false;
   glEnable(GL_DEPTH_TEST);
   _shader.load("LibBomberman_linux_x64/shaders/basic.fp", GL_FRAGMENT_SHADER);
