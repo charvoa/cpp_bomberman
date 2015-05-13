@@ -5,8 +5,11 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Wed May 13 03:58:34 2015 Antoine Garcia
-// Last update Wed May 13 05:09:51 2015 Antoine Garcia
+// Last update Wed May 13 06:59:35 2015 Antoine Garcia
 //
+
+#ifndef SOUNDMANAGER_HH_
+# define SOUNDMANAGER_HH_
 
 #include <map>
 #include <string>
@@ -26,3 +29,5 @@ public:
   void		registerSound(const std::string &filename, const std::string &title);
   void		playMusic(const std::string &title);
 };
+
+#endif
