@@ -5,10 +5,12 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:05:48 2015 Antoine Garcia
-// Last update Wed May 13 04:37:15 2015 Antoine Garcia
+// Last update Fri May 15 23:01:54 2015 Antoine Garcia
 //
 
 #include "Game.hh"
+
+Sound&	Game::_sound = Sound::getInstance();
 
 Game::Game()
 {
@@ -22,6 +24,7 @@ bool	Game::initialize()
   glEnable(GL_DEPTH_TEST);
   _shader.load("LibBomberman_linux_x64/shaders/basic.fp", GL_FRAGMENT_SHADER);
   _shader.load("LibBomberman_linux_x64/shaders/basic.vp", GL_VERTEX_SHADER);
+  _sound.initialize();
   pushState(new Menu(this));
   return true;
 }

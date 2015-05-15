@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:04:52 2015 Antoine Garcia
-// Last update Fri May  8 14:04:28 2015 Antoine Garcia
+// Last update Fri May 15 22:59:51 2015 Antoine Garcia
 //
 
 #ifndef GAME_HH_
@@ -20,6 +20,7 @@
 #include <BasicShader.hh>
 #include "GameState.hh"
 #include "Menu.hh"
+#include "Sound/SoundManager.hh"
 
 class	Game: public gdl::Game
 {
@@ -28,6 +29,7 @@ class	Game: public gdl::Game
   gdl::Input		_input;
   gdl::BasicShader		_shader;
   gdl::Clock		_clock;
+  static Sound&	_sound;
 public:
   Game();
   virtual bool update();
