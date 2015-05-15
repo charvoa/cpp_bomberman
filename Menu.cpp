@@ -5,13 +5,10 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Wed May 13 05:12:47 2015 Antoine Garcia
+// Last update Fri May 15 16:09:29 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
-#include <OpenGL.hh>
-#include <iostream>
-#include <Texture.hh>
 
 Sound&	Menu::_sound = Sound::getInstance();
 
@@ -48,7 +45,11 @@ void Menu::drawBackground()
   glEnd();
 }
 
-void Menu::drawButtons() {}
+void Menu::drawButtons()
+{
+  Button *exitButton = new Button(std::string("./images/ExitButton.tga"),
+				  964, 148);
+}
 
 void Menu::draw(gdl::Clock clock, gdl::BasicShader shader)
 {
