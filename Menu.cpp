@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Fri May 15 18:07:29 2015 Nicolas Charvoz
+// Last update Fri May 15 22:26:07 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
@@ -53,14 +53,10 @@ void Menu::drawButtons()
 				    60, 148);
   Button *loadButton = new Button(std::string("./images/LoadButton.tga"),
 				  60, 600);
-  Button *leaderboardButton = new Button(std::string("./images/LeaderboardButton.tga"), 60, 375);
+  Button *leaderboardButton =
+    new Button(std::string("./images/LeaderboardButton.tga"), 60, 375);
   Button *playButton = new Button(std::string("./images/PlayButton.tga"),
 				  964, 375);
-
-  gdl::Input input;
-
-  glm::ivec2 test = input.getMousePosition();
-  std::cout << test.x << std::endl;
 }
 
 void Menu::draw(gdl::Clock clock, gdl::BasicShader shader)
@@ -76,8 +72,22 @@ void Menu::draw(gdl::Clock clock, gdl::BasicShader shader)
   this->drawButtons();
 }
 
+void Menu::getNameOfButton(gdl::Input input)
+{
+  glm::ivec2 mouse = input.getMousePosition();
+  std::cout << "X : " << mouse.x << " && Y : " << mouse.y<< std::endl;
+  if (mouse.x >= 964 && mouse.x <= 964 + 897)
+    std::cout << "SOIT PLAY SOIT EXIT, M'EN DEMANDE PAS TROP NON PLUS" << std::endl;
+
+
+}
+
 bool Menu::update(gdl::Clock shader, gdl::Input input)
 {
+  if (input.getInput(SDL_BUTTON_LEFT) == true)
+    {
+      this->getNameOfButton(input);
+    }
   return true;
 }
 

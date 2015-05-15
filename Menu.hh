@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:41:57 2015 Antoine Garcia
-// Last update Fri May 15 16:10:01 2015 Nicolas Charvoz
+// Last update Fri May 15 22:09:07 2015 Nicolas Charvoz
 //
 
 #ifndef MENU_HH_
@@ -17,6 +17,7 @@
 #include <OpenGL.hh>
 #include <iostream>
 #include <Texture.hh>
+#include <SDL/SDL.h>
 
 class	Menu: public GameState
 {
@@ -29,6 +30,7 @@ public:
   void drawBackground();
   void drawButtons();
   void drawOneButton(std::string, int, int);
+  void getNameOfButton(gdl::Input);
 
 private:
   static Sound&	_sound;
