@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Fri May 15 16:09:29 2015 Nicolas Charvoz
+// Last update Fri May 15 18:07:29 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
@@ -24,7 +24,7 @@ Menu::Menu(Game *game)
 void Menu::drawBackground()
 {
   gdl::Texture texture;
-  texture.load(std::string("./images/background.tga"));
+  texture.load(std::string("./images/background-desert.tga"));
 
   glEnable(GL_TEXTURE_2D);
   texture.bind();
@@ -49,6 +49,18 @@ void Menu::drawButtons()
 {
   Button *exitButton = new Button(std::string("./images/ExitButton.tga"),
 				  964, 148);
+  Button *optionsButton = new Button(std::string("./images/OptionsButton.tga"),
+				    60, 148);
+  Button *loadButton = new Button(std::string("./images/LoadButton.tga"),
+				  60, 600);
+  Button *leaderboardButton = new Button(std::string("./images/LeaderboardButton.tga"), 60, 375);
+  Button *playButton = new Button(std::string("./images/PlayButton.tga"),
+				  964, 375);
+
+  gdl::Input input;
+
+  glm::ivec2 test = input.getMousePosition();
+  std::cout << test.x << std::endl;
 }
 
 void Menu::draw(gdl::Clock clock, gdl::BasicShader shader)
