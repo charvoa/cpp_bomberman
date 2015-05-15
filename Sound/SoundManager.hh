@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Wed May 13 03:58:34 2015 Antoine Garcia
-// Last update Wed May 13 06:59:35 2015 Antoine Garcia
+// Last update Fri May 15 22:41:38 2015 Antoine Garcia
 //
 
 #ifndef SOUNDMANAGER_HH_
@@ -27,7 +27,8 @@ public:
   static Sound&	getInstance();
   void		initialize();
   void		registerSound(const std::string &filename, const std::string &title);
-  void		playMusic(const std::string &title);
+  void		playMusic(const std::string &title, int repeat = 0);
+  void		playSound(const std::string &sound);
 };
 
 #endif
