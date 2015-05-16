@@ -1,11 +1,11 @@
 //
 // Map.cpp for BBM in /home/heitzls/rendu/cpp_bomberman
-// 
+//
 // Made by Serge Heitzler
 // Login   <heitzls@epitech.net>
-// 
+//
 // Started on  Sat May 16 10:19:18 2015 Serge Heitzler
-// Last update Mon May 18 11:14:27 2015 Serge Heitzler
+// Last update Sat May 16 22:42:36 2015 Antoine Garcia
 //
 
 #include "Map.hh"
@@ -32,7 +32,7 @@ Map::~Map()
 
 }
 
-std::stringstream			Map::getBufferForMap(std::ifstream file)
+std::stringstream&			Map::getBufferForMap(std::ifstream &file)
 {
   int					i;
   std::stringstream			buffer;
@@ -49,7 +49,7 @@ std::stringstream			Map::getBufferForMap(std::ifstream file)
   return (buffer);
 }
 
-void					Map::setMap(std::stringstream map)
+void					Map::setMap(std::stringstream &map)
 {
   std::string::iterator		       	x;
   int					i;
@@ -85,12 +85,12 @@ std::vector<std::vector<char> >		Map::getMap()
   return (this->_map);
 }
 
-void					Map::setWidth(std::string line)
+void					Map::setWidth(std::string &line)
 {
   this->_width = stoi(line.substr(10, line.size() - line.find("X")));
 }
 
-void					Map::setHeight(std::string line)
+void					Map::setHeight(std::string &line)
 {
   this->_height = stoi(line.substr((line.find("X") + 1)));
 }
