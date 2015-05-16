@@ -5,7 +5,11 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
+<<<<<<< HEAD
 // Last update Sat May 16 12:42:19 2015 Nicolas Charvoz
+=======
+// Last update Sat May 16 11:41:56 2015 Antoine Garcia
+>>>>>>> 42db8475b63892dc1337827292cc27fc35e5fe9e
 //
 
 #include "Menu.hh"
@@ -15,9 +19,9 @@ Sound&	Menu::_sound = Sound::getInstance();
 Menu::Menu(Game *game)
 {
   _game = game;
-  _sound.initialize();
   _sound.registerSound("./resources/sounds/menu.wav", "main");
-  _sound.playMusic("main", 1);
+  _sound.registerSound("./resources/sounds/beretta.mp3", "shot");
+  _sound.playMusic("main");
   std::cout << "Je suis dans le Menu" << std::endl;
 }
 
@@ -115,8 +119,10 @@ void Menu::getNameOfButton(gdl::Input input)
 
 bool Menu::update(gdl::Clock shader, gdl::Input input)
 {
-  if (input.getInput(SDL_BUTTON_LEFT) == true)
+  int	i;
+  if (input.getInput(SDL_BUTTON_LEFT, true) == true)
     {
+      _sound.playMusic("shot");
       this->getNameOfButton(input);
     }
   return true;
