@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Sat May 16 15:54:49 2015 Nicolas Charvoz
+// Last update Sat May 16 16:33:01 2015 Nicolas Charvoz
 //
 
 #include "Exit.hh"
@@ -47,6 +47,9 @@ void Exit::drawButtons() {}
 
 void Exit::draw(gdl::Clock clock, gdl::BasicShader shader)
 {
+  (void) clock;
+  (void) shader;
+
   glLoadIdentity();
   glMatrixMode(GL_PROJECTION);
 
@@ -60,6 +63,8 @@ void Exit::draw(gdl::Clock clock, gdl::BasicShader shader)
 
 bool Exit::update(gdl::Clock shader, gdl::Input input)
 {
+  (void) shader;
+  (void) input;
   // A FAIRE MIEUX
   usleep(1000000);
   exit(0);
