@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Sat May 16 13:06:20 2015 Nicolas Charvoz
+// Last update Sat May 16 15:27:14 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
@@ -95,22 +95,31 @@ void Menu::getNameOfButton(gdl::Input input)
       && mouse.y <= 1080 - _loadButton->getPosY()
       && mouse.y >= 1080 - _loadButton->getPosY() - _loadButton->getHeight()
       )
-    std::cout << "LOAD" << std::endl;
-  else if (mouse.x >= _leaderboardButton->getPosX()
+      {
+	std::cout << "LOAD" << std::endl;
+	_game->pushState(new Load(_game));
+      }
+    else if (mouse.x >= _leaderboardButton->getPosX()
 	   && mouse.x <= _leaderboardButton->getPosX()
 	   + _leaderboardButton->getWidth()
       && mouse.y <= 1080 - _leaderboardButton->getPosY()
       && mouse.y >= 1080 - _leaderboardButton->getPosY()
 	   - _leaderboardButton->getHeight()
       )
-    std::cout << "LEADERBOARD" << std::endl;
+    {
+      std::cout << "LEADERBOARD" << std::endl;
+      _game->pushState(new Leaderboard(_game));
+    }
   else if (mouse.x >= _optionsButton->getPosX()
       && mouse.x <= _optionsButton->getPosX() + _optionsButton->getWidth()
       && mouse.y <= 1080 - _optionsButton->getPosY()
       && mouse.y >= 1080 - _optionsButton->getPosY()
 	   - _optionsButton->getHeight()
-      )
-    std::cout << "OPTIONS" << std::endl;
+	   )
+    {
+      std::cout << "OPTIONS" << std::endl;
+      _game->pushState(new Options(_game));
+    }
 }
 
 bool Menu::update(gdl::Clock shader, gdl::Input input)
