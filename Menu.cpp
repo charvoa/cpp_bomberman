@@ -16,7 +16,7 @@ Menu::Menu(Game *game)
 {
   _game = game;
   _sound.initialize();
-  _sound.registerSound("./test.mp3", "main");
+  _sound.registerSound("./resources/sounds/menu.wav", "main");
   _sound.playMusic("main");
   std::cout << "Je suis dans le Menu" << std::endl;
 }
