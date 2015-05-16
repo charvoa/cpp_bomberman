@@ -1,28 +1,28 @@
 //
-// Leaderboard.cpp for  in /home/nicolaschr/Work/cpp_bomberman
+// Exit.cpp for  in /home/nicolaschr/Work/cpp_bomberman
 //
 // Made by Nicolas Charvoz
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Sat May 16 15:50:39 2015 Nicolas Charvoz
+// Last update Sat May 16 15:54:49 2015 Nicolas Charvoz
 //
 
-#include "Leaderboard.hh"
+#include "Exit.hh"
 #include <OpenGL.hh>
 #include <iostream>
 #include <Texture.hh>
 
-Leaderboard::Leaderboard(Game *game)
+Exit::Exit(Game *game)
 {
   _game = game;
-  std::cout << "Je suis dans Leaderboard" << std::endl;
+  std::cout << "Je suis dans Exit" << std::endl;
 }
 
-void Leaderboard::drawBackground()
+void Exit::drawBackground()
 {
   gdl::Texture texture;
-  texture.load(std::string("./images/backgroundSelectChar.tga"));
+  texture.load(std::string("./images/BackgroundCredit.tga"));
 
   glEnable(GL_TEXTURE_2D);
   texture.bind();
@@ -43,9 +43,9 @@ void Leaderboard::drawBackground()
   glEnd();
 }
 
-void Leaderboard::drawButtons() {}
+void Exit::drawButtons() {}
 
-void Leaderboard::draw(gdl::Clock clock, gdl::BasicShader shader)
+void Exit::draw(gdl::Clock clock, gdl::BasicShader shader)
 {
   glLoadIdentity();
   glMatrixMode(GL_PROJECTION);
@@ -58,14 +58,15 @@ void Leaderboard::draw(gdl::Clock clock, gdl::BasicShader shader)
   this->drawButtons();
 }
 
-bool Leaderboard::update(gdl::Clock shader, gdl::Input input)
+bool Exit::update(gdl::Clock shader, gdl::Input input)
 {
-  if (input.getInput(SDLK_BACKSPACE) == true)
-    {
-      _game->popState();
-    }
+  // A FAIRE MIEUX
+  usleep(1000000);
+  exit(0);
+  // CECI EST CACA
+
   return true;
 }
 
-Leaderboard::~Leaderboard()
+Exit::~Exit()
 {}
