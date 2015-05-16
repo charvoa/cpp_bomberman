@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Sat May 16 15:50:28 2015 Nicolas Charvoz
+// Last update Sat May 16 16:42:39 2015 Nicolas Charvoz
 //
 
 #include "Load.hh"
@@ -47,6 +47,9 @@ void Load::drawButtons() {}
 
 void Load::draw(gdl::Clock clock, gdl::BasicShader shader)
 {
+  (void) clock;
+  (void) shader;
+
   glLoadIdentity();
   glMatrixMode(GL_PROJECTION);
 
@@ -60,6 +63,8 @@ void Load::draw(gdl::Clock clock, gdl::BasicShader shader)
 
 bool Load::update(gdl::Clock shader, gdl::Input input)
 {
+  (void) shader;
+
   if (input.getInput(SDLK_BACKSPACE) == true)
     {
       _game->popState();

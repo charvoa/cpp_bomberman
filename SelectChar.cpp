@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Sat May 16 13:50:45 2015 Nicolas Charvoz
+// Last update Sat May 16 16:42:22 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -47,6 +47,8 @@ void SelectChar::drawButtons() {}
 
 void SelectChar::draw(gdl::Clock clock, gdl::BasicShader shader)
 {
+  (void) clock;
+  (void) shader;
   glLoadIdentity();
   glMatrixMode(GL_PROJECTION);
 
@@ -60,6 +62,8 @@ void SelectChar::draw(gdl::Clock clock, gdl::BasicShader shader)
 
 bool SelectChar::update(gdl::Clock shader, gdl::Input input)
 {
+  (void) shader;
+
   if (input.getInput(SDLK_BACKSPACE) == true)
     {
       _game->popState();

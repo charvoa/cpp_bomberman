@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Sat May 16 15:46:13 2015 Nicolas Charvoz
+// Last update Sat May 16 16:43:54 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
@@ -61,6 +61,9 @@ void Menu::drawButtons()
 
 void Menu::draw(gdl::Clock clock, gdl::BasicShader shader)
 {
+  (void) clock;
+  (void)shader;
+
   glLoadIdentity();
   glMatrixMode(GL_PROJECTION);
 
@@ -75,6 +78,7 @@ void Menu::draw(gdl::Clock clock, gdl::BasicShader shader)
 void Menu::getNameOfButton(gdl::Input input)
 {
   glm::ivec2 mouse = input.getMousePosition();
+
   if (mouse.x >= _exitButton->getPosX()
       && mouse.x <= _exitButton->getPosX() + _exitButton->getWidth()
       && mouse.y <= 1080 - _exitButton->getPosY()
@@ -127,6 +131,7 @@ void Menu::getNameOfButton(gdl::Input input)
 
 bool Menu::update(gdl::Clock shader, gdl::Input input)
 {
+  (void) shader;
   int	i;
 
   if (input.getInput(SDL_BUTTON_LEFT, true) == true)

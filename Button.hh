@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Fri May 15 15:52:58 2015 Nicolas Charvoz
-// Last update Sat May 16 11:53:13 2015 Nicolas Charvoz
+// Last update Sat May 16 16:44:53 2015 Nicolas Charvoz
 //
 
 #ifndef BUTTON_HH_
@@ -23,8 +23,8 @@ public:
   Button(std::string, int, int);
   ~Button();
   void draw();
-  GLuint getWidth() const;
-  GLuint getHeight() const;
+  int getWidth() const;
+  int getHeight() const;
   int getPosX() const;
   int getPosY() const;
 

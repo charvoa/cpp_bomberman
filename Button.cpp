@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Fri May 15 15:52:36 2015 Nicolas Charvoz
-// Last update Sat May 16 14:35:19 2015 Nicolas Charvoz
+// Last update Sat May 16 16:44:44 2015 Nicolas Charvoz
 //
 
 #include "Button.hh"
@@ -45,14 +45,14 @@ void Button::draw()
   glEnd();
 }
 
-GLuint Button::getWidth() const
+int Button::getWidth() const
 {
-  return _x;
+  return (int)_x;
 }
 
-GLuint Button::getHeight() const
+int Button::getHeight() const
 {
-  return _y;
+  return (int)_y;
 }
 
 int Button::getPosX() const
