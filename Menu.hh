@@ -5,11 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:41:57 2015 Antoine Garcia
-<<<<<<< HEAD
-// Last update Sat May 16 12:42:57 2015 Nicolas Charvoz
-=======
-// Last update Fri May 15 23:00:53 2015 Antoine Garcia
->>>>>>> 42db8475b63892dc1337827292cc27fc35e5fe9e
+// Last update Sat May 16 13:06:09 2015 Nicolas Charvoz
 //
 
 #ifndef MENU_HH_
