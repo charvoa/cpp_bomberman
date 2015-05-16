@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Fri May 15 15:52:36 2015 Nicolas Charvoz
-// Last update Fri May 15 16:08:52 2015 Nicolas Charvoz
+// Last update Sat May 16 11:53:07 2015 Nicolas Charvoz
 //
 
 #include "Button.hh"
@@ -22,8 +22,8 @@ void Button::draw()
 {
   gdl::Texture button;
   button.load(_texture);
-  GLuint x = button.getWidth();
-  GLuint y = button.getHeight();
+  _x = button.getWidth();
+  _y = button.getHeight();
 
   glEnable(GL_TEXTURE_2D);
   button.bind();
@@ -34,13 +34,33 @@ void Button::draw()
   glVertex2f(_xL, _yL);
 
   glTexCoord2d(1, 0);
-  glVertex2f(_xL + x, _yL);
+  glVertex2f(_xL + _x, _yL);
 
   glTexCoord2d(1, 1);
-  glVertex2f(_xL + x, _yL + y);
+  glVertex2f(_xL + _x, _yL + _y);
 
   glTexCoord2d(0, 1);
-  glVertex2f(_xL, _yL + y);
+  glVertex2f(_xL, _yL + _y);
 
   glEnd();
+}
+
+GLuint Button::getWidth() const
+{
+  return _x;
+}
+
+GLuint Button::getHeight() const
+{
+  return _y;
+}
+
+int Button::getPosX() const
+{
+  return _xL;
+}
+
+int Button::getPosY() const
+{
+  return _yL;
 }

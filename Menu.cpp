@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Fri May 15 22:42:32 2015 Antoine Garcia
+// Last update Sat May 16 12:42:19 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
@@ -47,15 +47,15 @@ void Menu::drawBackground()
 
 void Menu::drawButtons()
 {
-  Button *exitButton = new Button(std::string("./images/ExitButton.tga"),
+  _exitButton = new Button(std::string("./images/ExitButton.tga"),
 				  964, 148);
-  Button *optionsButton = new Button(std::string("./images/OptionsButton.tga"),
+  _optionsButton = new Button(std::string("./images/OptionsButton.tga"),
 				    60, 148);
-  Button *loadButton = new Button(std::string("./images/LoadButton.tga"),
+  _loadButton = new Button(std::string("./images/LoadButton.tga"),
 				  60, 600);
-  Button *leaderboardButton =
+  _leaderboardButton =
     new Button(std::string("./images/LeaderboardButton.tga"), 60, 375);
-  Button *playButton = new Button(std::string("./images/PlayButton.tga"),
+  _playButton = new Button(std::string("./images/PlayButton.tga"),
 				  964, 375);
 }
 
@@ -75,11 +75,42 @@ void Menu::draw(gdl::Clock clock, gdl::BasicShader shader)
 void Menu::getNameOfButton(gdl::Input input)
 {
   glm::ivec2 mouse = input.getMousePosition();
-  std::cout << "X : " << mouse.x << " && Y : " << mouse.y<< std::endl;
-  if (mouse.x >= 964 && mouse.x <= 964 + 897)
-    std::cout << "SOIT PLAY SOIT EXIT, M'EN DEMANDE PAS TROP NON PLUS" << std::endl;
-
-
+  if (mouse.x >= _exitButton->getPosX()
+      && mouse.x <= _exitButton->getPosX() + _exitButton->getWidth()
+      && mouse.y <= 1080 - _exitButton->getPosY()
+      && mouse.y >= 1080 - _exitButton->getPosY() - _exitButton->getHeight()
+      )
+    std::cout << "EXIT" << std::endl;
+  else if (mouse.x >= _playButton->getPosX()
+      && mouse.x <= _playButton->getPosX() + _playButton->getWidth()
+      && mouse.y <= 1080 - _playButton->getPosY()
+      && mouse.y >= 1080 - _playButton->getPosY() - _playButton->getHeight()
+      )
+    {
+      std::cout << "PLAY" << std::endl;
+      _game->pushState(new SelectChar(_game));
+    }
+    else if (mouse.x >= _loadButton->getPosX()
+      && mouse.x <= _loadButton->getPosX() + _loadButton->getWidth()
+      && mouse.y <= 1080 - _loadButton->getPosY()
+      && mouse.y >= 1080 - _loadButton->getPosY() - _loadButton->getHeight()
+      )
+    std::cout << "LOAD" << std::endl;
+  else if (mouse.x >= _leaderboardButton->getPosX()
+	   && mouse.x <= _leaderboardButton->getPosX()
+	   + _leaderboardButton->getWidth()
+      && mouse.y <= 1080 - _leaderboardButton->getPosY()
+      && mouse.y >= 1080 - _leaderboardButton->getPosY()
+	   - _leaderboardButton->getHeight()
+      )
+    std::cout << "LEADERBOARD" << std::endl;
+  else if (mouse.x >= _optionsButton->getPosX()
+      && mouse.x <= _optionsButton->getPosX() + _optionsButton->getWidth()
+      && mouse.y <= 1080 - _optionsButton->getPosY()
+      && mouse.y >= 1080 - _optionsButton->getPosY()
+	   - _optionsButton->getHeight()
+      )
+    std::cout << "OPTIONS" << std::endl;
 }
 
 bool Menu::update(gdl::Clock shader, gdl::Input input)
