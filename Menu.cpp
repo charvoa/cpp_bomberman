@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Fri May 15 22:26:07 2015 Nicolas Charvoz
+// Last update Fri May 15 22:42:32 2015 Antoine Garcia
 //
 
 #include "Menu.hh"
@@ -17,7 +17,7 @@ Menu::Menu(Game *game)
   _game = game;
   _sound.initialize();
   _sound.registerSound("./resources/sounds/menu.wav", "main");
-  _sound.playMusic("main");
+  _sound.playMusic("main", 1);
   std::cout << "Je suis dans le Menu" << std::endl;
 }
 

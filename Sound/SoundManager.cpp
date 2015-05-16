@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Wed May 13 03:57:20 2015 Antoine Garcia
-// Last update Wed May 13 05:12:20 2015 Antoine Garcia
+// Last update Fri May 15 22:46:29 2015 Antoine Garcia
 //
 
 #include <iostream>
@@ -29,13 +29,31 @@ void	Sound::registerSound(const std::string &filename, const std::string&title)
   _sounds[title] = filename;
 }
 
-void	Sound::playMusic(const std::string &title)
+void	Sound::playMusic(const std::string &title, int repeat)
 {
   FMOD_SOUND	*play;
   FMOD_RESULT	result;
 
   std::cout << _sounds[title].c_str() << std::endl;
   result = FMOD_System_CreateSound(_system, _sounds[title].c_str(), FMOD_SOFTWARE | FMOD_2D | FMOD_CREATESTREAM, 0, &play);
+  if (result != FMOD_OK)
+    {
+      std::cout << "Musique cannot be played !" << std::endl;
+    }
+  else
+    {
+      if (repeat == 1)
+	FMOD_Sound_SetLoopCount(play, -1);
+      FMOD_System_PlaySound(_system, FMOD_CHANNEL_FREE, play, 0, NULL);
+    }
+}
+
+void	Sound::playSound(const std::string &title)
+{
+  FMOD_SOUND	*play;
+  FMOD_RESULT	result;
+
+  result = FMOD_System_CreateSound(_system, _sounds[title].c_str(), FMOD_SOFTWARE | FMOD_2D, 0, &play);
   if (result != FMOD_OK)
     {
       std::cout << "Musique cannot be played !" << std::endl;
