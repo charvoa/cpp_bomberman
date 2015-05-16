@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Wed May 13 03:57:20 2015 Antoine Garcia
-// Last update Fri May 15 22:46:29 2015 Antoine Garcia
+// Last update Sat May 16 11:24:32 2015 Antoine Garcia
 //
 
 #include <iostream>
@@ -53,7 +53,7 @@ void	Sound::playSound(const std::string &title)
   FMOD_SOUND	*play;
   FMOD_RESULT	result;
 
-  result = FMOD_System_CreateSound(_system, _sounds[title].c_str(), FMOD_SOFTWARE | FMOD_2D, 0, &play);
+  result = FMOD_System_CreateSound(_system, _sounds[title].c_str(), FMOD_HARDWARE | FMOD_2D,  0, &play);
   if (result != FMOD_OK)
     {
       std::cout << "Musique cannot be played !" << std::endl;
