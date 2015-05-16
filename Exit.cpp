@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Sat May 16 15:53:22 2015 Nicolas Charvoz
+// Last update Sat May 16 15:54:49 2015 Nicolas Charvoz
 //
 
 #include "Exit.hh"
@@ -60,11 +60,6 @@ void Exit::draw(gdl::Clock clock, gdl::BasicShader shader)
 
 bool Exit::update(gdl::Clock shader, gdl::Input input)
 {
-  if (input.getInput(SDLK_BACKSPACE) == true)
-    {
-      _game->popState();
-    }
-
   // A FAIRE MIEUX
   usleep(1000000);
   exit(0);
