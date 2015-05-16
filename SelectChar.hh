@@ -5,13 +5,14 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:41:57 2015 Antoine Garcia
-// Last update Wed May 13 06:54:40 2015 Antoine Garcia
+// Last update Sat May 16 13:51:07 2015 Nicolas Charvoz
 //
 
 #ifndef SELECTCHAR_HH_
 # define SELECTCHAR_HH_
 
 #include "./Sound/SoundManager.hh"
+#include "Game.hh"
 #include "GameState.hh"
 
 class	SelectChar: public GameState

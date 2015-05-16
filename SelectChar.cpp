@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Wed May 13 06:32:33 2015 Antoine Garcia
+// Last update Sat May 16 13:50:45 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -22,7 +22,7 @@ SelectChar::SelectChar(Game *game)
 void SelectChar::drawBackground()
 {
   gdl::Texture texture;
-  texture.load(std::string("./images/background.tga"));
+  texture.load(std::string("./images/backgroundSelectChar.tga"));
 
   glEnable(GL_TEXTURE_2D);
   texture.bind();
@@ -60,6 +60,10 @@ void SelectChar::draw(gdl::Clock clock, gdl::BasicShader shader)
 
 bool SelectChar::update(gdl::Clock shader, gdl::Input input)
 {
+  if (input.getInput(SDLK_BACKSPACE) == true)
+    {
+      _game->popState();
+    }
   return true;
 }
 
