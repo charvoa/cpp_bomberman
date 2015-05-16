@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:41:57 2015 Antoine Garcia
-// Last update Sat May 16 13:06:09 2015 Nicolas Charvoz
+// Last update Sat May 16 15:27:27 2015 Nicolas Charvoz
 //
 
 #ifndef MENU_HH_
@@ -16,6 +16,9 @@
 #include "Game.hh"
 #include "GameState.hh"
 #include "Button.hh"
+#include "Options.hh"
+#include "Leaderboard.hh"
+#include "Load.hh"
 #include <OpenGL.hh>
 #include <iostream>
 #include <Texture.hh>

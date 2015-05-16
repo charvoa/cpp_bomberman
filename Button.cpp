@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Fri May 15 15:52:36 2015 Nicolas Charvoz
-// Last update Sat May 16 11:53:07 2015 Nicolas Charvoz
+// Last update Sat May 16 14:35:19 2015 Nicolas Charvoz
 //
 
 #include "Button.hh"
@@ -21,7 +21,7 @@ Button::~Button() {}
 void Button::draw()
 {
   gdl::Texture button;
-  button.load(_texture);
+  button.load(_texture, true);
   _x = button.getWidth();
   _y = button.getHeight();
 
