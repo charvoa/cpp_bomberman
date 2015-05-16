@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Sat May 16 16:43:54 2015 Nicolas Charvoz
+// Last update Sat May 16 16:49:06 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
@@ -132,7 +132,6 @@ void Menu::getNameOfButton(gdl::Input input)
 bool Menu::update(gdl::Clock shader, gdl::Input input)
 {
   (void) shader;
-  int	i;
 
   if (input.getInput(SDL_BUTTON_LEFT, true) == true)
     {

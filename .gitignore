@@ -27,5 +27,8 @@
 # Debug files
 *.dSYM/
 
+#Other Files
+
 *~
 #*
+bomberman
