@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Sat May 16 15:24:03 2015 Nicolas Charvoz
+// Last update Sat May 16 15:50:39 2015 Nicolas Charvoz
 //
 
 #include "Leaderboard.hh"
@@ -16,7 +16,7 @@
 Leaderboard::Leaderboard(Game *game)
 {
   _game = game;
-  std::cout << "Je suis dans les options" << std::endl;
+  std::cout << "Je suis dans Leaderboard" << std::endl;
 }
 
 void Leaderboard::drawBackground()

@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Sat May 16 15:27:14 2015 Nicolas Charvoz
+// Last update Sat May 16 15:46:13 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
@@ -80,7 +80,10 @@ void Menu::getNameOfButton(gdl::Input input)
       && mouse.y <= 1080 - _exitButton->getPosY()
       && mouse.y >= 1080 - _exitButton->getPosY() - _exitButton->getHeight()
       )
-    std::cout << "EXIT" << std::endl;
+    {
+      std::cout << "EXIT" << std::endl;
+      _game->pushState(new Exit(_game));
+    }
   else if (mouse.x >= _playButton->getPosX()
       && mouse.x <= _playButton->getPosX() + _playButton->getWidth()
       && mouse.y <= 1080 - _playButton->getPosY()

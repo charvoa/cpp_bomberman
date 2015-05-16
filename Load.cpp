@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Sat May 16 15:26:31 2015 Nicolas Charvoz
+// Last update Sat May 16 15:50:28 2015 Nicolas Charvoz
 //
 
 #include "Load.hh"
@@ -16,7 +16,7 @@
 Load::Load(Game *game)
 {
   _game = game;
-  std::cout << "Je suis dans les options" << std::endl;
+  std::cout << "Je suis dans Load" << std::endl;
 }
 
 void Load::drawBackground()
