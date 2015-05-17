@@ -5,13 +5,13 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Sun May 17 15:12:07 2015 Nicolas Charvoz
+// Last update Sun May 17 16:03:08 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
 
 Sound&	Menu::_sound = Sound::getInstance();
-TextureManager &Menu::_texture = TextureManager::getInstance();
+TextureManager &Menu::_texManag = TextureManager::getInstance();
 
 Menu::Menu(Game *game)
 {
@@ -19,13 +19,20 @@ Menu::Menu(Game *game)
   _sound.registerSound("./resources/sounds/menu.wav", "main");
   _sound.registerSound("./resources/sounds/beretta.mp3", "shot");
   _sound.playMusic("main");
+
+  _texManag.registerTexture("background-desert", "backgroundMenu");
+  _texManag.registerTexture("ExitButton", "exit");
+  _texManag.registerTexture("OptionsButton", "options");
+  _texManag.registerTexture("LoadButton", "load");
+  _texManag.registerTexture("LeaderboardButton", "leaderboard");
+  _texManag.registerTexture("PlayButton", "play");
+
   std::cout << "Je suis dans le Menu" << std::endl;
 }
 
 void Menu::drawBackground()
 {
-  gdl::Texture texture;
-  texture.load(std::string("./images/background-desert.tga"));
+  gdl::Texture texture = _texManag.loadTexture("backgroundMenu");
 
   glEnable(GL_TEXTURE_2D);
   texture.bind();
@@ -48,11 +55,11 @@ void Menu::drawBackground()
 
 void Menu::drawButtons()
 {
-  _exitButton = new Button("./images/ExitButton.tga", 964, 148);
-  _optionsButton = new Button("./images/OptionsButton.tga", 60, 148);
-  _loadButton = new Button("./images/LoadButton.tga",60, 600);
-  _leaderboardButton = new Button("./images/LeaderboardButton.tga", 60, 375);
-  _playButton = new Button("./images/PlayButton.tga", 964, 375);
+  _exitButton = new Button(_texManag.getTexture("exit"), 964, 148);
+  _optionsButton = new Button(_texManag.getTexture("options"), 60, 148);
+  _loadButton = new Button(_texManag.getTexture("load"), 60, 600);
+  _leaderboardButton = new Button(_texManag.getTexture("leaderboard"), 60, 375);
+  _playButton = new Button(_texManag.getTexture("play"), 964, 375);
 }
 
 void Menu::draw(gdl::Clock clock, gdl::BasicShader shader)

@@ -5,10 +5,12 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Fri May 15 15:52:36 2015 Nicolas Charvoz
-// Last update Sun May 17 14:44:57 2015 Nicolas Charvoz
+// Last update Sun May 17 15:53:02 2015 Nicolas Charvoz
 //
 
 #include "Button.hh"
+
+TextureManager &Button::_texManag = TextureManager::getInstance();
 
 Button::Button(const std::string &texture, int xL, int yL) : _texture(texture),
 						      _xL(xL), _yL(yL)
