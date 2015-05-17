@@ -41,11 +41,6 @@ ifeq ($(DEBUG), YES)
 
 endif
 
-ifeq ($(PROFIL), YES)
-	CPPFLAGS += -pg
-	PROFILFLAGS = -\033[1;31mPROFIL\033[0m-
-endif
-
 CPP		=	g++
 
 DEL_FILE	=	rm -f
