@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:41:57 2015 Antoine Garcia
-// Last update Sat May 16 15:46:34 2015 Nicolas Charvoz
+// Last update Sun May 17 15:13:41 2015 Nicolas Charvoz
 //
 
 #ifndef MENU_HH_
@@ -13,6 +13,7 @@
 
 #include "./Sound/SoundManager.hh"
 #include "SelectChar.hh"
+#include "TextureManager.hh"
 #include "Game.hh"
 #include "GameState.hh"
 #include "Button.hh"
@@ -40,6 +41,7 @@ public:
 
 private:
   static Sound&	_sound;
+  static TextureManager& _texture;
   Button *_buttonGeneral;
   Button *_exitButton;
   Button *_optionsButton;

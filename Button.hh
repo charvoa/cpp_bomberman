@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Fri May 15 15:52:58 2015 Nicolas Charvoz
-// Last update Sat May 16 16:44:53 2015 Nicolas Charvoz
+// Last update Sun May 17 14:45:12 2015 Nicolas Charvoz
 //
 
 #ifndef BUTTON_HH_
@@ -20,7 +20,7 @@ class Button {
 
 public:
 
-  Button(std::string, int, int);
+  Button(const std::string&, int, int);
   ~Button();
   void draw();
   int getWidth() const;
@@ -29,7 +29,7 @@ public:
   int getPosY() const;
 
 private:
-  std::string _texture;
+  const std::string &_texture;
   int _xL;
   int _yL;
   GLuint _x;

@@ -5,12 +5,12 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Fri May 15 15:52:36 2015 Nicolas Charvoz
-// Last update Sat May 16 16:44:44 2015 Nicolas Charvoz
+// Last update Sun May 17 14:44:57 2015 Nicolas Charvoz
 //
 
 #include "Button.hh"
 
-Button::Button(std::string texture, int xL, int yL) : _texture(texture),
+Button::Button(const std::string &texture, int xL, int yL) : _texture(texture),
 						      _xL(xL), _yL(yL)
 {
   this->draw();

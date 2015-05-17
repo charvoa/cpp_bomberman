@@ -5,12 +5,13 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Sat May 16 16:49:06 2015 Nicolas Charvoz
+// Last update Sun May 17 15:12:07 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
 
 Sound&	Menu::_sound = Sound::getInstance();
+TextureManager &Menu::_texture = TextureManager::getInstance();
 
 Menu::Menu(Game *game)
 {
@@ -47,16 +48,11 @@ void Menu::drawBackground()
 
 void Menu::drawButtons()
 {
-  _exitButton = new Button(std::string("./images/ExitButton.tga"),
-				  964, 148);
-  _optionsButton = new Button(std::string("./images/OptionsButton.tga"),
-				    60, 148);
-  _loadButton = new Button(std::string("./images/LoadButton.tga"),
-				  60, 600);
-  _leaderboardButton =
-    new Button(std::string("./images/LeaderboardButton.tga"), 60, 375);
-  _playButton = new Button(std::string("./images/PlayButton.tga"),
-				  964, 375);
+  _exitButton = new Button("./images/ExitButton.tga", 964, 148);
+  _optionsButton = new Button("./images/OptionsButton.tga", 60, 148);
+  _loadButton = new Button("./images/LoadButton.tga",60, 600);
+  _leaderboardButton = new Button("./images/LeaderboardButton.tga", 60, 375);
+  _playButton = new Button("./images/PlayButton.tga", 964, 375);
 }
 
 void Menu::draw(gdl::Clock clock, gdl::BasicShader shader)
@@ -66,6 +62,7 @@ void Menu::draw(gdl::Clock clock, gdl::BasicShader shader)
 
   glLoadIdentity();
   glMatrixMode(GL_PROJECTION);
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
   gluOrtho2D(0.0, (GLdouble)1920, 0.0, (GLdouble)1080);
   glDisable(GL_DEPTH_TEST);

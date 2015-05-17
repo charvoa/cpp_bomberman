@@ -19,7 +19,8 @@ SRC		+=	Button.cpp			\
 			Menu.cpp			\
 			Options.cpp			\
 			SelectChar.cpp			\
-			./Sound/SoundManager.cpp
+			./Sound/SoundManager.cpp	\
+			TextureManager.cpp
 
 SRC_MAIN	=	$(SRC) main.cpp
 
