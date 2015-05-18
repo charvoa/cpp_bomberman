@@ -18,6 +18,7 @@ SRC		+=	Button.cpp			\
 			Load.cpp			\
 			Menu.cpp			\
 			Options.cpp			\
+			Map.cpp				\
 			SelectChar.cpp			\
 			./Sound/SoundManager.cpp	\
 			TextureManager.cpp
