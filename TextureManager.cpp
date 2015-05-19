@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sun May 17 15:06:38 2015 Nicolas Charvoz
-// Last update Sun May 17 16:04:32 2015 Nicolas Charvoz
+// Last update Tue May 19 12:06:31 2015 Nicolas Charvoz
 //
 
 #include "TextureManager.hh"
