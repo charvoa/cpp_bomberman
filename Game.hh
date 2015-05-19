@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:04:52 2015 Antoine Garcia
-// Last update Mon May 18 16:11:24 2015 Antoine Garcia
+// Last update Tue May 19 17:58:38 2015 Nicolas Charvoz
 //
 
 #ifndef GAME_HH_
