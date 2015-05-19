@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Sat May 16 10:19:32 2015 Serge Heitzler
-// Last update Sat May 16 22:42:46 2015 Antoine Garcia
+// Last update Tue May 19 17:52:16 2015 Nicolas Charvoz
 //
 
 #ifndef MAP_HH_

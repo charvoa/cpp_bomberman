@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Sat May 16 10:19:18 2015 Serge Heitzler
-// Last update Sat May 16 22:42:36 2015 Antoine Garcia
+// Last update Tue May 19 17:50:51 2015 Nicolas Charvoz
 //
 
 #include "Map.hh"
@@ -32,7 +32,8 @@ Map::~Map()
 
 }
 
-std::stringstream&			Map::getBufferForMap(std::ifstream &file)
+const std::stringstream&			Map::getBufferForMap(std::ifstream
+							     &file)
 {
   int					i;
   std::stringstream			buffer;
