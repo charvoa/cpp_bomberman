@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:04:52 2015 Antoine Garcia
-// Last update Fri May 15 22:59:51 2015 Antoine Garcia
+// Last update Mon May 18 16:11:24 2015 Antoine Garcia
 //
 
 #ifndef GAME_HH_
@@ -32,6 +32,7 @@ class	Game: public gdl::Game
   static Sound&	_sound;
 public:
   Game();
+  ~Game();
   virtual bool update();
   virtual bool initialize();
   virtual void draw();
