@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Sat May 16 10:19:18 2015 Serge Heitzler
-// Last update Tue May 19 17:53:05 2015 Nicolas Charvoz
+// Last update Tue May 19 18:02:56 2015 Nicolas Charvoz
 //
 
 #include "Map.hh"
@@ -36,7 +36,6 @@ std::stringstream&			Map::getBufferForMap(std::ifstream
 							     &file)
 {
   int					i;
-  std::stringstream			buffer;
   std::string				tmp;
 
   i = 0;
@@ -46,8 +45,8 @@ std::stringstream&			Map::getBufferForMap(std::ifstream
       i++;
     }
   while (getline(file, tmp))
-    buffer << tmp;
-  return (buffer);
+    _bufferGetBufferForMap << tmp;
+  return (_bufferGetBufferForMap);
 }
 
 void					Map::setMap(std::stringstream &map)
