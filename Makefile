@@ -33,7 +33,7 @@ LDFLAGS		=	-L./LibBomberman_linux_x64/libs/ -lgdl_gl	\
 			-ldl -lGL -lGLU -lSDL_image			\
 			-L ./Sound/lib -lfmodex64 			\
 
-CPPFLAGS	=	-Wall -Wextra -std=c++11
+CPPFLAGS	=	-Wall -Wextra -std=c++11 -Wno-ignored-qualifiers
 CPPFLAGS	+=	-I./LibBomberman_linux_x64/includes/
 
 ifeq ($(DEBUG), YES)
