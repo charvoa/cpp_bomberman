@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Sat May 16 10:19:18 2015 Serge Heitzler
-// Last update Sat May 16 22:42:36 2015 Antoine Garcia
+// Last update Wed May 20 14:40:20 2015 Serge Heitzler
 //
 
 #include "Map.hh"
