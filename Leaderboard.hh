@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Sat May 16 15:23:46 2015 Nicolas Charvoz
+// Last update Tue May 19 18:07:14 2015 Nicolas Charvoz
 //
 
 #ifndef LEADERBOARD_HH_
@@ -19,9 +19,9 @@ class Leaderboard : public GameState {
 
 public:
   Leaderboard(Game *game);
+  virtual ~Leaderboard();
   virtual void draw(gdl::Clock, gdl::BasicShader);
   virtual bool update(gdl::Clock, gdl::Input);
-  ~Leaderboard();
   void drawBackground();
   void drawButtons();
 

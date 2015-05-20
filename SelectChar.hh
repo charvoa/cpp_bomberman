@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:41:57 2015 Antoine Garcia
-// Last update Sat May 16 13:51:07 2015 Nicolas Charvoz
+// Last update Tue May 19 18:07:48 2015 Nicolas Charvoz
 //
 
 #ifndef SELECTCHAR_HH_
@@ -20,9 +20,9 @@ class	SelectChar: public GameState
 
 public:
   SelectChar(Game *game);
+  virtual ~SelectChar();
   virtual void draw(gdl::Clock, gdl::BasicShader);
   virtual bool update(gdl::Clock, gdl::Input);
-  ~SelectChar();
   void drawBackground();
   void drawButtons();
 

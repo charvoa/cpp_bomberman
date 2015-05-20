@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Tue May 19 12:16:04 2015 Nicolas Charvoz
+// Last update Wed May 20 14:58:01 2015 Nicolas Charvoz
 //
 
 #ifndef ACHARACTER_HH_
@@ -23,7 +23,8 @@ public:
   virtual void dropBomb() = 0;
   virtual void takeObject(AObject *) = 0;
   virtual void die() = 0;
-
+  virtual void draw() = 0;
+  virtual void update() = 0;
 protected:
 
   std::string _name;
