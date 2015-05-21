@@ -31,7 +31,7 @@ OBJ_MAIN	=	$(SRC_MAIN:.cpp=.o)
 LDFLAGS		=	-L./LibBomberman_linux_x64/libs/ -lgdl_gl	\
 			-lGLEW -lrt -lfbxsdk -lSDL2 -lpthread		\
 			-ldl -lGL -lGLU -lSDL_image			\
-			-L ./Sound/lib -lfmodex64 			\
+			-L ./Sound/lib -lfmodex64 -lglut		\
 
 CPPFLAGS	=	-Wall -Wextra -std=c++11 -Wno-ignored-qualifiers
 CPPFLAGS	+=	-I./LibBomberman_linux_x64/includes/
