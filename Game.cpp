@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:05:48 2015 Antoine Garcia
-// Last update Fri May 15 23:01:54 2015 Antoine Garcia
+// Last update Mon May 18 16:11:47 2015 Antoine Garcia
 //
 
 #include "Game.hh"
@@ -17,6 +17,10 @@ Game::Game()
 
 }
 
+Game::~Game()
+{
+  std::cout << "GAME DESTRUCTOR" << std::endl;
+}
 bool	Game::initialize()
 {
   if (!_context.start(1920,1080, "Bomberman !"))
@@ -36,7 +40,8 @@ bool	Game::update()
   // Mise a jour des inputs et de l'horloge de jeu
   _context.updateClock(_clock);
   _context.updateInputs(_input);
-  peekState()->update(_clock, _input);
+  if(peekState()->update(_clock, _input) == false)
+    return false;
   return true;
 }
 

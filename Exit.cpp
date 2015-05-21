@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Sat May 16 16:40:30 2015 Nicolas Charvoz
+// Last update Tue May 19 18:09:25 2015 Nicolas Charvoz
 //
 
 #include "Exit.hh"
@@ -68,11 +68,10 @@ bool Exit::update(gdl::Clock shader, gdl::Input input)
 
   // A FAIRE MIEUX
   usleep(1000000);
-  exit(0);
+  //exit(0);
   // CECI EST CACA
 
-  return true;
+  return false;
 }
 
-Exit::~Exit()
-{}
+Exit::~Exit() {}

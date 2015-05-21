@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Fri May 15 15:52:58 2015 Nicolas Charvoz
-// Last update Sun May 17 15:52:19 2015 Nicolas Charvoz
+// Last update Mon May 18 10:55:44 2015 Serge Heitzler
 //
 
 #ifndef BUTTON_HH_
@@ -15,7 +15,6 @@
 #include <OpenGL.hh>
 #include <iostream>
 #include <Texture.hh>
-#include <SDL/SDL.h>
 
 class Button {
 
