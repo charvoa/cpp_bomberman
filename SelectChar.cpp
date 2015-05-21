@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Sat May 16 16:42:22 2015 Nicolas Charvoz
+// Last update Thu May 21 13:20:55 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -13,16 +13,19 @@
 #include <iostream>
 #include <Texture.hh>
 
+TextureManager &SelectChar::_texManag = TextureManager::getInstance();
+
 SelectChar::SelectChar(Game *game)
 {
   _game = game;
   std::cout << "Je suis dans la Selection Perso" << std::endl;
+  _texManag.registerTexture("backgroundSelectChar", "playMenu");
 }
 
 void SelectChar::drawBackground()
 {
-  gdl::Texture texture;
-  texture.load(std::string("./images/backgroundSelectChar.tga"));
+  gdl::Texture texture = _texManag.loadTexture("playMenu");
+  //d  texture.load(std::string("./images/backgroundSelectChar.tga"));
 
   glEnable(GL_TEXTURE_2D);
   texture.bind();
