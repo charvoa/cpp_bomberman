@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:41:57 2015 Antoine Garcia
-// Last update Thu May 21 13:06:42 2015 Nicolas Charvoz
+// Last update Thu May 21 17:04:11 2015 Nicolas Charvoz
 //
 
 #ifndef SELECTCHAR_HH_
@@ -15,6 +15,17 @@
 #include "TextureManager.hh"
 #include "Game.hh"
 #include "GameState.hh"
+#include "Button.hh"
+#include "Model.hh"
+#include "AShader.hh"
+#include <SDL.h>
+#include "SDL.h"
+# include <SDL/SDL.h>
+# include <SDL/SDL_image.h>
+# include <GL/glu.h>
+# include <GL/gl.h>
+# include <GL/freeglut.h>
+# include <X11/Xlib.h>
 
 class	SelectChar: public GameState
 {
@@ -26,10 +37,14 @@ public:
   virtual bool update(gdl::Clock, gdl::Input);
   void drawBackground();
   void drawButtons();
+  void drawPerso();
+  void writeToScreen();
 
 private:
   static Sound&	_sound;
   static TextureManager &_texManag;
+  Button *_playButton;
+
 };
 
 #endif
