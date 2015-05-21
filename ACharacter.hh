@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Wed May 20 14:58:01 2015 Nicolas Charvoz
+// Last update Thu May 21 11:28:57 2015 Serge Heitzler
 //
 
 #ifndef ACHARACTER_HH_
@@ -28,8 +28,8 @@ public:
 protected:
 
   std::string _name;
-  int _id;
-  int _hp;
+  std::string _id;
+  int _life;
   std::list<AObject*> _listObject;
   gdl::Model _model;
 };
