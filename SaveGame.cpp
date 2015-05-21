@@ -5,12 +5,12 @@
 // Login   <heitzls@epitech.net>
 // 
 // Started on  Wed May 20 10:56:14 2015 Serge Heitzler
-// Last update Thu May 21 15:58:03 2015 Serge Heitzler
+// Last update Thu May 21 16:13:40 2015 Serge Heitzler
 //
 
-#include "Save.hh"
+#include "SaveGame.hh"
 
-Save::Save(std::vector<std::vector<char> > map, const std::string & mapName)
+SaveGame::SaveGame(std::vector<std::vector<char> > map, const std::string & mapName)
 {
   std::ifstream file(mapName, std::ios::in | std::ios::trunc | std::ios:app);
 
@@ -19,12 +19,12 @@ Save::Save(std::vector<std::vector<char> > map, const std::string & mapName)
   this->writeInfo();
 }
 
-void		Save::writeMapName(std::ifstream & file, const std::string & mapName)
+void		SaveGame::writeMapName(std::ifstream & file, const std::string & mapName)
 {
   file << "MAP NAME " << mapName << std::endl;
 }
 
-void		Save::writeMap(std::ifstream & file, std::vector<std::vector<char> > map)
+void		SaveGame::writeMap(std::ifstream & file, std::vector<std::vector<char> > map)
 {
   int		x;
   int		y;
@@ -43,14 +43,14 @@ void		Save::writeMap(std::ifstream & file, std::vector<std::vector<char> > map)
     }
 }
 
-std::string    	Save::writeType(e_type *type, int id)
+std::string    	SaveGame::writeType(e_type *type, int id)
 {
   if (type == HUMAN)
     return ("P" + to_string(id));
   return ("I" + to_string(id));
 }
 
-void		Save::writeInfo(std::ifstream & file, std::list<ACharacter*> characters)
+void		SaveGame::writeInfo(std::ifstream & file, std::list<ACharacter*> characters)
 {
   ACharacter	*tmp;
   int		i;
@@ -65,14 +65,14 @@ void		Save::writeInfo(std::ifstream & file, std::list<ACharacter*> characters)
       file << "HP : " << tmp->getHp() << std::endl;
       file << "BOMB : " << tmp->getBomb() << std::endl;
       file << "RANGE : " << tmp->getRange() << std::endl;
-      file << "COLOR : R " << to_string(tmp->getColor()["R"]);
-      file << " G " << to_string(tmp->getColor()["G"]);
-      file << " B " << to_string(tmp->getColor()["B"]) << std::endl;
+      file << "COLOR : R " << to_string(tmp->getColor()["r"]);
+      file << " G " << to_string(tmp->getColor()["g"]);
+      file << " B " << to_string(tmp->getColor()["b"]) << std::endl;
       file << "*----------*" << std::endl;
     }
 }
 
-Save::~Save()
+SaveGame::~SaveGame()
 {
 
 }

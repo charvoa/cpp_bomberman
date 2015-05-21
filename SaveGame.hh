@@ -1,15 +1,15 @@
 //
-// Save.hh for BBM in /home/heitzls/rendu/cpp_bomberman
+// SaveGame.hh for BBM in /home/heitzls/rendu/cpp_bomberman
 // 
 // Made by Serge Heitzler
 // Login   <heitzls@epitech.net>
 // 
 // Started on  Wed May 20 10:54:39 2015 Serge Heitzler
-// Last update Thu May 21 15:58:02 2015 Serge Heitzler
+// Last update Thu May 21 16:11:36 2015 Serge Heitzler
 //
 
-#ifndef SAVE_HH_
-# define SAVE_HH_
+#ifndef SAVEGAME_HH_
+# define SAVEGAME_HH_
 
 # include <string>
 # include <iostream>
@@ -17,11 +17,11 @@
 # include <vector>
 # include "ACharacter.hh"
 
-class		Save
+class		SaveGame
 {
 public:
-  Save(std::vector<std::vector<char> > map, const std::string & mapName);
-  ~Save();
+  SaveGame(std::vector<std::vector<char> > map, const std::string & mapName);
+  ~SaveGame();
 
   void		writeMapName(std::ifstream & file, const std::string & name);
   void		writeMap(std::ifstream & file, std::vector<std::vector<char> > map);
