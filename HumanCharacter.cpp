@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu May 21 14:37:16 2015 Audibert Louis
+// Last update Thu May 21 15:55:52 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
@@ -116,4 +116,9 @@ void	HumanCharacter::initColor()
 std::map<char, int> HumanCharacter::getColor() const
 {
   return _color;
+}
+
+int	HumanCharacter::getType() const
+{
+  return _type;
 }

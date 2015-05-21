@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Thu May 21 14:38:32 2015 Audibert Louis
+// Last update Thu May 21 15:56:31 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
@@ -49,6 +49,16 @@ public:
   virtual void initColor() = 0;
   virtual std::map<char, int> getColor() const = 0;
 
+  virtual int getType() const = 0;
+
+private:
+  
+  typedef enum e_type
+    {
+      HUMAN,
+      IA
+    }	e_type;
+
 protected:
 
   std::string _name;
@@ -61,6 +71,7 @@ protected:
   int	_range;
   e_orientation	_orientation;
   std::map<char, int> _color;
+  e_type	_type;
 };
 
 #endif
