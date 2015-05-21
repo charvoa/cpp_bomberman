@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Wed May 20 14:58:18 2015 Nicolas Charvoz
+// Last update Thu May 21 14:37:22 2015 Audibert Louis
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -24,8 +24,21 @@ public:
   void dropBomb();
   void takeObject(AObject *);
   void die();
-  void draw();
+  void draw(gdl::Clock, gdl::BasicShader);
   void update();
+
+  int getPosX() const;
+  int getPosY() const;
+  int getRange() const;
+  int getOrientation() const;
+
+  void setPosX(int posX);
+  void setPosY(int posY);
+  void setRange(int range);
+  void setOrientation(int orientation);
+
+  void initColor();
+  std::map<char, int> getColor() const;
 
 private:
 
