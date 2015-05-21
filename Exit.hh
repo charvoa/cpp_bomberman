@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Sat May 16 15:49:03 2015 Nicolas Charvoz
+// Last update Tue May 19 18:11:32 2015 Nicolas Charvoz
 //
 
 #ifndef EXIT_HH_
@@ -20,9 +20,9 @@ class Exit : public GameState {
 
 public:
   Exit(Game *game);
+  virtual ~Exit();
   virtual void draw(gdl::Clock, gdl::BasicShader);
   virtual bool update(gdl::Clock, gdl::Input);
-  ~Exit();
   void drawBackground();
   void drawButtons();
 

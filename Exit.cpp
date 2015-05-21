@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Mon May 18 16:08:53 2015 Antoine Garcia
+// Last update Tue May 19 18:09:25 2015 Nicolas Charvoz
 //
 
 #include "Exit.hh"
@@ -74,5 +74,4 @@ bool Exit::update(gdl::Clock shader, gdl::Input input)
   return false;
 }
 
-Exit::~Exit()
-{}
+Exit::~Exit() {}

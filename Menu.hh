@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:41:57 2015 Antoine Garcia
-// Last update Mon May 18 10:55:57 2015 Serge Heitzler
+// Last update Tue May 19 18:05:57 2015 Nicolas Charvoz
 //
 
 #ifndef MENU_HH_
@@ -32,7 +32,7 @@ public:
   Menu(Game *game);
   virtual void draw(gdl::Clock, gdl::BasicShader);
   virtual bool update(gdl::Clock, gdl::Input);
-  ~Menu();
+  virtual ~Menu();
   void drawBackground();
   void drawButtons();
   void drawOneButton(std::string, int, int);
