@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Tue May 19 12:15:28 2015 Nicolas Charvoz
+// Last update Wed May 20 14:58:39 2015 Nicolas Charvoz
 //
 
 #include "HumanCharacter.hh"
@@ -42,3 +42,7 @@ void HumanCharacter::die()
 {
   std::cout << "I died" << std::cout;
 }
+
+void HumanCharacter::draw() {}
+
+void HumanCharacter::update() {}

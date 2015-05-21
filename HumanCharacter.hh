@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Tue May 19 12:12:30 2015 Nicolas Charvoz
+// Last update Wed May 20 14:58:18 2015 Nicolas Charvoz
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -24,6 +24,8 @@ public:
   void dropBomb();
   void takeObject(AObject *);
   void die();
+  void draw();
+  void update();
 
 private:
 
