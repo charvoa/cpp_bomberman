@@ -4,7 +4,7 @@
 // Made by Serge Heitzler
 // Login   <heitzls@epitech.net>
 //
-// Last update Thu May 21 09:16:03 2015 Serge Heitzler
+// Last update Fri May 22 10:12:22 2015 Antoine Garcia
 // Last update Tue May 19 18:02:56 2015 Nicolas Charvoz
 //
 
@@ -80,7 +80,7 @@ int					Map::getHeight()
   return (this->_height);
 }
 
-std::vector<std::vector<char> >		Map::getMap()
+std::vector<std::vector<char> >&		Map::getMap()
 {
   return (this->_map);
 }
