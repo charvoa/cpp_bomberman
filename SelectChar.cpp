@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Fri May 22 13:09:30 2015 Nicolas Charvoz
+// Last update Fri May 22 14:08:10 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -57,9 +57,19 @@ void SelectChar::writeToScreen()
 
 void SelectChar::drawPerso(gdl::BasicShader& shader)
 {
-  glm::mat4 const trans(1.0);
-  double deltaTime = 3;
+  glm::mat4 trans(1);
+  double deltaTime = 1;
+  glEnable(GL_DEPTH_TEST);
+  glm::vec3 _position(0, 0, 0);
+  glm::vec3 _rotation(0, 0, 0);
+  glm::vec3 _scale(1, 1, 1);
 
+  shader.build();
+  shader.bind();
+  trans = glm::rotate(trans, _rotation.x, glm::vec3(1, 0, 0));
+  trans = glm::rotate(trans, _rotation.y, glm::vec3(0, 1, 0));
+  trans = glm::rotate(trans, _rotation.z, glm::vec3(0, 0, 1));
+  trans = glm::scale(trans, _scale);
 
   _model.draw(shader, trans, deltaTime);
 }
