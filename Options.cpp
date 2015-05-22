@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Sat May 16 16:43:02 2015 Nicolas Charvoz
+// Last update Fri May 22 13:05:09 2015 Nicolas Charvoz
 //
 
 #include "Options.hh"
@@ -45,7 +45,7 @@ void Options::drawBackground()
 
 void Options::drawButtons() {}
 
-void Options::draw(gdl::Clock clock, gdl::BasicShader shader)
+void Options::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   (void) clock;
   (void) shader;
@@ -61,7 +61,7 @@ void Options::draw(gdl::Clock clock, gdl::BasicShader shader)
   this->drawButtons();
 }
 
-bool Options::update(gdl::Clock shader, gdl::Input input)
+bool Options::update(gdl::Clock& shader, gdl::Input& input)
 {
   (void) shader;
   if (input.getInput(SDLK_BACKSPACE) == true)

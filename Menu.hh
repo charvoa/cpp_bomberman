@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:41:57 2015 Antoine Garcia
-// Last update Tue May 19 18:05:57 2015 Nicolas Charvoz
+// Last update Fri May 22 13:03:41 2015 Nicolas Charvoz
 //
 
 #ifndef MENU_HH_
@@ -30,13 +30,13 @@ class	Menu: public GameState
 
 public:
   Menu(Game *game);
-  virtual void draw(gdl::Clock, gdl::BasicShader);
-  virtual bool update(gdl::Clock, gdl::Input);
+  virtual void draw(gdl::Clock&, gdl::BasicShader&);
+  virtual bool update(gdl::Clock&, gdl::Input&);
   virtual ~Menu();
   void drawBackground();
   void drawButtons();
   void drawOneButton(std::string, int, int);
-  void getNameOfButton(gdl::Input);
+  void getNameOfButton(gdl::Input&);
 
 private:
   static Sound&	_sound;

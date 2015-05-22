@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Tue May 19 18:09:25 2015 Nicolas Charvoz
+// Last update Fri May 22 13:09:01 2015 Nicolas Charvoz
 //
 
 #include "Exit.hh"
@@ -45,7 +45,7 @@ void Exit::drawBackground()
 
 void Exit::drawButtons() {}
 
-void Exit::draw(gdl::Clock clock, gdl::BasicShader shader)
+void Exit::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   (void) clock;
   (void) shader;
@@ -61,13 +61,13 @@ void Exit::draw(gdl::Clock clock, gdl::BasicShader shader)
   this->drawButtons();
 }
 
-bool Exit::update(gdl::Clock shader, gdl::Input input)
+bool Exit::update(gdl::Clock& shader, gdl::Input& input)
 {
   (void) shader;
   (void) input;
 
   // A FAIRE MIEUX
-  usleep(1000000);
+  usleep(4000000);
   //exit(0);
   // CECI EST CACA
 

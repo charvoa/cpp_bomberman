@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Sat May 16 16:42:39 2015 Nicolas Charvoz
+// Last update Fri May 22 13:04:53 2015 Nicolas Charvoz
 //
 
 #include "Load.hh"
@@ -45,7 +45,7 @@ void Load::drawBackground()
 
 void Load::drawButtons() {}
 
-void Load::draw(gdl::Clock clock, gdl::BasicShader shader)
+void Load::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   (void) clock;
   (void) shader;
@@ -61,7 +61,7 @@ void Load::draw(gdl::Clock clock, gdl::BasicShader shader)
   this->drawButtons();
 }
 
-bool Load::update(gdl::Clock shader, gdl::Input input)
+bool Load::update(gdl::Clock& shader, gdl::Input& input)
 {
   (void) shader;
 

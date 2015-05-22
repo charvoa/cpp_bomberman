@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Sat May 16 16:42:50 2015 Nicolas Charvoz
+// Last update Fri May 22 13:06:39 2015 Nicolas Charvoz
 //
 
 #include "Leaderboard.hh"
@@ -45,7 +45,7 @@ void Leaderboard::drawBackground()
 
 void Leaderboard::drawButtons() {}
 
-void Leaderboard::draw(gdl::Clock clock, gdl::BasicShader shader)
+void Leaderboard::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   (void) clock;
   (void) shader;
@@ -61,7 +61,7 @@ void Leaderboard::draw(gdl::Clock clock, gdl::BasicShader shader)
   this->drawButtons();
 }
 
-bool Leaderboard::update(gdl::Clock shader, gdl::Input input)
+bool Leaderboard::update(gdl::Clock& shader, gdl::Input& input)
 {
   (void) shader;
   if (input.getInput(SDLK_BACKSPACE) == true)

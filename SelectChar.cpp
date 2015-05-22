@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Thu May 21 17:36:02 2015 Nicolas Charvoz
+// Last update Fri May 22 13:09:30 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -21,6 +21,7 @@ SelectChar::SelectChar(Game *game)
   std::cout << "Je suis dans la Selection Perso" << std::endl;
   _texManag.registerTexture("backgroundSelectChar", "backgroundSelectChar");
   _texManag.registerTexture("PlaySousMenu", "playMenu");
+ _model.load(std::string("./images/marvin.fbx"));
 }
 
 void SelectChar::drawBackground()
@@ -54,21 +55,19 @@ void SelectChar::writeToScreen()
 {
 }
 
-void SelectChar::drawPerso()
+void SelectChar::drawPerso(gdl::BasicShader& shader)
 {
-  gdl::Model perso;
-  gdl::BasicShader shader;
   glm::mat4 const trans(1.0);
   double deltaTime = 3;
 
-  perso.load(std::string("./images/marvin.fbx"));
-  perso.draw(shader, trans, deltaTime);
+
+  _model.draw(shader, trans, deltaTime);
 }
 
-void SelectChar::draw(gdl::Clock clock, gdl::BasicShader shader)
+void SelectChar::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   (void) clock;
-  (void) shader;
+
   glLoadIdentity();
   glMatrixMode(GL_PROJECTION);
 
@@ -78,10 +77,10 @@ void SelectChar::draw(gdl::Clock clock, gdl::BasicShader shader)
 
   this->drawBackground();
   this->drawButtons();
-  this->drawPerso();
+  this->drawPerso(shader);
 }
 
-bool SelectChar::update(gdl::Clock shader, gdl::Input input)
+bool SelectChar::update(gdl::Clock& shader, gdl::Input& input)
 {
   (void) shader;
 

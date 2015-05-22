@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Tue May 19 18:07:25 2015 Nicolas Charvoz
+// Last update Fri May 22 13:05:20 2015 Nicolas Charvoz
 //
 
 #ifndef OPTIONS_HH_
@@ -20,8 +20,8 @@ class Options : public GameState {
 public:
   Options(Game *game);
   virtual ~Options();
-  virtual void draw(gdl::Clock, gdl::BasicShader);
-  virtual bool update(gdl::Clock, gdl::Input);
+  virtual void draw(gdl::Clock&, gdl::BasicShader&);
+  virtual bool update(gdl::Clock&, gdl::Input&);
   void drawBackground();
   void drawButtons();
 

@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Sun May 17 16:03:08 2015 Nicolas Charvoz
+// Last update Fri May 22 13:07:34 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
@@ -62,7 +62,7 @@ void Menu::drawButtons()
   _playButton = new Button(_texManag.getTexture("play"), 964, 375);
 }
 
-void Menu::draw(gdl::Clock clock, gdl::BasicShader shader)
+void Menu::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   (void) clock;
   (void)shader;
@@ -79,7 +79,7 @@ void Menu::draw(gdl::Clock clock, gdl::BasicShader shader)
   this->drawButtons();
 }
 
-void Menu::getNameOfButton(gdl::Input input)
+void Menu::getNameOfButton(gdl::Input& input)
 {
   glm::ivec2 mouse = input.getMousePosition();
 
@@ -133,7 +133,7 @@ void Menu::getNameOfButton(gdl::Input input)
     }
 }
 
-bool Menu::update(gdl::Clock shader, gdl::Input input)
+bool Menu::update(gdl::Clock& shader, gdl::Input& input)
 {
   (void) shader;
 
