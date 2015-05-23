@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Fri May 22 14:48:05 2015 Nicolas Charvoz
-// Last update Sat May 23 17:00:48 2015 Nicolas Charvoz
+// Last update Sat May 23 17:03:58 2015 Nicolas Charvoz
 //
 
 #ifndef MODELLOAD_HH_
@@ -41,7 +41,7 @@ public:
     (void)clock;
 
     glm::mat4 trans(1);
-    double deltaTime = 0;
+    double deltaTime = 1;
     // On bind la texture pour dire que l'on veux l'utiliser
     _model.draw(shader, getTransformation(), deltaTime);
     // Et on dessine notre cube
