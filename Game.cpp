@@ -5,11 +5,10 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:05:48 2015 Antoine Garcia
-// Last update Fri May 22 15:36:34 2015 Nicolas Charvoz
+// Last update Sat May 23 12:15:55 2015 Nicolas Charvoz
 //
 
 #include "Game.hh"
-#include "AObject.hh"
 
 Sound&	Game::_sound = Sound::getInstance();
 
@@ -42,13 +41,6 @@ bool	Game::initialize()
   _shader.setUniform("view", transformation);
   _shader.setUniform("projection", projection);
 
-  //AObject *cube = new Cube();
-
-  // if (cube->initialize() == false)
-  //   {
-  //     return false;
-  //   }
-  // _objects.push_back(cube);
   _sound.initialize();
   pushState(new Menu(this));
   return true;
@@ -61,10 +53,6 @@ bool	Game::update()
   // Mise a jour des inputs et de l'horloge de jeu
   _context.updateClock(_clock);
   _context.updateInputs(_input);
-  // for (size_t i = 0; i < _objects.size() ; ++i)
-  //   {
-  //     _objects[i]->update(_clock, _input);
-  //   }
   if(peekState()->update(_clock, _input) == false)
     return false;
   return true;
@@ -74,10 +62,6 @@ void	Game::draw()
 {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   _shader.bind();
-  // for (size_t i = 0; i < _objects.size() ; ++i)
-  //   {
-  //     _objects[i]->draw(_shader, _clock);
-  //   }
   peekState()->draw(_clock, _shader);
   _context.flush();
 }

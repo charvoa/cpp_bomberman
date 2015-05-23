@@ -5,10 +5,12 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Fri May 22 13:05:09 2015 Nicolas Charvoz
+// Last update Sat May 23 12:11:16 2015 Nicolas Charvoz
 //
 
 #include "Options.hh"
+#include "SousMenuButton.hh"
+#include "MenuBackground.hh"
 #include <OpenGL.hh>
 #include <iostream>
 #include <Texture.hh>
@@ -16,49 +18,35 @@
 Options::Options(Game *game)
 {
   _game = game;
-  std::cout << "Je suis dans les options" << std::endl;
+  std::cout << "Je suis dans Options" << std::endl;
+  this->loadBackground();
+  this->loadButtons();
 }
 
-void Options::drawBackground()
+void Options::loadBackground()
 {
-  gdl::Texture texture;
-  texture.load(std::string("./images/backgroundSelectChar.tga"));
-
-  glEnable(GL_TEXTURE_2D);
-  texture.bind();
-  glBegin(GL_QUADS);
-
-  glTexCoord2d(0, 0);
-  glVertex2f(0, 0);
-
-  glTexCoord2d(1, 0);
-  glVertex2f(1920, 0);
-
-  glTexCoord2d(1, 1);
-  glVertex2f(1920, 1080);
-
-  glTexCoord2d(0, 1);
-  glVertex2f(0, 1080);
-
-  glEnd();
 }
 
-void Options::drawButtons() {}
+void Options::loadButtons()
+{
+}
 
-void Options::draw(gdl::Clock& clock, gdl::BasicShader& shader)
+void Options::drawBackground(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   (void) clock;
   (void) shader;
+}
 
-  glLoadIdentity();
-  glMatrixMode(GL_PROJECTION);
+void Options::drawButtons(gdl::Clock& clock, gdl::BasicShader& shader)
+{
+  (void) clock;
+  (void) shader;
+}
 
-  gluOrtho2D(0.0, (GLdouble)1920, 0.0, (GLdouble)1080);
-  glDisable(GL_DEPTH_TEST);
-  glClear(GL_COLOR_BUFFER_BIT);
-
-  this->drawBackground();
-  this->drawButtons();
+void Options::draw(gdl::Clock& clock, gdl::BasicShader& shader)
+{
+  this->drawButtons(clock, shader);
+  this->drawBackground(clock, shader);
 }
 
 bool Options::update(gdl::Clock& shader, gdl::Input& input)

@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:41:57 2015 Antoine Garcia
-// Last update Fri May 22 17:38:45 2015 Nicolas Charvoz
+// Last update Sat May 23 11:43:28 2015 Nicolas Charvoz
 //
 
 #ifndef MENU_HH_
@@ -37,15 +37,18 @@ public:
   virtual void draw(gdl::Clock&, gdl::BasicShader&);
   virtual bool update(gdl::Clock&, gdl::Input&);
   virtual ~Menu();
-  void drawBackground();
-  void drawButtons();
+  void drawBackground(gdl::Clock&, gdl::BasicShader&);
+  void drawButtons(gdl::Clock&, gdl::BasicShader&);
   void drawOneButton(std::string, int, int);
   void getNameOfButton(gdl::Input&);
+  void loadButtons();
+  void loadBackground();
 
 private:
   static Sound&	_sound;
   static TextureManager& _texManag;
-  std::vector<AObject*> _objects;
+  std::vector<AObject*> _buttons;
+  AObject* _background;
 
 };
 

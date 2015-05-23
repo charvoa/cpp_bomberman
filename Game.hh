@@ -5,25 +5,25 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:04:52 2015 Antoine Garcia
-// Last update Fri May 22 14:57:17 2015 Nicolas Charvoz
+// Last update Sat May 23 12:18:18 2015 Nicolas Charvoz
 //
 
 #ifndef GAME_HH_
 # define GAME_HH_
 
 
+#include "GameState.hh"
+#include "AObject.hh"
+#include "Menu.hh"
+#include "Sound/SoundManager.hh"
 #include <stack>
 #include <Game.hh>
 #include <SdlContext.hh>
 #include <Clock.hh>
 #include <Input.hh>
 #include <BasicShader.hh>
-#include "GameState.hh"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include "Menu.hh"
-#include "Sound/SoundManager.hh"
-#include "Cube.hh"
 #include <vector>
 
 class	Game: public gdl::Game

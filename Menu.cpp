@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Fri May 22 17:44:15 2015 Nicolas Charvoz
+// Last update Sat May 23 11:59:19 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
@@ -28,23 +28,31 @@ Menu::Menu(Game *game)
   _texManag.registerTexture("PlayButton", "play");
 
   std::cout << "Je suis dans le Menu" << std::endl;
+  this->loadButtons();
+  this->loadBackground();
 }
 
-void Menu::drawBackground()
-{
-
-}
-
-void Menu::drawButtons()
+void Menu::loadBackground()
 {
   AObject *background = new MenuBackground();
+
+  background->initialize(_texManag.getTexture("backgroundMenu"));
+  _background = background;
+}
+
+void Menu::drawBackground(gdl::Clock& clock, gdl::BasicShader& shader)
+{
+  _background->draw(shader, clock);
+}
+
+void Menu::loadButtons()
+{
   AObject *exitButton = new LittleButton();
   AObject *optionsButton = new LittleButton();
   AObject *leaderButton = new LittleButton();
   AObject *loadButton = new LittleButton();
   AObject *playButton = new BigButton();
 
-  background->initialize(_texManag.getTexture("backgroundMenu"));
   exitButton->initialize(_texManag.getTexture("exit"));
   optionsButton->initialize(_texManag.getTexture("options"));
   leaderButton->initialize(_texManag.getTexture("leaderboard"));
@@ -66,39 +74,42 @@ void Menu::drawButtons()
   trans = glm::vec3(-0.38, 0.03, 0);
   playButton->translate(trans);
 
-  _objects.push_back(playButton);
-  _objects.push_back(loadButton);
-  _objects.push_back(leaderButton);
-  _objects.push_back(optionsButton);
-  _objects.push_back(exitButton);
-  _objects.push_back(background);
-  // _exitButton = new Button(_texManag.getTexture("exit"), 964, 148);
-  // _optionsButton = new Button(_texManag.getTexture("options"), 60, 148);
-  // _loadButton = new Button(_texManag.getTexture("load"), 60, 600);
-  // _leaderboardButton = new Button(_texManag.getTexture("leaderboard"), 60, 375);
-  // _playButton = new Button(_texManag.getTexture("play"), 964, 375);
+  _buttons.push_back(playButton);
+  _buttons.push_back(loadButton);
+  _buttons.push_back(leaderButton);
+  _buttons.push_back(optionsButton);
+  _buttons.push_back(exitButton);
+}
+
+void Menu::drawButtons(gdl::Clock& clock, gdl::BasicShader& shader)
+{
+  for (size_t i = 0; i < _buttons.size() ; ++i)
+    _buttons[i]->draw(shader, clock);
 }
 
 void Menu::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   shader.bind();
-
-  this->drawButtons();
-  for (size_t i = 0; i < _objects.size() ; ++i)
-    _objects[i]->draw(shader, clock);
+  this->drawButtons(clock, shader);
+  this->drawBackground(clock, shader);
 }
 
 void Menu::getNameOfButton(gdl::Input& input)
 {
   (void) input;
-  //  glm::ivec2 mouse = input.getMousePosition();
+  glm::ivec2 mouse = input.getMousePosition();
+  std::cout << "X : " << mouse.x << " Y: " << mouse.y << std::endl;
+  if (mouse.x >= 996 && mouse.x <= 1746 && mouse.y >= 279 && mouse.y <= 731)
+    {
+      std::cout << "PLAY" << std::endl;
+      _game->pushState(new SelectChar(_game));
+    }
 }
 
 bool Menu::update(gdl::Clock& clock, gdl::Input& input)
 {
-  (void) clock;
-  //  for (size_t i = 0; i < _objects.size() ; ++i)
-  //_objects[i]->update(clock, input);
+  for (size_t i = 0; i < _buttons.size() ; ++i)
+    _buttons[i]->update(clock, input);
   if (input.getInput(SDL_BUTTON_LEFT, true) == true)
     {
       _sound.playMusic("shot");
