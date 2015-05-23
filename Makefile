@@ -22,7 +22,8 @@ SRC		+=	Button.cpp			\
 			SelectChar.cpp			\
 			./Sound/SoundManager.cpp	\
 			TextureManager.cpp		\
-			HumanCharacter.cpp
+			HumanCharacter.cpp		\
+			World.cpp
 
 SRC_MAIN	=	$(SRC) main.cpp
 
