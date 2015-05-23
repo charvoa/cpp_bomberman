@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Fri May 22 10:52:43 2015 Antoine Garcia
+// Last update Sat May 23 15:53:40 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -27,6 +27,8 @@ private:
   HumanCharacter	*_player2;
 public:
   World(Map &map, int nb_players, int nb_ia);
+  virtual void draw(gdl::Clock&, gdl::BasicShader&);
+  virtual void update(gdl::Clock&, gdl::Input&); //Update Map and Position player.
 };
 
 #endif
