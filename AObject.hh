@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:19:54 2015 Nicolas Charvoz
-// Last update Fri May 22 17:23:48 2015 Nicolas Charvoz
+// Last update Sat May 23 16:54:12 2015 Nicolas Charvoz
 //
 
 #ifndef AOBJECT_HH_

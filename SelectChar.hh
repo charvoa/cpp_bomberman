@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Sat May 23 12:21:44 2015 Nicolas Charvoz
+// Last update Sat May 23 16:55:42 2015 Nicolas Charvoz
 //
 
 #ifndef SELECTCHAR_HH_
@@ -15,6 +15,7 @@
 #include "Game.hh"
 #include "GameState.hh"
 #include "TextureManager.hh"
+#include "ModelLoad.hh"
 
 class SelectChar : public GameState {
 

@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Sat May 23 12:41:15 2015 Nicolas Charvoz
+// Last update Sat May 23 17:01:01 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -62,6 +62,11 @@ void SelectChar::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   this->drawButtons(clock, shader);
   this->drawBackground(clock, shader);
+
+  AObject *model = new ModelLoad();
+
+  model->initialize(_texManag.getTexture("back"));
+  model->draw(shader, clock);
 }
 
 bool SelectChar::update(gdl::Clock& shader, gdl::Input& input)
