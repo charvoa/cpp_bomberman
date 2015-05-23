@@ -4,7 +4,7 @@
 // Made by Serge Heitzler
 // Login   <heitzls@epitech.net>
 //
-// Last update Sat May 23 19:30:15 2015 Antoine Garcia
+// Last update Sat May 23 23:05:06 2015 Antoine Garcia
 // Last update Tue May 19 18:02:56 2015 Nicolas Charvoz
 //
 
@@ -14,7 +14,7 @@ Map::Map(const std::string &filename)
 {
   std::ifstream file(filename, std::ios::in);
   std::string tmp;
-
+  std::cout << "coucou" << std::endl;
   if(file)
     {
       getline(file, tmp);

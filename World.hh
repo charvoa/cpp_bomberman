@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Sat May 23 19:57:01 2015 Antoine Garcia
+// Last update Sat May 23 22:58:39 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -25,6 +25,7 @@ private:
   std::vector<std::vector<char> >	_map;
   int			_nbPlayers;
   int			_nbIa;
+  Map			*_fileMap;
   HumanCharacter	*_player1;
   HumanCharacter	*_player2;
   bool checkPlayerCanMove(int x, int y, char c);
