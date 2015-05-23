@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu May 21 15:55:52 2015 Audibert Louis
+// Last update Mon May 25 12:17:34 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
@@ -113,9 +113,16 @@ void	HumanCharacter::initColor()
   _color.insert(std::pair<char,int>('b', rand() % 256));
 }
 
-std::map<char, int> HumanCharacter::getColor() const
+std::map<char, int> &HumanCharacter::getColor() const
 {
   return _color;
+}
+
+void	HumanCharacter::setColor(int r, int g, int b)
+{
+  _color.insert(std::pair<char,int>('r', r));
+  _color.insert(std::pair<char,int>('g', g));
+  _color.insert(std::pair<char,int>('b', b));
 }
 
 int	HumanCharacter::getType() const

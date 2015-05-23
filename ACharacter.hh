@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Thu May 21 16:03:43 2015 Serge Heitzler
+// Last update Mon May 25 12:18:41 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
@@ -47,7 +47,8 @@ public:
   virtual void setOrientation(int orientation) = 0;
 
   virtual void initColor() = 0;
-  virtual std::map<char, int> getColor() const = 0;
+  virtual std::map<char, int> &getColor() const = 0;
+  virtual void setColor(int r, int g, int b) = 0;
 
   virtual int getType() const = 0;
 
