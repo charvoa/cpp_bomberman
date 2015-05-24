@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Tue May 26 12:10:59 2015 Audibert Louis
+// Last update Sun May 24 07:32:24 2015 Antoine Garcia
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -13,7 +13,9 @@
 
 # include "ACharacter.hh"
 # include "TextureManager.hh"
-# include "World.hh"
+//# include "World.hh"
+
+class	World;
 
 class HumanCharacter : public ACharacter {
 

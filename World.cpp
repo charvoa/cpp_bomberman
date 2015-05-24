@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Mon May 25 16:51:04 2015 Nicolas Charvoz
+// Last update Sun May 24 07:33:01 2015 Antoine Garcia
 //
 
 #include "World.hh"
@@ -18,10 +18,10 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
   _game = game;
   _map = map.getMap();
   _texManag.registerTexture("backgroundInGame", "backIG");
-  _player1 = new HumanCharacter(1);
+  _player1 = new HumanCharacter('1', this);
   this->loadBackground();
   if (nb_players == 2)
-    _player2 = new HumanCharacter(2);
+    _player2 = new HumanCharacter('2', this);
   // _fileMap = &map;
   // _map = _fileMap->getMap();
   // _player1 = new HumanCharacter(1);
