@@ -26,7 +26,7 @@ SRC		+=	Button.cpp			\
 			HumanCharacter.cpp		\
 			World.cpp
 
-SRC_MAIN	=	$(SRC) main.cpp
+SRC_MAIN	=	$(SRC) testWorld.cpp
 
 OBJ_MAIN	=	$(SRC_MAIN:.cpp=.o)
 

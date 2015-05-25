@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Mon May 25 18:09:37 2015 Nicolas Girardot
+// Last update Mon May 25 18:17:53 2015 Nicolas Girardot
 //
 
 #ifndef WORLD_HH__
@@ -28,6 +28,7 @@ private:
   std::vector<std::vector<char> >	_map;
   int			_nbPlayers;
   int			_nbIa;
+  Map			*_fileMap;
   HumanCharacter	*_player1;
   HumanCharacter	*_player2;
   //Graphical Attributes

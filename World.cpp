@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Mon May 25 18:11:38 2015 Nicolas Girardot
+// Last update Mon May 25 18:18:20 2015 Nicolas Girardot
 //
 
 #include "World.hh"
@@ -21,6 +21,11 @@ World::World(Map &map, int nb_players, int nb_ia)
   this->loadBackground();
   if (nb_players == 2)
     _player2 = new HumanCharacter(2);
+  // _fileMap = &map;
+  // _map = _fileMap->getMap();
+  // _player1 = new HumanCharacter(1);
+  // if (nb_players == 2)
+  //   _player2 = new HumanCharacter(2);
 }
 
 void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
