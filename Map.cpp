@@ -5,7 +5,7 @@
 // Login   <heitzl_s@epitech.net>
 //
 // Started on  Mon May 25 18:56:25 2015 Serge Heitzler
-// Last update Mon May 25 21:01:34 2015 Serge Heitzler
+// Last update Mon May 25 21:39:20 2015 Serge Heitzler
 //
 
 #include "Map.hh"
@@ -60,12 +60,10 @@ void					Map::setMap(std::stringstream &map)
       i = 0;
       while (i < _width)
 	{
-	  std::cout << map.str()[(j * (_width)) + i];
 	  tmp.push_back(map.str()[(j * (_width)) + i]);
 	  i++;
 	}
       _map.push_back(tmp);
-      std::cout << std::endl;
       tmp.clear();
       j++;
     }
