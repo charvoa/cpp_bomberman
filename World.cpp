@@ -5,28 +5,47 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Mon May 25 14:58:43 2015 Nicolas Girardot
+// Last update Mon May 25 18:11:38 2015 Nicolas Girardot
 //
 
 #include "World.hh"
+
+TextureManager &World::_texManag = TextureManager::getInstance();
 
 World::World(Map &map, int nb_players, int nb_ia)
 {
   (void)nb_ia;
   _map = map.getMap();
+  _texManag.registerTexture("backgroundInGame", "backIG");
   _player1 = new HumanCharacter(1);
+  this->loadBackground();
   if (nb_players == 2)
     _player2 = new HumanCharacter(2);
 }
 
-void	World::draw(gdl::Clock&, gdl::BasicShader&)
+void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
-
+  this->drawBackground(clock, shader);
 }
 
-bool	World::update(gdl::Clock&, gdl::Input&)
+bool	World::update(gdl::Clock& clock, gdl::Input& shader)
 {
+  clock = clock;
+  shader = shader;
   return true;
+}
+
+void	World::loadBackground()
+{
+  AObject *background = new MenuBackground();
+
+  background->initialize(_texManag.getTexture("backIG"));
+  _background = background;
+}
+
+void	World::drawBackground(gdl::Clock& clock, gdl::BasicShader &shader)
+{
+  _background->draw(shader, clock);
 }
 
 bool	World::setItemAtPosition(int x, int y, char c)

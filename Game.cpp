@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:05:48 2015 Antoine Garcia
-// Last update Sat May 23 12:15:55 2015 Nicolas Charvoz
+// Last update Mon May 25 15:55:01 2015 Nicolas Girardot
 //
 
 #include "Game.hh"
@@ -22,9 +22,7 @@ Game::~Game()
 }
 bool	Game::initialize()
 {
-  glm::mat4 projection;
-  glm::mat4 transformation;
-
+  _camera = new Camera();
   if (!_context.start(1920, 1080, "Bomberman !"))
     return false;
   glEnable(GL_DEPTH_TEST);
@@ -33,13 +31,11 @@ bool	Game::initialize()
 
   _shader.build();
 
-  projection = glm::perspective(90.0f, 1920.0f/1080.0f, 0.1f, 100.0f);
-  transformation = glm::lookAt(glm::vec3(0, 0, -0.001), glm::vec3(0, 0, 0),
-			       glm::vec3(0, 1, 0));
+  _camera->Init();
 
   _shader.bind();
-  _shader.setUniform("view", transformation);
-  _shader.setUniform("projection", projection);
+  _shader.setUniform("view", _camera->getTransformation());
+  _shader.setUniform("projection", _camera->getProjection());
 
   _sound.initialize();
   pushState(new Menu(this));
