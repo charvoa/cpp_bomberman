@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Sat May 23 16:55:42 2015 Nicolas Charvoz
+// Last update Mon May 25 17:32:41 2015 Nicolas Charvoz
 //
 
 #ifndef SELECTCHAR_HH_
@@ -28,12 +28,15 @@ public:
   void loadButtons();
   void drawBackground(gdl::Clock&, gdl::BasicShader&);
   void drawButtons(gdl::Clock&, gdl::BasicShader&);
+  void loadModel();
+  void drawModel(gdl::Clock&, gdl::BasicShader&);
 
 private:
   static Sound& _sound;
   static TextureManager& _texManag;
   std::vector<AObject*> _buttons;
   AObject* _background;
+  AObject* _model;
 };
 
 #endif
