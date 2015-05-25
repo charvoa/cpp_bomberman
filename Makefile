@@ -20,6 +20,7 @@ SRC		+=	Button.cpp			\
 			Options.cpp			\
 			Map.cpp				\
 			SelectChar.cpp			\
+			Camera.cpp			\
 			./Sound/SoundManager.cpp	\
 			TextureManager.cpp		\
 			HumanCharacter.cpp		\
