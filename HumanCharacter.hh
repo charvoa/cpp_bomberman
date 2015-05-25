@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Mon May 25 15:46:01 2015 Serge Heitzler
+// Last update Mon May 25 15:47:26 2015 Serge Heitzler
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -38,7 +38,8 @@ public:
   void setOrientation(int orientation);
 
   void initColor();
-  std::map<char, int> getColor() const;
+  std::map<char, int> &getColor() const;
+  void setColor(int r, int g, int b);
 
   int	getType() const;
 
