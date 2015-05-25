@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Mon May 25 17:52:04 2015 Nicolas Charvoz
+// Last update Mon May 25 18:06:51 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -52,7 +52,7 @@ void SelectChar::loadModel()
 {
   _model = new ModelLoad();
 
-  _model->initialize(_texManag.getTexture("back"));
+  _model->initialize("./images/marvin.fbx");
 
   glm::vec3 trans(0, -200, 800);
   _model->translate(trans);
@@ -60,6 +60,8 @@ void SelectChar::loadModel()
   trans = glm::vec3(0.5, 0.5, 0.5);
   _model->scale(trans);
 
+  trans = glm::vec3(0, -200, 0);
+  _model->rotate(trans, 180.0f);
 }
 
 void SelectChar::drawModel(gdl::Clock& clock, gdl::BasicShader& shader)
