@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sat May 23 19:39:10 2015 Antoine Garcia
+// Last update Mon May 25 14:58:43 2015 Nicolas Girardot
 //
 
 #include "World.hh"
@@ -20,7 +20,9 @@ World::World(Map &map, int nb_players, int nb_ia)
 }
 
 void	World::draw(gdl::Clock&, gdl::BasicShader&)
-{}
+{
+
+}
 
 bool	World::update(gdl::Clock&, gdl::Input&)
 {
