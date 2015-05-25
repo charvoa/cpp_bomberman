@@ -1,14 +1,16 @@
 //
-// Menu.cpp for Menu in /home/antgar/rendu/cpp_bomberman
+// SelectChar.cpp for  in /home/nicolaschr/Work/cpp_bomberman
 //
-// Made by Antoine Garcia
-// Login   <antgar@epitech.net>
+// Made by Nicolas Charvoz
+// Login   <nicolaschr@epitech.net>
 //
-// Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Thu May 21 13:20:55 2015 Nicolas Charvoz
+// Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
+// Last update Sat May 23 17:01:01 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
+#include "SousMenuButton.hh"
+#include "MenuBackground.hh"
 #include <OpenGL.hh>
 #include <iostream>
 #include <Texture.hh>
@@ -18,55 +20,58 @@ TextureManager &SelectChar::_texManag = TextureManager::getInstance();
 SelectChar::SelectChar(Game *game)
 {
   _game = game;
-  std::cout << "Je suis dans la Selection Perso" << std::endl;
-  _texManag.registerTexture("backgroundSelectChar", "playMenu");
+  std::cout << "Je suis dans SelectChar" << std::endl;
+  _texManag.registerTexture("backgroundSelectChar", "back");
+  _texManag.registerTexture("PlaySousMenu", "playSM");
+  this->loadBackground();
+  this->loadButtons();
 }
 
-void SelectChar::drawBackground()
+void SelectChar::loadBackground()
 {
-  gdl::Texture texture = _texManag.loadTexture("playMenu");
-  //d  texture.load(std::string("./images/backgroundSelectChar.tga"));
+  AObject *background = new MenuBackground();
 
-  glEnable(GL_TEXTURE_2D);
-  texture.bind();
-  glBegin(GL_QUADS);
-
-  glTexCoord2d(0, 0);
-  glVertex2f(0, 0);
-
-  glTexCoord2d(1, 0);
-  glVertex2f(1920, 0);
-
-  glTexCoord2d(1, 1);
-  glVertex2f(1920, 1080);
-
-  glTexCoord2d(0, 1);
-  glVertex2f(0, 1080);
-
-  glEnd();
+  background->initialize(_texManag.getTexture("back"));
+  _background = background;
 }
 
-void SelectChar::drawButtons() {}
-
-void SelectChar::draw(gdl::Clock clock, gdl::BasicShader shader)
+void SelectChar::loadButtons()
 {
-  (void) clock;
+  AObject *play = new SousMenuButton();
+
+  play->initialize(_texManag.getTexture("playSM"));
+
+  glm::vec3 trans(-0.6, -0.38, 0);
+  play->translate(trans);
+
+  _buttons.push_back(play);
+}
+
+void SelectChar::drawBackground(gdl::Clock& clock, gdl::BasicShader& shader)
+{
+  _background->draw(shader, clock);
+}
+
+void SelectChar::drawButtons(gdl::Clock& clock, gdl::BasicShader& shader)
+{
+  for (size_t i = 0; i < _buttons.size() ; ++i)
+    _buttons[i]->draw(shader, clock);
+}
+
+void SelectChar::draw(gdl::Clock& clock, gdl::BasicShader& shader)
+{
+  this->drawButtons(clock, shader);
+  this->drawBackground(clock, shader);
+
+  AObject *model = new ModelLoad();
+
+  model->initialize(_texManag.getTexture("back"));
+  model->draw(shader, clock);
+}
+
+bool SelectChar::update(gdl::Clock& shader, gdl::Input& input)
+{
   (void) shader;
-  glLoadIdentity();
-  glMatrixMode(GL_PROJECTION);
-
-  gluOrtho2D(0.0, (GLdouble)1920, 0.0, (GLdouble)1080);
-  glDisable(GL_DEPTH_TEST);
-  glClear(GL_COLOR_BUFFER_BIT);
-
-  this->drawBackground();
-  this->drawButtons();
-}
-
-bool SelectChar::update(gdl::Clock shader, gdl::Input input)
-{
-  (void) shader;
-
   if (input.getInput(SDLK_BACKSPACE) == true)
     {
       _game->popState();

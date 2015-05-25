@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:05:48 2015 Antoine Garcia
-// Last update Mon May 18 16:11:47 2015 Antoine Garcia
+// Last update Sat May 23 12:15:55 2015 Nicolas Charvoz
 //
 
 #include "Game.hh"
@@ -14,7 +14,6 @@ Sound&	Game::_sound = Sound::getInstance();
 
 Game::Game()
 {
-
 }
 
 Game::~Game()
@@ -23,11 +22,25 @@ Game::~Game()
 }
 bool	Game::initialize()
 {
-  if (!_context.start(1920,1080, "Bomberman !"))
+  glm::mat4 projection;
+  glm::mat4 transformation;
+
+  if (!_context.start(1920, 1080, "Bomberman !"))
     return false;
   glEnable(GL_DEPTH_TEST);
   _shader.load("LibBomberman_linux_x64/shaders/basic.fp", GL_FRAGMENT_SHADER);
   _shader.load("LibBomberman_linux_x64/shaders/basic.vp", GL_VERTEX_SHADER);
+
+  _shader.build();
+
+  projection = glm::perspective(90.0f, 1920.0f/1080.0f, 0.1f, 100.0f);
+  transformation = glm::lookAt(glm::vec3(0, 0, -0.001), glm::vec3(0, 0, 0),
+			       glm::vec3(0, 1, 0));
+
+  _shader.bind();
+  _shader.setUniform("view", transformation);
+  _shader.setUniform("projection", projection);
+
   _sound.initialize();
   pushState(new Menu(this));
   return true;

@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Mon May 25 12:15:38 2015 Audibert Louis
+// Last update Mon May 25 12:18:41 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
@@ -62,17 +62,17 @@ private:
 
 protected:
 
-  std::string _name;
-  int _id;
-  int _hp;
-  std::list<AObject*> _listObject;
-  gdl::Model _model;
-  int	_posX;
-  int	_posY;
-  int	_range;
-  e_orientation	_orientation;
-  std::map<char, int> _color;
-  e_type	_type;
+  std::string		_name;
+  int			_id;
+  int			_hp;
+  std::list<AObject*>	_listObject;
+  gdl::Model		_model;
+  int			_posX;
+  int			_posY;
+  int			_range;
+  e_orientation		_orientation;
+  std::map<char, int>	_color;
+  e_type		_type;
 };
 
 #endif

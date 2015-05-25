@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:02:07 2015 Antoine Garcia
-// Last update Tue May 19 18:12:16 2015 Nicolas Charvoz
+// Last update Sat May 23 15:48:43 2015 Antoine Garcia
 //
 
 #ifndef GAMESTATEMANAGER_HH_
@@ -26,9 +26,9 @@ protected:
 
 public:
 
-  //virtual ~GameState();
-  virtual void draw(gdl::Clock, gdl::BasicShader) = 0;
-  virtual bool update(gdl::Clock, gdl::Input) = 0;
+  virtual ~GameState(){};
+  virtual void draw(gdl::Clock&, gdl::BasicShader&) = 0;
+  virtual bool update(gdl::Clock&, gdl::Input&) = 0;
 };
 
 #endif
