@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Fri May 22 14:48:05 2015 Nicolas Charvoz
-// Last update Sat May 23 17:03:58 2015 Nicolas Charvoz
+// Last update Mon May 25 11:24:51 2015 Nicolas Charvoz
 //
 
 #ifndef MODELLOAD_HH_
@@ -28,23 +28,21 @@ public:
   virtual bool initialize(const std::string &tex)
   {
     (void) tex;
+
     _model.load("./images/marvin.fbx");
     return (true);
   }
   virtual void update(gdl::Clock const &clock, gdl::Input &input)
   {
-    (void)clock;
-    (void)input;
+    (void) clock;
+    (void) input;
   }
   virtual void draw(gdl::AShader &shader, gdl::Clock const &clock)
   {
-    (void)clock;
-
-    glm::mat4 trans(1);
+    (void) clock;
     double deltaTime = 1;
-    // On bind la texture pour dire que l'on veux l'utiliser
+
     _model.draw(shader, getTransformation(), deltaTime);
-    // Et on dessine notre cube
   }
 };
 
