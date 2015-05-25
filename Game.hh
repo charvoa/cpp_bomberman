@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:04:52 2015 Antoine Garcia
-// Last update Sat May 23 12:18:18 2015 Nicolas Charvoz
+// Last update Mon May 25 15:53:44 2015 Nicolas Girardot
 //
 
 #ifndef GAME_HH_
@@ -16,6 +16,7 @@
 #include "AObject.hh"
 #include "Menu.hh"
 #include "Sound/SoundManager.hh"
+#include "Camera.hh"
 #include <stack>
 #include <Game.hh>
 #include <SdlContext.hh>
@@ -35,6 +36,7 @@ class	Game: public gdl::Game
   gdl::Clock		_clock;
   static Sound&	_sound;
   std::vector<AObject *> _objects;
+  Camera		*_camera;
 public:
   Game();
   ~Game();
