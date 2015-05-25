@@ -1,11 +1,11 @@
 //
 // Save.cpp for BBM in /home/heitzls/rendu/cpp_bomberman
-// 
+//
 // Made by Serge Heitzler
 // Login   <heitzls@epitech.net>
-// 
+//
 // Started on  Wed May 20 10:56:14 2015 Serge Heitzler
-// Last update Thu May 21 16:13:40 2015 Serge Heitzler
+// Last update Mon May 25 12:11:56 2015 Serge Heitzler
 //
 
 #include "SaveGame.hh"
@@ -15,8 +15,8 @@ SaveGame::SaveGame(std::vector<std::vector<char> > map, const std::string & mapN
   std::ifstream file(mapName, std::ios::in | std::ios::trunc | std::ios:app);
 
   this->writeMapName(file, mapName);
-  this->writeMap(file, map);
   this->writeInfo();
+  this->writeMap(file, map);
 }
 
 void		SaveGame::writeMapName(std::ifstream & file, const std::string & mapName)

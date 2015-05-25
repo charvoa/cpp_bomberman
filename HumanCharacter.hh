@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Thu May 21 15:55:32 2015 Audibert Louis
+// Last update Mon May 25 15:46:01 2015 Serge Heitzler
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -39,7 +39,7 @@ public:
 
   void initColor();
   std::map<char, int> getColor() const;
-  
+
   int	getType() const;
 
 private:

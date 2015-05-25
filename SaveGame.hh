@@ -1,11 +1,11 @@
 //
 // SaveGame.hh for BBM in /home/heitzls/rendu/cpp_bomberman
-// 
+//
 // Made by Serge Heitzler
 // Login   <heitzls@epitech.net>
-// 
+//
 // Started on  Wed May 20 10:54:39 2015 Serge Heitzler
-// Last update Thu May 21 16:11:36 2015 Serge Heitzler
+// Last update Mon May 25 15:46:02 2015 Serge Heitzler
 //
 
 #ifndef SAVEGAME_HH_
@@ -29,7 +29,7 @@ public:
   void		writeInfo(std::ifstream & file, std::list<ACharacter*> characters);
 
 private:
-  
+
 };
 
 #endif
