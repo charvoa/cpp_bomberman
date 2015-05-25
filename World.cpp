@@ -5,16 +5,17 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Mon May 25 18:18:20 2015 Nicolas Girardot
+// Last update Mon May 25 16:51:04 2015 Nicolas Charvoz
 //
 
 #include "World.hh"
 
 TextureManager &World::_texManag = TextureManager::getInstance();
 
-World::World(Map &map, int nb_players, int nb_ia)
+World::World(Game *game, Map &map, int nb_players, int nb_ia)
 {
   (void)nb_ia;
+  _game = game;
   _map = map.getMap();
   _texManag.registerTexture("backgroundInGame", "backIG");
   _player1 = new HumanCharacter(1);

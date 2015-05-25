@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Mon May 25 18:17:53 2015 Nicolas Girardot
+// Last update Mon May 25 16:48:59 2015 Nicolas Charvoz
 //
 
 #ifndef WORLD_HH__
@@ -36,7 +36,7 @@ private:
   AObject		*_background;
   bool checkPlayerCanMove(int x, int y, char c);
 public:
-  World(Map &map, int nb_players, int nb_ia);
+  World(Game *game, Map &map, int nb_players, int nb_ia);
   ~World(){};
   virtual void draw(gdl::Clock&, gdl::BasicShader&);
   virtual bool update(gdl::Clock&, gdl::Input&); //get InputKeys and update.
@@ -44,6 +44,7 @@ public:
   char		getItemAtPosition(int x, int y);
   void		drawBackground(gdl::Clock&, gdl::BasicShader &);
   void		loadBackground();
+  Game		*_game;
 };
 
 #endif
