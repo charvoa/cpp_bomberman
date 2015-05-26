@@ -1396,8 +1396,8 @@ Objects:  {
             Property: "AccessMode", "enum", "",0
         }
         UseMipMap: 0
-        Filename: "test_crate_tex.jpg"
-        RelativeFilename: "../../../../../test_crate_tex.jpg"
+        Filename: "crate_tex3.tga"
+        RelativeFilename: ”./crate_tex3.tga"
     }
     Texture: "Texture::crate_mat_tex", "TextureVideoClip" {
         Type: "TextureVideoClip"
@@ -1421,8 +1421,8 @@ Objects:  {
             Property: "VideoProperty", "object", ""
         }
         Media: "Video::crate_mat_tex"
-        FileName: "test_crate_tex.jpg"
-        RelativeFilename: "../../../../../test_crate_tex.jpg"
+        FileName: "crate_tex3.tga"
+        RelativeFilename: "./crate_tex3.tga"
         ModelUVTranslation: 0,0
         ModelUVScaling: 1,1
         Texture_Alpha_Source: "None"
