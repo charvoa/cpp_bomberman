@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue May 26 13:47:00 2015 Nicolas Girardot
+// Last update Tue May 26 13:56:14 2015 Nicolas Charvoz
 //
 
 #include "World.hh"
@@ -21,7 +21,7 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
   _player1 = new HumanCharacter('1', this);
   this->loadBackground();
   if (nb_players == 2)
-    _player2 = new HumanCharacter(2);
+    //_player2 = new HumanCharacter(2);
   findWall(map);
 }
 
