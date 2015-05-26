@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Mon May 25 15:47:26 2015 Serge Heitzler
+// Last update Tue May 26 11:59:21 2015 Audibert Louis
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -13,12 +13,13 @@
 
 # include "ACharacter.hh"
 # include "TextureManager.hh"
+# include "World.hh"
 
 class HumanCharacter : public ACharacter {
 
 public:
 
-  HumanCharacter(int);
+  HumanCharacter(char, World &);
   virtual ~HumanCharacter();
   int getHp() const;
   void dropBomb();
@@ -27,13 +28,11 @@ public:
   void draw(gdl::Clock, gdl::BasicShader);
   void update();
 
-  int getPosX() const;
-  int getPosY() const;
+  Position &getPos() const;
   int getRange() const;
   int getOrientation() const;
 
-  void setPosX(int posX);
-  void setPosY(int posY);
+  void setPos(Position &pos);
   void setRange(int range);
   void setOrientation(int orientation);
 
