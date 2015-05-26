@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Tue May 26 12:10:46 2015 Audibert Louis
+// Last update Tue May 26 16:17:52 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
@@ -17,6 +17,18 @@ HumanCharacter::HumanCharacter(char id, World *world)
   (void) world;
   this->_id = id;
   this->_hp = 100;
+  _model = new ModelLoad();
+
+  _model->initialize("./images/marvin.fbx");
+
+  glm::vec3 trans(0, -200, 800);
+  _model->translate(trans);
+
+  trans = glm::vec3(0.5, 0.5, 0.5);
+  _model->scale(trans);
+
+  trans = glm::vec3(0, -200, 0);
+  _model->rotate(trans, 180.0f);
 }
 
 HumanCharacter::~HumanCharacter()
@@ -56,14 +68,12 @@ glm::mat4	getTransformation()
 
 void HumanCharacter::draw(gdl::Clock clock, gdl::BasicShader shader)
 {
-  (void)clock;
-  // setCurrentAnim(0, true);
-  // _model.draw(shader, getTransformation(), Input::getElpasedTime());
-  _model.draw(shader, getTransformation(), 0);
+  _model->draw(shader, clock);
 }
 
-void HumanCharacter::update() {}
-
+void HumanCharacter::update()
+{
+}
 
 Position	&HumanCharacter::getPos() const
 {

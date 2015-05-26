@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Sun May 24 07:32:24 2015 Antoine Garcia
+// Last update Tue May 26 16:18:27 2015 Audibert Louis
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -13,7 +13,7 @@
 
 # include "ACharacter.hh"
 # include "TextureManager.hh"
-//# include "World.hh"
+# include "ModelLoad.hh"
 
 class	World;
 
