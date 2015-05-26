@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue May 26 17:27:43 2015 Nicolas Girardot
+// Last update Tue May 26 17:36:29 2015 Nicolas Charvoz
 //
 
 #include "World.hh"
@@ -42,8 +42,8 @@ void	World::findWall(Map &map)
 	{
 	  if (map.getItemAtPosition(x, y) == 'W')
 	    {
-	      wall = new ModelLoad();
-	      wall->initialize("./images/model/box.fbx");
+	      wall = new Cube();
+	      wall->initialize("./images/model/crate_tex3.tga");
 	      glm::vec3 trans(0 + x * 100, 0, 500 - y * 100);
 	      wall->translate(trans);
 	      wall->scale(glm::vec3(0.3, 0.3, 0.3));

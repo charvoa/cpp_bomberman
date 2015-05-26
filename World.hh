@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Tue May 26 15:10:03 2015 Nicolas Girardot
+// Last update Tue May 26 17:30:53 2015 Nicolas Charvoz
 //
 
 #ifndef WORLD_HH__
@@ -22,6 +22,7 @@
 #include "Game.hh"
 #include "Position.hpp"
 #include "HumanCharacter.hh"
+#include "Cube.hh"
 
 class	World : public GameState
 {
