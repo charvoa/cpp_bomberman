@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue May 26 13:56:14 2015 Nicolas Charvoz
+// Last update Tue May 26 16:51:29 2015 Nicolas Girardot
 //
 
 #include "World.hh"
@@ -16,6 +16,11 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
 {
   (void)nb_ia;
   _game = game;
+  _game->_camera->move(glm::vec3(750, 900, -850), glm::vec3(750, 0, 550));
+  gdl::BasicShader shader = _game->getShader();
+  shader.bind();
+  shader.setUniform("view", _game->_camera->getTransformation());
+  shader.setUniform("projection", _game->_camera->getProjection());
   _map = map.getMap();
   _texManag.registerTexture("backgroundInGame", "backIG");
   _player1 = new HumanCharacter('1', this);
@@ -28,25 +33,35 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
 void	World::findWall(Map &map)
 {
   AObject *wall;
-  Position *pos;
-  for (int y = 0; y < map.getWidth(); ++y)
+  int	y = 0;
+  int	x;
+  while(y < map.getHeight())
     {
-      for (int x = 0; x < map.getHeight(); ++x)
+      x = 0;
+      while(x < map.getWidth())
 	{
 	  if (map.getItemAtPosition(x, y) == 'W')
 	    {
 	      wall = new ModelLoad();
-	      pos = new Position(x, y);
-	      wall->initialize("./marvin/marvin.gbx");
-	      _objects.insert(std::pair<AObject*, Position*>(wall, pos));
+	      wall->initialize("./images/model/crate1.fbx");
+	      glm::vec3 trans(0 + x * 100, 0, 500 - y * 100);
+	      wall->translate(trans);
+	      wall->scale(glm::vec3(0.3, 0.3, 0.3));
+	      _objects.push_back(wall);
 	    }
+	  x++;
 	}
+      y++;
     }
 }
 
 void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   this->drawBackground(clock, shader);
+  for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
+    {
+      (*it)->draw(shader, clock);
+    }
 }
 
 bool	World::update(gdl::Clock& clock, gdl::Input& shader)
@@ -66,6 +81,7 @@ void	World::loadBackground()
 
 void	World::drawBackground(gdl::Clock& clock, gdl::BasicShader &shader)
 {
+
   _background->draw(shader, clock);
 }
 

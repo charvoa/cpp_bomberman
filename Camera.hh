@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Thu May 21 16:43:10 2015 Nicolas Girardot
-// Last update Mon May 25 15:57:07 2015 Nicolas Girardot
+// Last update Tue May 26 16:11:48 2015 Nicolas Girardot
 //
 
 #ifndef CAMERA_HH_
@@ -26,10 +26,13 @@ class Camera
 private:
   glm::mat4 _projection;
   glm::mat4 _transformation;
+  glm::vec3 _cameraP;
+  glm::vec3 _cameraS;
 public:
-  Camera();
+  Camera(glm::vec3, glm::vec3);
   ~Camera();
   void	Init();
+  void	move(glm::vec3, glm::vec3);
   glm::mat4 getTransformation();
   glm::mat4 getProjection();
 };

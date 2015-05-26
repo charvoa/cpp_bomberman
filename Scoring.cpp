@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Fri May 15 13:53:19 2015 Nicolas Girardot
-// Last update Wed May 20 15:07:24 2015 Nicolas Girardot
+// Last update Tue May 26 15:03:26 2015 Nicolas Girardot
 //
 
 #include "Scoring.hh"

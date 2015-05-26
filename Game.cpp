@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:05:48 2015 Antoine Garcia
-// Last update Mon May 25 15:55:01 2015 Nicolas Girardot
+// Last update Tue May 26 16:18:42 2015 Nicolas Girardot
 //
 
 #include "Game.hh"
@@ -20,9 +20,10 @@ Game::~Game()
 {
   std::cout << "GAME DESTRUCTOR" << std::endl;
 }
+
 bool	Game::initialize()
 {
-  _camera = new Camera();
+  _camera = new Camera(glm::vec3(0, 0, -0.0001), glm::vec3(0, 0, 0));
   if (!_context.start(1920, 1080, "Bomberman !"))
     return false;
   glEnable(GL_DEPTH_TEST);
@@ -92,4 +93,9 @@ GameState	*Game::peekState()
   if (!_states.empty())
     return _states.top();
   return NULL;
+}
+
+gdl::BasicShader	Game::getShader()
+{
+  return (_shader);
 }
