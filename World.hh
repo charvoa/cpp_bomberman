@@ -5,13 +5,14 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Mon May 25 16:48:59 2015 Nicolas Charvoz
+// Last update Tue May 26 13:32:40 2015 Nicolas Girardot
 //
 
 #ifndef WORLD_HH__
 # define WORLD_HH__
 
 #include <list>
+#include <map>
 #include "Map.hh"
 #include "Camera.hh"
 #include "AObject.hh"
@@ -19,6 +20,7 @@
 #include "ACharacter.hh"
 #include "TextureManager.hh"
 #include "Game.hh"
+#include "Position.hpp"
 #include "HumanCharacter.hh"
 
 class	World : public GameState
@@ -26,6 +28,7 @@ class	World : public GameState
 private:
   std::list<ACharacter *> _ia;
   std::vector<std::vector<char> >	_map;
+  std::map<AObject*, Position*>		_objects;
   int			_nbPlayers;
   int			_nbIa;
   Map			*_fileMap;
@@ -44,6 +47,7 @@ public:
   char		getItemAtPosition(int x, int y);
   void		drawBackground(gdl::Clock&, gdl::BasicShader &);
   void		loadBackground();
+  void		findWall(Map &);
   Game		*_game;
 };
 
