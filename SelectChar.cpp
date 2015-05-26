@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Tue May 26 13:40:08 2015 Nicolas Charvoz
+// Last update Tue May 26 13:49:31 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -54,7 +54,7 @@ void SelectChar::loadModel()
 
   _model->initialize("./images/marvin.fbx");
 
-  trans = glm::vec3(0, 350, 800);
+  glm::vec3 trans(0, 350, 800);
   _model->translate(trans);
 
   trans = glm::vec3(0.5, 0.5, 0.5);
