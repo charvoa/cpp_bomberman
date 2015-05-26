@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Tue May 26 17:30:53 2015 Nicolas Charvoz
+// Last update Tue May 26 22:18:26 2015 Nicolas Girardot
 //
 
 #ifndef WORLD_HH__

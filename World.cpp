@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue May 26 17:36:29 2015 Nicolas Charvoz
+// Last update Tue May 26 22:14:39 2015 Nicolas Girardot
 //
 
 #include "World.hh"
@@ -16,11 +16,11 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
 {
   (void)nb_ia;
   _game = game;
-  //  _game->_camera->move(glm::vec3(750, 900, -850), glm::vec3(750, 0, 550));
-  // gdl::BasicShader shader = _game->getShader();
-  // shader.bind();
-  // shader.setUniform("view", _game->_camera->getTransformation());
-  // shader.setUniform("projection", _game->_camera->getProjection());
+  _game->_camera->move(glm::vec3(0, 900, 0), glm::vec3(0, 0, - 750));
+  gdl::BasicShader shader = _game->getShader();
+  shader.bind();
+  shader.setUniform("view", _game->_camera->getTransformation());
+  shader.setUniform("projection", _game->_camera->getProjection());
   _map = map.getMap();
   _texManag.registerTexture("backgroundInGame", "backIG");
   _player1 = new HumanCharacter('1', this);
@@ -42,13 +42,57 @@ void	World::findWall(Map &map)
 	{
 	  if (map.getItemAtPosition(x, y) == 'W')
 	    {
-	      wall = new Cube();
-	      wall->initialize("./images/model/crate_tex3.tga");
-	      glm::vec3 trans(0 + x * 100, 0, 500 - y * 100);
-	      wall->translate(trans);
-	      wall->scale(glm::vec3(0.3, 0.3, 0.3));
-	      _objects.push_back(wall);
+	      if (x == 14 && y == 10);
+	      else
+		{
+		  wall = new Cube();
+		  wall->initialize("./images/model/crate_tex3.tga");
+		  glm::vec3 trans(0 + (x - map.getWidth() / 2) * 100, 0,  750 * (-1) + (y - map.getHeight() / 2) * 100);
+		  wall->translate(trans);
+		  wall->scale(glm::vec3(100, 100, 100));
+		  _objects.push_back(wall);
+		}
 	    }
+	  if (map.getItemAtPosition(x, y) == '1' || map.getItemAtPosition(x, y) == '2')
+	    {
+	      if (x == 14 && y == 10);
+	      else
+		{
+		  wall = new ModelLoad();
+		  wall->initialize("./images/marvin.fbx");
+		  glm::vec3 trans(0 + (x - map.getWidth() / 2) * 100, 0,  750 * (-1) + (y - map.getHeight() / 2) * 100);
+		  wall->translate(trans);
+		  wall->scale(glm::vec3(0.3, 0.3, 0.3));
+		  _objects.push_back(wall);
+		}
+	    }
+	  if (map.getItemAtPosition(x, y) == 'B')
+	    {
+	      if (x == 14 && y == 10);
+	      else
+		{
+		  wall = new Cube();
+		  wall->initialize("./images/model/crate_tex.tga");
+		  glm::vec3 trans(0 + (x - map.getWidth() / 2) * 100, 0,  750 * (-1) + (y - map.getHeight() / 2) * 100);
+		  wall->translate(trans);
+		  wall->scale(glm::vec3(100, 100, 100));
+		  _objects.push_back(wall);
+		}
+	    }
+	  if (map.getItemAtPosition(x, y) == 'F' || (map.getItemAtPosition(x, y) == '1' || map.getItemAtPosition(x, y) == '2'))
+	    {
+	      if (x == 14 && y == 10);
+	      else
+		{
+		  wall = new Cube();
+		  wall->initialize("./images/model/crate_tex4.tga");
+		  glm::vec3 trans(0 + (x - map.getWidth() / 2) * 100, -100,  750 * (-1) + (y - map.getHeight() / 2) * 100);
+		  wall->translate(trans);
+		  wall->scale(glm::vec3(100, 100, 100));
+		  _objects.push_back(wall);
+		}
+	    }
+
 	  x++;
 	}
       y++;
@@ -57,7 +101,7 @@ void	World::findWall(Map &map)
 
 void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
-  this->drawBackground(clock, shader);
+  //  this->drawBackground(clock, shader);
   for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
     {
       (*it)->draw(shader, clock);
