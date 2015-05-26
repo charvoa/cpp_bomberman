@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Mon May 25 16:55:10 2015 Nicolas Charvoz
+// Last update Tue May 26 13:36:15 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
@@ -27,6 +27,7 @@ Menu::Menu(Game *game)
   _texManag.registerTexture("LeaderboardButton", "leaderboard");
   _texManag.registerTexture("PlayButton", "play");
 
+  SelectChar sC(_game);
   std::cout << "Je suis dans le Menu" << std::endl;
   this->loadButtons();
   this->loadBackground();
@@ -96,8 +97,8 @@ void Menu::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 
 void Menu::getNameOfButton(gdl::Input& input)
 {
-  (void) input;
   glm::ivec2 mouse = input.getMousePosition();
+
   std::cout << "X : " << mouse.x << " Y: " << mouse.y << std::endl;
   if (mouse.x >= 996 && mouse.x <= 1746 && mouse.y >= 279 && mouse.y <= 731)
     {

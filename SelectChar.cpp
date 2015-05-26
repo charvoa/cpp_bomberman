@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Tue May 26 16:17:37 2015 Audibert Louis
+// Last update Tue May 26 16:23:06 2015 Audibert Louis
 //
 
 #include "SelectChar.hh"
@@ -54,14 +54,15 @@ void SelectChar::loadModel()
 
   _model->initialize("./images/marvin.fbx");
 
-  glm::vec3 trans(0, -200, 800);
+  glm::vec3 trans(0, 350, 800);
   _model->translate(trans);
 
-  trans = glm::vec3(0.5, 0.5, 0.5);
+    trans = glm::vec3(0.5, 0.5, 0.5);
   _model->scale(trans);
 
-  trans = glm::vec3(0, -200, 0);
-  _model->rotate(trans, 180.0f);
+  //  trans = glm::vec3(0, 0, 0);
+  //_model->rotate(trans, 180.0f);
+  // We need to rotate that fucking little shit ..
 }
 
 void SelectChar::drawModel(gdl::Clock& clock, gdl::BasicShader& shader)
@@ -80,6 +81,19 @@ void SelectChar::drawButtons(gdl::Clock& clock, gdl::BasicShader& shader)
     _buttons[i]->draw(shader, clock);
 }
 
+void SelectChar::getNameOfButton(gdl::Input &input)
+{
+  glm::ivec2 mouse = input.getMousePosition();
+
+  std::cout << "X : " << mouse.x << " Y: " << mouse.y << std::endl;
+  if (mouse.x >= 1394 && mouse.x <= 1820 && mouse.y >= 900 && mouse.y <= 1000)
+    {
+      std::cout << "PLAY NEW MAP" << std::endl;
+      Map map("./maps/x.map");
+      _game->pushState(new World(_game, map, 2, 10));
+    }
+}
+
 void SelectChar::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   this->drawButtons(clock, shader);
@@ -87,13 +101,16 @@ void SelectChar::draw(gdl::Clock& clock, gdl::BasicShader& shader)
   this->drawBackground(clock, shader);
 }
 
-bool SelectChar::update(gdl::Clock& shader, gdl::Input& input)
+bool SelectChar::update(gdl::Clock& clock, gdl::Input& input)
 {
-  (void) shader;
-
+  _model->update(clock, input);
   if (input.getInput(SDLK_BACKSPACE) == true)
     {
       _game->popState();
+    }
+  if (input.getInput(SDL_BUTTON_LEFT, true) == true)
+    {
+      this->getNameOfButton(input);
     }
   return true;
 }

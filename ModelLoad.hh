@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Fri May 22 14:48:05 2015 Nicolas Charvoz
-// Last update Mon May 25 17:57:42 2015 Nicolas Charvoz
+// Last update Mon May 25 18:50:54 2015 Nicolas Charvoz
 //
 
 #ifndef MODELLOAD_HH_
@@ -34,6 +34,11 @@ public:
   {
     (void) clock;
     (void) input;
+    //static int i = 0;
+
+    //glm::vec3 trans(0, 0, 1);
+    //i += 10;
+    //rotate(trans, i);
   }
   virtual void draw(gdl::AShader &shader, gdl::Clock const &clock)
   {
