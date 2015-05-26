@@ -1,11 +1,11 @@
 //
-// Map.cpp for BBM in /home/heitzls/rendu/cpp_bomberman
+// Map.cpp for Map.hh in /home/heitzl_s/rendu/tmp
 //
 // Made by Serge Heitzler
-// Login   <heitzls@epitech.net>
+// Login   <heitzl_s@epitech.net>
 //
-// Last update Thu May 21 09:16:03 2015 Serge Heitzler
-// Last update Tue May 19 18:02:56 2015 Nicolas Charvoz
+// Started on  Mon May 25 18:56:25 2015 Serge Heitzler
+// Last update Mon May 25 22:18:53 2015 Serge Heitzler
 //
 
 #include "Map.hh"
@@ -14,7 +14,6 @@ Map::Map(const std::string &filename)
 {
   std::ifstream file(filename, std::ios::in);
   std::string tmp;
-
   if(file)
     {
       getline(file, tmp);
@@ -39,7 +38,7 @@ std::stringstream&			Map::getBufferForMap(std::ifstream
   std::string				tmp;
 
   i = 0;
-  while (i < 3)
+  while (i < 2)
     {
       getline(file, tmp);
       i++;
@@ -51,21 +50,21 @@ std::stringstream&			Map::getBufferForMap(std::ifstream
 
 void					Map::setMap(std::stringstream &map)
 {
-  std::string::iterator		       	x;
   int					i;
   int					j;
+  std::vector<char>			tmp;
 
   j = 0;
-  while (x != map.str().end())
+  while (((i) * (j)) < (_width * _height))
     {
       i = 0;
-      while (map.str()[i] != '\n')
+      while (i < _width)
 	{
-	  this->_map[j][i] = map.str()[(j * (_width + 1)) + i];
+	  tmp.push_back(map.str()[(j * (_width)) + i]);
 	  i++;
-	  x++;
 	}
-      x++;
+      _map.push_back(tmp);
+      tmp.clear();
       j++;
     }
 }
@@ -80,19 +79,19 @@ int					Map::getHeight()
   return (this->_height);
 }
 
-std::vector<std::vector<char> >		Map::getMap()
+std::vector<std::vector<char> >&		Map::getMap()
 {
   return (this->_map);
 }
 
-void					Map::setWidth(std::string &line)
-{
-  this->_width = stoi(line.substr(10, line.size() - line.find("X")));
-}
-
 void					Map::setHeight(std::string &line)
 {
-  this->_height = stoi(line.substr((line.find("X") + 1)));
+  this->_height = stoi(line.substr(9, line.size() - line.find("X")));
+}
+
+void					Map::setWidth(std::string &line)
+{
+  this->_width = stoi(line.substr((line.find("X") + 1)));
 }
 
 char					Map::getItemAtPosition(int x, int y)

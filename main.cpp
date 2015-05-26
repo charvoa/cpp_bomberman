@@ -1,18 +1,19 @@
 //
-// main.cpp for main in /home/antgar/rendu/cpp_bomberman
+// main.cpp for  in /home/nicolaschr/Work/cpp_bomberman
 //
-// Made by Antoine Garcia
-// Login   <antgar@epitech.net>
+// Made by Nicolas Charvoz
+// Login   <nicolaschr@epitech.net>
 //
-// Started on  Mon Apr 27 04:58:01 2015 Antoine Garcia
-// Last update Tue May 12 12:00:41 2015 Nicolas Charvoz
+// Started on  Mon May 25 17:58:36 2015 Nicolas Charvoz
+// Last update Mon May 25 18:01:18 2015 Nicolas Charvoz
 //
 
 #include "Game.hh"
 
-int	main()
+int		main()
 {
-  Game	engine;
+  Game origin;
 
-  engine.run();
+  origin.run();
+  return (0);
 }

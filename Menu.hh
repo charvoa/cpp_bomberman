@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:41:57 2015 Antoine Garcia
-// Last update Tue May 19 18:05:57 2015 Nicolas Charvoz
+// Last update Mon May 25 16:50:33 2015 Nicolas Charvoz
 //
 
 #ifndef MENU_HH_
@@ -24,29 +24,31 @@
 #include <OpenGL.hh>
 #include <iostream>
 #include <Texture.hh>
+#include <vector>
+#include "MenuBackground.hh"
+#include "LittleButton.hh"
+#include "BigButton.hh"
 
 class	Menu: public GameState
 {
 
 public:
   Menu(Game *game);
-  virtual void draw(gdl::Clock, gdl::BasicShader);
-  virtual bool update(gdl::Clock, gdl::Input);
+  virtual void draw(gdl::Clock&, gdl::BasicShader&);
+  virtual bool update(gdl::Clock&, gdl::Input&);
   virtual ~Menu();
-  void drawBackground();
-  void drawButtons();
+  void drawBackground(gdl::Clock&, gdl::BasicShader&);
+  void drawButtons(gdl::Clock&, gdl::BasicShader&);
   void drawOneButton(std::string, int, int);
-  void getNameOfButton(gdl::Input);
+  void getNameOfButton(gdl::Input&);
+  void loadButtons();
+  void loadBackground();
 
 private:
   static Sound&	_sound;
   static TextureManager& _texManag;
-  Button *_buttonGeneral;
-  Button *_exitButton;
-  Button *_optionsButton;
-  Button *_loadButton;
-  Button *_leaderboardButton;
-  Button *_playButton;
+  std::vector<AObject*> _buttons;
+  AObject* _background;
 
 };
 
