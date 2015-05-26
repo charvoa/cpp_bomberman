@@ -5,13 +5,14 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Mon May 25 12:18:41 2015 Audibert Louis
+// Last update Tue May 26 16:20:22 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
 # define ACHARACTER_HH_
 
 # include "AObject.hh"
+# include "Position.hpp"
 # include <Model.hh>
 # include <BasicShader.hh>
 # include <Clock.hh>
@@ -36,13 +37,11 @@ public:
   virtual void draw(gdl::Clock, gdl::BasicShader) = 0;
   virtual void update() = 0;
   
-  virtual int getPosX() const = 0;
-  virtual int getPosY() const = 0;
+  virtual Position &getPos() const = 0;
   virtual int getRange() const = 0;
   virtual int getOrientation() const = 0;
 
-  virtual void setPosX(int posX) = 0;
-  virtual void setPosY(int posY) = 0;
+  virtual void setPos(Position &pos) = 0;
   virtual void setRange(int range) = 0;
   virtual void setOrientation(int orientation) = 0;
 
@@ -63,12 +62,11 @@ private:
 protected:
 
   std::string		_name;
-  int			_id;
+  char			_id;
   int			_hp;
   std::list<AObject*>	_listObject;
-  gdl::Model		_model;
-  int			_posX;
-  int			_posY;
+  AObject*		_model;
+  Position		_pos;
   int			_range;
   e_orientation		_orientation;
   std::map<char, int>	_color;

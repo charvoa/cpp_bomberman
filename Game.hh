@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:04:52 2015 Antoine Garcia
-// Last update Mon May 25 15:53:44 2015 Nicolas Girardot
+// Last update Tue May 26 16:18:02 2015 Nicolas Girardot
 //
 
 #ifndef GAME_HH_
@@ -32,11 +32,10 @@ class	Game: public gdl::Game
   std::stack<GameState*> _states;
   gdl::SdlContext	_context;
   gdl::Input		_input;
-  gdl::BasicShader		_shader;
   gdl::Clock		_clock;
+  gdl::BasicShader		_shader;
   static Sound&	_sound;
   std::vector<AObject *> _objects;
-  Camera		*_camera;
 public:
   Game();
   ~Game();
@@ -47,8 +46,10 @@ public:
   void		popState();
   void		changeState(GameState * state);
   GameState*		peekState();
+  gdl::BasicShader	getShader();
   // ~Game();
   void	run();
+  Camera		*_camera;
 };
 
 #endif

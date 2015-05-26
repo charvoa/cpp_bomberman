@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Mon May 25 17:32:41 2015 Nicolas Charvoz
+// Last update Tue May 26 13:33:50 2015 Nicolas Charvoz
 //
 
 #ifndef SELECTCHAR_HH_
@@ -16,6 +16,7 @@
 #include "GameState.hh"
 #include "TextureManager.hh"
 #include "ModelLoad.hh"
+#include "World.hh"
 
 class SelectChar : public GameState {
 
@@ -30,7 +31,7 @@ public:
   void drawButtons(gdl::Clock&, gdl::BasicShader&);
   void loadModel();
   void drawModel(gdl::Clock&, gdl::BasicShader&);
-
+  void getNameOfButton(gdl::Input&);
 private:
   static Sound& _sound;
   static TextureManager& _texManag;

@@ -5,18 +5,30 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Mon May 25 13:27:53 2015 Audibert Louis
+// Last update Tue May 26 16:17:52 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
 
 TextureManager &HumanCharacter::_texManag = TextureManager::getInstance();
 
-HumanCharacter::HumanCharacter(int id)
+HumanCharacter::HumanCharacter(char id, World *world)
 {
+  (void) world;
   this->_id = id;
   this->_hp = 100;
-  _model.load(std::string("./images/marvin.fbx"));
+  _model = new ModelLoad();
+
+  _model->initialize("./images/marvin.fbx");
+
+  glm::vec3 trans(0, -200, 800);
+  _model->translate(trans);
+
+  trans = glm::vec3(0.5, 0.5, 0.5);
+  _model->scale(trans);
+
+  trans = glm::vec3(0, -200, 0);
+  _model->rotate(trans, 180.0f);
 }
 
 HumanCharacter::~HumanCharacter()
@@ -56,23 +68,16 @@ glm::mat4	getTransformation()
 
 void HumanCharacter::draw(gdl::Clock clock, gdl::BasicShader shader)
 {
-  (void)clock;
-  // setCurrentAnim(0, true);
-  // _model.draw(shader, getTransformation(), Input::getElpasedTime());
-  _model.draw(shader, getTransformation(), 0);
+  _model->draw(shader, clock);
 }
 
-void HumanCharacter::update() {}
-
-
-int	HumanCharacter::getPosX() const
+void HumanCharacter::update()
 {
-  return _posX;
 }
 
-int	HumanCharacter::getPosY() const
+Position	&HumanCharacter::getPos() const
 {
-  return _posY;
+  return (Position &) _pos;
 }
 
 int	HumanCharacter::getRange() const
@@ -85,14 +90,9 @@ int	HumanCharacter::getOrientation() const
   return _orientation;
 }
 
-void	HumanCharacter::setPosX(int posX)
+void	HumanCharacter::setPos(Position &pos)
 {
-  _posX = posX;
-}
-
-void	HumanCharacter::setPosY(int posY)
-{
-  _posY = posY;
+  _pos = pos;
 }
 
 void	HumanCharacter::setRange(int range)

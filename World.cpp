@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Mon May 25 16:51:04 2015 Nicolas Charvoz
+// Last update Tue May 26 17:36:29 2015 Nicolas Charvoz
 //
 
 #include "World.hh"
@@ -16,22 +16,52 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
 {
   (void)nb_ia;
   _game = game;
+  //  _game->_camera->move(glm::vec3(750, 900, -850), glm::vec3(750, 0, 550));
+  // gdl::BasicShader shader = _game->getShader();
+  // shader.bind();
+  // shader.setUniform("view", _game->_camera->getTransformation());
+  // shader.setUniform("projection", _game->_camera->getProjection());
   _map = map.getMap();
   _texManag.registerTexture("backgroundInGame", "backIG");
-  _player1 = new HumanCharacter(1);
+  _player1 = new HumanCharacter('1', this);
   this->loadBackground();
   if (nb_players == 2)
-    _player2 = new HumanCharacter(2);
-  // _fileMap = &map;
-  // _map = _fileMap->getMap();
-  // _player1 = new HumanCharacter(1);
-  // if (nb_players == 2)
-  //   _player2 = new HumanCharacter(2);
+    //_player2 = new HumanCharacter(2);
+  findWall(map);
+}
+
+void	World::findWall(Map &map)
+{
+  AObject *wall;
+  int	y = 0;
+  int	x;
+  while(y < map.getHeight())
+    {
+      x = 0;
+      while(x < map.getWidth())
+	{
+	  if (map.getItemAtPosition(x, y) == 'W')
+	    {
+	      wall = new Cube();
+	      wall->initialize("./images/model/crate_tex3.tga");
+	      glm::vec3 trans(0 + x * 100, 0, 500 - y * 100);
+	      wall->translate(trans);
+	      wall->scale(glm::vec3(0.3, 0.3, 0.3));
+	      _objects.push_back(wall);
+	    }
+	  x++;
+	}
+      y++;
+    }
 }
 
 void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   this->drawBackground(clock, shader);
+  for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
+    {
+      (*it)->draw(shader, clock);
+    }
 }
 
 bool	World::update(gdl::Clock& clock, gdl::Input& shader)
@@ -51,6 +81,7 @@ void	World::loadBackground()
 
 void	World::drawBackground(gdl::Clock& clock, gdl::BasicShader &shader)
 {
+
   _background->draw(shader, clock);
 }
 
