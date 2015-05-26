@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Fri May 22 14:48:05 2015 Nicolas Charvoz
-// Last update Mon May 25 11:24:51 2015 Nicolas Charvoz
+// Last update Mon May 25 17:57:42 2015 Nicolas Charvoz
 //
 
 #ifndef MODELLOAD_HH_
@@ -25,11 +25,9 @@ public:
 
   ModelLoad(){}
   virtual ~ModelLoad() {}
-  virtual bool initialize(const std::string &tex)
+  virtual bool initialize(const std::string &mod)
   {
-    (void) tex;
-
-    _model.load("./images/marvin.fbx");
+    _model.load(mod);
     return (true);
   }
   virtual void update(gdl::Clock const &clock, gdl::Input &input)
