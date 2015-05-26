@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Tue May 26 12:02:06 2015 Audibert Louis
+// Last update Tue May 26 16:20:22 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
@@ -65,7 +65,7 @@ protected:
   char			_id;
   int			_hp;
   std::list<AObject*>	_listObject;
-  gdl::Model		_model;
+  AObject*		_model;
   Position		_pos;
   int			_range;
   e_orientation		_orientation;

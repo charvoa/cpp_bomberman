@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Thu May 21 16:43:06 2015 Nicolas Girardot
-// Last update Tue May 26 16:12:06 2015 Nicolas Girardot
+// Last update Tue May 26 16:53:27 2015 Nicolas Girardot
 //
 
 #include "Camera.hh"

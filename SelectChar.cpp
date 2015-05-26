@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Tue May 26 13:49:31 2015 Nicolas Charvoz
+// Last update Tue May 26 16:23:06 2015 Audibert Louis
 //
 
 #include "SelectChar.hh"
@@ -57,9 +57,11 @@ void SelectChar::loadModel()
   glm::vec3 trans(0, 350, 800);
   _model->translate(trans);
 
-  trans = glm::vec3(0.5, 0.5, 0.5);
+    trans = glm::vec3(0.5, 0.5, 0.5);
   _model->scale(trans);
 
+  //  trans = glm::vec3(0, 0, 0);
+  //_model->rotate(trans, 180.0f);
   // We need to rotate that fucking little shit ..
 }
 
