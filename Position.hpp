@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 19:49:40 2015 Antoine Garcia
-// Last update Sat May 23 19:56:50 2015 Antoine Garcia
+// Last update Sun May 24 07:24:39 2015 Antoine Garcia
 //
 
 #ifndef POSITION_HPP_
@@ -17,6 +17,7 @@ public:
   int	_x;
   int	_y;
 
+  Position(){}
   Position(int x, int y)
   {
     _x = x;

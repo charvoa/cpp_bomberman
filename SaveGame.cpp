@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Wed May 20 10:56:14 2015 Serge Heitzler
-// Last update Mon May 25 12:11:56 2015 Serge Heitzler
+// Last update Tue May 26 11:07:04 2015 Serge Heitzler
 //
 
 #include "SaveGame.hh"
@@ -21,7 +21,7 @@ SaveGame::SaveGame(std::vector<std::vector<char> > map, const std::string & mapN
 
 void		SaveGame::writeMapName(std::ifstream & file, const std::string & mapName)
 {
-  file << "MAP NAME " << mapName << std::endl;
+  file << "MAP NAME " << mapName << "\n";
 }
 
 void		SaveGame::writeMap(std::ifstream & file, std::vector<std::vector<char> > map)
@@ -38,7 +38,7 @@ void		SaveGame::writeMap(std::ifstream & file, std::vector<std::vector<char> > m
 	  file << map.at(y).at(x);
 	  x++;
 	}
-      file << std::endl;
+      file << "\n";
       y++;
     }
 }

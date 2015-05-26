@@ -5,18 +5,18 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Mon May 25 13:27:53 2015 Audibert Louis
+// Last update Tue May 26 12:10:46 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
 
 TextureManager &HumanCharacter::_texManag = TextureManager::getInstance();
 
-HumanCharacter::HumanCharacter(int id)
+HumanCharacter::HumanCharacter(char id, World *world)
 {
+  (void) world;
   this->_id = id;
   this->_hp = 100;
-  _model.load(std::string("./images/marvin.fbx"));
 }
 
 HumanCharacter::~HumanCharacter()
@@ -65,14 +65,9 @@ void HumanCharacter::draw(gdl::Clock clock, gdl::BasicShader shader)
 void HumanCharacter::update() {}
 
 
-int	HumanCharacter::getPosX() const
+Position	&HumanCharacter::getPos() const
 {
-  return _posX;
-}
-
-int	HumanCharacter::getPosY() const
-{
-  return _posY;
+  return (Position &) _pos;
 }
 
 int	HumanCharacter::getRange() const
@@ -85,14 +80,9 @@ int	HumanCharacter::getOrientation() const
   return _orientation;
 }
 
-void	HumanCharacter::setPosX(int posX)
+void	HumanCharacter::setPos(Position &pos)
 {
-  _posX = posX;
-}
-
-void	HumanCharacter::setPosY(int posY)
-{
-  _posY = posY;
+  _pos = pos;
 }
 
 void	HumanCharacter::setRange(int range)
