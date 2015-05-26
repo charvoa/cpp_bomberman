@@ -1,10 +1,11 @@
 ##
-## Makefile for bomberman in /home/leprov_a//project/tek2/bomberman/dev
+## Makefile<2> for girard_s in /home/nicolas/rendu/PSU_2014_zappy/sources/graph
 ##
-## Made by alexis leprovost
-## Login   <leprov_a@epitech.net>
+## Made by Nicolas Girardot
+## Login   <girard_s@epitech.net>
 ##
-## Started on  Mon Apr 29 10:42:09 2013 alexis leprovost
+## Started on  Tue May 26 17:42:11 2015 Nicolas Girardot
+## Last update Tue May 26 17:42:15 2015 Nicolas Girardot
 ##
 
 MAIN		=	bomberman
