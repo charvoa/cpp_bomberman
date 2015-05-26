@@ -5,14 +5,14 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Tue May 26 12:06:20 2015 Audibert Louis
+// Last update Tue May 26 12:10:46 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
 
 TextureManager &HumanCharacter::_texManag = TextureManager::getInstance();
 
-HumanCharacter::HumanCharacter(char id, World &world)
+HumanCharacter::HumanCharacter(char id, World *world)
 {
   (void) world;
   this->_id = id;
