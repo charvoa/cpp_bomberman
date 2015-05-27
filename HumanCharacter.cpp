@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Wed May 27 16:08:26 2015 Audibert Louis
+// Last update Wed May 27 16:13:52 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
@@ -54,17 +54,6 @@ void HumanCharacter::takeObject(AObject *object)
 void HumanCharacter::die()
 {
   std::cout << "I died" << std::cout;
-}
-
-glm::mat4	getTransformation()
-{
-  glm::mat4	transform(1);
-  // transform = glm::rotate(transform, _rotation.x, glm::vec3(1, 0, 0));
-  // transform = glm::rotate(transform, _rotation.y, glm::vec3(0, 1, 0));
-  // transform = glm::rotate(transform, _rotation.z, glm::vec3(0, 0, 1));
-  // transform = glm::translate(transform, _position);
-  // transform = glm::scale(transform, _scale);
-  return(transform);
 }
 
 void HumanCharacter::draw(gdl::AShader &shader, gdl::Clock const &clock)
