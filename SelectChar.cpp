@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Wed May 27 14:29:08 2015 Nicolas Charvoz
+// Last update Wed May 27 14:35:33 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -25,9 +25,7 @@ SelectChar::SelectChar(Game *game)
   _texManag.registerTexture("PlaySousMenu", "playSM");
   this->loadBackground();
   this->loadButtons();
-  this->loadModel();
   _game->_camera->move(glm::vec3(0, 0, -0.0001), glm::vec3(0, 0, 0));
-  //_game->_camera->move(glm::vec3(0, 900, 0), glm::vec3(0, 0, -750));
   gdl::BasicShader shader = _game->getShader();
 
   shader.bind();
@@ -53,24 +51,6 @@ void SelectChar::loadButtons()
   play->translate(trans);
 
   _buttons.push_back(play);
-}
-
-void SelectChar::loadModel()
-{
-  _model = new ModelLoad();
-
-  _model->initialize("./images/marvin.fbx");
-
-  glm::vec3 trans(0, 200, 800) ;
-  _model->translate(trans);
-
-  trans = glm::vec3(0.7, 0.7, 0.7);
-  _model->scale(trans);
-}
-
-void SelectChar::drawModel(gdl::Clock& clock, gdl::BasicShader& shader)
-{
-  _model->draw(shader, clock);
 }
 
 void SelectChar::drawBackground(gdl::Clock& clock, gdl::BasicShader& shader)
@@ -100,13 +80,13 @@ void SelectChar::getNameOfButton(gdl::Input &input)
 void SelectChar::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   this->drawButtons(clock, shader);
-  this->drawModel(clock, shader);
   this->drawBackground(clock, shader);
 }
 
 bool SelectChar::update(gdl::Clock& clock, gdl::Input& input)
 {
-  _model->update(clock, input);
+  (void) clock;
+
   if (input.getInput(SDLK_BACKSPACE) == true)
     {
       _game->popState();

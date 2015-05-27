@@ -1,11 +1,11 @@
 //
 // IACharacter.cpp for IACharacter.cpp in /home/audibe_l/rendu/cpp_bomberman
-// 
+//
 // Made by Audibert Louis
 // Login   <audibe_l@epitech.net>
-// 
+//
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Wed May 27 14:52:09 2015 Audibert Louis
+// Last update Wed May 27 15:12:44 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -16,7 +16,7 @@ IACharacter::IACharacter(int id, World *world)
 {
   (void) world;
   this->_IAid = id;
-  this->_hp = 100;
+  this->_alive = true;
   _model = new ModelLoad();
 
   _model->initialize("./images/marvin.fbx");
@@ -35,9 +35,9 @@ IACharacter::~IACharacter()
 {
 }
 
-int IACharacter::getHp() const
+bool IACharacter::getAlive() const
 {
-  return _hp;
+  return _alive;
 }
 
 void IACharacter::dropBomb()
