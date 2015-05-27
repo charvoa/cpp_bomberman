@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Wed May 27 14:35:33 2015 Nicolas Charvoz
+// Last update Wed May 27 16:13:23 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -31,6 +31,8 @@ SelectChar::SelectChar(Game *game)
   shader.bind();
   shader.setUniform("view", _game->_camera->getTransformation());
   shader.setUniform("projection", _game->_camera->getProjection());
+  _inputManager = new InputManager();
+  _command = new Command(_game);
 }
 
 void SelectChar::loadBackground()
@@ -86,15 +88,15 @@ void SelectChar::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 bool SelectChar::update(gdl::Clock& clock, gdl::Input& input)
 {
   (void) clock;
+  // if (_inputManager->getTouche(input) == InputManager::BACK)
+  //   _game->popState();
 
-  if (input.getInput(SDLK_BACKSPACE) == true)
-    {
-      _game->popState();
-    }
+  _command->exec(_inputManager->getTouche(input));
+
+  // if (input.getInput(SDLK_BACKSPACE) == true)
+  //   _game->popState();
   if (input.getInput(SDL_BUTTON_LEFT, true) == true)
-    {
-      this->getNameOfButton(input);
-    }
+    this->getNameOfButton(input);
   return true;
 }
 

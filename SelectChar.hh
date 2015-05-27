@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Wed May 27 15:03:43 2015 Nicolas Charvoz
+// Last update Wed May 27 16:17:26 2015 Nicolas Charvoz
 //
 
 #ifndef SELECTCHAR_HH_
@@ -20,6 +20,9 @@
 #include "Camera.hh"
 #include "GameBackground.hh"
 #include "InputManager.hh"
+#include "Command.hh"
+
+class Command;
 
 class SelectChar : public GameState {
 
@@ -41,6 +44,7 @@ private:
   AObject* _background;
   Camera *_camera;
   InputManager *_inputManager;
+  Command *_command;
 };
 
 #endif
