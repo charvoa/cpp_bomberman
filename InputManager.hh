@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 14:45:11 2015 Nicolas Charvoz
-// Last update Wed May 27 16:12:42 2015 Nicolas Charvoz
+// Last update Wed May 27 16:43:25 2015 Nicolas Charvoz
 //
 
 #ifndef INPUTMANAGER_HH_
@@ -15,6 +15,7 @@
 #include <SdlContext.hh>
 #include <Input.hh>
 #include <vector>
+#include <iostream>
 
 class InputManager {
 
@@ -24,6 +25,7 @@ public:
     NO,
     PAUSE,
     MUTE,
+    UNMUTE,
     BACK,
     UP,
     LEFT,

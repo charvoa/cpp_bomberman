@@ -8,5 +8,5 @@ then
     echo "Running Bomberman by La Pintade";
     ./bomberman;
 else
-    make re; ./bomberman;
+    make re ; ./bomberman;
 fi
