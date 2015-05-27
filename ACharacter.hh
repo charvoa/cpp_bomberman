@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Wed May 27 15:53:21 2015 Audibert Louis
+// Last update Wed May 27 16:07:13 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_

@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Wed May 27 15:54:14 2015 Audibert Louis
+// Last update Wed May 27 16:09:17 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -17,9 +17,9 @@ IACharacter::IACharacter(int id, World *world)
   (void) world;
   this->_IAid = id;
   this->_alive = true;
-  _model = new ModelLoad();
+  //_model = new AObject();
 
-  _model->initialize("./images/marvin.fbx");
+  // _model->initialize("./images/marvin.fbx");
 
   // glm::vec3 trans(0, -200, 800);
   // _model->translate(trans);

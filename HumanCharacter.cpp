@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Wed May 27 15:52:08 2015 Audibert Louis
+// Last update Wed May 27 16:08:26 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
@@ -43,6 +43,7 @@ bool HumanCharacter::getAlive() const
 void HumanCharacter::dropBomb()
 {
   std::cout << "I droped a bomb hahah" << std::endl;
+  //new Bomb(Position &, World &);
 }
 
 void HumanCharacter::takeObject(AObject *object)
