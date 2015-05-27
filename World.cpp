@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Wed May 27 12:29:38 2015 Antoine Garcia
+// Last update Wed May 27 12:46:57 2015 Antoine Garcia
 // Last update Wed May 27 10:50:44 2015 Nicolas Girardot
 //
 
@@ -133,10 +133,10 @@ void	World::drawBackground(gdl::Clock& clock, gdl::BasicShader &shader)
   _background->draw(shader, clock);
 }
 
-bool	World::setItemAtPosition(int x, int y, char c)
+bool	World::setItemAtPosition(Position& pos, char c)
 {
   if (c == '1' || c == '2')
-    return (this->checkPlayerCanMove(x, y, c));
+    return (this->checkPlayerCanMove(pos._x, pos._y, c));
   return true;
 }
 
@@ -158,12 +158,12 @@ bool	World::checkPlayerCanMove(int x, int y, char c)
   return false;
 }
 
-int	World::getWidth()
+int	World::getWidth() const
 {
   return _fileMap->getWidth();
 }
 
-int	World::getHeight()
+int	World::getHeight() const
 {
   return _fileMap->getHeight();
 }
