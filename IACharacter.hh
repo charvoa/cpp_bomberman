@@ -1,11 +1,11 @@
 //
 // IACharacter.hh for IACharacter.hh in /home/audibe_l/rendu/cpp_bomberman
-// 
+//
 // Made by Audibert Louis
 // Login   <audibe_l@epitech.net>
-// 
+//
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Wed May 27 14:32:14 2015 Audibert Louis
+// Last update Wed May 27 14:39:33 2015 Nicolas Charvoz
 //
 
 #ifndef IACHARACTER_HH_
@@ -23,7 +23,7 @@ public:
 
   IACharacter(int, World *);
   virtual ~IACharacter();
-  int	getHp() const;
+  bool	getAlive() const;
   void dropBomb();
   void takeObject(AObject *);
   void die();

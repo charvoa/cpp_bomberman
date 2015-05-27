@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Wed May 27 14:36:00 2015 Audibert Louis
+// Last update Wed May 27 14:39:46 2015 Nicolas Charvoz
 //
 
 #ifndef ACHARACTER_HH_
@@ -30,13 +30,13 @@ class ACharacter {
 public:
 
   virtual ~ACharacter() {}
-  virtual int getHp() const = 0;
+  virtual bool getAlive() const = 0;
   virtual void dropBomb() = 0;
   virtual void takeObject(AObject *) = 0;
   virtual void die() = 0;
   virtual void draw(gdl::Clock, gdl::BasicShader) = 0;
   virtual void update() = 0;
-  
+
   virtual Position &getPos() const = 0;
   virtual int getRange() const = 0;
   virtual int getOrientation() const = 0;
@@ -53,7 +53,7 @@ public:
   virtual ACharacter &getCharacter() = 0;
 
 private:
-  
+
   typedef enum e_type
     {
       HUMAN,
@@ -65,7 +65,7 @@ protected:
   std::string		_name;
   char			_id;
   int			_IAid;
-  int			_hp;
+  bool			_alive;
   std::list<AObject*>	_listObject;
   AObject*		_model;
   Position		_pos;

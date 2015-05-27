@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Wed May 27 14:32:06 2015 Audibert Louis
+// Last update Wed May 27 14:40:14 2015 Nicolas Charvoz
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -23,7 +23,7 @@ public:
 
   HumanCharacter(char, World *);
   virtual ~HumanCharacter();
-  int getHp() const;
+  bool getAlive() const;
   void dropBomb();
   void takeObject(AObject *);
   void die();
