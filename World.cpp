@@ -5,6 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
+// Last update Wed May 27 12:46:57 2015 Antoine Garcia
 // Last update Wed May 27 10:50:44 2015 Nicolas Girardot
 //
 
@@ -17,12 +18,14 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
 {
   (void)nb_ia;
   _game = game;
+  _fileMap = &map;
+  _game->_camera->move(glm::vec3(0, 900, 0), glm::vec3(0, 0, - 750));
   _game->_camera->move(glm::vec3(0, 900, 0), glm::vec3(0, 0, -750));
   gdl::BasicShader shader = _game->getShader();
   shader.bind();
   shader.setUniform("view", _game->_camera->getTransformation());
   shader.setUniform("projection", _game->_camera->getProjection());
-  _map = map.getMap();
+  _map = _fileMap->getMap();
   _texManag.registerTexture("backgroundInGame", "backIG");
   _player1 = new HumanCharacter('1', this);
   this->loadBackground();
@@ -130,10 +133,10 @@ void	World::drawBackground(gdl::Clock& clock, gdl::BasicShader &shader)
   _background->draw(shader, clock);
 }
 
-bool	World::setItemAtPosition(int x, int y, char c)
+bool	World::setItemAtPosition(Position& pos, char c)
 {
   if (c == '1' || c == '2')
-    return (this->checkPlayerCanMove(x, y, c));
+    return (this->checkPlayerCanMove(pos._x, pos._y, c));
   return true;
 }
 
@@ -153,4 +156,14 @@ bool	World::checkPlayerCanMove(int x, int y, char c)
       return true;
     }
   return false;
+}
+
+int	World::getWidth() const
+{
+  return _fileMap->getWidth();
+}
+
+int	World::getHeight() const
+{
+  return _fileMap->getHeight();
 }
