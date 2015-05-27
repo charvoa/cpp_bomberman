@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Wed May 27 12:37:41 2015 Antoine Garcia
+// Last update Wed May 27 12:46:57 2015 Antoine Garcia
 // Last update Wed May 27 10:50:44 2015 Nicolas Girardot
 //
 
@@ -158,12 +158,12 @@ bool	World::checkPlayerCanMove(int x, int y, char c)
   return false;
 }
 
-int	World::getWidth()
+int	World::getWidth() const
 {
   return _fileMap->getWidth();
 }
 
-int	World::getHeight()
+int	World::getHeight() const
 {
   return _fileMap->getHeight();
 }
