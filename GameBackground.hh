@@ -1,19 +1,19 @@
 //
-// Cube.hh for  in /home/nicolaschr/Work/cpp_bomberman
+// GameBackground.hh for GameBackground in /home/nicolas/rendu/cpp_bomberman
 //
-// Made by Nicolas Charvoz
-// Login   <nicolaschr@epitech.net>
+// Made by Nicolas Girardot
+// Login   <girard_s@epitech.net>
 //
-// Started on  Fri May 22 14:48:05 2015 Nicolas Charvoz
-// Last update Tue May 26 22:40:17 2015 Nicolas Girardot
+// Started on  Tue May 26 22:39:24 2015 Nicolas Girardot
+// Last update Tue May 26 23:25:34 2015 Nicolas Girardot
 //
 
-#ifndef MENUBACKGROUND_HH_
-# define MENUBACKGROUND_HH_
+#ifndef GAMEBACKGROUND_HH_
+# define GAMEBACKGROUND_HH_
 
 # include "AObject.hh"
 
-class MenuBackground : public AObject
+class GameBackground : public AObject
 {
 
 private:
@@ -24,8 +24,8 @@ private:
 
 public:
 
-  MenuBackground() { }
-  virtual ~MenuBackground() { }
+  GameBackground() { }
+  virtual ~GameBackground() { }
 
   virtual bool initialize(const std::string &tex)
   {
@@ -39,10 +39,10 @@ public:
 
     // Ratio Marwin * Background = 1602
 
-    _geometry.pushVertex(glm::vec3(1442, 801, 801));
-    _geometry.pushVertex(glm::vec3(1442, -801, 801));
-    _geometry.pushVertex(glm::vec3(-1442, -801, 801));
-    _geometry.pushVertex(glm::vec3(-1442, 801, 801));
+    _geometry.pushVertex(glm::vec3(2524, 718, -2000));
+    _geometry.pushVertex(glm::vec3(2524, -718, -2000));
+    _geometry.pushVertex(glm::vec3(-2524, -718, -2000));
+    _geometry.pushVertex(glm::vec3(-2524, 718, -2000));
 
     _geometry.pushUv(glm::vec2(0.0f, 1.0f));
     _geometry.pushUv(glm::vec2(0.0f, 0.0f));
