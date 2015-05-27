@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Tue May 26 13:36:15 2015 Nicolas Charvoz
+// Last update Wed May 27 13:20:43 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
@@ -27,7 +27,6 @@ Menu::Menu(Game *game)
   _texManag.registerTexture("LeaderboardButton", "leaderboard");
   _texManag.registerTexture("PlayButton", "play");
 
-  SelectChar sC(_game);
   std::cout << "Je suis dans le Menu" << std::endl;
   this->loadButtons();
   this->loadBackground();

@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Wed May 27 11:19:51 2015 Nicolas Charvoz
+// Last update Wed May 27 14:29:08 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -26,19 +26,13 @@ SelectChar::SelectChar(Game *game)
   this->loadBackground();
   this->loadButtons();
   this->loadModel();
-  // _camera = new Camera(glm::vec3(0, 0, -0.0001), glm::vec3(0, 0, 0));
-  // _game->getShader().load("LibBomberman_linux_x64/shaders/basic.fp",
-  // 		     GL_FRAGMENT_SHADER);
-  // _game->getShader().load("LibBomberman_linux_x64/shaders/basic.vp",
-  // 		     GL_VERTEX_SHADER);
+  _game->_camera->move(glm::vec3(0, 0, -0.0001), glm::vec3(0, 0, 0));
+  //_game->_camera->move(glm::vec3(0, 900, 0), glm::vec3(0, 0, -750));
+  gdl::BasicShader shader = _game->getShader();
 
-  // _game->getShader().build();
-
-  // _camera->Init();
-
-  // _game->getShader().bind();
-  // _game->getShader().setUniform("view", _camera->getTransformation());
-  // _game->getShader().setUniform("projection", _camera->getProjection());
+  shader.bind();
+  shader.setUniform("view", _game->_camera->getTransformation());
+  shader.setUniform("projection", _game->_camera->getProjection());
 }
 
 void SelectChar::loadBackground()
@@ -67,17 +61,11 @@ void SelectChar::loadModel()
 
   _model->initialize("./images/marvin.fbx");
 
-  glm::vec3 trans(0, 350, 800);
+  glm::vec3 trans(0, 200, 800) ;
   _model->translate(trans);
 
-    trans = glm::vec3(0.5, 0.5, 0.5);
+  trans = glm::vec3(0.7, 0.7, 0.7);
   _model->scale(trans);
-
-  //  trans = glm::vec3(0, 1, 0);
-  // _model->rotate(trans, 180.0f);
-  // _camera->move(glm::vec3(0, 0, 0.0001), glm::vec3(0, 0, 0));
-  // _camera->Init();
-  // We need to rotate that fucking little shit ..
 }
 
 void SelectChar::drawModel(gdl::Clock& clock, gdl::BasicShader& shader)

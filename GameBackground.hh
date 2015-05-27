@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Tue May 26 22:39:24 2015 Nicolas Girardot
-// Last update Tue May 26 23:25:34 2015 Nicolas Girardot
+// Last update Wed May 27 14:25:30 2015 Nicolas Charvoz
 //
 
 #ifndef GAMEBACKGROUND_HH_
