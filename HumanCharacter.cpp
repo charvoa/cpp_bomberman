@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Wed May 27 14:38:41 2015 Nicolas Charvoz
+// Last update Wed May 27 15:29:40 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
@@ -68,6 +68,7 @@ glm::mat4	getTransformation()
 
 void HumanCharacter::draw(gdl::Clock clock, gdl::BasicShader shader)
 {
+  _model->setCurrentAnim(1, true);
   _model->draw(shader, clock);
 }
 
