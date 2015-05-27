@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Thu May 21 16:43:06 2015 Nicolas Girardot
-// Last update Tue May 26 16:53:27 2015 Nicolas Girardot
+// Last update Tue May 26 23:22:59 2015 Nicolas Girardot
 //
 
 #include "Camera.hh"
@@ -21,7 +21,7 @@ Camera::~Camera()
 
 void	Camera::Init()
 {
-  _projection = glm::perspective(90.0f, 1920.0f / 1080.0f, 0.1f, 10000.0f);
+  _projection = glm::perspective(90.0f, 1920.0f / 1080.0f, 0.1f, 1000000.0f);
   _transformation = glm::lookAt(_cameraP, _cameraS, glm::vec3(0, 1, 0));
 }
 

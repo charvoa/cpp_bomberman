@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Tue May 26 16:20:22 2015 Audibert Louis
+// Last update Wed May 27 13:50:49 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
@@ -50,6 +50,7 @@ public:
   virtual void setColor(int r, int g, int b) = 0;
 
   virtual int getType() const = 0;
+  virtual AObject *getHuman() const = 0;
 
 private:
   
