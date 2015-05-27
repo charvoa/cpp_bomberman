@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue May 26 22:14:39 2015 Nicolas Girardot
+// Last update Wed May 27 12:28:04 2015 Antoine Garcia
 //
 
 #include "World.hh"
@@ -16,12 +16,13 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
 {
   (void)nb_ia;
   _game = game;
+  _fileMap = &map;
   _game->_camera->move(glm::vec3(0, 900, 0), glm::vec3(0, 0, - 750));
   gdl::BasicShader shader = _game->getShader();
   shader.bind();
   shader.setUniform("view", _game->_camera->getTransformation());
   shader.setUniform("projection", _game->_camera->getProjection());
-  _map = map.getMap();
+  _map = _fileMap->getMap();
   _texManag.registerTexture("backgroundInGame", "backIG");
   _player1 = new HumanCharacter('1', this);
   this->loadBackground();
@@ -152,4 +153,14 @@ bool	World::checkPlayerCanMove(int x, int y, char c)
       return true;
     }
   return false;
+}
+
+int	World::getWidth()
+{
+  return _fileMap->getWidth();
+}
+
+int	World::getHeight()
+{
+  return _fileMap->getHeight();
 }
