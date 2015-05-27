@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Wed May 27 14:22:00 2015 Audibert Louis
+// Last update Wed May 27 14:36:00 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
@@ -64,6 +64,7 @@ protected:
 
   std::string		_name;
   char			_id;
+  int			_IAid;
   int			_hp;
   std::list<AObject*>	_listObject;
   AObject*		_model;
