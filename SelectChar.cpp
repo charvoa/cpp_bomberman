@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Tue May 26 16:23:06 2015 Audibert Louis
+// Last update Wed May 27 11:18:32 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -26,6 +26,19 @@ SelectChar::SelectChar(Game *game)
   this->loadBackground();
   this->loadButtons();
   this->loadModel();
+  // _camera = new Camera(glm::vec3(0, 0, -0.0001), glm::vec3(0, 0, 0));
+  // _game->getShader().load("LibBomberman_linux_x64/shaders/basic.fp",
+  // 		     GL_FRAGMENT_SHADER);
+  // _game->getShader().load("LibBomberman_linux_x64/shaders/basic.vp",
+  // 		     GL_VERTEX_SHADER);
+
+  // _game->getShader().build();
+
+  // _camera->Init();
+
+  // _game->getShader().bind();
+  // _game->getShader().setUniform("view", _camera->getTransformation());
+  // _game->getShader().setUniform("projection", _camera->getProjection());
 }
 
 void SelectChar::loadBackground()
@@ -60,8 +73,10 @@ void SelectChar::loadModel()
     trans = glm::vec3(0.5, 0.5, 0.5);
   _model->scale(trans);
 
-  //  trans = glm::vec3(0, 0, 0);
-  //_model->rotate(trans, 180.0f);
+  //  trans = glm::vec3(0, 1, 0);
+  // _model->rotate(trans, 180.0f);
+  // _camera->move(glm::vec3(0, 0, 0.0001), glm::vec3(0, 0, 0));
+  // _camera->Init();
   // We need to rotate that fucking little shit ..
 }
 
