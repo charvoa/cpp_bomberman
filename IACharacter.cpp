@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Wed May 27 15:29:38 2015 Audibert Louis
+// Last update Wed May 27 15:54:14 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -55,7 +55,7 @@ void IACharacter::die()
   std::cout << "I died" << std::cout;
 }
 
-void IACharacter::draw(gdl::Clock clock, gdl::BasicShader shader)
+void IACharacter::draw(gdl::AShader &shader, gdl::Clock const &clock)
 {
   _model->setCurrentAnim(1, true);
   _model->draw(shader, clock);

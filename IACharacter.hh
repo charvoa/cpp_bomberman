@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Wed May 27 14:39:33 2015 Nicolas Charvoz
+// Last update Wed May 27 15:53:44 2015 Audibert Louis
 //
 
 #ifndef IACHARACTER_HH_
@@ -27,7 +27,7 @@ public:
   void dropBomb();
   void takeObject(AObject *);
   void die();
-  void draw(gdl::Clock, gdl::BasicShader);
+  void draw(gdl::AShader &, gdl::Clock const &);
   void update();
 
   Position &getPos() const;

@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Wed May 27 15:22:54 2015 Audibert Louis
+// Last update Wed May 27 15:53:21 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
@@ -26,7 +26,7 @@ typedef enum e_orientation
     RIGHT
   }	e_orientation;
 
-class ACharacter {
+class ACharacter : public AObject {
 
 public:
 
@@ -35,7 +35,7 @@ public:
   virtual void dropBomb() = 0;
   virtual void takeObject(AObject *) = 0;
   virtual void die() = 0;
-  virtual void draw(gdl::Clock, gdl::BasicShader) = 0;
+  virtual void draw(gdl::AShader &, gdl::Clock const &) = 0;
   virtual void update() = 0;
 
   virtual Position &getPos() const = 0;
