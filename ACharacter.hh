@@ -5,13 +5,14 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Wed May 27 14:39:46 2015 Nicolas Charvoz
+// Last update Wed May 27 16:07:13 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
 # define ACHARACTER_HH_
 
 # include "AObject.hh"
+# include "ModelLoad.hh"
 # include "Position.hpp"
 # include <Model.hh>
 # include <BasicShader.hh>
@@ -25,7 +26,7 @@ typedef enum e_orientation
     RIGHT
   }	e_orientation;
 
-class ACharacter {
+class ACharacter : public AObject {
 
 public:
 
@@ -34,7 +35,7 @@ public:
   virtual void dropBomb() = 0;
   virtual void takeObject(AObject *) = 0;
   virtual void die() = 0;
-  virtual void draw(gdl::Clock, gdl::BasicShader) = 0;
+  virtual void draw(gdl::AShader &, gdl::Clock const &) = 0;
   virtual void update() = 0;
 
   virtual Position &getPos() const = 0;
@@ -67,7 +68,7 @@ protected:
   int			_IAid;
   bool			_alive;
   std::list<AObject*>	_listObject;
-  AObject*		_model;
+  ModelLoad*		_model;
   Position		_pos;
   int			_range;
   e_orientation		_orientation;

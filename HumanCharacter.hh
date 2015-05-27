@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Wed May 27 14:40:14 2015 Nicolas Charvoz
+// Last update Wed May 27 15:51:33 2015 Audibert Louis
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -27,7 +27,7 @@ public:
   void dropBomb();
   void takeObject(AObject *);
   void die();
-  void draw(gdl::Clock, gdl::BasicShader);
+  void draw(gdl::AShader &shader, gdl::Clock const &clock);
   void update();
 
   Position &getPos() const;

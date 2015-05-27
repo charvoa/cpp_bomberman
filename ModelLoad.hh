@@ -1,11 +1,11 @@
 //
-// Cube.hh for  in /home/nicolaschr/Work/cpp_bomberman
+// ModelLoad.hh for  in /home/nicolaschr/Work/cpp_bomberman
 //
 // Made by Nicolas Charvoz
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Fri May 22 14:48:05 2015 Nicolas Charvoz
-// Last update Mon May 25 18:50:54 2015 Nicolas Charvoz
+// Last update Wed May 27 15:08:51 2015 Audibert Louis
 //
 
 #ifndef MODELLOAD_HH_
@@ -46,6 +46,12 @@ public:
     double deltaTime = 1;
 
     _model.draw(shader, getTransformation(), deltaTime);
+  }
+  virtual bool setCurrentAnim(int stack, bool loop = true)
+  {
+    if (_model.setCurrentAnim(stack, loop) == true)
+      return true;
+    return false;
   }
 };
 
