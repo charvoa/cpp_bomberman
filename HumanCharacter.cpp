@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Wed May 27 13:53:54 2015 Audibert Louis
+// Last update Wed May 27 14:02:14 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
@@ -132,5 +132,5 @@ int	HumanCharacter::getType() const
 
 AObject	*HumanCharacter::getHuman() const
 {
-  return ((AObject*) this);
+  return (static_cast<Object*> this);
 }
