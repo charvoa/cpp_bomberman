@@ -5,11 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-<<<<<<< HEAD
-// Last update Wed May 27 11:18:32 2015 Nicolas Charvoz
-=======
-// Last update Tue May 26 23:21:35 2015 Nicolas Girardot
->>>>>>> 04e19536cf69af074b1ea7223e118b81623d0389
+// Last update Wed May 27 11:19:51 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
