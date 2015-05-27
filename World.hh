@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Tue May 26 22:18:26 2015 Nicolas Girardot
+// Last update Wed May 27 12:24:41 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -50,6 +50,8 @@ public:
   void		loadBackground();
   void		findWall(Map &);
   Game		*_game;
+  int		getWidth();
+  int		getHeight();
 };
 
 #endif
