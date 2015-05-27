@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Tue May 26 16:18:27 2015 Audibert Louis
+// Last update Wed May 27 13:51:22 2015 Audibert Louis
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -43,6 +43,7 @@ public:
   void setColor(int r, int g, int b);
 
   int	getType() const;
+  AObject *getHuman() const;
 
 private:
 

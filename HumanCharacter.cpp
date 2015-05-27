@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Tue May 26 16:17:52 2015 Audibert Louis
+// Last update Wed May 27 13:53:54 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
@@ -21,14 +21,14 @@ HumanCharacter::HumanCharacter(char id, World *world)
 
   _model->initialize("./images/marvin.fbx");
 
-  glm::vec3 trans(0, -200, 800);
-  _model->translate(trans);
+  // glm::vec3 trans(0, -200, 800);
+  // _model->translate(trans);
 
-  trans = glm::vec3(0.5, 0.5, 0.5);
-  _model->scale(trans);
+  // trans = glm::vec3(0.5, 0.5, 0.5);
+  // _model->scale(trans);
 
-  trans = glm::vec3(0, -200, 0);
-  _model->rotate(trans, 180.0f);
+  // trans = glm::vec3(0, -200, 0);
+  // _model->rotate(trans, 180.0f);
 }
 
 HumanCharacter::~HumanCharacter()
@@ -128,4 +128,9 @@ void	HumanCharacter::setColor(int r, int g, int b)
 int	HumanCharacter::getType() const
 {
   return _type;
+}
+
+AObject	*HumanCharacter::getHuman() const
+{
+  return ((AObject*) this);
 }

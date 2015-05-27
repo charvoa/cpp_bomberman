@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Tue May 26 13:33:50 2015 Nicolas Charvoz
+// Last update Wed May 27 11:06:19 2015 Nicolas Charvoz
 //
 
 #ifndef SELECTCHAR_HH_
@@ -17,6 +17,7 @@
 #include "TextureManager.hh"
 #include "ModelLoad.hh"
 #include "World.hh"
+#include "Camera.hh"
 
 class SelectChar : public GameState {
 
@@ -38,6 +39,7 @@ private:
   std::vector<AObject*> _buttons;
   AObject* _background;
   AObject* _model;
+  Camera *_camera;
 };
 
 #endif

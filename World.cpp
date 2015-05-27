@@ -5,10 +5,12 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Wed May 27 12:28:04 2015 Antoine Garcia
+// Last update Wed May 27 12:29:38 2015 Antoine Garcia
+// Last update Wed May 27 10:50:44 2015 Nicolas Girardot
 //
 
 #include "World.hh"
+#include "GameBackground.hh"
 
 TextureManager &World::_texManag = TextureManager::getInstance();
 
@@ -18,6 +20,7 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
   _game = game;
   _fileMap = &map;
   _game->_camera->move(glm::vec3(0, 900, 0), glm::vec3(0, 0, - 750));
+  _game->_camera->move(glm::vec3(0, 900, 0), glm::vec3(0, 0, -750));
   gdl::BasicShader shader = _game->getShader();
   shader.bind();
   shader.setUniform("view", _game->_camera->getTransformation());
@@ -102,7 +105,7 @@ void	World::findWall(Map &map)
 
 void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
-  //  this->drawBackground(clock, shader);
+  this->drawBackground(clock, shader);
   for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
     {
       (*it)->draw(shader, clock);
@@ -118,7 +121,7 @@ bool	World::update(gdl::Clock& clock, gdl::Input& shader)
 
 void	World::loadBackground()
 {
-  AObject *background = new MenuBackground();
+  AObject *background = new GameBackground();
 
   background->initialize(_texManag.getTexture("backIG"));
   _background = background;
