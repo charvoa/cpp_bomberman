@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu May 28 13:27:06 2015 Nicolas Charvoz
+// Last update Thu May 28 13:56:41 2015 Nicolas Charvoz
 //
 
 #include "Leaderboard.hh"
@@ -21,7 +21,7 @@ Leaderboard::Leaderboard(Game *game)
 {
   _game = game;
   std::cout << "Je suis dans Leaderboard" << std::endl;
-  _texManag.registerTexture("backgroundSelectChar", "back");
+  _texManag.registerTexture("LeaderBoardMenu", "lbMenu");
   this->loadBackground();
   this->loadButtons();
   _inputManager = new InputManager();
@@ -32,12 +32,24 @@ void Leaderboard::loadBackground()
 {
   AObject *background = new MenuBackground();
 
-  background->initialize(_texManag.getTexture("back"));
+  background->initialize(_texManag.getTexture("lbMenu"));
   _background = background;
 }
 
 void Leaderboard::loadButtons()
 {
+}
+
+void Leaderboard::drawScore()
+{
+  std::stringstream ss;
+
+  ss << "NOM" ;
+  glRasterPos2i(0, 0);
+  glColor4f(0.0f, 0.0f, 1.0f, 1.0f);
+  glutBitmapString(GLUT_BITMAP_HELVETICA_18,
+                   reinterpret_cast<unsigned const char*>(ss.str().c_str()));
+
 }
 
 void Leaderboard::drawBackground(gdl::Clock& clock, gdl::BasicShader& shader)

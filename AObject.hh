@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:19:54 2015 Nicolas Charvoz
-// Last update Thu May 28 11:22:25 2015 Antoine Garcia
+// Last update Thu May 28 14:15:03 2015 Nicolas Charvoz
 //
 
 #ifndef AOBJECT_HH_
@@ -20,7 +20,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <vector>
-# include <Texture.hh>
+#include <Texture.hh>
 #include <Geometry.hh>
 
 class AObject
@@ -48,6 +48,10 @@ public:
   }
   // La fonction draw sert a dessiner l'objet
   virtual void draw(gdl::AShader &shader, gdl::Clock const &clock) = 0;
+  virtual bool getStatus()
+  {
+    return (true);
+  }
   void translate(glm::vec3 const &v)
   {
     _position += v;
@@ -64,11 +68,11 @@ public:
   {
     glm::mat4 transform(1); // On cree une matrice identite
     // On applique ensuite les rotations selon les axes x, y et z
+    transform = glm::translate(transform, _position);
     transform = glm::rotate(transform, _rotation.x, glm::vec3(1, 0, 0));
     transform = glm::rotate(transform, _rotation.y, glm::vec3(0, 1, 0));
     transform = glm::rotate(transform, _rotation.z, glm::vec3(0, 0, 1));
     // On effectue ensuite la translation
-    transform = glm::translate(transform, _position);
     // Et pour finir, on fait la mise a l'echelle
     transform = glm::scale(transform, _scale);
     return (transform);

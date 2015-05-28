@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu May 28 13:05:37 2015 Antoine Garcia
+// Last update Thu May 28 13:39:46 2015 Antoine Garcia
 // Last update Wed May 27 10:50:44 2015 Nicolas Girardot
 //
 
@@ -59,14 +59,15 @@ void	World::findWall()
 	  if (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2')
 	    {
 	      Position pos(x, y);
+	      ACharacter *charac;
 	      if (x == 14 && y == 10);
 	      else
 		{
 		  if (_fileMap->getItemAtPosition(x,y) == '1')
-		    wall = new HumanCharacter('1', this, pos);
+		    charac = new HumanCharacter('1', this, pos);
 		  else
-		    wall = new HumanCharacter('2', this, pos);
-		  _objects.push_back(wall);
+		    charac = new HumanCharacter('2', this, pos);
+		  _players.push_back(charac);
 		}
 	    }
 	  if (_fileMap->getItemAtPosition(x, y) == 'B')
@@ -106,6 +107,10 @@ void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   this->drawBackground(clock, shader);
   for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
+    {
+      (*it)->draw(shader, clock);
+    }
+  for (std::vector<ACharacter*>::iterator it = _players.begin(); it != _players.end(); ++it)
     {
       (*it)->draw(shader, clock);
     }
