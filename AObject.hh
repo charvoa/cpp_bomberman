@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:19:54 2015 Nicolas Charvoz
-// Last update Thu May 28 14:13:50 2015 Nicolas Charvoz
+// Last update Thu May 28 14:15:03 2015 Nicolas Charvoz
 //
 
 #ifndef AOBJECT_HH_
@@ -20,7 +20,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <vector>
-# include <Texture.hh>
+#include <Texture.hh>
 #include <Geometry.hh>
 
 class AObject
@@ -48,6 +48,10 @@ public:
   }
   // La fonction draw sert a dessiner l'objet
   virtual void draw(gdl::AShader &shader, gdl::Clock const &clock) = 0;
+  virtual bool getStatus()
+  {
+    return (true);
+  }
   void translate(glm::vec3 const &v)
   {
     _position += v;
