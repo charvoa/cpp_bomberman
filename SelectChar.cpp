@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Wed May 27 16:39:32 2015 Nicolas Charvoz
+// Last update Thu May 28 12:51:57 2015 Antoine Garcia
 //
 
 #include "SelectChar.hh"
@@ -74,7 +74,7 @@ void SelectChar::getNameOfButton(gdl::Input &input)
   if (mouse.x >= 1394 && mouse.x <= 1820 && mouse.y >= 900 && mouse.y <= 1000)
     {
       std::cout << "PLAY NEW MAP" << std::endl;
-      Map map("./maps/x.map");
+      Map map("./maps/lp.map");
       _game->pushState(new World(_game, map, 2, 10));
     }
 }
