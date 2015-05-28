@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 14:15:33 2015 Nicolas Girardot
-// Last update Thu May 28 13:55:30 2015 Nicolas Girardot
+// Last update Thu May 28 15:09:56 2015 Nicolas Girardot
 //
 
 #ifndef BOMB_HH_
@@ -24,15 +24,16 @@ private:
   bool		_isDestroyed = false;
   World		*_world;
   int		_range;
-  Position	_pos;
+  Position	*_pos;
   double	_timer;
+  double	_otimer;
 public:
-  Bomb(Position &, World *);
-  ~Bomb();
-  virtual bool	initialize(const std::string &);
-  virtual void	update(gdl::Clock const &, gdl::Input &);
-  virtual void	draw(gdl::Clock const &, gdl::BasicShader&);
-  virtual bool	getStatus();
+  Bomb(Position *, World *);
+  virtual ~Bomb();
+  bool		initialize(const std::string &);
+  void		update(gdl::Clock const &, gdl::Input &);
+  void		draw(gdl::AShader&, gdl::Clock const &);
+  bool		getStatus();
   void		onDrop();
   void		onDestroy();
 };
