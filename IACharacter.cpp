@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Wed May 27 16:09:17 2015 Audibert Louis
+// Last update Thu May 28 11:44:37 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -17,18 +17,7 @@ IACharacter::IACharacter(int id, World *world)
   (void) world;
   this->_IAid = id;
   this->_alive = true;
-  //_model = new AObject();
-
-  // _model->initialize("./images/marvin.fbx");
-
-  // glm::vec3 trans(0, -200, 800);
-  // _model->translate(trans);
-
-  // trans = glm::vec3(0.5, 0.5, 0.5);
-  // _model->scale(trans);
-
-  // trans = glm::vec3(0, -200, 0);
-  // _model->rotate(trans, 180.0f);
+  _model.load("./images/marvin.fbx");
 }
 
 IACharacter::~IACharacter()
@@ -57,8 +46,9 @@ void IACharacter::die()
 
 void IACharacter::draw(gdl::AShader &shader, gdl::Clock const &clock)
 {
-  _model->setCurrentAnim(1, true);
-  _model->draw(shader, clock);
+  (void) clock;
+  // _model->setCurrentAnim(1, true);
+  _model.draw(shader, AObject::getTransformation(), 1);
 }
 
 void IACharacter::update()
