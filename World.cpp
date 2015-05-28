@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu May 28 20:20:50 2015 Antoine Garcia
+// Last update Thu May 28 21:53:33 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -205,4 +205,15 @@ int	World::getWidth() const
 int	World::getHeight() const
 {
   return _fileMap->getHeight();
+}
+
+const std::vector<std::vector<char> >&	World::getWorld() const
+{
+  return	_map;
+}
+
+
+const std::vector<ACharacter *>& World::getPlayers() const
+{
+  return _players;
 }
