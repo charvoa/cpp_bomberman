@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Thu May 28 11:22:13 2015 Antoine Garcia
+// Last update Thu May 28 13:03:07 2015 Antoine Garcia
 //
 
 #ifndef ACHARACTER_HH_
@@ -17,6 +17,8 @@
 # include <Model.hh>
 # include <BasicShader.hh>
 # include <Clock.hh>
+
+class	World;
 
 typedef enum e_orientation
   {
@@ -74,6 +76,7 @@ protected:
   e_orientation		_orientation;
   std::map<char, int>	_color;
   e_type		_type;
+  World			*_world;
 };
 
 #endif

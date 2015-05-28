@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Thu May 28 10:58:01 2015 Antoine Garcia
+// Last update Thu May 28 13:37:51 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -27,7 +27,7 @@
 class	World : public GameState
 {
 private:
-  std::list<ACharacter *> _ia;
+  std::vector<ACharacter *> _players;
   std::vector<std::vector<char> >	_map;
   std::vector<AObject*>			_objects;
   int			_nbPlayers;
