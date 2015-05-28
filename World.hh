@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Wed May 27 12:41:43 2015 Antoine Garcia
+// Last update Thu May 28 10:58:01 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -48,7 +48,7 @@ public:
   char		getItemAtPosition(int x, int y);
   void		drawBackground(gdl::Clock&, gdl::BasicShader &);
   void		loadBackground();
-  void		findWall(Map &);
+  void		findWall();
   Game		*_game;
   int		getWidth() const;
   int		getHeight() const;
