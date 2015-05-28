@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu May 28 15:21:05 2015 Nicolas Charvoz
+// Last update Thu May 28 16:53:00 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
