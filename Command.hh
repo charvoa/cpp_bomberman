@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:34:46 2015 Nicolas Charvoz
-// Last update Thu May 28 16:33:19 2015 Nicolas Charvoz
+// Last update Thu May 28 19:24:00 2015 Nicolas Charvoz
 //
 
 #ifndef COMMAND_HH_
@@ -26,7 +26,7 @@ class Command
 public:
 
   static Sound& _sound;
-  typedef void(Command::*funcs)();
+  typedef void(Command::*funcs)(gdl::Clock&);
   funcs _ptr;
   typedef std::map<InputManager::touche, funcs>map_funcs;
   map_funcs     _functions;
@@ -39,20 +39,20 @@ private:
 public:
   Command(Game*, World *world = NULL);
   ~Command();
-  void exec(InputManager::touche);
-  void no();
-  void pause();
-  void mute();
-  void unmute();
-  void back();
-  void up();
-  void left();
-  void right();
-  void down();
-  void up2();
-  void left2();
-  void right2();
-  void down2();
+  void exec(InputManager::touche, gdl::Clock&);
+  void no(gdl::Clock&);
+  void pause(gdl::Clock&);
+  void mute(gdl::Clock&);
+  void unmute(gdl::Clock&);
+  void back(gdl::Clock&);
+  void up(gdl::Clock&);
+  void left(gdl::Clock&);
+  void right(gdl::Clock&);
+  void down(gdl::Clock&);
+  void up2(gdl::Clock&);
+  void left2(gdl::Clock&);
+  void right2(gdl::Clock&);
+  void down2(gdl::Clock&);
 
   Game *_game;
   World *_world;

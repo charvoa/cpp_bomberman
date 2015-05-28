@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Fri May 29 13:42:47 2015 Audibert Louis
+// Last update Thu May 28 19:21:13 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -88,7 +88,7 @@ bool SelectChar::update(gdl::Clock& clock, gdl::Input& input)
 {
   (void) clock;
 
-  _command->exec(_inputManager->getTouche(input));
+  _command->exec(_inputManager->getTouche(input), clock);
 
   if (input.getInput(SDL_BUTTON_LEFT, true) == true)
     this->getNameOfButton(input);
