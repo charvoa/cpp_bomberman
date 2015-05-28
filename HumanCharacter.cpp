@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Fri May 29 11:22:07 2015 Audibert Louis
+// Last update Fri May 29 11:46:19 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -58,7 +58,6 @@ void HumanCharacter::die()
 void HumanCharacter::draw(gdl::AShader &shader, gdl::Clock const &clock)
 {
   (void)clock;
-  //_model.setCurrentAnim(0, false);
   _model.draw(shader, AObject::getTransformation(), 1);
 }
 
@@ -187,6 +186,7 @@ void	HumanCharacter::move(e_orientation ori)
       _pos = *pos;
       std::cout << "OK" << std::endl;
       glm::vec3 move(x * 100, 0, y * 100);
+      _model.setCurrentAnim(0, false);
       this->translate(move);
     }
 }
