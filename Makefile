@@ -5,7 +5,7 @@
 ## Login   <girard_s@epitech.net>
 ##
 ## Started on  Tue May 26 17:42:11 2015 Nicolas Girardot
-## Last update Thu May 28 11:44:02 2015 Audibert Louis
+## Last update Thu May 28 13:41:56 2015 Antoine Garcia
 ##
 
 MAIN		=	bomberman
