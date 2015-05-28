@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu May 28 15:38:14 2015 Antoine Garcia
+// Last update Thu May 28 16:42:46 2015 Nicolas Charvoz
 // Last update Wed May 27 10:50:44 2015 Nicolas Girardot
 //
 
@@ -130,14 +130,14 @@ ACharacter*	World::getPlayerById(int id)
 bool	World::update(gdl::Clock& clock, gdl::Input& input)
 {
   _command->exec(_inputManager->getTouche(input));
-  if (input.getKey(SDLK_UP))
-    getPlayerById(1)->move(UP);
-  else if (input.getKey(SDLK_RIGHT))
-    getPlayerById(1)->move(RIGHT);
-  else if (input.getKey(SDLK_DOWN))
-    getPlayerById(1)->move(DOWN);
-  else if (input.getKey(SDLK_LEFT))
-    getPlayerById(1)->move(LEFT);
+  // if (input.getKey(SDLK_UP))
+  //   getPlayerById(1)->move(UP);
+  // else if (input.getKey(SDLK_RIGHT))
+  //   getPlayerById(1)->move(RIGHT);
+  // else if (input.getKey(SDLK_DOWN))
+  //   getPlayerById(1)->move(DOWN);
+  // else if (input.getKey(SDLK_LEFT))
+  //   getPlayerById(1)->move(LEFT);
   clock = clock;
   return true;
 }
