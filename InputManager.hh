@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 14:45:11 2015 Nicolas Charvoz
-// Last update Wed May 27 16:43:25 2015 Nicolas Charvoz
+// Last update Thu May 28 12:11:30 2015 Nicolas Charvoz
 //
 
 #ifndef INPUTMANAGER_HH_
@@ -40,7 +40,6 @@ public:
   private:
 
   gdl::Input _input;
-
 };
 
 #endif

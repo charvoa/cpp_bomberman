@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:34:46 2015 Nicolas Charvoz
-// Last update Wed May 27 16:56:40 2015 Nicolas Charvoz
+// Last update Thu May 28 12:11:57 2015 Nicolas Charvoz
 //
 
 #ifndef COMMAND_HH_
@@ -33,6 +33,9 @@ public:
 
 public:
 
+private:
+
+public:
   Command(Game*);
   ~Command();
   void exec(InputManager::touche);

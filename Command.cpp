@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:36:27 2015 Nicolas Charvoz
-// Last update Wed May 27 17:00:13 2015 Nicolas Charvoz
+// Last update Thu May 28 12:11:29 2015 Nicolas Charvoz
 //
 
 #include "Command.hh"
@@ -40,14 +40,19 @@ void Command::pause()
 
 void Command::mute()
 {
-  _sound.Pause("main");
-  _mute = true;
+  if (_mute == false)
+    {
+      std::cout << "mute" << std::endl;
+     _sound.Pause("main");
+      _mute = true;
+    }
 }
 
 void Command::unmute()
 {
   if (_mute == true)
     {
+      std::cout << "unmute" << std::endl;
       _sound.playSound("main");
       _mute = false;
     }

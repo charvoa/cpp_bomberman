@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Wed May 27 16:17:26 2015 Nicolas Charvoz
+// Last update Thu May 28 12:12:11 2015 Nicolas Charvoz
 //
 
 #ifndef SELECTCHAR_HH_
