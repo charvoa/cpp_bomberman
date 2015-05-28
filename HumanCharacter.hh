@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Thu May 28 12:41:15 2015 Antoine Garcia
+// Last update Thu May 28 15:08:51 2015 Audibert Louis
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -33,6 +33,7 @@ public:
   Position &getPos() const;
   int getRange() const;
   int getOrientation() const;
+  int getId() const;
 
   void setPos(Position &pos);
   void setRange(int range);
@@ -44,6 +45,8 @@ public:
 
   int	getType() const;
   ACharacter &getCharacter();
+
+  void move(e_orientation ori);
 
 private:
 

@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Thu May 28 11:44:37 2015 Audibert Louis
+// Last update Thu May 28 15:09:21 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -18,6 +18,7 @@ IACharacter::IACharacter(int id, World *world)
   this->_IAid = id;
   this->_alive = true;
   _model.load("./images/marvin.fbx");
+  _orientation = DOWN;
 }
 
 IACharacter::~IACharacter()
@@ -70,6 +71,11 @@ int	IACharacter::getOrientation() const
   return _orientation;
 }
 
+int	IACharacter::getId() const
+{
+  return _IAid;
+}
+
 void	IACharacter::setPos(Position &pos)
 {
   _pos = pos;
@@ -113,4 +119,9 @@ int	IACharacter::getType() const
 ACharacter	&IACharacter::getCharacter()
 {
   return *this;
+}
+
+void	IACharacter::move(e_orientation ori)
+{
+  (void)ori;
 }
