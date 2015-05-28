@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu May 28 19:28:52 2015 Antoine Garcia
+// Last update Thu May 28 19:31:45 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -65,9 +65,9 @@ void	World::findWall()
 	      else
 		{
 		  if (_fileMap->getItemAtPosition(x,y) == '1')
-		    charac = new HumanCharacter('1', *this, pos);
+		    charac = new HumanCharacter('1', this, pos);
 		  else
-		    charac = new HumanCharacter('2', *this, pos);
+		    charac = new HumanCharacter('2', this, pos);
 		  _players.push_back(charac);
 		}
 	    }
