@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Tue May 26 22:39:24 2015 Nicolas Girardot
-// Last update Wed May 27 14:25:30 2015 Nicolas Charvoz
+// Last update Thu May 28 17:21:16 2015 Nicolas Girardot
 //
 
 #ifndef GAMEBACKGROUND_HH_
@@ -39,10 +39,10 @@ public:
 
     // Ratio Marwin * Background = 1602
 
-    _geometry.pushVertex(glm::vec3(2524, 718, -2000));
-    _geometry.pushVertex(glm::vec3(2524, -718, -2000));
-    _geometry.pushVertex(glm::vec3(-2524, -718, -2000));
-    _geometry.pushVertex(glm::vec3(-2524, 718, -2000));
+    _geometry.pushVertex(glm::vec3(2900, 700, -2300));
+    _geometry.pushVertex(glm::vec3(2900, -1000, 70));
+    _geometry.pushVertex(glm::vec3(-2900, -1000, 70));
+    _geometry.pushVertex(glm::vec3(-2900, 700, -2300));
 
     _geometry.pushUv(glm::vec2(0.0f, 1.0f));
     _geometry.pushUv(glm::vec2(0.0f, 0.0f));
