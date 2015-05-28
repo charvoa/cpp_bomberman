@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:36:27 2015 Nicolas Charvoz
-// Last update Thu May 28 16:49:47 2015 Nicolas Charvoz
+// Last update Thu May 28 16:55:54 2015 Nicolas Charvoz
 //
 
 #include "Command.hh"
@@ -47,8 +47,7 @@ void Command::mute()
 {
   if (_mute == false)
     {
-      std::cout << "mute" << std::endl;
-     _sound.Pause("main");
+      _sound.Pause("main");
       _mute = true;
     }
 }
@@ -57,7 +56,6 @@ void Command::unmute()
 {
   if (_mute == true)
     {
-      std::cout << "unmute" << std::endl;
       _sound.playSound("main");
       _mute = false;
     }
@@ -65,47 +63,48 @@ void Command::unmute()
 
 void Command::back()
 {
-  _game->popState();
+  if (!_world)
+    _game->popState();
 }
 
 void Command::up()
 {
-  _world->getPlayerById(1)->move(UP);
+  _world->getPlayerById(2)->move(UP);
 }
 
 void Command::left()
 {
-  _world->getPlayerById(1)->move(RIGHT);
+  _world->getPlayerById(2)->move(RIGHT);
 }
 
 void Command::right()
 {
- _world->getPlayerById(1)->move(LEFT);
+ _world->getPlayerById(2)->move(LEFT);
 }
 
 void Command::down()
 {
- _world->getPlayerById(1)->move(DOWN);
+ _world->getPlayerById(2)->move(DOWN);
 }
 
 void Command::up2()
 {
-  _world->getPlayerById(2)->move(UP);
+  _world->getPlayerById(1)->move(UP);
 }
 
 void Command::left2()
 {
-  _world->getPlayerById(2)->move(RIGHT);
+  _world->getPlayerById(1)->move(RIGHT);
 }
 
 void Command::right2()
 {
-  _world->getPlayerById(2)->move(LEFT);
+  _world->getPlayerById(1)->move(LEFT);
 }
 
 void Command::down2()
 {
-  _world->getPlayerById(2)->move(DOWN);
+  _world->getPlayerById(1)->move(DOWN);
 }
 
 void Command::exec(InputManager::touche touche)
