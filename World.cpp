@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Wed May 27 12:46:57 2015 Antoine Garcia
+// Last update Thu May 28 10:56:53 2015 Antoine Garcia
 // Last update Wed May 27 10:50:44 2015 Nicolas Girardot
 //
 
@@ -62,7 +62,7 @@ void	World::findWall(Map &map)
 	      if (x == 14 && y == 10);
 	      else
 		{
-		  wall = new ModelLoad();
+		  wall = new HumanCharacter('1', this);
 		  wall->initialize("./images/marvin.fbx");
 		  glm::vec3 trans(0 + (x - map.getWidth() / 2) * 100, 0,  750 * (-1) + (y - map.getHeight() / 2) * 100);
 		  wall->translate(trans);
