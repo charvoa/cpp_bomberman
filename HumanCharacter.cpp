@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu May 28 13:05:54 2015 Antoine Garcia
+// Last update Thu May 28 15:12:13 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
@@ -21,6 +21,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   this->_alive = true;
   _pos = pos;
   _model.load("./images/marvin.fbx");
+  _orientation = DOWN;
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, 0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
   this->scale(glm::vec3(0.3, 0.3, 0.3));
@@ -54,11 +55,7 @@ void HumanCharacter::die()
 void HumanCharacter::draw(gdl::AShader &shader, gdl::Clock const &clock)
 {
   (void)clock;
-  // _model->setCurrentAnim(1, true);
-  // if (!shader.load("./LibBomberman_linux_x64/shaders//basic.fp", GL_FRAGMENT_SHADER)
-  //     ||!shader.load("./LibBomberman_linux_x64/shaders/basic.vp", GL_VERTEX_SHADER)
-  //     ||!shader.build())
-  //   return false;
+  _model.setCurrentAnim(0, false);
   _model.draw(shader, AObject::getTransformation(), 1);
 }
 
@@ -79,6 +76,11 @@ int	HumanCharacter::getRange() const
 int	HumanCharacter::getOrientation() const
 {
   return _orientation;
+}
+
+int	HumanCharacter::getId() const
+{
+  return (_id - '0');
 }
 
 void	HumanCharacter::setPos(Position &pos)
@@ -124,4 +126,9 @@ int	HumanCharacter::getType() const
 ACharacter	&HumanCharacter::getCharacter()
 {
   return *this;
+}
+
+void	HumanCharacter::move(e_orientation ori)
+{
+  (void) ori;
 }
