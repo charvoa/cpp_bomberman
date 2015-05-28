@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu May 28 15:21:38 2015 Antoine Garcia
+// Last update Thu May 28 15:38:14 2015 Antoine Garcia
 // Last update Wed May 27 10:50:44 2015 Nicolas Girardot
 //
 
@@ -19,7 +19,7 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
 {
   (void)nb_ia;
   _inputManager = new InputManager();
-  _command = new Command(game);
+  _command = new Command(game, this);
   _game = game;
   _nbPlayers = nb_players;
   _nbIa = nb_ia;
