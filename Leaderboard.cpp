@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu May 28 16:24:45 2015 Nicolas Charvoz
+// Last update Thu May 28 17:17:59 2015 Nicolas Charvoz
 //
 
 #include "Leaderboard.hh"
@@ -36,6 +36,9 @@ Leaderboard::Leaderboard(Game *game)
 
   _inputManager = new InputManager();
   _command = new Command(_game);
+  Scoring scoring;
+  _scores = scoring.highScore();
+  this->getScore();
 }
 
 void Leaderboard::loadBackground()
@@ -59,6 +62,20 @@ void Leaderboard::loadLetters()
 
 void Leaderboard::loadButtons()
 {
+}
+
+void Leaderboard::getScore()
+{
+  int i = 0;
+
+  std::multimap<std::string, std::string>::iterator it = _scores.begin();
+  while (it != _scores.end())
+    {
+      std::cout << (*it).first << ' ' << (*it).second << std::endl;
+      _bestScore[i] << (*it).first << ' ' << (*it).second;
+      ++it;
+      i++;
+    }
 }
 
 void Leaderboard::drawLetters(gdl::Clock& clock, gdl::BasicShader& shader)
