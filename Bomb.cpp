@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Thu May 28 15:36:51 2015 Nicolas Girardot
+// Last update Thu May 28 15:48:51 2015 Nicolas Girardot
 //
 
 #include "Bomb.hh"
@@ -65,6 +65,5 @@ bool	Bomb::getStatus()
 
 void	Bomb::onDestroy()
 {
-  std::cout << "delete" << std::endl;
   _isDestroyed = true;
 }

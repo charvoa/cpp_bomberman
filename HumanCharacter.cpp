@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu May 28 15:11:37 2015 Antoine Garcia
+// Last update Thu May 28 15:14:27 2015 Antoine Garcia
 //
 
 #include "HumanCharacter.hh"
@@ -130,21 +130,22 @@ ACharacter	&HumanCharacter::getCharacter()
 
 float	getAngle(e_orientation before, e_orientation after)
 {
-  if (before == UP && after == RIGHT
-      || before == RIGHT && after == DOWN
-      || before == DOWN && after == LEFT
-      || before == LEFT && after == UP)
+  if ((before == UP && after == RIGHT)
+      || (before == RIGHT && after == DOWN)
+      || (before == DOWN && after == LEFT)
+      || (before == LEFT && after == UP))
     return (90.0f);
-  else if (before == UP && after == DOWN
-	   || before == RIGHT && after == LEFT
-	   || before == DOWN && after == UP
-	   || before == LEFT && after == RIGHT)
+  else if ((before == UP && after == DOWN)
+	   || (before == RIGHT && after == LEFT)
+	   || (before == DOWN && after == UP)
+	   || (before == LEFT && after == RIGHT))
     return (180.0f);
-  else if (before == UP && after == LEFT
-	   || before == RIGHT && after == UP
-	   || before == DOWN && after == RIGHT
-	   || before == LEFT && after == DOWN)
+  else if ((before == UP && after == LEFT)
+	   || (before == RIGHT && after == UP)
+	   || (before == DOWN && after == RIGHT)
+	   || (before == LEFT && after == DOWN))
     return (270.0f);
+  return (0.0f);
 }
 
 void	HumanCharacter::move(e_orientation ori)
