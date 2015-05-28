@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Fri May 22 14:48:05 2015 Nicolas Charvoz
-// Last update Tue May 26 22:40:17 2015 Nicolas Girardot
+// Last update Wed May 27 13:33:53 2015 Nicolas Charvoz
 //
 
 #ifndef MENUBACKGROUND_HH_
@@ -35,8 +35,8 @@ public:
 	std::cerr << "Cannot load the cube texture" << std::endl;
 	return (false);
       }
-    // 0.9  , 0.5 , 0.5
 
+    // 0.9  , 0.5 , 0.5
     // Ratio Marwin * Background = 1602
 
     _geometry.pushVertex(glm::vec3(1442, 801, 801));

@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Tue May 26 22:18:26 2015 Nicolas Girardot
+// Last update Thu May 28 10:58:01 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -44,12 +44,14 @@ public:
   ~World(){};
   virtual void draw(gdl::Clock&, gdl::BasicShader&);
   virtual bool update(gdl::Clock&, gdl::Input&); //get InputKeys and update.
-  bool		setItemAtPosition(int x, int y, char c);
+  bool		setItemAtPosition(Position&, char c);
   char		getItemAtPosition(int x, int y);
   void		drawBackground(gdl::Clock&, gdl::BasicShader &);
   void		loadBackground();
-  void		findWall(Map &);
+  void		findWall();
   Game		*_game;
+  int		getWidth() const;
+  int		getHeight() const;
 };
 
 #endif

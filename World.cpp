@@ -5,6 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
+// Last update Thu May 28 12:04:01 2015 Antoine Garcia
 // Last update Wed May 27 10:50:44 2015 Nicolas Girardot
 //
 
@@ -17,77 +18,80 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
 {
   (void)nb_ia;
   _game = game;
+  _nbPlayers = nb_players;
+  _nbIa = nb_ia;
+  _fileMap = &map;
+  _game->_camera->move(glm::vec3(0, 900, 0), glm::vec3(0, 0, - 750));
   _game->_camera->move(glm::vec3(0, 900, 0), glm::vec3(0, 0, -750));
   gdl::BasicShader shader = _game->getShader();
   shader.bind();
   shader.setUniform("view", _game->_camera->getTransformation());
   shader.setUniform("projection", _game->_camera->getProjection());
-  _map = map.getMap();
+  _map = _fileMap->getMap();
   _texManag.registerTexture("backgroundInGame", "backIG");
-  _player1 = new HumanCharacter('1', this);
   this->loadBackground();
-  if (nb_players == 2)
-    //_player2 = new HumanCharacter(2);
-  findWall(map);
+  findWall();
 }
 
-void	World::findWall(Map &map)
+void	World::findWall()
 {
   AObject *wall;
   int	y = 0;
   int	x;
-  while(y < map.getHeight())
+  while(y < _fileMap->getHeight())
     {
       x = 0;
-      while(x < map.getWidth())
+      while(x < _fileMap->getWidth())
 	{
-	  if (map.getItemAtPosition(x, y) == 'W')
+	  if (_fileMap->getItemAtPosition(x, y) == 'W')
 	    {
 	      if (x == 14 && y == 10);
 	      else
 		{
 		  wall = new Cube();
 		  wall->initialize("./images/model/crate_tex3.tga");
-		  glm::vec3 trans(0 + (x - map.getWidth() / 2) * 100, 0,  750 * (-1) + (y - map.getHeight() / 2) * 100);
+		  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, 0,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
 		  wall->translate(trans);
 		  wall->scale(glm::vec3(100, 100, 100));
 		  _objects.push_back(wall);
 		}
 	    }
-	  if (map.getItemAtPosition(x, y) == '1' || map.getItemAtPosition(x, y) == '2')
+	  if (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2')
 	    {
 	      if (x == 14 && y == 10);
 	      else
 		{
-		  wall = new ModelLoad();
-		  wall->initialize("./images/marvin.fbx");
-		  glm::vec3 trans(0 + (x - map.getWidth() / 2) * 100, 0,  750 * (-1) + (y - map.getHeight() / 2) * 100);
+		  if (_fileMap->getItemAtPosition(x,y) == '1')
+		    wall = new HumanCharacter('1', this);
+		  else
+		    wall = new HumanCharacter('2', this);
+		  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, 0,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
 		  wall->translate(trans);
 		  wall->scale(glm::vec3(0.3, 0.3, 0.3));
 		  _objects.push_back(wall);
 		}
 	    }
-	  if (map.getItemAtPosition(x, y) == 'B')
+	  if (_fileMap->getItemAtPosition(x, y) == 'B')
 	    {
 	      if (x == 14 && y == 10);
 	      else
 		{
 		  wall = new Cube();
 		  wall->initialize("./images/model/crate_tex.tga");
-		  glm::vec3 trans(0 + (x - map.getWidth() / 2) * 100, 0,  750 * (-1) + (y - map.getHeight() / 2) * 100);
+		  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, 0,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
 		  wall->translate(trans);
 		  wall->scale(glm::vec3(100, 100, 100));
 		  _objects.push_back(wall);
 		}
 	    }
-	  if (map.getItemAtPosition(x, y) == 'F' || (map.getItemAtPosition(x, y) == '1' || map.getItemAtPosition(x, y) == '2'))
+	  if (_fileMap->getItemAtPosition(x, y) == 'F' || (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2'))
 	    {
 	      if (x == 14 && y == 10);
 	      else
 		{
 		  wall = new Cube();
 		  wall->initialize("./images/model/crate_tex4.tga");
-		  glm::vec3 trans(0 + (x - map.getWidth() / 2) * 100, -100,  750 * (-1) + (y - map.getHeight() / 2) * 100);
+		  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, -100,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
 		  wall->translate(trans);
 		  wall->scale(glm::vec3(100, 100, 100));
 		  _objects.push_back(wall);
@@ -130,10 +134,10 @@ void	World::drawBackground(gdl::Clock& clock, gdl::BasicShader &shader)
   _background->draw(shader, clock);
 }
 
-bool	World::setItemAtPosition(int x, int y, char c)
+bool	World::setItemAtPosition(Position& pos, char c)
 {
   if (c == '1' || c == '2')
-    return (this->checkPlayerCanMove(x, y, c));
+    return (this->checkPlayerCanMove(pos._x, pos._y, c));
   return true;
 }
 
@@ -153,4 +157,14 @@ bool	World::checkPlayerCanMove(int x, int y, char c)
       return true;
     }
   return false;
+}
+
+int	World::getWidth() const
+{
+  return _fileMap->getWidth();
+}
+
+int	World::getHeight() const
+{
+  return _fileMap->getHeight();
 }

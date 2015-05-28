@@ -5,12 +5,11 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:04:52 2015 Antoine Garcia
-// Last update Tue May 26 16:18:02 2015 Nicolas Girardot
+// Last update Wed May 27 16:15:49 2015 Nicolas Charvoz
 //
 
 #ifndef GAME_HH_
 # define GAME_HH_
-
 
 #include "GameState.hh"
 #include "AObject.hh"

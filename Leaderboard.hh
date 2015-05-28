@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Sat May 23 12:14:44 2015 Nicolas Charvoz
+// Last update Wed May 27 17:06:51 2015 Nicolas Charvoz
 //
 
 #ifndef LEADERBOARD_HH_

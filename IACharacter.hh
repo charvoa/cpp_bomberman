@@ -1,33 +1,33 @@
 //
-// HumanCharacter.hh for  in /home/nicolaschr/Work/cpp_bomberman
+// IACharacter.hh for IACharacter.hh in /home/audibe_l/rendu/cpp_bomberman
 //
-// Made by Nicolas Charvoz
-// Login   <nicolaschr@epitech.net>
+// Made by Audibert Louis
+// Login   <audibe_l@epitech.net>
 //
-// Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Wed May 27 15:51:33 2015 Audibert Louis
+// Started on  Wed May 27 14:28:02 2015 Audibert Louis
+// Last update Wed May 27 15:53:44 2015 Audibert Louis
 //
 
-#ifndef HUMANCHARACTER_HH_
-# define HUMANCHARACTER_HH_
+#ifndef IACHARACTER_HH_
+# define IACHARACTER_HH_
 
 # include "ACharacter.hh"
 # include "TextureManager.hh"
 # include "ModelLoad.hh"
 
-class	World;
+class World;
 
-class HumanCharacter : public ACharacter {
+class IACharacter : public ACharacter {
 
 public:
 
-  HumanCharacter(char, World *);
-  virtual ~HumanCharacter();
-  bool getAlive() const;
+  IACharacter(int, World *);
+  virtual ~IACharacter();
+  bool	getAlive() const;
   void dropBomb();
   void takeObject(AObject *);
   void die();
-  void draw(gdl::AShader &shader, gdl::Clock const &clock);
+  void draw(gdl::AShader &, gdl::Clock const &);
   void update();
 
   Position &getPos() const;
@@ -50,4 +50,4 @@ private:
   static TextureManager& _texManag;
 };
 
-#endif
+#endif /* IACHARACTER_HH_ */

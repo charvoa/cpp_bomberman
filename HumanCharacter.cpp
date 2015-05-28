@@ -5,44 +5,36 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Tue May 26 16:17:52 2015 Audibert Louis
+// Last update Thu May 28 12:03:57 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
+#include "World.hh"
 
 TextureManager &HumanCharacter::_texManag = TextureManager::getInstance();
 
 HumanCharacter::HumanCharacter(char id, World *world)
 {
   (void) world;
+  std::cout << "id = " << id << std::endl;
   this->_id = id;
-  this->_hp = 100;
-  _model = new ModelLoad();
-
-  _model->initialize("./images/marvin.fbx");
-
-  glm::vec3 trans(0, -200, 800);
-  _model->translate(trans);
-
-  trans = glm::vec3(0.5, 0.5, 0.5);
-  _model->scale(trans);
-
-  trans = glm::vec3(0, -200, 0);
-  _model->rotate(trans, 180.0f);
+  this->_alive = true;
+  _model.load("./images/marvin.fbx");
 }
 
 HumanCharacter::~HumanCharacter()
 {
 }
 
-int HumanCharacter::getHp() const
+bool HumanCharacter::getAlive() const
 {
-  return _hp;
+  return _alive;
 }
 
 void HumanCharacter::dropBomb()
 {
   std::cout << "I droped a bomb hahah" << std::endl;
+  //new Bomb(Position &, World &);
 }
 
 void HumanCharacter::takeObject(AObject *object)
@@ -55,20 +47,15 @@ void HumanCharacter::die()
   std::cout << "I died" << std::cout;
 }
 
-glm::mat4	getTransformation()
+void HumanCharacter::draw(gdl::AShader &shader, gdl::Clock const &clock)
 {
-  glm::mat4	transform(1);
-  // transform = glm::rotate(transform, _rotation.x, glm::vec3(1, 0, 0));
-  // transform = glm::rotate(transform, _rotation.y, glm::vec3(0, 1, 0));
-  // transform = glm::rotate(transform, _rotation.z, glm::vec3(0, 0, 1));
-  // transform = glm::translate(transform, _position);
-  // transform = glm::scale(transform, _scale);
-  return(transform);
-}
-
-void HumanCharacter::draw(gdl::Clock clock, gdl::BasicShader shader)
-{
-  _model->draw(shader, clock);
+  (void)clock;
+  // _model->setCurrentAnim(1, true);
+  // if (!shader.load("./LibBomberman_linux_x64/shaders//basic.fp", GL_FRAGMENT_SHADER)
+  //     ||!shader.load("./LibBomberman_linux_x64/shaders/basic.vp", GL_VERTEX_SHADER)
+  //     ||!shader.build())
+  //   return false;
+  _model.draw(shader, AObject::getTransformation(), 1);
 }
 
 void HumanCharacter::update()
@@ -128,4 +115,9 @@ void	HumanCharacter::setColor(int r, int g, int b)
 int	HumanCharacter::getType() const
 {
   return _type;
+}
+
+ACharacter	&HumanCharacter::getCharacter()
+{
+  return *this;
 }
