@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu May 28 17:22:39 2015 Nicolas Charvoz
+// Last update Thu May 28 21:03:32 2015 Nicolas Charvoz
 //
 
 #include "Exit.hh"
@@ -59,6 +59,7 @@ void Exit::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 bool Exit::update(gdl::Clock& shader, gdl::Input& input)
 {
   (void) shader;
+  (void) input;
   usleep(5000000);
   return false;
 }

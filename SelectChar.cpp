@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu May 28 19:21:13 2015 Nicolas Charvoz
+// Last update Thu May 28 20:49:04 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -27,7 +27,6 @@ SelectChar::SelectChar(Game *game)
   this->loadButtons();
   _game->_camera->move(glm::vec3(0, 0, -0.0001), glm::vec3(0, 0, 0));
   gdl::BasicShader shader = _game->getShader();
-
   shader.bind();
   shader.setUniform("view", _game->_camera->getTransformation());
   shader.setUniform("projection", _game->_camera->getProjection());
@@ -49,7 +48,7 @@ void SelectChar::loadButtons()
 
   play->initialize(_texManag.getTexture("playSM"));
 
-  glm::vec3 trans(-0.6, -0.38, 0);
+  glm::vec3 trans(-0.6, -0.40, 0);
   play->translate(trans);
 
   _buttons.push_back(play);
