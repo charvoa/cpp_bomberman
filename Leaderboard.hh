@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Thu May 28 15:21:28 2015 Nicolas Charvoz
+// Last update Thu May 28 17:15:29 2015 Nicolas Charvoz
 //
 
 #ifndef LEADERBOARD_HH_
@@ -19,7 +19,7 @@
 #include "TextureManager.hh"
 #include "InputManager.hh"
 #include "Command.hh"
-
+#include "Scoring.hh"
 
 class Command;
 
@@ -36,6 +36,7 @@ public:
   void drawButtons(gdl::Clock&, gdl::BasicShader&);
   void loadLetters();
   void drawLetters(gdl::Clock&, gdl::BasicShader&);
+  void getScore();
 
 private:
   static Sound& _sound;
@@ -43,8 +44,9 @@ private:
   InputManager *_inputManager;
   Command *_command;
   AObject *_background;
+  std::multimap<std::string, std::string> _scores;
   std::vector<AObject*> _letters;
-
+  std::vector<std::stringstream> _bestScore;
 };
 
 #endif
