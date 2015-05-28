@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:34:46 2015 Nicolas Charvoz
-// Last update Thu May 28 12:11:57 2015 Nicolas Charvoz
+// Last update Thu May 28 16:33:19 2015 Nicolas Charvoz
 //
 
 #ifndef COMMAND_HH_
@@ -18,6 +18,7 @@
 # include <map>
 # include "InputManager.hh"
 # include "Game.hh"
+# include "World.hh"
 
 class Command
 {
@@ -36,7 +37,7 @@ public:
 private:
 
 public:
-  Command(Game*);
+  Command(Game*, World *world = NULL);
   ~Command();
   void exec(InputManager::touche);
   void no();
@@ -48,8 +49,13 @@ public:
   void left();
   void right();
   void down();
+  void up2();
+  void left2();
+  void right2();
+  void down2();
 
   Game *_game;
+  World *_world;
 };
 
 #endif

@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu May 28 13:05:54 2015 Antoine Garcia
+// Last update Thu May 28 14:17:40 2015 Nicolas Charvoz
 //
 
 #include "HumanCharacter.hh"

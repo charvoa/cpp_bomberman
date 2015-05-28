@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Thu May 28 13:42:10 2015 Nicolas Charvoz
+// Last update Thu May 28 15:21:28 2015 Nicolas Charvoz
 //
 
 #ifndef LEADERBOARD_HH_
@@ -15,16 +15,11 @@
 #include "SousMenuButton.hh"
 #include "Game.hh"
 #include "GameState.hh"
+#include "Camera.hh"
 #include "TextureManager.hh"
 #include "InputManager.hh"
 #include "Command.hh"
-# include <GL/glu.h>
-# include <GL/gl.h>
-# include <GL/freeglut.h>
-# include <X11/Xlib.h>
-# include <iostream>
-# include <ostream>
-# include <sstream>
+
 
 class Command;
 
@@ -39,7 +34,8 @@ public:
   void loadButtons();
   void drawBackground(gdl::Clock&, gdl::BasicShader&);
   void drawButtons(gdl::Clock&, gdl::BasicShader&);
-  void drawScore();
+  void loadLetters();
+  void drawLetters(gdl::Clock&, gdl::BasicShader&);
 
 private:
   static Sound& _sound;
@@ -47,6 +43,8 @@ private:
   InputManager *_inputManager;
   Command *_command;
   AObject *_background;
+  std::vector<AObject*> _letters;
+
 };
 
 #endif

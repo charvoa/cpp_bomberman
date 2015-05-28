@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Thu May 28 13:42:45 2015 Nicolas Charvoz
+// Last update Thu May 28 14:32:29 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
@@ -108,6 +108,12 @@ void Menu::getNameOfButton(gdl::Input& input)
     {
       std::cout << "LEADERBOARD" << std::endl;
       _game->pushState(new Leaderboard(_game));
+    }
+  else if (mouse.x >= 996 && mouse.x <= 1746 && mouse.y >= 759
+	   && mouse.y <= 967)
+    {
+      std::cout << "EXIT" << std::endl;
+      _game->pushState(new Exit(_game));
     }
 }
 

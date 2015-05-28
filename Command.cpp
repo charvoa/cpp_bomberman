@@ -5,16 +5,17 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:36:27 2015 Nicolas Charvoz
-// Last update Thu May 28 12:11:29 2015 Nicolas Charvoz
+// Last update Thu May 28 16:34:17 2015 Nicolas Charvoz
 //
 
 #include "Command.hh"
 
 Sound&  Command::_sound = Sound::getInstance();
 
-Command::Command(Game *game)
+Command::Command(Game *game, World *world)
 {
   _game = game;
+  _world = world;
   _functions[InputManager::NO] = &Command::no;
   _functions[InputManager::PAUSE] = &Command::pause;
   _functions[InputManager::MUTE] = &Command::mute;
@@ -24,6 +25,10 @@ Command::Command(Game *game)
   _functions[InputManager::LEFT] = &Command::left;
   _functions[InputManager::RIGHT] = &Command::right;
   _functions[InputManager::DOWN] = &Command::down;
+  _functions[InputManager::UP2] = &Command::up2;
+  _functions[InputManager::LEFT2] = &Command::left2;
+  _functions[InputManager::RIGHT2] = &Command::right2;
+  _functions[InputManager::DOWN2] = &Command::down2;
   _mute = false;
 }
 
@@ -81,6 +86,26 @@ void Command::right()
 void Command::down()
 {
  std::cout << "down" << std::endl;
+}
+
+void Command::up2()
+{
+  std::cout << "UP2" << std::endl;
+}
+
+void Command::left2()
+{
+ std::cout << "LEFT2" << std::endl;
+}
+
+void Command::right2()
+{
+ std::cout << "right2" << std::endl;
+}
+
+void Command::down2()
+{
+ std::cout << "down2" << std::endl;
 }
 
 void Command::exec(InputManager::touche touche)
