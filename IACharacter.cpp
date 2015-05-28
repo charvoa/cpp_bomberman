@@ -5,10 +5,11 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Fri May 29 11:56:46 2015 Audibert Louis
+// Last update Fri May 29 14:14:25 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
+#include "World.hh"
 
 TextureManager &IACharacter::_texManag = TextureManager::getInstance();
 
@@ -144,6 +145,40 @@ float	IACharacter::getAngle(e_orientation before, e_orientation after)
 void	IACharacter::move(e_orientation ori)
 {
   glm::vec3 trans(0, 1, 0);
+  Position *pos;
+  int x = 0;
+  int y = 0;
+
   this->rotate(trans, getAngle(_orientation, ori));
   _orientation = ori;
+
+  if (ori == UP)
+    {
+      pos = new Position(_pos._x, _pos._y - 1);
+      y = -1;
+    }
+  else if (ori == LEFT)
+    {
+      pos = new Position(_pos._x + 1, _pos._y);
+      x = 1;
+    }
+  else if (ori == DOWN)
+    {
+      pos = new Position(_pos._x, _pos._y + 1);
+      y = +1;
+    }
+  else if (ori == RIGHT)
+    {
+      pos = new Position(_pos._x - 1, _pos._y);
+      x = -1;
+    }
+  if (_world->setItemAtPosition(*pos, _id) == true)
+    {
+      _pos = *pos;
+      std::cout << "OK" << std::endl;
+      glm::vec3 move(x * 100, 0, y * 100);
+      _model.setCurrentAnim(0, false);
+      this->translate(move);
+      // this->translate(move * static_cast<float>(clock.getElapsed() * 0.5);
+    }
 }

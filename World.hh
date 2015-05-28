@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Thu May 28 19:35:18 2015 Antoine Garcia
+// Last update Thu May 28 21:53:23 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -47,6 +47,8 @@ public:
   ~World(){};
   virtual void draw(gdl::Clock&, gdl::BasicShader&);
   virtual bool update(gdl::Clock&, gdl::Input&); //get InputKeys and update.
+  const std::vector<std::vector<char> >&	getWorld() const;
+  const std::vector<ACharacter *>& getPlayers() const;
   bool		setItemAtPosition(Position&, char c);
   char		getItemAtPosition(int x, int y);
   void		drawBackground(gdl::Clock&, gdl::BasicShader &);
