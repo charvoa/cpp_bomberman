@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Wed May 27 17:06:51 2015 Nicolas Charvoz
+// Last update Thu May 28 13:22:25 2015 Nicolas Charvoz
 //
 
 #ifndef LEADERBOARD_HH_
@@ -15,6 +15,11 @@
 #include "SousMenuButton.hh"
 #include "Game.hh"
 #include "GameState.hh"
+#include "TextureManager.hh"
+#include "InputManager.hh"
+#include "Command.hh"
+
+class Command;
 
 class Leaderboard : public GameState {
 
@@ -30,7 +35,10 @@ public:
 
 private:
   static Sound& _sound;
-
+  static TextureManager& _texManag;
+  InputManager *_inputManager;
+  Command *_command;
+  AObject *_background;
 };
 
 #endif
