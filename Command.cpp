@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:36:27 2015 Nicolas Charvoz
-// Last update Thu May 28 16:34:17 2015 Nicolas Charvoz
+// Last update Thu May 28 16:49:47 2015 Nicolas Charvoz
 //
 
 #include "Command.hh"
@@ -70,42 +70,42 @@ void Command::back()
 
 void Command::up()
 {
-  std::cout << "UP" << std::endl;
+  _world->getPlayerById(1)->move(UP);
 }
 
 void Command::left()
 {
- std::cout << "LEFT" << std::endl;
+  _world->getPlayerById(1)->move(RIGHT);
 }
 
 void Command::right()
 {
- std::cout << "right" << std::endl;
+ _world->getPlayerById(1)->move(LEFT);
 }
 
 void Command::down()
 {
- std::cout << "down" << std::endl;
+ _world->getPlayerById(1)->move(DOWN);
 }
 
 void Command::up2()
 {
-  std::cout << "UP2" << std::endl;
+  _world->getPlayerById(2)->move(UP);
 }
 
 void Command::left2()
 {
- std::cout << "LEFT2" << std::endl;
+  _world->getPlayerById(2)->move(RIGHT);
 }
 
 void Command::right2()
 {
- std::cout << "right2" << std::endl;
+  _world->getPlayerById(2)->move(LEFT);
 }
 
 void Command::down2()
 {
- std::cout << "down2" << std::endl;
+  _world->getPlayerById(2)->move(DOWN);
 }
 
 void Command::exec(InputManager::touche touche)
