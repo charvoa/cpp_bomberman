@@ -5,10 +5,11 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Wed May 27 16:19:01 2015 Audibert Louis
+// Last update Thu May 28 10:58:59 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
+#include "World.hh"
 
 TextureManager &HumanCharacter::_texManag = TextureManager::getInstance();
 

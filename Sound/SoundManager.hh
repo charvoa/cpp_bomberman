@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Wed May 13 03:58:34 2015 Antoine Garcia
-// Last update Wed May 27 15:31:35 2015 Antoine Garcia
+// Last update Wed May 27 17:09:03 2015 Nicolas Charvoz
 //
 
 #ifndef SOUNDMANAGER_HH_
@@ -24,6 +24,7 @@ class	Sound
   Sound(Sound const&);
   Sound&	operator=(Sound&);
   FMOD_SYSTEM	*_system;
+
 public:
   static Sound&	getInstance();
   void		initialize();
