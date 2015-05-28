@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Thu May 28 14:41:21 2015 Antoine Garcia
+// Last update Thu May 28 15:18:17 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -13,6 +13,7 @@
 
 #include <list>
 #include <map>
+#include "InputManager.hh"
 #include "Map.hh"
 #include "Camera.hh"
 #include "AObject.hh"
@@ -24,6 +25,7 @@
 #include "HumanCharacter.hh"
 #include "Cube.hh"
 
+class	Command;
 class	World : public GameState
 {
 private:
@@ -38,6 +40,8 @@ private:
   //Graphical Attributes
   static TextureManager &_texManag;
   AObject		*_background;
+  InputManager		*_inputManager;
+  Command		*_command;
   ACharacter*		getPlayerById(int id);
 public:
   World(Game *game, Map &map, int nb_players, int nb_ia);

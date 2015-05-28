@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu May 28 16:03:19 2015 Audibert Louis
+// Last update Thu May 28 15:21:38 2015 Antoine Garcia
 // Last update Wed May 27 10:50:44 2015 Nicolas Girardot
 //
 
@@ -18,6 +18,8 @@ TextureManager &World::_texManag = TextureManager::getInstance();
 World::World(Game *game, Map &map, int nb_players, int nb_ia)
 {
   (void)nb_ia;
+  _inputManager = new InputManager();
+  _command = new Command(game);
   _game = game;
   _nbPlayers = nb_players;
   _nbIa = nb_ia;
@@ -127,6 +129,7 @@ ACharacter*	World::getPlayerById(int id)
 }
 bool	World::update(gdl::Clock& clock, gdl::Input& input)
 {
+  _command->exec(_inputManager->getTouche(input));
   if (input.getKey(SDLK_UP))
     getPlayerById(1)->move(UP);
   else if (input.getKey(SDLK_RIGHT))
