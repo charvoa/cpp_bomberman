@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Thu May 28 13:37:51 2015 Antoine Garcia
+// Last update Thu May 28 14:41:21 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -38,7 +38,7 @@ private:
   //Graphical Attributes
   static TextureManager &_texManag;
   AObject		*_background;
-  bool checkPlayerCanMove(int x, int y, char c);
+  ACharacter*		getPlayerById(int id);
 public:
   World(Game *game, Map &map, int nb_players, int nb_ia);
   ~World(){};
@@ -52,6 +52,7 @@ public:
   Game		*_game;
   int		getWidth() const;
   int		getHeight() const;
+  bool checkPlayerCanMove(int x, int y);
 };
 
 #endif

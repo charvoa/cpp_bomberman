@@ -5,10 +5,11 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu May 28 13:39:46 2015 Antoine Garcia
+// Last update Thu May 28 14:48:07 2015 Antoine Garcia
 // Last update Wed May 27 10:50:44 2015 Nicolas Girardot
 //
 
+# include <iostream>
 #include "World.hh"
 #include "GameBackground.hh"
 
@@ -116,6 +117,14 @@ void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
     }
 }
 
+ACharacter*	World::getPlayerById(int id)
+{
+   for (std::vector<ACharacter*>::iterator it = _players.begin(); it != _players.end(); ++it)
+     {
+       if ((*it)->getId() == id)
+	 return *it;
+     }
+}
 bool	World::update(gdl::Clock& clock, gdl::Input& shader)
 {
   clock = clock;
@@ -140,7 +149,13 @@ void	World::drawBackground(gdl::Clock& clock, gdl::BasicShader &shader)
 bool	World::setItemAtPosition(Position& pos, char c)
 {
   if (c == '1' || c == '2')
-    return (this->checkPlayerCanMove(pos._x, pos._y, c));
+    {
+      if(this->checkPlayerCanMove(pos._x, pos._y))
+	{
+	  _map.at(pos._y).at(pos._x) = c;
+	  return true;
+	}
+    }
   return true;
 }
 
@@ -149,14 +164,13 @@ char	World::getItemAtPosition(int x, int y)
   return (_map.at(y).at(x));
 }
 
-bool	World::checkPlayerCanMove(int x, int y, char c)
+bool	World::checkPlayerCanMove(int x, int y)
 {
   char	test;
 
   test = getItemAtPosition(x, y);
   if (test == 'F')
     {
-      _map.at(y).at(x) = c;
       return true;
     }
   return false;
