@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Thu May 28 15:38:04 2015 Antoine Garcia
+// Last update Thu May 28 19:35:18 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -35,8 +35,8 @@ private:
   int			_nbPlayers;
   int			_nbIa;
   Map			*_fileMap;
-  HumanCharacter	*_player1;
-  HumanCharacter	*_player2;
+  int			_height;
+  int			_width;
   //Graphical Attributes
   static TextureManager &_texManag;
   AObject		*_background;
