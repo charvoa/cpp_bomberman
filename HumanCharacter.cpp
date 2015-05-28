@@ -5,9 +5,10 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu May 28 17:18:57 2015 Audibert Louis
+// Last update Thu May 28 16:51:44 2015 Antoine Garcia
 //
 
+#include <iostream>
 #include "HumanCharacter.hh"
 #include "World.hh"
 
@@ -167,6 +168,7 @@ void	HumanCharacter::move(e_orientation ori)
   _pos = *pos;
   if (_world->setItemAtPosition(*pos, _id) == true)
     {
+      std::cout << "OK" << std::endl;
       glm::vec3 move(0 + (_pos._x - _world->getWidth() / 2) * 100, 0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
       this->translate(move);
     }
