@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu May 28 16:42:46 2015 Nicolas Charvoz
+// Last update Thu May 28 16:23:06 2015 Antoine Garcia
 // Last update Wed May 27 10:50:44 2015 Nicolas Girardot
 //
 
@@ -160,13 +160,15 @@ bool	World::setItemAtPosition(Position& pos, char c)
 {
   if (c == '1' || c == '2')
     {
+      std::cout << pos._x <<"et" << pos._y << std::endl;
       if(this->checkPlayerCanMove(pos._x, pos._y))
 	{
 	  _map.at(pos._y).at(pos._x) = c;
 	  return true;
 	}
+      return false;
     }
-  return true;
+  return false;
 }
 
 char	World::getItemAtPosition(int x, int y)
@@ -178,6 +180,11 @@ bool	World::checkPlayerCanMove(int x, int y)
 {
   char	test;
 
+  if (x > _fileMap->getWidth() || x < _fileMap->getWidth() ||
+      y > _fileMap->getHeight() || y< _fileMap->getHeight())
+    {
+      return false;
+    }
   test = getItemAtPosition(x, y);
   if (test == 'F')
     {
