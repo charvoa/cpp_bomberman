@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu May 28 11:46:35 2015 Audibert Louis
+// Last update Thu May 28 12:03:57 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
@@ -16,6 +16,7 @@ TextureManager &HumanCharacter::_texManag = TextureManager::getInstance();
 HumanCharacter::HumanCharacter(char id, World *world)
 {
   (void) world;
+  std::cout << "id = " << id << std::endl;
   this->_id = id;
   this->_alive = true;
   _model.load("./images/marvin.fbx");
@@ -50,6 +51,10 @@ void HumanCharacter::draw(gdl::AShader &shader, gdl::Clock const &clock)
 {
   (void)clock;
   // _model->setCurrentAnim(1, true);
+  // if (!shader.load("./LibBomberman_linux_x64/shaders//basic.fp", GL_FRAGMENT_SHADER)
+  //     ||!shader.load("./LibBomberman_linux_x64/shaders/basic.vp", GL_VERTEX_SHADER)
+  //     ||!shader.build())
+  //   return false;
   _model.draw(shader, AObject::getTransformation(), 1);
 }
 
