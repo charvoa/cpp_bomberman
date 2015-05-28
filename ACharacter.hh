@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Thu May 28 15:08:25 2015 Audibert Louis
+// Last update Thu May 28 15:10:47 2015 Antoine Garcia
 //
 
 #ifndef ACHARACTER_HH_
@@ -27,7 +27,6 @@ typedef enum e_orientation
     LEFT,
     RIGHT
   }	e_orientation;
-
 class ACharacter : public AObject {
 
 public:
@@ -44,7 +43,7 @@ public:
   virtual int getRange() const = 0;
   virtual int getOrientation() const = 0;
   virtual int getId() const = 0;
-  
+
   virtual void setPos(Position &pos) = 0;
   virtual void setRange(int range) = 0;
   virtual void setOrientation(int orientation) = 0;

@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu May 28 15:43:01 2015 Audibert Louis
+// Last update Thu May 28 15:11:37 2015 Antoine Garcia
 //
 
 #include "HumanCharacter.hh"
@@ -55,7 +55,7 @@ void HumanCharacter::die()
 void HumanCharacter::draw(gdl::AShader &shader, gdl::Clock const &clock)
 {
   (void)clock;
-  _model.setCurrentAnim(0, false);
+  //_model.setCurrentAnim(0, false);
   _model.draw(shader, AObject::getTransformation(), 1);
 }
 

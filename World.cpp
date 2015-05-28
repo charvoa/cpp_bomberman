@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu May 28 14:48:07 2015 Antoine Garcia
+// Last update Thu May 28 15:11:51 2015 Antoine Garcia
 // Last update Wed May 27 10:50:44 2015 Nicolas Girardot
 //
 
@@ -125,10 +125,11 @@ ACharacter*	World::getPlayerById(int id)
 	 return *it;
      }
 }
-bool	World::update(gdl::Clock& clock, gdl::Input& shader)
+bool	World::update(gdl::Clock& clock, gdl::Input& input)
 {
+  if (input.getKey(SDLK_UP))
+    getPlayerById(1)->move(UP);
   clock = clock;
-  shader = shader;
   return true;
 }
 
