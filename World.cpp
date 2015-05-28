@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu May 28 12:04:01 2015 Antoine Garcia
+// Last update Thu May 28 13:05:37 2015 Antoine Garcia
 // Last update Wed May 27 10:50:44 2015 Nicolas Girardot
 //
 
@@ -58,16 +58,14 @@ void	World::findWall()
 	    }
 	  if (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2')
 	    {
+	      Position pos(x, y);
 	      if (x == 14 && y == 10);
 	      else
 		{
 		  if (_fileMap->getItemAtPosition(x,y) == '1')
-		    wall = new HumanCharacter('1', this);
+		    wall = new HumanCharacter('1', this, pos);
 		  else
-		    wall = new HumanCharacter('2', this);
-		  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, 0,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
-		  wall->translate(trans);
-		  wall->scale(glm::vec3(0.3, 0.3, 0.3));
+		    wall = new HumanCharacter('2', this, pos);
 		  _objects.push_back(wall);
 		}
 	    }

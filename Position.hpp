@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 19:49:40 2015 Antoine Garcia
-// Last update Sun May 24 07:24:39 2015 Antoine Garcia
+// Last update Thu May 28 12:35:30 2015 Antoine Garcia
 //
 
 #ifndef POSITION_HPP_
@@ -33,6 +33,13 @@ public:
     if (pos._x == _x && pos._y == _y)
       return true;
     return false;
+  }
+
+  inline Position&	operator=(const Position& pos)
+  {
+    _x = pos._x;
+    _y = pos._y;
+    return *this;
   }
 };
 

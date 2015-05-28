@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu May 28 12:03:57 2015 Audibert Louis
+// Last update Thu May 28 13:05:54 2015 Antoine Garcia
 //
 
 #include "HumanCharacter.hh"
@@ -13,13 +13,17 @@
 
 TextureManager &HumanCharacter::_texManag = TextureManager::getInstance();
 
-HumanCharacter::HumanCharacter(char id, World *world)
+HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
 {
-  (void) world;
+  _world = world;
   std::cout << "id = " << id << std::endl;
   this->_id = id;
   this->_alive = true;
+  _pos = pos;
   _model.load("./images/marvin.fbx");
+  glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, 0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
+  this->translate(trans);
+  this->scale(glm::vec3(0.3, 0.3, 0.3));
 }
 
 HumanCharacter::~HumanCharacter()
