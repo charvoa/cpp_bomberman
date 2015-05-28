@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Wed May 27 15:51:33 2015 Audibert Louis
+// Last update Thu May 28 12:41:15 2015 Antoine Garcia
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -21,7 +21,7 @@ class HumanCharacter : public ACharacter {
 
 public:
 
-  HumanCharacter(char, World *);
+  HumanCharacter(char, World *, Position&);
   virtual ~HumanCharacter();
   bool getAlive() const;
   void dropBomb();
