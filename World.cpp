@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu May 28 15:11:51 2015 Antoine Garcia
+// Last update Thu May 28 16:03:19 2015 Audibert Louis
 // Last update Wed May 27 10:50:44 2015 Nicolas Girardot
 //
 
@@ -129,6 +129,12 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
 {
   if (input.getKey(SDLK_UP))
     getPlayerById(1)->move(UP);
+  else if (input.getKey(SDLK_RIGHT))
+    getPlayerById(1)->move(RIGHT);
+  else if (input.getKey(SDLK_DOWN))
+    getPlayerById(1)->move(DOWN);
+  else if (input.getKey(SDLK_LEFT))
+    getPlayerById(1)->move(LEFT);
   clock = clock;
   return true;
 }

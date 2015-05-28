@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu May 28 15:14:27 2015 Antoine Garcia
+// Last update Thu May 28 16:00:51 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
@@ -152,4 +152,5 @@ void	HumanCharacter::move(e_orientation ori)
 {
   glm::vec3 trans(0, 1, 0);
   this->rotate(trans, getAngle(_orientation, ori));
+  _orientation = ori;
 }
