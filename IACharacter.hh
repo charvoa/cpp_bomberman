@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Thu May 28 15:08:41 2015 Audibert Louis
+// Last update Thu May 28 16:55:42 2015 Audibert Louis
 //
 
 #ifndef IACHARACTER_HH_
@@ -47,6 +47,7 @@ public:
   ACharacter &getCharacter();
 
   void move(e_orientation ori);
+  float	getAngle(e_orientation before, e_orientation after);
 
 private:
 

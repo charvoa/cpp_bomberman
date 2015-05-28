@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Thu May 28 15:08:51 2015 Audibert Louis
+// Last update Thu May 28 16:55:02 2015 Audibert Louis
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -46,6 +46,7 @@ public:
   int	getType() const;
   ACharacter &getCharacter();
 
+  float getAngle(e_orientation before, e_orientation after);
   void move(e_orientation ori);
 
 private:

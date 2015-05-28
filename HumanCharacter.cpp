@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu May 28 16:39:52 2015 Nicolas Charvoz
+// Last update Thu May 28 16:54:08 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
@@ -128,7 +128,7 @@ ACharacter	&HumanCharacter::getCharacter()
   return *this;
 }
 
-float	getAngle(e_orientation before, e_orientation after)
+float	HumanCharacter::getAngle(e_orientation before, e_orientation after)
 {
   if ((before == UP && after == RIGHT)
       || (before == RIGHT && after == DOWN)
@@ -151,6 +151,18 @@ float	getAngle(e_orientation before, e_orientation after)
 void	HumanCharacter::move(e_orientation ori)
 {
   glm::vec3 trans(0, 1, 0);
+  Position *pos;
+
   this->rotate(trans, getAngle(_orientation, ori));
   _orientation = ori;
+
+  if (ori == UP)
+    pos = new Position(_pos._x, _pos._y + 1);
+  else if (ori == RIGHT)
+    pos = new Position(_pos._x + 1, _pos._y);
+  else if (ori == DOWN)
+    pos = new Position(_pos._x, _pos._y - 1);
+  else if (ori == LEFT)
+    pos = new Position(_pos._x - 1, _pos._y);
+  _world->setItemAtPosition(*pos, _id);
 }

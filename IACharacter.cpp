@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Thu May 28 15:09:21 2015 Audibert Louis
+// Last update Thu May 28 16:55:35 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -121,7 +121,29 @@ ACharacter	&IACharacter::getCharacter()
   return *this;
 }
 
+float	IACharacter::getAngle(e_orientation before, e_orientation after)
+{
+  if ((before == UP && after == RIGHT)
+      || (before == RIGHT && after == DOWN)
+      || (before == DOWN && after == LEFT)
+      || (before == LEFT && after == UP))
+    return (90.0f);
+  else if ((before == UP && after == DOWN)
+	   || (before == RIGHT && after == LEFT)
+	   || (before == DOWN && after == UP)
+	   || (before == LEFT && after == RIGHT))
+    return (180.0f);
+  else if ((before == UP && after == LEFT)
+	   || (before == RIGHT && after == UP)
+	   || (before == DOWN && after == RIGHT)
+	   || (before == LEFT && after == DOWN))
+    return (270.0f);
+  return (0.0f);
+}
+
 void	IACharacter::move(e_orientation ori)
 {
-  (void)ori;
+  glm::vec3 trans(0, 1, 0);
+  this->rotate(trans, getAngle(_orientation, ori));
+  _orientation = ori;
 }
