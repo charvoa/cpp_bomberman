@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu May 28 10:58:59 2015 Audibert Louis
+// Last update Thu May 28 11:21:51 2015 Antoine Garcia
 //
 
 #include "HumanCharacter.hh"
@@ -18,9 +18,9 @@ HumanCharacter::HumanCharacter(char id, World *world)
   (void) world;
   this->_id = id;
   this->_alive = true;
-  _model = new ModelLoad();
+  _model.load("./images/marvin.fbx");
 
-  _model->initialize("./images/marvin.fbx");
+  //_model->initialize("./images/marvin.fbx");
 
   // glm::vec3 trans(0, -200, 800);
   // _model->translate(trans);
@@ -59,8 +59,8 @@ void HumanCharacter::die()
 
 void HumanCharacter::draw(gdl::AShader &shader, gdl::Clock const &clock)
 {
-  _model->setCurrentAnim(1, true);
-  _model->draw(shader, clock);
+  // _model->setCurrentAnim(1, true);
+  _model.draw(shader, AObject::getTransformation(), 1);
 }
 
 void HumanCharacter::update()
