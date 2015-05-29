@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu May 28 16:24:20 2015 Antoine Garcia
+// Last update Thu May 28 17:02:50 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -178,11 +178,14 @@ bool	World::checkPlayerCanMove(int x, int y)
 {
   char	test;
 
-  if (x > _fileMap->getWidth() || x < _fileMap->getWidth() ||
-      y > _fileMap->getHeight() || y< _fileMap->getHeight())
-    {
-      return false;
-    }
+  std::cout << "AAAA" << std::endl;
+  // if (x > _fileMap->getWidth() || x < 0 ||
+  //     y > _fileMap->getHeight() || y < 0)
+  //   {
+  //     std::cout << "Height " << _fileMap->getHeight() << "Width:" << _fileMap->getWidth() << std::endl;
+  //     return false;
+  //   }
+  std::cout << "BBBB" << std::endl;
   test = getItemAtPosition(x, y);
   if (test == 'F')
     {
