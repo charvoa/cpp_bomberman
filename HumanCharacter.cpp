@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Fri May 29 12:55:52 2015 Audibert Louis
+// Last update Fri May 29 13:42:09 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -163,7 +163,7 @@ void	HumanCharacter::move(e_orientation ori)
 
   if (ori == UP)
     {
-      pos = new Position(_pos._x, _pos._y + 1);
+      pos = new Position(_pos._x, _pos._y - 1);
       y = -1;
     }
   else if (ori == LEFT)
@@ -173,7 +173,7 @@ void	HumanCharacter::move(e_orientation ori)
     }
   else if (ori == DOWN)
     {
-      pos = new Position(_pos._x, _pos._y - 1);
+      pos = new Position(_pos._x, _pos._y + 1);
       y = +1;
     }
   else if (ori == RIGHT)
@@ -188,5 +188,6 @@ void	HumanCharacter::move(e_orientation ori)
       glm::vec3 move(x * 100, 0, y * 100);
       _model.setCurrentAnim(0, false);
       this->translate(move);
+      // this->translate(move * static_cast<float>(clock.getElapsed() * 0.5);
     }
 }
