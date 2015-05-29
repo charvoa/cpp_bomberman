@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 14:45:44 2015 Nicolas Charvoz
-// Last update Thu May 28 16:31:04 2015 Nicolas Charvoz
+// Last update Thu May 28 20:57:01 2015 Nicolas Charvoz
 //
 
 #include "InputManager.hh"
@@ -20,6 +20,10 @@ InputManager::touche InputManager::getTouche(gdl::Input &input) const
 {
   if (input.getInput(SDLK_BACKSPACE) == true)
     return BACK;
+  else if (input.getInput(SDLK_SPACE) == true)
+    return SPACE;
+  else if (input.getInput(SDLK_LSHIFT) == true)
+    return LSHIFT;
   else if (input.getInput(SDLK_p) == true)
     return PAUSE;
   else if (input.getInput(SDLK_m) == true)

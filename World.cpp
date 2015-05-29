@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Fri May 29 16:26:02 2015 Nicolas Girardot
+// Last update Fri May 29 16:29:26 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -126,6 +126,7 @@ ACharacter*	World::getPlayerById(int id)
        if ((*it)->getId() == id)
 	 return *it;
      }
+   return NULL;
 }
 bool	World::update(gdl::Clock& clock, gdl::Input& input)
 {

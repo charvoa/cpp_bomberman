@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Fri May 29 14:47:48 2015 Audibert Louis
+// Last update Fri May 29 14:56:36 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -179,7 +179,6 @@ void	IACharacter::move(e_orientation ori, gdl::Clock &clock)
       std::cout << "OK" << std::endl;
       glm::vec3 move(x * 100, 0, y * 100);
       _model.setCurrentAnim(0, false);
-      this->translate(move * static_cast<float>(clock.getElapsed() * 0.5));
-      this->translate(move);
+      this->translate(move * static_cast<float>(clock.getElapsed() * 20));
     }
 }

@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:36:27 2015 Nicolas Charvoz
-// Last update Thu May 28 19:45:39 2015 Nicolas Charvoz
+// Last update Thu May 28 21:03:18 2015 Nicolas Charvoz
 //
 
 #include "Command.hh"
@@ -17,6 +17,8 @@ Command::Command(Game *game, World *world)
   _game = game;
   _world = world;
   _functions[InputManager::NO] = &Command::no;
+  _functions[InputManager::LSHIFT] = &Command::lshift;
+  _functions[InputManager::SPACE] = &Command::space;
   _functions[InputManager::PAUSE] = &Command::pause;
   _functions[InputManager::MUTE] = &Command::mute;
   _functions[InputManager::UNMUTE] = &Command::unmute;
@@ -37,6 +39,20 @@ Command::~Command(){}
 void Command::no(gdl::Clock& clock)
 {
   (void) clock;
+}
+
+void Command::space(gdl::Clock& clock)
+{
+  (void) clock;
+  std::cout << "SPACE" << std::endl;
+  _world->getPlayerById(2)->dropBomb();
+}
+
+void Command::lshift(gdl::Clock& clock)
+{
+  (void) clock;
+  std::cout << "LSHIFT" << std::endl;
+  _world->getPlayerById(1)->dropBomb();
 }
 
 void Command::pause(gdl::Clock& clock)

@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:34:46 2015 Nicolas Charvoz
-// Last update Thu May 28 19:24:00 2015 Nicolas Charvoz
+// Last update Thu May 28 20:57:12 2015 Nicolas Charvoz
 //
 
 #ifndef COMMAND_HH_
@@ -41,6 +41,8 @@ public:
   ~Command();
   void exec(InputManager::touche, gdl::Clock&);
   void no(gdl::Clock&);
+  void space(gdl::Clock&);
+  void lshift(gdl::Clock&);
   void pause(gdl::Clock&);
   void mute(gdl::Clock&);
   void unmute(gdl::Clock&);
