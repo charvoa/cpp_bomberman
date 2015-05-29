@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 14:45:11 2015 Nicolas Charvoz
-// Last update Thu May 28 16:27:47 2015 Nicolas Charvoz
+// Last update Thu May 28 21:02:46 2015 Nicolas Charvoz
 //
 
 #ifndef INPUTMANAGER_HH_
@@ -23,6 +23,8 @@ public:
 
   enum touche {
     NO,
+    SPACE,
+    LSHIFT,
     PAUSE,
     MUTE,
     UNMUTE,
