@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Wed May 27 15:53:44 2015 Audibert Louis
+// Last update Fri May 29 14:45:38 2015 Audibert Louis
 //
 
 #ifndef IACHARACTER_HH_
@@ -33,6 +33,7 @@ public:
   Position &getPos() const;
   int getRange() const;
   int getOrientation() const;
+  int getId() const;
 
   void setPos(Position &pos);
   void setRange(int range);
@@ -44,6 +45,9 @@ public:
 
   int	getType() const;
   ACharacter &getCharacter();
+
+  void move(e_orientation ori, gdl::Clock &);
+  float	getAngle(e_orientation before, e_orientation after);
 
 private:
 

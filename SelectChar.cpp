@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu May 28 13:07:56 2015 Antoine Garcia
+// Last update Thu May 28 19:21:13 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -73,7 +73,7 @@ void SelectChar::getNameOfButton(gdl::Input &input)
   std::cout << "X : " << mouse.x << " Y: " << mouse.y << std::endl;
   if (mouse.x >= 1394 && mouse.x <= 1820 && mouse.y >= 900 && mouse.y <= 1000)
     {
-      Map map("./maps/x.map");
+      Map map("./maps/lp.map");
       _game->pushState(new World(_game, map, 2, 10));
     }
 }
@@ -88,7 +88,7 @@ bool SelectChar::update(gdl::Clock& clock, gdl::Input& input)
 {
   (void) clock;
 
-  _command->exec(_inputManager->getTouche(input));
+  _command->exec(_inputManager->getTouche(input), clock);
 
   if (input.getInput(SDL_BUTTON_LEFT, true) == true)
     this->getNameOfButton(input);

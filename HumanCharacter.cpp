@@ -5,11 +5,13 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu May 28 13:05:54 2015 Antoine Garcia
+// Last update Fri May 29 14:55:10 2015 Audibert Louis
 //
 
+#include <iostream>
 #include "HumanCharacter.hh"
 #include "World.hh"
+#include "Bomb.hh"
 
 TextureManager &HumanCharacter::_texManag = TextureManager::getInstance();
 
@@ -21,7 +23,9 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   this->_alive = true;
   _pos = pos;
   _model.load("./images/marvin.fbx");
-  glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, 0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
+  _orientation = DOWN;
+  _type = HUMAN;
+  glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
   this->scale(glm::vec3(0.3, 0.3, 0.3));
 }
@@ -38,7 +42,8 @@ bool HumanCharacter::getAlive() const
 void HumanCharacter::dropBomb()
 {
   std::cout << "I droped a bomb hahah" << std::endl;
-  //new Bomb(Position &, World &);
+  //Bomb	*bomb;
+  //  bomb =  new Bomb(&_pos, &_world);
 }
 
 void HumanCharacter::takeObject(AObject *object)
@@ -54,16 +59,12 @@ void HumanCharacter::die()
 void HumanCharacter::draw(gdl::AShader &shader, gdl::Clock const &clock)
 {
   (void)clock;
-  // _model->setCurrentAnim(1, true);
-  // if (!shader.load("./LibBomberman_linux_x64/shaders//basic.fp", GL_FRAGMENT_SHADER)
-  //     ||!shader.load("./LibBomberman_linux_x64/shaders/basic.vp", GL_VERTEX_SHADER)
-  //     ||!shader.build())
-  //   return false;
   _model.draw(shader, AObject::getTransformation(), 1);
 }
 
 void HumanCharacter::update()
 {
+  // _model.update();
 }
 
 Position	&HumanCharacter::getPos() const
@@ -79,6 +80,11 @@ int	HumanCharacter::getRange() const
 int	HumanCharacter::getOrientation() const
 {
   return _orientation;
+}
+
+int	HumanCharacter::getId() const
+{
+  return (_id - '0');
 }
 
 void	HumanCharacter::setPos(Position &pos)
@@ -124,4 +130,65 @@ int	HumanCharacter::getType() const
 ACharacter	&HumanCharacter::getCharacter()
 {
   return *this;
+}
+
+float	HumanCharacter::getAngle(e_orientation before, e_orientation after)
+{
+  if ((before == UP && after == RIGHT)
+      || (before == RIGHT && after == DOWN)
+      || (before == DOWN && after == LEFT)
+      || (before == LEFT && after == UP))
+    return (90.0f);
+  else if ((before == UP && after == DOWN)
+	   || (before == RIGHT && after == LEFT)
+	   || (before == DOWN && after == UP)
+	   || (before == LEFT && after == RIGHT))
+    return (180.0f);
+  else if ((before == UP && after == LEFT)
+	   || (before == RIGHT && after == UP)
+	   || (before == DOWN && after == RIGHT)
+	   || (before == LEFT && after == DOWN))
+    return (270.0f);
+  return (0.0f);
+}
+
+void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
+{
+  glm::vec3 trans(0, 1, 0);
+  Position *pos;
+  int x = 0;
+  int y = 0;
+
+  this->rotate(trans, getAngle(_orientation, ori));
+  _orientation = ori;
+
+  if (ori == UP)
+    {
+      pos = new Position(_pos._x, _pos._y - 1);
+      y = -1;
+    }
+  else if (ori == LEFT)
+    {
+      pos = new Position(_pos._x + 1, _pos._y);
+      x = 1;
+    }
+  else if (ori == DOWN)
+    {
+      pos = new Position(_pos._x, _pos._y + 1);
+      y = +1;
+    }
+  else if (ori == RIGHT)
+    {
+      pos = new Position(_pos._x - 1, _pos._y);
+      x = -1;
+    }
+  if (_world->setItemAtPosition(*pos, _id) == true)
+    {
+      _pos = *pos;
+      std::cout << "OK" << std::endl;
+      glm::vec3 move(x * 100, 0, y * 100);
+      _model.setCurrentAnim(0, false);
+      std::cout << "clock.getElapsed() = " << clock.getElapsed() << std::endl;
+      this->translate(move * static_cast<float>(clock.getElapsed() * 20));
+    }
 }

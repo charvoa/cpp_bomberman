@@ -5,10 +5,11 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Thu May 28 11:44:37 2015 Audibert Louis
+// Last update Fri May 29 14:55:15 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
+#include "World.hh"
 
 TextureManager &IACharacter::_texManag = TextureManager::getInstance();
 
@@ -18,6 +19,8 @@ IACharacter::IACharacter(int id, World *world)
   this->_IAid = id;
   this->_alive = true;
   _model.load("./images/marvin.fbx");
+  _orientation = DOWN;
+  _type = IA;
 }
 
 IACharacter::~IACharacter()
@@ -70,6 +73,11 @@ int	IACharacter::getOrientation() const
   return _orientation;
 }
 
+int	IACharacter::getId() const
+{
+  return _IAid;
+}
+
 void	IACharacter::setPos(Position &pos)
 {
   _pos = pos;
@@ -113,4 +121,64 @@ int	IACharacter::getType() const
 ACharacter	&IACharacter::getCharacter()
 {
   return *this;
+}
+
+float	IACharacter::getAngle(e_orientation before, e_orientation after)
+{
+  if ((before == UP && after == RIGHT)
+      || (before == RIGHT && after == DOWN)
+      || (before == DOWN && after == LEFT)
+      || (before == LEFT && after == UP))
+    return (90.0f);
+  else if ((before == UP && after == DOWN)
+	   || (before == RIGHT && after == LEFT)
+	   || (before == DOWN && after == UP)
+	   || (before == LEFT && after == RIGHT))
+    return (180.0f);
+  else if ((before == UP && after == LEFT)
+	   || (before == RIGHT && after == UP)
+	   || (before == DOWN && after == RIGHT)
+	   || (before == LEFT && after == DOWN))
+    return (270.0f);
+  return (0.0f);
+}
+
+void	IACharacter::move(e_orientation ori, gdl::Clock &clock)
+{
+  glm::vec3 trans(0, 1, 0);
+  Position *pos;
+  int x = 0;
+  int y = 0;
+
+  this->rotate(trans, getAngle(_orientation, ori));
+  _orientation = ori;
+
+  if (ori == UP)
+    {
+      pos = new Position(_pos._x, _pos._y - 1);
+      y = -1;
+    }
+  else if (ori == LEFT)
+    {
+      pos = new Position(_pos._x + 1, _pos._y);
+      x = 1;
+    }
+  else if (ori == DOWN)
+    {
+      pos = new Position(_pos._x, _pos._y + 1);
+      y = +1;
+    }
+  else if (ori == RIGHT)
+    {
+      pos = new Position(_pos._x - 1, _pos._y);
+      x = -1;
+    }
+  if (_world->setItemAtPosition(*pos, _id) == true)
+    {
+      _pos = *pos;
+      std::cout << "OK" << std::endl;
+      glm::vec3 move(x * 100, 0, y * 100);
+      _model.setCurrentAnim(0, false);
+      this->translate(move * static_cast<float>(clock.getElapsed() * 20));
+    }
 }

@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Sat May 23 12:06:59 2015 Nicolas Charvoz
+// Last update Thu May 28 14:37:55 2015 Nicolas Charvoz
 //
 
 #ifndef EXIT_HH_
@@ -14,6 +14,7 @@
 #include "./Sound/SoundManager.hh"
 #include "Game.hh"
 #include "GameState.hh"
+#include "TextureManager.hh"
 
 class Exit : public GameState {
 
@@ -29,7 +30,8 @@ public:
 
 private:
   static Sound& _sound;
-
+  static TextureManager& _texManag;
+  AObject *_background;
 };
 
 #endif

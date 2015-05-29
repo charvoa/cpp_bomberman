@@ -1,19 +1,19 @@
 //
-// GameBackground.hh for GameBackground in /home/nicolas/rendu/cpp_bomberman
+// Letters.hh for  in /home/nicolaschr/Work/cpp_bomberman
 //
-// Made by Nicolas Girardot
-// Login   <girard_s@epitech.net>
+// Made by Nicolas Charvoz
+// Login   <nicolaschr@epitech.net>
 //
-// Started on  Tue May 26 22:39:24 2015 Nicolas Girardot
-// Last update Thu May 28 17:21:16 2015 Nicolas Girardot
+// Started on  Thu May 28 15:03:51 2015 Nicolas Charvoz
+// Last update Thu May 28 15:38:34 2015 Nicolas Charvoz
 //
 
-#ifndef GAMEBACKGROUND_HH_
-# define GAMEBACKGROUND_HH_
+#ifndef LETTERS_HH_
+# define LETTERS_HH_
 
 # include "AObject.hh"
 
-class GameBackground : public AObject
+class Letters : public AObject
 {
 
 private:
@@ -24,8 +24,8 @@ private:
 
 public:
 
-  GameBackground() { }
-  virtual ~GameBackground() { }
+  Letters() { }
+  virtual ~Letters() { }
 
   virtual bool initialize(const std::string &tex)
   {
@@ -35,14 +35,14 @@ public:
 	std::cerr << "Cannot load the cube texture" << std::endl;
 	return (false);
       }
-    // 0.9  , 0.5 , 0.5
 
+    // 0.9  , 0.5 , 0.5
     // Ratio Marwin * Background = 1602
 
-    _geometry.pushVertex(glm::vec3(2900, 700, -2300));
-    _geometry.pushVertex(glm::vec3(2900, -1000, 70));
-    _geometry.pushVertex(glm::vec3(-2900, -1000, 70));
-    _geometry.pushVertex(glm::vec3(-2900, 700, -2300));
+    _geometry.pushVertex(glm::vec3(0.03, 0.03, 0.5));
+    _geometry.pushVertex(glm::vec3(0.03, -0.03, 0.5));
+    _geometry.pushVertex(glm::vec3(-0.03, -0.03, 0.5));
+    _geometry.pushVertex(glm::vec3(-0.03, 0.03, 0.5));
 
     _geometry.pushUv(glm::vec2(0.0f, 1.0f));
     _geometry.pushUv(glm::vec2(0.0f, 0.0f));
