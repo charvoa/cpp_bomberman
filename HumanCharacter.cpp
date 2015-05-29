@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Fri May 29 14:55:10 2015 Audibert Louis
+// Last update Fri May 29 15:10:40 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -182,13 +182,14 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
       pos = new Position(_pos._x - 1, _pos._y);
       x = -1;
     }
-  if (_world->setItemAtPosition(*pos, _id) == true)
+  if (_world->checkPlayerCanMove(pos->_x, pos->_y) == true)
     {
-      _pos = *pos;
       std::cout << "OK" << std::endl;
       glm::vec3 move(x * 100, 0, y * 100);
       _model.setCurrentAnim(0, false);
       std::cout << "clock.getElapsed() = " << clock.getElapsed() << std::endl;
-      this->translate(move * static_cast<float>(clock.getElapsed() * 20));
+      this->translate(move * static_cast<float>(clock.getElapsed() * 20));      
+      _world->setItemAtPosition(*pos, _id);
+      _pos = *pos;
     }
 }
