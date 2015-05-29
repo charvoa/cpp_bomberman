@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Thu May 28 16:55:02 2015 Audibert Louis
+// Last update Fri May 29 11:21:32 2015 Audibert Louis
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -16,6 +16,7 @@
 # include "ModelLoad.hh"
 
 class	World;
+class	Bomb;
 
 class HumanCharacter : public ACharacter {
 

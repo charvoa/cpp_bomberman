@@ -5,12 +5,13 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Fri May 29 11:01:30 2015 Audibert Louis
+// Last update Fri May 29 11:22:07 2015 Audibert Louis
 //
 
 #include <iostream>
 #include "HumanCharacter.hh"
 #include "World.hh"
+#include "Bomb.hh"
 
 TextureManager &HumanCharacter::_texManag = TextureManager::getInstance();
 
@@ -40,7 +41,8 @@ bool HumanCharacter::getAlive() const
 void HumanCharacter::dropBomb()
 {
   std::cout << "I droped a bomb hahah" << std::endl;
-  //new Bomb(Position &, World &);
+  //Bomb	*bomb;
+  //  bomb =  new Bomb(&_pos, &_world);
 }
 
 void HumanCharacter::takeObject(AObject *object)
@@ -180,8 +182,11 @@ void	HumanCharacter::move(e_orientation ori)
       pos = new Position(_pos._x - 1, _pos._y);
       x = +1;
     }
-  _pos = *pos;
-  std::cout << "OK" << std::endl;
-  glm::vec3 move(x * 100, 0, y * 100);
-  this->translate(move);
+  if (_world->setItemAtPosition(*pos, _id) == true)
+    {
+      _pos = *pos;
+      std::cout << "OK" << std::endl;
+      glm::vec3 move(x * 100, 0, y * 100);
+      this->translate(move);
+    }
 }
