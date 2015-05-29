@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu May 28 17:17:59 2015 Nicolas Charvoz
+// Last update Thu May 28 19:44:37 2015 Nicolas Charvoz
 //
 
 #include "Leaderboard.hh"
@@ -66,15 +66,16 @@ void Leaderboard::loadButtons()
 
 void Leaderboard::getScore()
 {
-  int i = 0;
+  std::stringstream ss;
 
   std::multimap<std::string, std::string>::iterator it = _scores.begin();
   while (it != _scores.end())
     {
-      std::cout << (*it).first << ' ' << (*it).second << std::endl;
-      _bestScore[i] << (*it).first << ' ' << (*it).second;
+      ss.str("");
+      ss.clear();
+      ss << (*it).first << ' ' << (*it).second;
+      _bestScore.push_back(ss.str());
       ++it;
-      i++;
     }
 }
 
@@ -106,7 +107,7 @@ bool Leaderboard::update(gdl::Clock& clock, gdl::Input& input)
 {
   (void) clock;
 
-  _command->exec(_inputManager->getTouche(input));
+  _command->exec(_inputManager->getTouche(input), clock);
 
   return true;
 }

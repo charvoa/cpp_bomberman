@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:36:27 2015 Nicolas Charvoz
-// Last update Thu May 28 16:55:54 2015 Nicolas Charvoz
+// Last update Thu May 28 19:45:39 2015 Nicolas Charvoz
 //
 
 #include "Command.hh"
@@ -34,17 +34,21 @@ Command::Command(Game *game, World *world)
 
 Command::~Command(){}
 
-void Command::no()
+void Command::no(gdl::Clock& clock)
 {
+  (void) clock;
 }
 
-void Command::pause()
+void Command::pause(gdl::Clock& clock)
 {
+  (void) clock;
   std::cout << "PAUSE" << std::endl;
 }
 
-void Command::mute()
+void Command::mute(gdl::Clock& clock)
 {
+  (void) clock;
+
   if (_mute == false)
     {
       _sound.Pause("main");
@@ -52,8 +56,10 @@ void Command::mute()
     }
 }
 
-void Command::unmute()
+void Command::unmute(gdl::Clock& clock)
 {
+  (void) clock;
+
   if (_mute == true)
     {
       _sound.playSound("main");
@@ -61,53 +67,55 @@ void Command::unmute()
     }
 }
 
-void Command::back()
+void Command::back(gdl::Clock& clock)
 {
+  (void) clock;
+
   if (!_world)
     _game->popState();
 }
 
-void Command::up()
+void Command::up(gdl::Clock& clock)
 {
-  _world->getPlayerById(2)->move(UP);
+  _world->getPlayerById(2)->move(UP, clock);
 }
 
-void Command::left()
+void Command::left(gdl::Clock& clock)
 {
-  _world->getPlayerById(2)->move(RIGHT);
+  _world->getPlayerById(2)->move(RIGHT, clock);
 }
 
-void Command::right()
+void Command::right(gdl::Clock& clock)
 {
- _world->getPlayerById(2)->move(LEFT);
+  _world->getPlayerById(2)->move(LEFT, clock);
 }
 
-void Command::down()
+void Command::down(gdl::Clock& clock)
 {
- _world->getPlayerById(2)->move(DOWN);
+  _world->getPlayerById(2)->move(DOWN, clock);
 }
 
-void Command::up2()
+void Command::up2(gdl::Clock& clock)
 {
-  _world->getPlayerById(1)->move(UP);
+  _world->getPlayerById(1)->move(UP, clock);
 }
 
-void Command::left2()
+void Command::left2(gdl::Clock& clock)
 {
-  _world->getPlayerById(1)->move(RIGHT);
+  _world->getPlayerById(1)->move(RIGHT, clock);
 }
 
-void Command::right2()
+void Command::right2(gdl::Clock& clock)
 {
-  _world->getPlayerById(1)->move(LEFT);
+  _world->getPlayerById(1)->move(LEFT, clock);
 }
 
-void Command::down2()
+void Command::down2(gdl::Clock& clock)
 {
-  _world->getPlayerById(1)->move(DOWN);
+  _world->getPlayerById(1)->move(DOWN, clock);
 }
 
-void Command::exec(InputManager::touche touche)
+void Command::exec(InputManager::touche touche, gdl::Clock& clock)
 {
-  (*this.*_functions[touche])();
+  (*this.*_functions[touche])(clock);
 }

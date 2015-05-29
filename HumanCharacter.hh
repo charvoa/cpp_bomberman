@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Thu May 28 16:55:02 2015 Audibert Louis
+// Last update Fri May 29 14:45:59 2015 Audibert Louis
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -16,6 +16,7 @@
 # include "ModelLoad.hh"
 
 class	World;
+class	Bomb;
 
 class HumanCharacter : public ACharacter {
 
@@ -47,7 +48,7 @@ public:
   ACharacter &getCharacter();
 
   float getAngle(e_orientation before, e_orientation after);
-  void move(e_orientation ori);
+  void move(e_orientation ori, gdl::Clock &);
 
 private:
 
