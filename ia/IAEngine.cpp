@@ -28,10 +28,10 @@ bool		IAEngine::isHumanPlayerAlive(std::vector<ACharacter *> vector)
 
 ACharacter	*IAEngine::getTarget(World *world)
 {
-  this->isHumanPlayerAlive(world->getPlayers())
+  if (this->isHumanPlayerAlive(world->getPlayers()) == true)
 }
 
 std::vector<std::map[int:int]>	getPathToTarget(ACharacter *)
 {
-
+  
 }
