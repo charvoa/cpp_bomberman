@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:05:48 2015 Antoine Garcia
-// Last update Tue May 26 21:43:44 2015 Nicolas Girardot
+// Last update Fri May 29 16:22:11 2015 Nicolas Girardot
 //
 
 #include "Game.hh"
@@ -24,7 +24,7 @@ Game::~Game()
 bool	Game::initialize()
 {
   _camera = new Camera(glm::vec3(0, 0, -0.0001), glm::vec3(0, 0, 0));
-  if (!_context.start(1920, 1080, "Bomberman !"))
+  if (!_context.start(1920, 1080, "Bomberman !", SDL_INIT_VIDEO, SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN))
     return false;
   glEnable(GL_DEPTH_TEST);
   _shader.load("LibBomberman_linux_x64/shaders/basic.fp", GL_FRAGMENT_SHADER);

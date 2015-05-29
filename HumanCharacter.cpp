@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Fri May 29 14:48:42 2015 Audibert Louis
+// Last update Fri May 29 14:53:53 2015 Nicolas Girardot
 //
 
 #include <iostream>
@@ -188,7 +188,6 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
       std::cout << "OK" << std::endl;
       glm::vec3 move(x * 100, 0, y * 100);
       _model.setCurrentAnim(0, false);
-      this->translate(move * static_cast<float>(clock.getElapsed() * 0.1));
-      this->translate(move);
+      this->translate(move * static_cast<float>(clock.getElapsed() * 15));
     }
 }

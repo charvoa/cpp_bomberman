@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Thu May 28 15:48:51 2015 Nicolas Girardot
+// Last update Fri May 29 11:16:36 2015 Nicolas Girardot
 //
 
 #include "Bomb.hh"
@@ -17,8 +17,6 @@ Bomb::Bomb(Position* pos, World *world)
   _world = world;
   _pos = pos;
   _isPosed = false;
-  this->initialize("hello");
-  this->onDrop();
 }
 
 Bomb::~Bomb()

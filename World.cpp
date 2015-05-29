@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu May 28 19:46:28 2015 Nicolas Charvoz
+// Last update Fri May 29 16:26:02 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -52,7 +52,7 @@ void	World::findWall()
 	      else
 		{
 		  wall = new Cube();
-		  wall->initialize("./images/model/crate_tex3.tga");
+		  wall->initialize("./images/wall.tga");
 		  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, 0,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
 		  wall->translate(trans);
 		  wall->scale(glm::vec3(100, 100, 100));
@@ -92,7 +92,7 @@ void	World::findWall()
 	      else
 		{
 		  wall = new Cube();
-		  wall->initialize("./images/model/crate_tex4.tga");
+		  wall->initialize("./images/floor1.tga");
 		  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, -100,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
 		  wall->translate(trans);
 		  wall->scale(glm::vec3(100, 100, 100));
