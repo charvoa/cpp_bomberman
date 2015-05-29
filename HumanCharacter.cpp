@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Fri May 29 10:44:18 2015 Audibert Louis
+// Last update Fri May 29 10:58:14 2015 Nicolas Girardot
 //
 
 #include <iostream>
@@ -180,12 +180,8 @@ void	HumanCharacter::move(e_orientation ori)
       pos = new Position(_pos._x - 1, _pos._y);
       x = -1;
     }
-  if (_world->setItemAtPosition(*pos, _id) == true)
-    {
-      _pos = *pos;
-      std::cout << "OK" << std::endl;
-      glm::vec3 move(0 + (x - _world->getWidth() / 2) * 100, 0,  750 * (-1) + (y - _world->getHeight() / 2) * 100);
-      std::cout << "x " << (x - _world->getWidth() / 2) * 100 << " y " << (y - _world->getHeight() / 2) * 100 << std::endl;
-      this->translate(move);
-    }
+  _pos = *pos;
+  std::cout << "OK" << std::endl;
+  glm::vec3 move(x * 100, 0, y * 100);
+  this->translate(move);
 }
