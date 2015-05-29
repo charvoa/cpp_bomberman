@@ -5,7 +5,7 @@
 ## Login   <girard_s@epitech.net>
 ##
 ## Started on  Tue May 26 17:42:11 2015 Nicolas Girardot
-## Last update Fri May 29 16:39:51 2015 Nicolas Charvoz
+## Last update Fri May 29 19:03:07 2015 Nicolas Charvoz
 ##
 
 MAIN		=	bomberman
@@ -31,7 +31,8 @@ SRC		+=	Button.cpp			\
 			Command.cpp			\
 			IACharacter.cpp			\
 			Scoring.cpp			\
-			Pause.cpp
+			Pause.cpp			\
+			Box.cpp
 
 SRC_MAIN	=	$(SRC) main.cpp
 

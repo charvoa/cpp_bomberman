@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Fri May 29 16:29:26 2015 Nicolas Girardot
+// Last update Sat May 30 23:43:20 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -78,11 +78,8 @@ void	World::findWall()
 	      if (x == 14 && y == 10);
 	      else
 		{
-		  wall = new Cube();
-		  wall->initialize("./images/model/crate_tex.tga");
-		  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, 0,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
-		  wall->translate(trans);
-		  wall->scale(glm::vec3(100, 100, 100));
+		  wall = new Box(new Position(x, y), this);
+		  wall->initialize("hello");
 		  _objects.push_back(wall);
 		}
 	    }
@@ -139,8 +136,26 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
   //   getPlayerById(1)->move(DOWN);
   // else if (input.getKey(SDLK_LEFT))
   //   getPlayerById(1)->move(LEFT);
+  for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
+    {
+      (*it)->update(clock, input);
+      if ((*it)->getStatus() == false)
+	{
+	  delete (*it);
+	  _objects.erase(it);
+	  return true;
+	}
+   }
   clock = clock;
   return true;
+}
+
+void	World::dropBomb(Position *pos)
+{
+  Bomb	*bomb;
+  bomb = new Bomb(pos, this);
+  bomb->initialize("hello");
+  _objects.push_back(bomb);
 }
 
 void	World::loadBackground()
@@ -153,7 +168,6 @@ void	World::loadBackground()
 
 void	World::drawBackground(gdl::Clock& clock, gdl::BasicShader &shader)
 {
-
   _background->draw(shader, clock);
 }
 
@@ -200,12 +214,12 @@ bool	World::checkPlayerCanMove(int x, int y)
 
 int	World::getWidth() const
 {
-  return _fileMap->getWidth();
+  return _width;
 }
 
 int	World::getHeight() const
 {
-  return _fileMap->getHeight();
+  return _height;
 }
 
 const std::vector<std::vector<char> >&	World::getWorld() const

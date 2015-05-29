@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Fri May 29 11:16:36 2015 Nicolas Girardot
+// Last update Sat May 30 17:23:08 2015 Nicolas Girardot
 //
 
 #include "Bomb.hh"
@@ -17,11 +17,13 @@ Bomb::Bomb(Position* pos, World *world)
   _world = world;
   _pos = pos;
   _isPosed = false;
+  _sound.registerSound("./resources/sounds/allahu_akbar_and_explosion.wav", "allahu");
+  std::cout << "Bomb Is being Droped" << std::endl;
 }
 
 Bomb::~Bomb()
 {
-
+  std::cout << "i'm being destroyed" << std::endl;
 }
 
 bool	Bomb::initialize(const std::string &tex)
@@ -30,18 +32,32 @@ bool	Bomb::initialize(const std::string &tex)
   std::cout << _pos->_x << " " << _pos->_y << std::endl;
   _bomb = new ModelLoad();
   _bomb->initialize("LibBomberman_linux_x64/assets/bomb.fbx");
-  glm::vec3 trans(0 + (_pos->_x - _world->getWidth() / 2) * 100, 0, 750 * (-1) + (_pos->_y - _world->getHeight() / 2) * 100);
+  glm::vec3 trans(0 + (_pos->_x * 100 - 710), 0, 750 * (-1) + (_pos->_y - 5 - _world->getHeight() / 2) * 100);
+  std::cout << _pos->_x * 100 - 750 << " hh " << 750 * (-1) + (_pos->_y - _world->getHeight() / 2) * 100 << std::endl;
   _bomb->translate(trans);
   _bomb->scale(glm::vec3(0.3, 0.3, 0.3));
+  _isPosed = true;
   return (true);
 }
 
 void	Bomb::update(gdl::Clock const &clock, gdl::Input &input)
 {
   (void) input;
+
   if (_isPosed == true)
-    _timer += clock.getElapsed();
-  if (_timer >= 6.48)
+    {
+      _timer += clock.getElapsed();
+      std::cout << _timer << std::endl;
+    }
+  if (_timer >= 1.5)
+    {
+      if (_isPlayed == 0)
+	{
+	  _sound.playMusic("allahu");
+	  _isPlayed = 1;
+	}
+    }
+  if (_timer >= 3)
     this->onDestroy();
 }
 

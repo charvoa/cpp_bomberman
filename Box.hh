@@ -5,11 +5,11 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Fri May 29 15:01:23 2015 Nicolas Girardot
-// Last update Fri May 29 16:04:32 2015 Nicolas Girardot
+// Last update Fri May 29 16:56:17 2015 Nicolas Girardot
 //
 
-#ifndef BOMB_HH_
-# define BOMB_HH_
+#ifndef BOX_HH_
+# define BOX_HH_
 
 #include "AObject.hh"
 #include "World.hh"
@@ -31,4 +31,6 @@ public:
   void	draw(gdl::AShader &, gdl::Clock const &);
   bool	getStatus();
   void	onDestroy();
-}
+};
+
+#endif
