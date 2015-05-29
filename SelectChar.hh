@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Tue May 26 13:33:50 2015 Nicolas Charvoz
+// Last update Thu May 28 12:12:11 2015 Nicolas Charvoz
 //
 
 #ifndef SELECTCHAR_HH_
@@ -17,6 +17,12 @@
 #include "TextureManager.hh"
 #include "ModelLoad.hh"
 #include "World.hh"
+#include "Camera.hh"
+#include "GameBackground.hh"
+#include "InputManager.hh"
+#include "Command.hh"
+
+class Command;
 
 class SelectChar : public GameState {
 
@@ -29,15 +35,16 @@ public:
   void loadButtons();
   void drawBackground(gdl::Clock&, gdl::BasicShader&);
   void drawButtons(gdl::Clock&, gdl::BasicShader&);
-  void loadModel();
-  void drawModel(gdl::Clock&, gdl::BasicShader&);
   void getNameOfButton(gdl::Input&);
+
 private:
   static Sound& _sound;
   static TextureManager& _texManag;
   std::vector<AObject*> _buttons;
   AObject* _background;
-  AObject* _model;
+  Camera *_camera;
+  InputManager *_inputManager;
+  Command *_command;
 };
 
 #endif

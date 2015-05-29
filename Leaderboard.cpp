@@ -5,34 +5,88 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Sat May 23 12:13:25 2015 Nicolas Charvoz
+// Last update Thu May 28 17:17:59 2015 Nicolas Charvoz
 //
 
 #include "Leaderboard.hh"
+#include "SousMenuButton.hh"
+#include "MenuBackground.hh"
+#include "Letters.hh"
 #include <OpenGL.hh>
 #include <iostream>
 #include <Texture.hh>
+
+TextureManager &Leaderboard::_texManag = TextureManager::getInstance();
 
 Leaderboard::Leaderboard(Game *game)
 {
   _game = game;
   std::cout << "Je suis dans Leaderboard" << std::endl;
+  _texManag.registerTexture("LeaderBoardMenu", "lbMenu");
+  _texManag.registerTexture("LetterS", "s");
   this->loadBackground();
   this->loadButtons();
+  this->loadLetters();
+  _game->_camera->move(glm::vec3(0, 0, -0.0001), glm::vec3(0, 0, 0));
+  gdl::BasicShader shader = _game->getShader();
+
+  shader.bind();
+  shader.setUniform("view", _game->_camera->getTransformation());
+  shader.setUniform("projection", _game->_camera->getProjection());
+
+  _inputManager = new InputManager();
+  _command = new Command(_game);
+  Scoring scoring;
+  _scores = scoring.highScore();
+  this->getScore();
 }
 
 void Leaderboard::loadBackground()
 {
+  AObject *background = new MenuBackground();
+
+  background->initialize(_texManag.getTexture("lbMenu"));
+  _background = background;
+}
+
+void Leaderboard::loadLetters()
+{
+  AObject *newLetter = new Letters();
+
+  for (int i = 0; i < 26 ; ++i)
+    {
+      newLetter->initialize(_texManag.getTexture("s"));
+      _letters.push_back(newLetter);
+    }
 }
 
 void Leaderboard::loadButtons()
 {
 }
 
+void Leaderboard::getScore()
+{
+  int i = 0;
+
+  std::multimap<std::string, std::string>::iterator it = _scores.begin();
+  while (it != _scores.end())
+    {
+      std::cout << (*it).first << ' ' << (*it).second << std::endl;
+      _bestScore[i] << (*it).first << ' ' << (*it).second;
+      ++it;
+      i++;
+    }
+}
+
+void Leaderboard::drawLetters(gdl::Clock& clock, gdl::BasicShader& shader)
+{
+  for (size_t i = 0; i < _letters.size() ; ++i)
+    _letters[i]->draw(shader, clock);
+}
+
 void Leaderboard::drawBackground(gdl::Clock& clock, gdl::BasicShader& shader)
 {
-  (void) clock;
-  (void) shader;
+  _background->draw(shader, clock);
 }
 
 void Leaderboard::drawButtons(gdl::Clock& clock, gdl::BasicShader& shader)
@@ -43,17 +97,17 @@ void Leaderboard::drawButtons(gdl::Clock& clock, gdl::BasicShader& shader)
 
 void Leaderboard::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
+  this->drawLetters(clock, shader);
   this->drawButtons(clock, shader);
   this->drawBackground(clock, shader);
 }
 
-bool Leaderboard::update(gdl::Clock& shader, gdl::Input& input)
+bool Leaderboard::update(gdl::Clock& clock, gdl::Input& input)
 {
-  (void) shader;
-  if (input.getInput(SDLK_BACKSPACE) == true)
-    {
-      _game->popState();
-    }
+  (void) clock;
+
+  _command->exec(_inputManager->getTouche(input));
+
   return true;
 }
 

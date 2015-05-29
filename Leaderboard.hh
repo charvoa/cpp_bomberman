@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Sat May 23 12:14:44 2015 Nicolas Charvoz
+// Last update Thu May 28 17:15:29 2015 Nicolas Charvoz
 //
 
 #ifndef LEADERBOARD_HH_
@@ -15,6 +15,13 @@
 #include "SousMenuButton.hh"
 #include "Game.hh"
 #include "GameState.hh"
+#include "Camera.hh"
+#include "TextureManager.hh"
+#include "InputManager.hh"
+#include "Command.hh"
+#include "Scoring.hh"
+
+class Command;
 
 class Leaderboard : public GameState {
 
@@ -27,10 +34,19 @@ public:
   void loadButtons();
   void drawBackground(gdl::Clock&, gdl::BasicShader&);
   void drawButtons(gdl::Clock&, gdl::BasicShader&);
+  void loadLetters();
+  void drawLetters(gdl::Clock&, gdl::BasicShader&);
+  void getScore();
 
 private:
   static Sound& _sound;
-
+  static TextureManager& _texManag;
+  InputManager *_inputManager;
+  Command *_command;
+  AObject *_background;
+  std::multimap<std::string, std::string> _scores;
+  std::vector<AObject*> _letters;
+  std::vector<std::stringstream> _bestScore;
 };
 
 #endif

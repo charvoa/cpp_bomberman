@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Tue May 26 22:18:26 2015 Nicolas Girardot
+// Last update Thu May 28 15:38:04 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -13,6 +13,7 @@
 
 #include <list>
 #include <map>
+#include "InputManager.hh"
 #include "Map.hh"
 #include "Camera.hh"
 #include "AObject.hh"
@@ -24,10 +25,11 @@
 #include "HumanCharacter.hh"
 #include "Cube.hh"
 
+class	Command;
 class	World : public GameState
 {
 private:
-  std::list<ACharacter *> _ia;
+  std::vector<ACharacter *> _players;
   std::vector<std::vector<char> >	_map;
   std::vector<AObject*>			_objects;
   int			_nbPlayers;
@@ -38,18 +40,23 @@ private:
   //Graphical Attributes
   static TextureManager &_texManag;
   AObject		*_background;
-  bool checkPlayerCanMove(int x, int y, char c);
+  InputManager		*_inputManager;
+  Command		*_command;
 public:
   World(Game *game, Map &map, int nb_players, int nb_ia);
   ~World(){};
   virtual void draw(gdl::Clock&, gdl::BasicShader&);
   virtual bool update(gdl::Clock&, gdl::Input&); //get InputKeys and update.
-  bool		setItemAtPosition(int x, int y, char c);
+  bool		setItemAtPosition(Position&, char c);
   char		getItemAtPosition(int x, int y);
   void		drawBackground(gdl::Clock&, gdl::BasicShader &);
   void		loadBackground();
-  void		findWall(Map &);
+  void		findWall();
   Game		*_game;
+  int		getWidth() const;
+  int		getHeight() const;
+  bool checkPlayerCanMove(int x, int y);
+  ACharacter*		getPlayerById(int id);
 };
 
 #endif

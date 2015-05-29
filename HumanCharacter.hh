@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Tue May 26 16:18:27 2015 Audibert Louis
+// Last update Thu May 28 16:55:02 2015 Audibert Louis
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -21,18 +21,19 @@ class HumanCharacter : public ACharacter {
 
 public:
 
-  HumanCharacter(char, World *);
+  HumanCharacter(char, World *, Position&);
   virtual ~HumanCharacter();
-  int getHp() const;
+  bool getAlive() const;
   void dropBomb();
   void takeObject(AObject *);
   void die();
-  void draw(gdl::Clock, gdl::BasicShader);
+  void draw(gdl::AShader &shader, gdl::Clock const &clock);
   void update();
 
   Position &getPos() const;
   int getRange() const;
   int getOrientation() const;
+  int getId() const;
 
   void setPos(Position &pos);
   void setRange(int range);
@@ -43,6 +44,10 @@ public:
   void setColor(int r, int g, int b);
 
   int	getType() const;
+  ACharacter &getCharacter();
+
+  float getAngle(e_orientation before, e_orientation after);
+  void move(e_orientation ori);
 
 private:
 

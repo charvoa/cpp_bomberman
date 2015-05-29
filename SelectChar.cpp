@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Tue May 26 16:23:06 2015 Audibert Louis
+// Last update Thu May 28 16:53:00 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -25,7 +25,14 @@ SelectChar::SelectChar(Game *game)
   _texManag.registerTexture("PlaySousMenu", "playSM");
   this->loadBackground();
   this->loadButtons();
-  this->loadModel();
+  _game->_camera->move(glm::vec3(0, 0, -0.0001), glm::vec3(0, 0, 0));
+  gdl::BasicShader shader = _game->getShader();
+
+  shader.bind();
+  shader.setUniform("view", _game->_camera->getTransformation());
+  shader.setUniform("projection", _game->_camera->getProjection());
+  _inputManager = new InputManager();
+  _command = new Command(_game);
 }
 
 void SelectChar::loadBackground()
@@ -48,28 +55,6 @@ void SelectChar::loadButtons()
   _buttons.push_back(play);
 }
 
-void SelectChar::loadModel()
-{
-  _model = new ModelLoad();
-
-  _model->initialize("./images/marvin.fbx");
-
-  glm::vec3 trans(0, 350, 800);
-  _model->translate(trans);
-
-    trans = glm::vec3(0.5, 0.5, 0.5);
-  _model->scale(trans);
-
-  //  trans = glm::vec3(0, 0, 0);
-  //_model->rotate(trans, 180.0f);
-  // We need to rotate that fucking little shit ..
-}
-
-void SelectChar::drawModel(gdl::Clock& clock, gdl::BasicShader& shader)
-{
-  _model->draw(shader, clock);
-}
-
 void SelectChar::drawBackground(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   _background->draw(shader, clock);
@@ -88,7 +73,6 @@ void SelectChar::getNameOfButton(gdl::Input &input)
   std::cout << "X : " << mouse.x << " Y: " << mouse.y << std::endl;
   if (mouse.x >= 1394 && mouse.x <= 1820 && mouse.y >= 900 && mouse.y <= 1000)
     {
-      std::cout << "PLAY NEW MAP" << std::endl;
       Map map("./maps/x.map");
       _game->pushState(new World(_game, map, 2, 10));
     }
@@ -97,21 +81,17 @@ void SelectChar::getNameOfButton(gdl::Input &input)
 void SelectChar::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   this->drawButtons(clock, shader);
-  this->drawModel(clock, shader);
   this->drawBackground(clock, shader);
 }
 
 bool SelectChar::update(gdl::Clock& clock, gdl::Input& input)
 {
-  _model->update(clock, input);
-  if (input.getInput(SDLK_BACKSPACE) == true)
-    {
-      _game->popState();
-    }
+  (void) clock;
+
+  _command->exec(_inputManager->getTouche(input));
+
   if (input.getInput(SDL_BUTTON_LEFT, true) == true)
-    {
-      this->getNameOfButton(input);
-    }
+    this->getNameOfButton(input);
   return true;
 }
 

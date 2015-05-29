@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 22:59:18 2015 Antoine Garcia
-// Last update Tue May 26 10:32:42 2015 Nicolas Girardot
+// Last update Wed May 27 15:44:23 2015 Audibert Louis
 //
 
 #include "World.hh"
@@ -13,6 +13,8 @@
 int	main()
 {
   std::cout << "ok" << std::endl;
-  Map	Map("maps/x.map");
-  World	test(Map, 2, 4);
+  Game *game();
+  Map	map("maps/x.map");
+  // World	test(&game, Map, 2, 2);
+  HumanCharacter player1('1', new World(game, map, 2, 10));
 }
