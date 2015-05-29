@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Fri May 29 14:14:25 2015 Audibert Louis
+// Last update Fri May 29 14:47:48 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -20,6 +20,7 @@ IACharacter::IACharacter(int id, World *world)
   this->_alive = true;
   _model.load("./images/marvin.fbx");
   _orientation = DOWN;
+  _type = IA;
 }
 
 IACharacter::~IACharacter()
@@ -142,7 +143,7 @@ float	IACharacter::getAngle(e_orientation before, e_orientation after)
   return (0.0f);
 }
 
-void	IACharacter::move(e_orientation ori)
+void	IACharacter::move(e_orientation ori, gdl::Clock &clock)
 {
   glm::vec3 trans(0, 1, 0);
   Position *pos;
@@ -178,7 +179,7 @@ void	IACharacter::move(e_orientation ori)
       std::cout << "OK" << std::endl;
       glm::vec3 move(x * 100, 0, y * 100);
       _model.setCurrentAnim(0, false);
+      this->translate(move * static_cast<float>(clock.getElapsed() * 0.5));
       this->translate(move);
-      // this->translate(move * static_cast<float>(clock.getElapsed() * 0.5);
     }
 }

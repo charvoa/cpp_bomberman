@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Fri May 29 11:56:17 2015 Audibert Louis
+// Last update Fri May 29 14:45:17 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
@@ -27,6 +27,13 @@ typedef enum e_orientation
     LEFT,
     RIGHT
   }	e_orientation;
+
+typedef enum e_type
+  {
+    HUMAN,
+    IA
+  }	e_type;
+
 class ACharacter : public AObject {
 
 public:
@@ -55,15 +62,7 @@ public:
   virtual int getType() const = 0;
   virtual ACharacter &getCharacter() = 0;
 
-  virtual void move(e_orientation ori) = 0;
-
-private:
-
-  typedef enum e_type
-    {
-      HUMAN,
-      IA
-    }	e_type;
+  virtual void move(e_orientation ori, gdl::Clock &clock) = 0;
 
 protected:
 

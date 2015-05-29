@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Fri May 29 14:13:37 2015 Audibert Louis
+// Last update Fri May 29 14:48:42 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -24,6 +24,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   _pos = pos;
   _model.load("./images/marvin.fbx");
   _orientation = DOWN;
+  _type = HUMAN;
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
   this->scale(glm::vec3(0.3, 0.3, 0.3));
@@ -151,7 +152,7 @@ float	HumanCharacter::getAngle(e_orientation before, e_orientation after)
   return (0.0f);
 }
 
-void	HumanCharacter::move(e_orientation ori)
+void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
 {
   glm::vec3 trans(0, 1, 0);
   Position *pos;
@@ -187,7 +188,7 @@ void	HumanCharacter::move(e_orientation ori)
       std::cout << "OK" << std::endl;
       glm::vec3 move(x * 100, 0, y * 100);
       _model.setCurrentAnim(0, false);
+      this->translate(move * static_cast<float>(clock.getElapsed() * 0.1));
       this->translate(move);
-      // this->translate(move * static_cast<float>(clock.getElapsed() * 0.5);
     }
 }
