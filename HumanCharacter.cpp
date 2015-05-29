@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Fri May 29 15:37:10 2015 Audibert Louis
+// Last update Fri May 29 16:28:11 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -190,9 +190,10 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
       _model.setCurrentAnim(0, false);
       std::cout << "clock.getElapsed() = " << clock.getElapsed() << std::endl;
       timer += clock.getElapsed();
-      if (timer == (_model.getAnimationFrameNumber(0) * _model.getFrameDuration()))
+      // if (timer == (_model.getAnimationFrameNumber(0) * _model.getFrameDuration()))
 	_world->setItemAtPosition(*pos, _id);
-      this->translate(move * static_cast<float>(clock.getElapsed() * 20));
+      this->translate(move);
+      // this->translate(move * static_cast<float>(clock.getElapsed() * 20));
       _pos = *pos;
     }
 }
