@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu May 28 17:18:57 2015 Audibert Louis
+// Last update Thu May 28 17:32:12 2015 Audibert Louis
 //
 
 #include "HumanCharacter.hh"
@@ -61,6 +61,7 @@ void HumanCharacter::draw(gdl::AShader &shader, gdl::Clock const &clock)
 
 void HumanCharacter::update()
 {
+  _model.update();
 }
 
 Position	&HumanCharacter::getPos() const
@@ -164,9 +165,9 @@ void	HumanCharacter::move(e_orientation ori)
     pos = new Position(_pos._x, _pos._y - 1);
   else if (ori == LEFT)
     pos = new Position(_pos._x - 1, _pos._y);
-  _pos = *pos;
   if (_world->setItemAtPosition(*pos, _id) == true)
     {
+      _pos = *pos;
       glm::vec3 move(0 + (_pos._x - _world->getWidth() / 2) * 100, 0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
       this->translate(move);
     }
