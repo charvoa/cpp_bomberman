@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Thu May 28 16:55:35 2015 Audibert Louis
+// Last update Fri May 29 11:56:46 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
