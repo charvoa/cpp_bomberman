@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:36:27 2015 Nicolas Charvoz
-// Last update Thu May 28 21:03:18 2015 Nicolas Charvoz
+// Last update Fri May 29 16:43:34 2015 Nicolas Charvoz
 //
 
 #include "Command.hh"
@@ -58,6 +58,7 @@ void Command::lshift(gdl::Clock& clock)
 void Command::pause(gdl::Clock& clock)
 {
   (void) clock;
+  _game->pushState(new Pause(_game));
   std::cout << "PAUSE" << std::endl;
 }
 

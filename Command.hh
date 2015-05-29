@@ -5,20 +5,21 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:34:46 2015 Nicolas Charvoz
-// Last update Thu May 28 20:57:12 2015 Nicolas Charvoz
+// Last update Fri May 29 16:42:45 2015 Nicolas Charvoz
 //
 
 #ifndef COMMAND_HH_
 # define COMMAND_HH_
 
+# include "InputManager.hh"
+# include "Game.hh"
+# include "World.hh"
+# include "Pause.hh"
 # include <fstream>
 # include <sstream>
 # include <iostream>
 # include <vector>
 # include <map>
-# include "InputManager.hh"
-# include "Game.hh"
-# include "World.hh"
 
 class Command
 {

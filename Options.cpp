@@ -1,11 +1,11 @@
 //
-// Options.cpp for  in /home/nicolaschr/Work/cpp_bomberman
+// Options:.cpp for  in /home/nicolaschr/Work/cpp_bomberman
 //
 // Made by Nicolas Charvoz
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Sat May 23 12:11:16 2015 Nicolas Charvoz
+// Last update Thu May 28 21:09:09 2015 Nicolas Charvoz
 //
 
 #include "Options.hh"
