@@ -6,7 +6,7 @@ file=$(pwd)"/bomberman"
 if [ -f "$file" ]
 then
     echo "Running Bomberman by La Pintade";
-    ./bomberman;
+    make ; ./bomberman;
 else
     make re ; ./bomberman;
 fi
