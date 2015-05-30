@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sat May 30 17:04:07 2015 Nicolas Girardot
+// Last update Sat May 30 23:43:20 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -214,12 +214,12 @@ bool	World::checkPlayerCanMove(int x, int y)
 
 int	World::getWidth() const
 {
-  return _fileMap->getWidth();
+  return _width;
 }
 
 int	World::getHeight() const
 {
-  return _fileMap->getHeight();
+  return _height;
 }
 
 const std::vector<std::vector<char> >&	World::getWorld() const
