@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Sat May 30 16:10:39 2015 Nicolas Girardot
+// Last update Sun May 31 00:23:30 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -62,6 +62,7 @@ public:
   ACharacter*		getPlayerById(int id);
   void	dropBomb(Position *);
   Map			*_fileMap;
+  const std::vector<HumanCharacter*> getHumansPlayers();
 };
 
 #endif

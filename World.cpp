@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sat May 30 23:43:20 2015 Antoine Garcia
+// Last update Sun May 31 00:26:09 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -231,4 +231,18 @@ const std::vector<std::vector<char> >&	World::getWorld() const
 const std::vector<ACharacter *>& World::getPlayers() const
 {
   return _players;
+}
+
+const std::vector<HumanCharacter*>	World::getHumansPlayers()
+{
+  std::vector<HumanCharacter*> players;
+  HumanCharacter *player;
+
+  player = static_cast<HumanCharacter*>(getPlayerById(1));
+  if (player != NULL)
+    players.push_back(player);
+  player = static_cast<HumanCharacter*>(getPlayerById(2));
+  if (player != NULL)
+    players.push_back(player);
+  return players;
 }
