@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Fri May 29 16:30:59 2015 Audibert Louis
+// Last update Sat May 30 15:48:06 2015 Nicolas Girardot
 //
 
 #include <iostream>
@@ -42,8 +42,9 @@ bool HumanCharacter::getAlive() const
 void HumanCharacter::dropBomb()
 {
   std::cout << "I droped a bomb hahah" << std::endl;
-  //Bomb	*bomb;
-  //  bomb =  new Bomb(&_pos, &_world);
+  _world->dropBomb(&_pos);
+  //  Bomb	*bomb;
+  //bomb = new Bomb(&_pos, _world);
 }
 
 void HumanCharacter::takeObject(AObject *object)

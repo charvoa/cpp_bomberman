@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Fri May 29 17:23:46 2015 Nicolas Girardot
+// Last update Sat May 30 17:04:07 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -136,8 +136,26 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
   //   getPlayerById(1)->move(DOWN);
   // else if (input.getKey(SDLK_LEFT))
   //   getPlayerById(1)->move(LEFT);
+  for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
+    {
+      (*it)->update(clock, input);
+      if ((*it)->getStatus() == false)
+	{
+	  delete (*it);
+	  _objects.erase(it);
+	  return true;
+	}
+   }
   clock = clock;
   return true;
+}
+
+void	World::dropBomb(Position *pos)
+{
+  Bomb	*bomb;
+  bomb = new Bomb(pos, this);
+  bomb->initialize("hello");
+  _objects.push_back(bomb);
 }
 
 void	World::loadBackground()
@@ -150,7 +168,6 @@ void	World::loadBackground()
 
 void	World::drawBackground(gdl::Clock& clock, gdl::BasicShader &shader)
 {
-
   _background->draw(shader, clock);
 }
 
