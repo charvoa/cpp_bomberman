@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu May 28 20:49:04 2015 Nicolas Charvoz
+// Last update Mon Jun  1 15:56:31 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -32,6 +32,7 @@ SelectChar::SelectChar(Game *game)
   shader.setUniform("projection", _game->_camera->getProjection());
   _inputManager = new InputManager();
   _command = new Command(_game);
+  _map = new Map("./maps/basic.map");
 }
 
 void SelectChar::loadBackground()
@@ -70,11 +71,41 @@ void SelectChar::getNameOfButton(gdl::Input &input)
   glm::ivec2 mouse = input.getMousePosition();
 
   std::cout << "X : " << mouse.x << " Y: " << mouse.y << std::endl;
+  if (mouse.x >= 328 && mouse.x <= 730 && mouse.y >= 77 && mouse.y <= 473)
+    {
+      // MAP 1
+      _map = new Map("./maps/basic.map");
+    }
+  if (mouse.x >= 760 && mouse.x <= 1160 && mouse.y >= 77 && mouse.y <= 473)
+    {
+      // MAP 2
+      _map = new Map("./maps/hard.map");
+    }
+  if (mouse.x >= 1192 && mouse.x <= 1594 && mouse.y >= 77 && mouse.y <= 473)
+    {
+      // MAP 3
+      _map = new Map("./maps/big.map");
+    }
+  if (mouse.x >= 330 && mouse.x <= 730 && mouse.y >= 501 && mouse.y <= 899)
+    {
+      // MAP 4
+      _map = new Map("./maps/+.map");
+    }
+  if (mouse.x >= 760 && mouse.x <= 1158 && mouse.y >= 501 && mouse.y <= 899)
+    {
+      // MAP 5
+      _map = new Map("./maps/x.map");
+    }
+  if (mouse.x >= 1192 && mouse.x <= 1592 && mouse.y >= 501 && mouse.y <= 899)
+    {
+      // RANDOM
+      _map = new Map("./maps/lp.map");
+    }
   if (mouse.x >= 1394 && mouse.x <= 1820 && mouse.y >= 900 && mouse.y <= 1000)
     {
-      Map map("./maps/lp.map");
-      _game->pushState(new World(_game, map, 2, 10));
+      _game->pushState(new World(_game, *_map, 2, 10));
     }
+
 }
 
 void SelectChar::draw(gdl::Clock& clock, gdl::BasicShader& shader)

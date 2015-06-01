@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Fri May 29 14:45:17 2015 Audibert Louis
+// Last update Mon Jun  1 11:23:29 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
@@ -78,6 +78,8 @@ protected:
   std::map<char, int>	_color;
   e_type		_type;
   World			*_world;
+  float			_timer;
+  bool			_canLaunchBomb;
 };
 
 #endif

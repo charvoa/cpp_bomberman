@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Fri May 29 15:37:10 2015 Audibert Louis
+// Last update Mon Jun  1 14:49:55 2015 Nicolas Girardot
 //
 
 #include <iostream>
@@ -25,6 +25,8 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   _model.load("./images/marvin.fbx");
   _orientation = DOWN;
   _type = HUMAN;
+  _timer = 0;
+  _canLaunchBomb = true;
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
   this->scale(glm::vec3(0.3, 0.3, 0.3));
@@ -42,8 +44,7 @@ bool HumanCharacter::getAlive() const
 void HumanCharacter::dropBomb()
 {
   std::cout << "I droped a bomb hahah" << std::endl;
-  //Bomb	*bomb;
-  //  bomb =  new Bomb(&_pos, &_world);
+  _world->dropBomb(&_pos);
 }
 
 void HumanCharacter::takeObject(AObject *object)
@@ -158,11 +159,10 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
   Position *pos;
   int x = 0;
   int y = 0;
-  double timer = 0;
 
+  _timer = 0;
   this->rotate(trans, getAngle(_orientation, ori));
   _orientation = ori;
-
   if (ori == UP)
     {
       pos = new Position(_pos._x, _pos._y - 1);
@@ -189,10 +189,15 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
       glm::vec3 move(x * 100, 0, y * 100);
       _model.setCurrentAnim(0, false);
       std::cout << "clock.getElapsed() = " << clock.getElapsed() << std::endl;
-      timer += clock.getElapsed();
-      if (timer == (_model.getAnimationFrameNumber(0) * _model.getFrameDuration()))
-	_world->setItemAtPosition(*pos, _id);
-      this->translate(move * static_cast<float>(clock.getElapsed() * 20));
-      _pos = *pos;
+      // if (timer == (_model.getAnimationFrameNumber(0) * _model.getFrameDuration()))
+      this->translate(move);
+      // this->translate(move * static_cast<float>(clock.getElapsed() * 10));
+      // _timer += clock.getElapsed() * 10;
+      // std::cout << "timer = " << _timer << std::endl;
+      // if (_timer > 0.30f)
+      // 	{
+	  _world->setItemAtPosition(*pos, _id);
+	  _pos = *pos;
+	// }
     }
 }

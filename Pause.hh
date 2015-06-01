@@ -5,11 +5,11 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Mon Jun  1 15:41:35 2015 Nicolas Charvoz
+// Last update Fri May 29 16:42:30 2015 Nicolas Charvoz
 //
 
-#ifndef SELECTCHAR_HH_
-# define SELECTCHAR_HH_
+#ifndef PAUSE_HH_
+# define PAUSE_HH_
 
 #include "./Sound/SoundManager.hh"
 #include "Game.hh"
@@ -24,11 +24,11 @@
 
 class Command;
 
-class SelectChar : public GameState {
+class Pause : public GameState {
 
 public:
-  SelectChar(Game *game);
-  virtual ~SelectChar();
+  Pause(Game *game);
+  virtual ~Pause();
   virtual void draw(gdl::Clock&, gdl::BasicShader&);
   virtual bool update(gdl::Clock&, gdl::Input&);
   void loadBackground();
@@ -45,7 +45,6 @@ private:
   Camera *_camera;
   InputManager *_inputManager;
   Command *_command;
-  Map *_map;
 };
 
 #endif

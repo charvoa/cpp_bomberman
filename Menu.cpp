@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Thu May 28 14:32:29 2015 Nicolas Charvoz
+// Last update Sat May 30 17:49:27 2015 Nicolas Girardot
 //
 
 #include "Menu.hh"
@@ -18,7 +18,7 @@ Menu::Menu(Game *game)
   _game = game;
   _sound.registerSound("./resources/sounds/menu.wav", "main");
   _sound.registerSound("./resources/sounds/beretta.mp3", "shot");
-  //_sound.playMusic("main", 1);
+  _sound.playMusic("main", 1);
 
   _texManag.registerTexture("background-desert", "backgroundMenu");
   _texManag.registerTexture("ExitButton", "exit");

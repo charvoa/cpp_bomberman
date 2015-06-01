@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Thu May 28 21:53:23 2015 Antoine Garcia
+// Last update Sun May 31 00:23:30 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -24,6 +24,8 @@
 #include "Position.hpp"
 #include "HumanCharacter.hh"
 #include "Cube.hh"
+#include "Box.hh"
+#include "Bomb.hh"
 
 class	Command;
 class	World : public GameState
@@ -34,7 +36,6 @@ private:
   std::vector<AObject*>			_objects;
   int			_nbPlayers;
   int			_nbIa;
-  Map			*_fileMap;
   int			_height;
   int			_width;
   //Graphical Attributes
@@ -59,6 +60,9 @@ public:
   int		getHeight() const;
   bool checkPlayerCanMove(int x, int y);
   ACharacter*		getPlayerById(int id);
+  void	dropBomb(Position *);
+  Map			*_fileMap;
+  const std::vector<HumanCharacter*> getHumansPlayers();
 };
 
 #endif

@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 14:15:33 2015 Nicolas Girardot
-// Last update Thu May 28 15:09:56 2015 Nicolas Girardot
+// Last update Mon Jun  1 14:31:19 2015 Nicolas Girardot
 //
 
 #ifndef BOMB_HH_
@@ -14,6 +14,9 @@
 #include "AObject.hh"
 #include "World.hh"
 #include "Position.hpp"
+#include "Flame.hh"
+
+class Flame;
 
 class Bomb : public AObject
 {
@@ -23,10 +26,12 @@ private:
   bool		_isPosed;
   bool		_isDestroyed = false;
   World		*_world;
-  int		_range;
+  int		_range = 3;
   Position	*_pos;
   double	_timer;
+  bool		_isPlayed = 0;
   double	_otimer;
+  std::list<Flame*>	_flames;
 public:
   Bomb(Position *, World *);
   virtual ~Bomb();

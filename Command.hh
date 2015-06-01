@@ -5,25 +5,26 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:34:46 2015 Nicolas Charvoz
-// Last update Thu May 28 20:57:12 2015 Nicolas Charvoz
+// Last update Fri May 29 19:09:30 2015 Nicolas Charvoz
 //
 
 #ifndef COMMAND_HH_
 # define COMMAND_HH_
 
+# include "InputManager.hh"
+# include "Game.hh"
+# include "World.hh"
+# include "Pause.hh"
 # include <fstream>
 # include <sstream>
 # include <iostream>
 # include <vector>
 # include <map>
-# include "InputManager.hh"
-# include "Game.hh"
-# include "World.hh"
 
 class Command
 {
 
-public:
+private:
 
   static Sound& _sound;
   typedef void(Command::*funcs)(gdl::Clock&);
@@ -31,10 +32,8 @@ public:
   typedef std::map<InputManager::touche, funcs>map_funcs;
   map_funcs     _functions;
   bool _mute;
-
-public:
-
-private:
+  bool _twoPlayers;
+  bool _pause;
 
 public:
   Command(Game*, World *world = NULL);
