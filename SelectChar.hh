@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Thu May 28 12:12:11 2015 Nicolas Charvoz
+// Last update Mon Jun  1 15:41:35 2015 Nicolas Charvoz
 //
 
 #ifndef SELECTCHAR_HH_
@@ -45,6 +45,7 @@ private:
   Camera *_camera;
   InputManager *_inputManager;
   Command *_command;
+  Map *_map;
 };
 
 #endif
