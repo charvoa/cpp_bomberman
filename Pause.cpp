@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Mon Jun  1 19:39:42 2015 Nicolas Charvoz
+// Last update Mon Jun  1 22:53:03 2015 Nicolas Charvoz
 //
 
 #include "Pause.hh"
@@ -58,7 +58,8 @@ void Pause::drawButtons(gdl::Clock& clock, gdl::BasicShader& shader)
 
 void Pause::getNameOfButton(gdl::Input &input)
 {
-  glm::ivec2 mouse = input.getMousePosition();
+   glm::ivec2 mouse = input.getMousePosition();
+   (void) mouse;
 }
 
 void Pause::draw(gdl::Clock& clock, gdl::BasicShader& shader)
