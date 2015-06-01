@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:36:27 2015 Nicolas Charvoz
-// Last update Mon Jun  1 13:54:02 2015 Nicolas Charvoz
+// Last update Mon Jun  1 15:09:51 2015 Nicolas Charvoz
 //
 
 #include "Command.hh"
@@ -32,10 +32,10 @@ Command::Command(Game *game, World *world)
   _functions[InputManager::RIGHT2] = &Command::right2;
   _functions[InputManager::DOWN2] = &Command::down2;
   _mute = false;
-  //_twoPlayers = false;
+  _twoPlayers = false;
   _pause = false;
-  // if (_world.getHumanPlayers().size() > 1)
-  //   _twoPlayers = true;
+  //  if (_world->getHumansPlayers().size() > 1)
+  // _twoPlayers = true;
 }
 
 Command::~Command(){}
@@ -48,15 +48,14 @@ void Command::no(gdl::Clock& clock)
 void Command::space(gdl::Clock& clock)
 {
   (void) clock;
-  if (_twoPlayers)
-    _world->getPlayerById(2)->dropBomb();
+  _world->getPlayerById(1)->dropBomb();
 }
 
 void Command::lshift(gdl::Clock& clock)
 {
   (void) clock;
   if (_twoPlayers)
-    _world->getPlayerById(1)->dropBomb();
+    _world->getPlayerById(2)->dropBomb();
 }
 
 void Command::pause(gdl::Clock& clock)
