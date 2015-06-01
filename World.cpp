@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Mon Jun  1 19:13:55 2015 Nicolas Charvoz
+// Last update Tue Jun  2 14:06:11 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -250,5 +250,15 @@ const std::vector<HumanCharacter*>	World::getHumansPlayers()
 
 void		World::checkDamages(std::list<Flame*>& flames)
 {
-  std::cout << "Check Damages" << std::endl;
+  std::list<Flame*>::iterator it;
+
+  for (it = flames.begin() ; it != flames.end() ; ++it)
+    {
+      checkPlayersDeath(**it);
+    }
+}
+
+void			World::checkPlayersDeath(Flame& flame)
+{
+  std::cout << flame.getPos()._x << std::endl;
 }
