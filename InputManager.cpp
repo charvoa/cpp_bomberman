@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 14:45:44 2015 Nicolas Charvoz
-// Last update Mon Jun  1 23:47:33 2015 Nicolas Charvoz
+// Last update Mon Jun  1 23:55:02 2015 Nicolas Charvoz
 //
 
 #include "InputManager.hh"

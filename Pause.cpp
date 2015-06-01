@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Mon Jun  1 22:53:03 2015 Nicolas Charvoz
+// Last update Mon Jun  1 23:51:57 2015 Nicolas Charvoz
 //
 
 #include "Pause.hh"
@@ -30,7 +30,7 @@ Pause::Pause(Game *game)
   // shader.setUniform("view", _game->_camera->getTransformation());
   // shader.setUniform("projection", _game->_camera->getProjection());
   _inputManager = new InputManager();
-  _command = new Command(_game, NULL, true);
+  _command = new Command(_game, NULL, "PAUSE");
 }
 
 void Pause::loadBackground()

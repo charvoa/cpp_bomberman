@@ -5,14 +5,14 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:36:27 2015 Nicolas Charvoz
-// Last update Mon Jun  1 23:48:30 2015 Nicolas Charvoz
+// Last update Mon Jun  1 23:54:11 2015 Nicolas Charvoz
 //
 
 #include "Command.hh"
 
 Sound&  Command::_sound = Sound::getInstance();
 
-Command::Command(Game *game, World *world, bool pause)
+Command::Command(Game *game, World *world, const std::string& str)
 {
   _game = game;
   _world = world;
@@ -32,10 +32,14 @@ Command::Command(Game *game, World *world, bool pause)
   _functions[InputManager::RIGHT2] = &Command::right2;
   _functions[InputManager::DOWN2] = &Command::down2;
   _functions[InputManager::ENTER] = &Command::enter;
-
+  _selectChar = false;
+  _pause = false;
   _mute = false;
   _twoPlayers = false;
-  _pause = pause;
+  if (str == "PAUSE")
+    _pause = true;
+  else if (str == "SELECTCHAR")
+    _selectChar = true;
   if ( _world && _world->getHumansPlayers().size() > 1)
     _twoPlayers = true;
 }
@@ -200,6 +204,8 @@ void Command::down2(gdl::Clock& clock)
 void Command::enter(gdl::Clock& clock)
 {
   (void) clock;
+  if (_selectChar)
+    std::cout << "lol" << std::endl;
 }
 
 void Command::exec(InputManager::touche touche, gdl::Clock& clock)
