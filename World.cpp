@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue Jun  2 13:34:03 2015 Antoine Garcia
+// Last update Mon Jun  1 19:13:55 2015 Nicolas Charvoz
 //
 
 # include <iostream>
@@ -19,7 +19,6 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
 {
   (void)nb_ia;
   _inputManager = new InputManager();
-  _command = new Command(game, this);
   _game = game;
   _nbPlayers = nb_players;
   _nbIa = nb_ia;
@@ -35,6 +34,7 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
   _texManag.registerTexture("backgroundInGame", "backIG");
   this->loadBackground();
   findWall();
+  _command = new Command(game, this);
 }
 
 void	World::findWall()
