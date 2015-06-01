@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Fri May 29 14:56:36 2015 Audibert Louis
+// Last update Mon Jun  1 12:05:46 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -21,6 +21,7 @@ IACharacter::IACharacter(int id, World *world)
   _model.load("./images/marvin.fbx");
   _orientation = DOWN;
   _type = IA;
+  _canLaunchBomb = true;
 }
 
 IACharacter::~IACharacter()
