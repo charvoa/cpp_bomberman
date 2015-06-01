@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:34:46 2015 Nicolas Charvoz
-// Last update Fri May 29 16:42:45 2015 Nicolas Charvoz
+// Last update Fri May 29 19:09:30 2015 Nicolas Charvoz
 //
 
 #ifndef COMMAND_HH_
@@ -24,7 +24,7 @@
 class Command
 {
 
-public:
+private:
 
   static Sound& _sound;
   typedef void(Command::*funcs)(gdl::Clock&);
@@ -32,10 +32,8 @@ public:
   typedef std::map<InputManager::touche, funcs>map_funcs;
   map_funcs     _functions;
   bool _mute;
-
-public:
-
-private:
+  bool _twoPlayers;
+  bool _pause;
 
 public:
   Command(Game*, World *world = NULL);
