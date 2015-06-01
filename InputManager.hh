@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 14:45:11 2015 Nicolas Charvoz
-// Last update Thu May 28 21:31:50 2015 Nicolas Charvoz
+// Last update Mon Jun  1 23:47:51 2015 Nicolas Charvoz
 //
 
 #ifndef INPUTMANAGER_HH_
@@ -36,7 +36,8 @@ public:
     UP2,
     LEFT2,
     RIGHT2,
-    DOWN2
+    DOWN2,
+    ENTER
   };
 
   InputManager();
