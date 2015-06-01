@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue Jun  2 16:28:02 2015 Antoine Garcia
+// Last update Tue Jun  2 16:54:28 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -287,6 +287,7 @@ void		World::checkDestroyBoxes(Flame& flame)
 	  if (box->getPosition() == flame.getPos())
 	    {
 	      box->onDestroy();
+	      _map.at(flame.getPos()._y).at(flame.getPos()._x) = 'F';
 	    }
 	}
     }
