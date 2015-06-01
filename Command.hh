@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:34:46 2015 Nicolas Charvoz
-// Last update Fri May 29 19:09:30 2015 Nicolas Charvoz
+// Last update Mon Jun  1 19:39:29 2015 Nicolas Charvoz
 //
 
 #ifndef COMMAND_HH_
@@ -36,7 +36,7 @@ private:
   bool _pause;
 
 public:
-  Command(Game*, World *world = NULL);
+  Command(Game*, World *world = NULL, bool pause = false);
   ~Command();
   void exec(InputManager::touche, gdl::Clock&);
   void no(gdl::Clock&);
