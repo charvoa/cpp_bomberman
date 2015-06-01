@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Mon Jun  1 10:48:15 2015 Antoine Garcia
+// Last update Mon Jun  1 14:24:08 2015 Nicolas Girardot
 //
 
 #include "Bomb.hh"
@@ -18,7 +18,6 @@ Bomb::Bomb(Position* pos, World *world)
   _pos = pos;
   _isPosed = false;
   _sound.registerSound("./resources/sounds/allahu_akbar_and_explosion.wav", "allahu");
-  std::cout << "Bomb Is being Droped" << std::endl;
 }
 
 Bomb::~Bomb()
@@ -28,6 +27,7 @@ Bomb::~Bomb()
 
 bool	Bomb::initialize(const std::string &tex)
 {
+  Flame *fire;
   (void) tex;
   std::cout << _pos->_x << " " << _pos->_y << std::endl;
   _bomb = new ModelLoad();
@@ -37,6 +37,30 @@ bool	Bomb::initialize(const std::string &tex)
   _bomb->translate(trans);
   _bomb->scale(glm::vec3(0.3, 0.3, 0.3));
   _isPosed = true;
+  for (int i = 1; i != _range; i++)
+    {
+      fire = new Flame(new Position(_pos->_x + i, _pos->_y), _world);
+      fire->initialize("hello");
+      _flames.push_back(fire);
+    }
+  for (int i = 1; i != _range; i++)
+    {
+      fire = new Flame(new Position(_pos->_x - i, _pos->_y), _world);
+      fire->initialize("hello");
+      _flames.push_back(fire);
+    }
+  for (int i = 1; i != _range; i++)
+    {
+      fire = new Flame(new Position(_pos->_x, _pos->_y  + i), _world);
+      fire->initialize("hello");
+      _flames.push_back(fire);
+    }
+  for (int i = 1; i != _range; i++)
+    {
+      fire = new Flame(new Position(_pos->_x, _pos->_y - i), _world);
+      fire->initialize("hello");
+      _flames.push_back(fire);
+    }
   return (true);
 }
 
@@ -57,13 +81,27 @@ void	Bomb::update(gdl::Clock const &clock, gdl::Input &input)
 	  _isPlayed = 1;
 	}
     }
-  if (_timer >= 3)
-    this->onDestroy();
+  for (std::list<Flame*>::iterator it = _flames.begin(); it != _flames.end(); ++it)
+    {
+      (*it)->update(clock, input);
+    }
+  if (_timer >= 4)
+    {
+      this->onDestroy();
+    }
 }
 
 void	Bomb::draw(gdl::AShader& shader ,gdl::Clock const  &clock)
 {
-  _bomb->draw(shader, clock);
+  if (_timer <= 3)
+    _bomb->draw(shader, clock);
+  else
+    {
+      for (std::list<Flame*>::iterator it = _flames.begin(); it != _flames.end(); ++it)
+	{
+	  (*it)->draw(shader, clock);
+	}
+    }
 }
 
 void	Bomb::onDrop()
@@ -79,5 +117,6 @@ bool	Bomb::getStatus()
 
 void	Bomb::onDestroy()
 {
+
   _isDestroyed = true;
 }

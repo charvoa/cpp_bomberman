@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sun May 31 00:26:09 2015 Antoine Garcia
+// Last update Mon Jun  1 14:22:02 2015 Nicolas Girardot
 //
 
 # include <iostream>

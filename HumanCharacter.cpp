@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Sat May 30 15:48:06 2015 Nicolas Girardot
+// Last update Sun May 31 17:35:23 2015 Nicolas Girardot
 //
 
 #include <iostream>
@@ -43,8 +43,6 @@ void HumanCharacter::dropBomb()
 {
   std::cout << "I droped a bomb hahah" << std::endl;
   _world->dropBomb(&_pos);
-  //  Bomb	*bomb;
-  //bomb = new Bomb(&_pos, _world);
 }
 
 void HumanCharacter::takeObject(AObject *object)
