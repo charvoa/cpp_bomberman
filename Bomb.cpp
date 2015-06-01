@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Sat May 30 17:23:08 2015 Nicolas Girardot
+// Last update Mon Jun  1 11:15:12 2015 Audibert Louis
 //
 
 #include "Bomb.hh"
