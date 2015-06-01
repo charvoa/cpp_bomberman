@@ -28,6 +28,22 @@ public:
     _x = newpos._x;
     _y = newpos._y;
   }
+  int   getX()
+  {
+    return _x;
+  }
+  int   getY()
+  {
+    return _y;
+  }
+  void  setX(int x)
+  {
+    _x = x;
+  }
+  void  setY(int y)
+  {
+    _y = y;
+  }
   inline bool	operator==(const Position& pos)
   {
     if (pos._x == _x && pos._y == _y)
