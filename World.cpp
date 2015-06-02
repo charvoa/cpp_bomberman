@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue Jun  2 16:15:59 2015 Nicolas Girardot
+// Last update Tue Jun  2 17:11:33 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -84,26 +84,17 @@ void	World::findWall()
 		  _objects.push_back(wall);
 		}
 	    }
-	  if (_fileMap->getItemAtPosition(x, y) == 'F' || (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2'))
-	    {
-	      if (x == 14 && y == 10);
-	      else
-		{
-		  wall = new Cube();
-		  wall->initialize("./images/floor1.tga");
-		  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, -100,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
-		  wall->translate(trans);
-		  wall->scale(glm::vec3(100, 100, 100));
-		  _objects.push_back(wall);
-		}
-	    }
-
+	  wall = new Cube();
+	  wall->initialize("./images/floor1.tga");
+	  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, -100,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
+	  wall->translate(trans);
+	  wall->scale(glm::vec3(100, 100, 100));
+	  _objects.push_back(wall);
 	  x++;
 	}
       y++;
     }
 }
-
 void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   if (getHeight() >= 15);
@@ -257,6 +248,7 @@ void		World::checkDamages(std::list<Flame*>& flames)
   for (it = flames.begin() ; it != flames.end() ; ++it)
     {
       checkPlayersDeath(**it);
+      checkDestroyBoxes(**it);
     }
 }
 
@@ -269,6 +261,7 @@ void			World::checkPlayersDeath(Flame& flame)
   	{
 	  delete *it;
 	  it = _players.erase(it);
+	  _map.at(flame.getPos()._y).at(flame.getPos()._x) = 'F';
 	  if (it == _players.end())
 	    break;
   	}
@@ -277,5 +270,17 @@ void			World::checkPlayersDeath(Flame& flame)
 
 void		World::checkDestroyBoxes(Flame& flame)
 {
-  (void) flame;
+  std::vector<AObject*>::iterator it;
+  Box	*box;
+
+  for (it = _objects.begin(); it != _objects.end() ; ++it)
+    {
+      if ((box = dynamic_cast<Box *>(*it)))
+	{
+	  if (box->getPosition() == flame.getPos())
+	    {
+	      box->onDestroy();
+	    }
+	}
+    }
 }
