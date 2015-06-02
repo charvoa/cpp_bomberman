@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:05:48 2015 Antoine Garcia
-// Last update Mon Jun  1 16:07:34 2015 Nicolas Girardot
+// Last update Tue Jun  2 14:05:50 2015 Nicolas Girardot
 //
 
 #include "Game.hh"

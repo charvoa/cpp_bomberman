@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue Jun  2 15:26:19 2015 Audibert Louis
+// Last update Tue Jun  2 17:16:00 2015 Audibert Louis
 //
 
 # include <iostream>
@@ -256,10 +256,40 @@ void		World::checkDamages(std::list<Flame*>& flames)
   for (it = flames.begin() ; it != flames.end() ; ++it)
     {
       checkPlayersDeath(**it);
+      checkDestroyBoxes(**it);
     }
 }
 
 void			World::checkPlayersDeath(Flame& flame)
 {
-  std::cout << flame.getPos()._x << std::endl;
+  std::vector<ACharacter*>::iterator it;
+  for (it = _players.begin() ; it != _players.end() ; ++it)
+    {
+      if ((*it)->getPos() == flame.getPos())
+  	{
+	  delete *it;
+	  it = _players.erase(it);
+	  _map.at(flame.getPos()._y).at(flame.getPos()._x) = 'F';
+	  if (it == _players.end())
+	    break;
+  	}
+    }
+}
+
+void		World::checkDestroyBoxes(Flame& flame)
+{
+  std::vector<AObject*>::iterator it;
+  Box	*box;
+
+  for (it = _objects.begin(); it != _objects.end() ; ++it)
+    {
+      if ((box = dynamic_cast<Box *>(*it)))
+	{
+	  if (box->getPosition() == flame.getPos())
+	    {
+	      box->onDestroy();
+	      _map.at(flame.getPos()._y).at(flame.getPos()._x) = 'F';
+	    }
+	}
+    }
 }

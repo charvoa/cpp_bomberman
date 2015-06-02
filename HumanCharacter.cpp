@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Tue Jun  2 17:12:48 2015 Audibert Louis
+// Last update Tue Jun  2 17:15:25 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -167,7 +167,6 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
   int x = 0;
   int y = 0;
 
-  _timer = 0;
   this->rotate(trans, getAngle(_orientation, ori));
   _orientation = ori;
   if (ori == UP)
@@ -200,22 +199,16 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
 	  _model.setCurrentAnim(0, false);
 	  _isAnime = true;
 	}
-      // if (timer == (_model.getAnimationFrameNumber(0) * _model.getFrameDuration()))
+      //      if (timer == (_model.getAnimationFrameNumber(0) * _model.getFrameDuration()))
       this->translate(move);
-      // float	tmp = static_cast<float>(clock.getElapsed() * 10);
-      // this->translate(move * tmp);
-      // _timer += clock.getElapsed() * 10;
+      // _timer += 1.0f;
+      // std::cout << "x = " << _pos._x << "; y = " << _pos._y << std::endl;
       // std::cout << "timer = " << _timer << std::endl;
-      // while (_timer < tmp)
+      // if (_timer >= 4.0f)
       // 	{
-      // 	  std::cout << "timer " << _timer << std::endl;
-      // 	  if (_timer == tmp)
-      // 	    {
       _world->setItemAtPosition(*pos, _id);
       _pos = *pos;
-      //   }
-      // else
-      //   _timer += 0.005;
-      // }
+      // 	  _timer = 0;
+      // 	}
     }
 }
