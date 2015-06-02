@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue Jun  2 15:02:54 2015 Antoine Garcia
+// Last update Tue Jun  2 16:28:02 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -255,6 +255,7 @@ void		World::checkDamages(std::list<Flame*>& flames)
   for (it = flames.begin() ; it != flames.end() ; ++it)
     {
       checkPlayersDeath(**it);
+      checkDestroyBoxes(**it);
     }
 }
 
@@ -267,6 +268,7 @@ void			World::checkPlayersDeath(Flame& flame)
   	{
 	  delete *it;
 	  it = _players.erase(it);
+	  _map.at(flame.getPos()._y).at(flame.getPos()._x) = 'F';
 	  if (it == _players.end())
 	    break;
   	}
@@ -275,5 +277,17 @@ void			World::checkPlayersDeath(Flame& flame)
 
 void		World::checkDestroyBoxes(Flame& flame)
 {
-  (void) flame;
+  std::vector<AObject*>::iterator it;
+  Box	*box;
+
+  for (it = _objects.begin(); it != _objects.end() ; ++it)
+    {
+      if ((box = dynamic_cast<Box *>(*it)))
+	{
+	  if (box->getPosition() == flame.getPos())
+	    {
+	      box->onDestroy();
+	    }
+	}
+    }
 }
