@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Sat May 16 10:19:32 2015 Serge Heitzler
-// Last update Sat May 23 19:32:15 2015 Antoine Garcia
+// Last update Mon Jun  1 16:48:47 2015 Nicolas Charvoz
 //
 
 #ifndef MAP_HH_
@@ -26,13 +26,15 @@ public:
   ~Map();
   std::stringstream&			getBufferForMap(std::ifstream &file);
   void					setMap(std::stringstream &map);
-  int					getWidth();
-  int					getHeight();
+  int					getWidth() const;
+  int					getHeight() const;
   std::vector<std::vector<char> >&	getMap();
   void					setWidth(std::string &line);
   void					setHeight(std::string &line);
-  char					getItemAtPosition(int x, int y);
-  void					setItemAtPosition(int x, int y, char c);
+  char					getItemAtPosition(int x, int y) const;
+  void					setItemAtPosition(int x, int y,
+							  char c);
+  int					getNumberOfFreeSpace() const;
 
   private:
 

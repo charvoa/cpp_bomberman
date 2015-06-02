@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu May 28 21:26:04 2015 Nicolas Charvoz
+// Last update Mon Jun  1 19:22:11 2015 Nicolas Charvoz
 //
 
 #include "Pause.hh"
@@ -69,10 +69,7 @@ void Pause::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 
 bool Pause::update(gdl::Clock& clock, gdl::Input& input)
 {
-  (void) clock;
-
   _command->exec(_inputManager->getTouche(input), clock);
-
   if (input.getInput(SDL_BUTTON_LEFT, true) == true)
     this->getNameOfButton(input);
   return true;
