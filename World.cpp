@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Mon Jun  1 21:47:11 2015 Antoine Garcia
+// Last update Tue Jun  2 13:18:52 2015 Audibert Louis
 //
 
 # include <iostream>
@@ -143,7 +143,8 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
 	{
 	  delete (*it);
 	  _objects.erase(it);
-	  return true;
+	  break;
+	  // return true;
 	}
    }
   clock = clock;
