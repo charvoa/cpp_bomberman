@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Tue Jun  2 15:08:59 2015 Nicolas Girardot
+// Last update Tue Jun  2 15:25:08 2015 Nicolas Girardot
 //
 
 #include <iostream>
@@ -193,16 +193,15 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
       glm::vec3 move(x * 100, 0, y * 100);
       _model.setCurrentAnim(0, false);
       std::cout << "clock.getElapsed() = " << clock.getElapsed() << std::endl;
-      //      if (timer == (_model.getAnimationFrameNumber(0) * _model.getFrameDuration()))
-      this->translate(move);
-      // _timer += 1.0f;
-      // std::cout << "x = " << _pos._x << "; y = " << _pos._y << std::endl;
-      // std::cout << "timer = " << _timer << std::endl;
-      // if (_timer >= 4.0f)
-      // 	{
-      _world->setItemAtPosition(*pos, _id);
-      _pos = *pos;
-      // 	  _timer = 0;
-      // 	}
+      _timer += 1.0f;
+      std::cout << "x = " << _pos._x << "; y = " << _pos._y << std::endl;
+      std::cout << "timer = " << _timer << std::endl;
+      if (_timer >= 2.0f)
+      	{
+	  this->translate(move);
+	  _world->setItemAtPosition(*pos, _id);
+	  _pos = *pos;
+      	  _timer = 0;
+      	}
     }
 }

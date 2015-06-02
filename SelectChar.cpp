@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Mon Jun  1 15:56:31 2015 Nicolas Charvoz
+// Last update Tue Jun  2 16:10:07 2015 Nicolas Girardot
 //
 
 #include "SelectChar.hh"
@@ -32,7 +32,7 @@ SelectChar::SelectChar(Game *game)
   shader.setUniform("projection", _game->_camera->getProjection());
   _inputManager = new InputManager();
   _command = new Command(_game);
-  _map = new Map("./maps/basic.map");
+  _map = new Map("./maps/big.map");
 }
 
 void SelectChar::loadBackground()

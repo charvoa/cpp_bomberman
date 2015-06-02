@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue Jun  2 15:02:54 2015 Antoine Garcia
+// Last update Tue Jun  2 16:15:59 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -106,7 +106,9 @@ void	World::findWall()
 
 void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
-  this->drawBackground(clock, shader);
+  if (getHeight() >= 15);
+  else
+    this->drawBackground(clock, shader);
   for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
     {
       (*it)->draw(shader, clock);
