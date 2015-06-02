@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Mon Jun  1 19:40:44 2015 Nicolas Charvoz
+// Last update Tue Jun  2 14:55:42 2015 Nicolas Charvoz
 //
 
 #include "Leaderboard.hh"
@@ -23,7 +23,6 @@ Leaderboard::Leaderboard(Game *game)
   _game = game;
   std::cout << "Je suis dans Leaderboard" << std::endl;
   _texManag.registerTexture("LeaderBoardMenu", "lbMenu");
-  _texManag.registerTexture("LetterS", "s");
   this->loadBackground();
   this->loadButtons();
   this->loadLetters();
@@ -51,12 +50,19 @@ void Leaderboard::loadBackground()
 
 void Leaderboard::loadLetters()
 {
-  AObject *newLetter = new Letters();
+  AObject *letter = new Letters();
+  std::stringstream ss;
 
-  for (int i = 0; i < 26 ; ++i)
+  for (char c = 'A'; c <= 'Z'; ++c)
     {
-      newLetter->initialize(_texManag.getTexture("s"));
-      _letters.push_back(newLetter);
+      ss.str("");
+      ss.clear();
+      ss << "fonts/" << c;
+      letter = new Letters();
+      _texManag.registerTexture(ss.str(), ss.str());
+      letter->initialize(_texManag.getTexture(ss.str()));
+      std::cout << ss.str() << std::endl;
+      _letters[ss.str()] = letter;
     }
 }
 
@@ -81,8 +87,7 @@ void Leaderboard::getScore()
 
 void Leaderboard::drawLetters(gdl::Clock& clock, gdl::BasicShader& shader)
 {
-  for (size_t i = 0; i < _letters.size() ; ++i)
-    _letters[i]->draw(shader, clock);
+  _letters["fonts/N"]->draw(shader, clock);
 }
 
 void Leaderboard::drawBackground(gdl::Clock& clock, gdl::BasicShader& shader)

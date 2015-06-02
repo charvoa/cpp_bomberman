@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Thu May 28 19:42:30 2015 Nicolas Charvoz
+// Last update Tue Jun  2 14:40:17 2015 Nicolas Charvoz
 //
 
 #ifndef LEADERBOARD_HH_
@@ -45,8 +45,8 @@ private:
   Command *_command;
   AObject *_background;
   std::multimap<std::string, std::string> _scores;
-  std::vector<AObject*> _letters;
   std::vector<std::string> _bestScore;
+  std::map<std::string, AObject*> _letters;
 };
 
 #endif
