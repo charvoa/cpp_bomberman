@@ -5,15 +5,16 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Wed Jun  3 18:47:27 2015 Nicolas Girardot
+// Last update Thu Jun  4 18:12:25 2015 Audibert Louis
 //
 
 #include "Bomb.hh"
 
 Sound&	Bomb::_sound = Sound::getInstance();
 
-Bomb::Bomb(Position& pos, World *world)
+Bomb::Bomb(Position& pos, World *world, int id)
 {
+  _id = id;
   _world = world;
   _pos = pos;
   _isPosed = false;
@@ -135,4 +136,5 @@ void	Bomb::onDestroy()
 {
   _world->setItemAtPosition(_pos, 'F');
   _isDestroyed = true;
+  _world->getPlayerById(_id)->setCanLaunchBomb(true);
 }
