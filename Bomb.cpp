@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Mon Jun  1 14:50:04 2015 Nicolas Girardot
+// Last update Tue Jun  2 11:04:08 2015 Nicolas Girardot
 //
 
 #include "Bomb.hh"
@@ -39,24 +39,32 @@ bool	Bomb::initialize(const std::string &tex)
   _isPosed = true;
   for (int i = 1; i != _range; i++)
     {
+      if (_world->getItemAtPosition(_pos->_x + i, _pos->_y) == 'W')
+	break;
       fire = new Flame(new Position(_pos->_x + i, _pos->_y), _world);
       fire->initialize("hello");
       _flames.push_back(fire);
     }
   for (int i = 1; i != _range; i++)
     {
+      if (_world->getItemAtPosition(_pos->_x - i, _pos->_y) == 'W')
+	break;
       fire = new Flame(new Position(_pos->_x - i, _pos->_y), _world);
       fire->initialize("hello");
       _flames.push_back(fire);
     }
   for (int i = 1; i != _range; i++)
     {
+      if (_world->getItemAtPosition(_pos->_x, _pos->_y + i) == 'W')
+	break;
       fire = new Flame(new Position(_pos->_x, _pos->_y  + i), _world);
       fire->initialize("hello");
       _flames.push_back(fire);
     }
   for (int i = 1; i != _range; i++)
     {
+      if (_world->getItemAtPosition(_pos->_x, _pos->_y - i) == 'W')
+	break;
       fire = new Flame(new Position(_pos->_x, _pos->_y - i), _world);
       fire->initialize("hello");
       _flames.push_back(fire);
@@ -97,6 +105,11 @@ void	Bomb::draw(gdl::AShader& shader ,gdl::Clock const  &clock)
     _bomb->draw(shader, clock);
   else
     {
+      if (_isPoped == true)
+	{
+	  _world->checkDamages(_flames);
+	  _isPoped = false;
+	}
       for (std::list<Flame*>::iterator it = _flames.begin(); it != _flames.end(); ++it)
 	{
 	  (*it)->draw(shader, clock);
