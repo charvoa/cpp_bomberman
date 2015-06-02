@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Fri May 29 15:01:23 2015 Nicolas Girardot
-// Last update Fri May 29 16:56:17 2015 Nicolas Girardot
+// Last update Tue Jun  2 15:10:12 2015 Nicolas Girardot
 //
 
 #ifndef BOX_HH_
@@ -30,6 +30,7 @@ public:
   void	update(gdl::Clock const &, gdl::Input &);
   void	draw(gdl::AShader &, gdl::Clock const &);
   bool	getStatus();
+  Position &getPosition() const;
   void	onDestroy();
 };
 
