@@ -6,33 +6,33 @@
 class Math
 {
 public:
-	Math(){}
-	~Math(){}
+  Math(){}
+  ~Math(){}
 
-	float	Math::squareRoot(float request)
-	{
-		return (sqrt(request));
-	}
+  float	squareRoot(float request)
+  {
+    return (sqrt(request));
+  }
 
-	int		Math::absolute(int request)
-	{
-		return (abs(request));
-	}
+  int	absolute(int request)
+  {
+    return (abs(request));
+  }
 
-	void	Math::initSRand(time_t time)
-	{
-		srand(time);
-	}
+  void	initSRand(time_t time)
+  {
+    srand(time);
+  }
 
-	time_t	Math::initTime(time_t* timer);
-	{
-		return (time(0));
-	}
+  time_t	initTime(time_t* timer)
+  {
+    return (time(timer));
+  }
 
-	int 	Math::useRand()
-	{
-		return (rand());
-	}
+  int 	useRand()
+  {
+    return (rand());
+  }
 
 };
 
