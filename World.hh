@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Sun May 31 00:23:30 2015 Antoine Garcia
+// Last update Mon Jun  1 21:46:39 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -27,6 +27,7 @@
 #include "Box.hh"
 #include "Bomb.hh"
 
+class	Flame;
 class	Command;
 class	World : public GameState
 {
@@ -63,6 +64,7 @@ public:
   void	dropBomb(Position *);
   Map			*_fileMap;
   const std::vector<HumanCharacter*> getHumansPlayers();
+  void					checkDamages(std::list<Flame*>&);
 };
 
 #endif

@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Mon Jun  1 14:22:02 2015 Nicolas Girardot
+// Last update Mon Jun  1 21:47:11 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -245,4 +245,9 @@ const std::vector<HumanCharacter*>	World::getHumansPlayers()
   if (player != NULL)
     players.push_back(player);
   return players;
+}
+
+void		World::checkDamages(std::list<Flame*>& flames)
+{
+  (void)flames;
 }
