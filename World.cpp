@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue Jun  2 14:45:38 2015 Antoine Garcia
+// Last update Tue Jun  2 15:02:54 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -265,10 +265,15 @@ void			World::checkPlayersDeath(Flame& flame)
     {
       if ((*it)->getPos() == flame.getPos())
   	{
-	  it = _players.erase(it);
 	  delete *it;
+	  it = _players.erase(it);
 	  if (it == _players.end())
 	    break;
   	}
     }
+}
+
+void		World::checkDestroyBoxes(Flame& flame)
+{
+  (void) flame;
 }
