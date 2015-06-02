@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Mon Jun  1 11:09:17 2015 Nicolas Girardot
-// Last update Mon Jun  1 12:51:01 2015 Nicolas Girardot
+// Last update Tue Jun  2 11:24:04 2015 Nicolas Girardot
 //
 
 #include "Flame.hh"
@@ -46,6 +46,11 @@ void	Flame::update(gdl::Clock const &clock, gdl::Input &input)
     }
   if (_timer >= 4)
     this->onDestroy();
+}
+
+Position&	Flame::getPos() const
+{
+  return (*_pos);
 }
 
 void	Flame::draw(gdl::AShader &shader, gdl::Clock const &clock)

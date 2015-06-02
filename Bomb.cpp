@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Tue Jun  2 11:04:08 2015 Nicolas Girardot
+// Last update Tue Jun  2 11:25:13 2015 Nicolas Girardot
 //
 
 #include "Bomb.hh"
@@ -17,7 +17,7 @@ Bomb::Bomb(Position* pos, World *world)
   _world = world;
   _pos = pos;
   _isPosed = false;
-  _sound.registerSound("./resources/sounds/allahu_akbar_and_explosion.wav", "allahu");
+  _sound.registerSound("./resources/sounds/explosion.wav", "allahu");
 }
 
 Bomb::~Bomb()
@@ -81,7 +81,7 @@ void	Bomb::update(gdl::Clock const &clock, gdl::Input &input)
       _timer += clock.getElapsed();
       std::cout << _timer << std::endl;
     }
-  if (_timer >= 1.5)
+  if (_timer >= 3)
     {
       if (_isPlayed == 0)
 	{
