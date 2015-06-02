@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Tue Jun  2 10:57:46 2015 Audibert Louis
+// Last update Tue Jun  2 11:23:13 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -13,7 +13,8 @@
 #include "World.hh"
 #include "Bomb.hh"
 
-TextureManager &HumanCharacter::_texManag = TextureManager::getInstance();
+TextureManager&	HumanCharacter::_texManag = TextureManager::getInstance();
+Sound&	ACharacter::_sound = Sound::getInstance();
 
 HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
 {
@@ -28,6 +29,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   _type = HUMAN;
   _timer = 0;
   _canLaunchBomb = true;
+  _sound.registerSound("./resources/sounds/allahu_akbar_and_explosion.wav", "allahu");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
   this->scale(glm::vec3(0.3, 0.3, 0.3));
@@ -47,6 +49,7 @@ void HumanCharacter::dropBomb()
 {
   std::cout << "I droped a bomb hahah" << std::endl;
   _world->dropBomb(&_pos);
+  _sound.playMusic("allahu");
 }
 
 void HumanCharacter::takeObject(AObject *object)
