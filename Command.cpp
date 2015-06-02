@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:36:27 2015 Nicolas Charvoz
-// Last update Mon Jun  1 19:41:54 2015 Nicolas Charvoz
+// Last update Mon Jun  1 22:34:11 2015 Nicolas Charvoz
 //
 
 #include "Command.hh"
@@ -48,13 +48,16 @@ void Command::no(gdl::Clock& clock)
 void Command::space(gdl::Clock& clock)
 {
   (void) clock;
-  _world->getPlayerById(1)->dropBomb();
+  if (_pause == true)
+    return;
+  if (_world->getPlayerById(1))
+    _world->getPlayerById(1)->dropBomb();
 }
 
 void Command::lshift(gdl::Clock& clock)
 {
   (void) clock;
-  if (_twoPlayers)
+  if (_twoPlayers && _pause == false)
     _world->getPlayerById(2)->dropBomb();
 }
 
@@ -101,49 +104,57 @@ void Command::back(gdl::Clock& clock)
 
 void Command::up(gdl::Clock& clock)
 {
-  if (_pause == false && _twoPlayers)
+  if (_pause == false && _twoPlayers && _world->getPlayerById(2))
     _world->getPlayerById(2)->move(UP, clock);
 }
 
 void Command::left(gdl::Clock& clock)
 {
-  if (_pause == false && _twoPlayers)
+  if (_pause == false && _twoPlayers && _world->getPlayerById(2))
     _world->getPlayerById(2)->move(RIGHT, clock);
 }
 
 void Command::right(gdl::Clock& clock)
 {
-  if (_pause == false && _twoPlayers)
+  if (_pause == false && _twoPlayers && _world->getPlayerById(2))
     _world->getPlayerById(2)->move(LEFT, clock);
 }
 
 void Command::down(gdl::Clock& clock)
 {
-  if (_pause == false && _twoPlayers)
+  if (_pause == false && _twoPlayers && _world->getPlayerById(2))
     _world->getPlayerById(2)->move(DOWN, clock);
 }
 
 void Command::up2(gdl::Clock& clock)
 {
-  if (_pause == false)
+  if (_pause == true)
+    return;
+  if (_world->getPlayerById(1) && _pause == false)
     _world->getPlayerById(1)->move(UP, clock);
 }
 
 void Command::left2(gdl::Clock& clock)
 {
-  if (_pause == false)
+  if (_pause == true)
+    return;
+  if (_world->getPlayerById(1) && _pause == false)
     _world->getPlayerById(1)->move(RIGHT, clock);
 }
 
 void Command::right2(gdl::Clock& clock)
 {
-  if (_pause == false)
+  if (_pause == true)
+    return;
+  if (_world->getPlayerById(1) && _pause == false)
     _world->getPlayerById(1)->move(LEFT, clock);
 }
 
 void Command::down2(gdl::Clock& clock)
 {
-  if (_pause == false)
+  if (_pause == true)
+    return;
+  if (_world->getPlayerById(1) && _pause == false)
     _world->getPlayerById(1)->move(DOWN, clock);
 }
 
