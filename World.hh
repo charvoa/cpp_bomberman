@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Wed Jun  3 15:06:16 2015 Antoine Garcia
+// Last update Wed Jun  3 18:00:00 2015 Nicolas Girardot
 //
 
 #ifndef WORLD_HH__
@@ -64,7 +64,7 @@ public:
   int		getHeight() const;
   bool checkPlayerCanMove(int x, int y);
   ACharacter*		getPlayerById(int id);
-  void	dropBomb(Position *, int id = 0);
+  void	dropBomb(Position &, int id = 0);
   Map			*_fileMap;
   const std::vector<HumanCharacter*> getHumansPlayers();
   void					checkDamages(std::list<Flame*>&);
