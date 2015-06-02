@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Mon Jun  1 15:41:35 2015 Nicolas Charvoz
+// Last update Tue Jun  2 09:58:02 2015 Nicolas Charvoz
 //
 
 #ifndef SELECTCHAR_HH_
@@ -21,6 +21,7 @@
 #include "GameBackground.hh"
 #include "InputManager.hh"
 #include "Command.hh"
+#include "DisplayButton.hh"
 
 class Command;
 
@@ -36,16 +37,32 @@ public:
   void drawBackground(gdl::Clock&, gdl::BasicShader&);
   void drawButtons(gdl::Clock&, gdl::BasicShader&);
   void getNameOfButton(gdl::Input&);
+  void drawDisplayButton(gdl::Clock&, gdl::BasicShader&);
 
 private:
   static Sound& _sound;
   static TextureManager& _texManag;
-  std::vector<AObject*> _buttons;
+  std::map<std::string, AObject*> _buttons;
   AObject* _background;
   Camera *_camera;
   InputManager *_inputManager;
   Command *_command;
   Map *_map;
+  gdl::BasicShader _shader;
+  gdl::Clock _clock;
+  bool _map1;
+  bool _map2;
+  bool _map3;
+  bool _map4;
+  bool _map5;
+  bool _mapR;
+  bool _p1;
+  bool _p2;
+  bool _ia1;
+  bool _ia5;
+  bool _ia10;
+  bool _ia15;
+  bool _ia20;
 };
 
 #endif
