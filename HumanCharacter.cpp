@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Tue Jun  2 11:23:13 2015 Audibert Louis
+// Last update Tue Jun  2 14:22:18 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -19,17 +19,18 @@ Sound&	ACharacter::_sound = Sound::getInstance();
 HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
 {
   _world = world;
+  initColor();
   std::cout << "id = " << id << std::endl;
   this->_id = id;
   this->_alive = true;
   _pos = pos;
-  glColor3f(1.0f, 0.0f, 0.0f);
   _model.load("./images/marvin.fbx");
   _orientation = DOWN;
   _type = HUMAN;
   _timer = 0;
   _canLaunchBomb = true;
-  _sound.registerSound("./resources/sounds/allahu_akbar_and_explosion.wav", "allahu");
+  _isAnime = false;
+  _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
   this->scale(glm::vec3(0.3, 0.3, 0.3));
@@ -48,6 +49,7 @@ bool HumanCharacter::getAlive() const
 void HumanCharacter::dropBomb()
 {
   std::cout << "I droped a bomb hahah" << std::endl;
+  // _model.setCurrentAnim(4, false);
   _world->dropBomb(&_pos);
   _sound.playMusic("allahu");
 }
@@ -192,17 +194,28 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
     {
       std::cout << "OK" << std::endl;
       glm::vec3 move(x * 100, 0, y * 100);
-      _model.setCurrentAnim(0, false);
       std::cout << "clock.getElapsed() = " << clock.getElapsed() << std::endl;
+      if (_isAnime == false)
+	{
+	  _model.setCurrentAnim(0, false);
+	  _isAnime = true;
+	}
       // if (timer == (_model.getAnimationFrameNumber(0) * _model.getFrameDuration()))
       this->translate(move);
-      // this->translate(move * static_cast<float>(clock.getElapsed() * 10));
+      // float	tmp = static_cast<float>(clock.getElapsed() * 10);
+      // this->translate(move * tmp);
       // _timer += clock.getElapsed() * 10;
       // std::cout << "timer = " << _timer << std::endl;
-      // if (_timer > 0.30f)
+      // while (_timer < tmp)
       // 	{
-	  _world->setItemAtPosition(*pos, _id);
-	  _pos = *pos;
+      // 	  std::cout << "timer " << _timer << std::endl;
+      // 	  if (_timer == tmp)
+      // 	    {
+	      _world->setItemAtPosition(*pos, _id);
+	      _pos = *pos;
+	  //   }
+	  // else
+	  //   _timer += 0.005;
 	// }
     }
 }

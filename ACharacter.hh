@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Tue Jun  2 11:22:06 2015 Audibert Louis
+// Last update Tue Jun  2 14:20:18 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
@@ -82,6 +82,7 @@ protected:
   float			_timer;
   bool			_canLaunchBomb;
   static Sound		&_sound;
+  bool			_isAnime;
 };
 
 #endif
