@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Mon Jun  1 15:10:39 2015 Audibert Louis
+// Last update Tue Jun  2 10:57:46 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -22,6 +22,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   this->_id = id;
   this->_alive = true;
   _pos = pos;
+  glColor3f(1.0f, 0.0f, 0.0f);
   _model.load("./images/marvin.fbx");
   _orientation = DOWN;
   _type = HUMAN;
@@ -34,6 +35,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
 
 HumanCharacter::~HumanCharacter()
 {
+  std::cout << "Im dead..." << std::endl;
 }
 
 bool HumanCharacter::getAlive() const
