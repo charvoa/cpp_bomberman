@@ -5,12 +5,13 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Mon Jun  1 21:47:11 2015 Antoine Garcia
+// Last update Tue Jun  2 13:34:03 2015 Antoine Garcia
 //
 
 # include <iostream>
-#include "World.hh"
-#include "GameBackground.hh"
+# include "World.hh"
+# include "GameBackground.hh"
+# include "Flame.hh"
 
 TextureManager &World::_texManag = TextureManager::getInstance();
 
@@ -249,5 +250,5 @@ const std::vector<HumanCharacter*>	World::getHumansPlayers()
 
 void		World::checkDamages(std::list<Flame*>& flames)
 {
-  (void)flames;
+  std::cout << "Check Damages" << std::endl;
 }

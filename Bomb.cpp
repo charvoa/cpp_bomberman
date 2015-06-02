@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Tue Jun  2 11:27:49 2015 Nicolas Girardot
+// Last update Tue Jun  2 13:35:33 2015 Antoine Garcia
 //
 
 #include "Bomb.hh"
@@ -33,7 +33,7 @@ bool	Bomb::initialize(const std::string &tex)
   _bomb = new ModelLoad();
   _bomb->initialize("LibBomberman_linux_x64/assets/bomb.fbx");
   glm::vec3 trans(0 + (_pos->_x * 100 - 710), 0, 750 * (-1) + (_pos->_y  - _world->getHeight() / 2) * 100);
-  std::cout << _pos->_x * 100 - 750 << " hh " << 750 * (-1) + (_pos->_y - _world->getHeight() / 2) * 100 << std::endl;
+  // std::cout << _pos->_x * 100 - 750 << " hh " << 750 * (-1) + (_pos->_y - _world->getHeight() / 2) * 100 << std::endl;
   _bomb->translate(trans);
   _bomb->scale(glm::vec3(0.3, 0.3, 0.3));
   _isPosed = true;
@@ -79,7 +79,7 @@ void	Bomb::update(gdl::Clock const &clock, gdl::Input &input)
   if (_isPosed == true)
     {
       _timer += clock.getElapsed();
-      std::cout << _timer << std::endl;
+      // std::cout << _timer << std::endl;
     }
   if (_timer >= 3)
     {
