@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Tue Jun  2 14:41:49 2015 Nicolas Charvoz
+// Last update Tue Jun  2 19:32:58 2015 Nicolas Charvoz
 //
 
 #include "RandomMenu.hh"
@@ -19,6 +19,7 @@ RandomMenu::RandomMenu(Game *game)
 {
   _game = game;
   std::cout << "Je suis dans RandomMenu" << std::endl;
+  _texManag.registerTexture("backgroundRandom", "backRM");
   this->loadBackground();
   this->loadButtons();
 }
@@ -27,7 +28,7 @@ void RandomMenu::loadBackground()
 {
   AObject *background = new MenuBackground();
 
-  background->initialize(_texManag.getTexture("backgroundMenu"));
+  background->initialize(_texManag.getTexture("backgroundRM"));
   _background = background;
 }
 
