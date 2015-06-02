@@ -19,6 +19,21 @@ public:
 		return (abs(request));
 	}
 
+	void	Math::initSRand(time_t time)
+	{
+		srand(time);
+	}
+
+	time_t	Math::initTime(time_t* timer);
+	{
+		return (time(0));
+	}
+
+	int 	Math::useRand()
+	{
+		return (rand());
+	}
+
 };
 
 #endif
