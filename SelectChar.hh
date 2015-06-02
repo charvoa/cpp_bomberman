@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Tue Jun  2 13:37:13 2015 Nicolas Charvoz
+// Last update Tue Jun  2 14:19:23 2015 Nicolas Charvoz
 //
 
 #ifndef SELECTCHAR_HH_
@@ -65,6 +65,7 @@ private:
   bool _ia10;
   bool _ia15;
   bool _ia20;
+  int _nbrIA;
 };
 
 #endif

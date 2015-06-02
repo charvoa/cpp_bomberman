@@ -5,11 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-<<<<<<< HEAD
-// Last update Tue Jun  2 13:58:45 2015 Nicolas Charvoz
-=======
-// Last update Thu Jun  4 16:06:32 2015 Audibert Louis
->>>>>>> 1bb2670485e251ae006dda3152758d7b0b800971
+// Last update Tue Jun  2 14:21:22 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -28,11 +24,11 @@ SelectChar::SelectChar(Game *game)
   std::cout << "Je suis dans SelectChar" << std::endl;
   _texManag.registerTexture("backgroundSelectChar", "back");
   _texManag.registerTexture("PlaySousMenu", "playSM");
-  _texManag.registerTexture("ONEIA", "ONEIA");
-  _texManag.registerTexture("5IA", "5IA");
-  _texManag.registerTexture("10IA", "10IA");
-  _texManag.registerTexture("15IA", "15IA");
-  _texManag.registerTexture("20IA", "20IA");
+  _texManag.registerTexture("ONEIA", "1ia");
+  _texManag.registerTexture("5IA", "5ia");
+  _texManag.registerTexture("10IA", "10ia");
+  _texManag.registerTexture("15IA", "15ia");
+  _texManag.registerTexture("20IA", "20ia");
   _texManag.registerTexture("1Player", "1P");
   _texManag.registerTexture("2Player", "2P");
   _texManag.registerTexture("SC_Map1", "Map1");
@@ -65,6 +61,7 @@ SelectChar::SelectChar(Game *game)
   _ia10 = false;
   _ia15 = false;
   _ia20 = false;
+  _nbrIA = 1;
 }
 
 void SelectChar::loadBackground()
@@ -80,29 +77,29 @@ void SelectChar::loadButtons()
   AObject *b = new DisplayButton();
 
   b = new DisplayButton();
-  b->initialize(_texManag.getTexture("ONEIA"));
+  b->initialize(_texManag.getTexture("1ia"));
   b->translate(glm::vec3(0, -0.39, 0));
-  _buttons["ONEIA"] = b;
+  _buttons["1ia"] = b;
 
   b = new DisplayButton();
-  b->initialize(_texManag.getTexture("5IA"));
-  b->translate(glm::vec3(0.4, -0.39, 0));
-  _buttons["5IA"] = b;
-
-  b = new DisplayButton();
-  b->initialize(_texManag.getTexture("10IA"));
+  b->initialize(_texManag.getTexture("5ia"));
   b->translate(glm::vec3(0, -0.39, 0));
-  _buttons["10IA"] = b;
+  _buttons["5ia"] = b;
 
   b = new DisplayButton();
-  b->initialize(_texManag.getTexture("15IA"));
-  b->translate(glm::vec3(0.4, -0.39, 0));
-  _buttons["15IA"] = b;
+  b->initialize(_texManag.getTexture("10ia"));
+  b->translate(glm::vec3(0, -0.39, 0));
+  _buttons["10ia"] = b;
 
   b = new DisplayButton();
-  b->initialize(_texManag.getTexture("20IA"));
-  b->translate(glm::vec3(0.4, -0.39, 0));
-  _buttons["20IA"] = b;
+  b->initialize(_texManag.getTexture("15ia"));
+  b->translate(glm::vec3(0, -0.39, 0));
+  _buttons["15ia"] = b;
+
+  b = new DisplayButton();
+  b->initialize(_texManag.getTexture("20ia"));
+  b->translate(glm::vec3(0, -0.39, 0));
+  _buttons["20ia"] = b;
 
   b = new DisplayButton();
   b->initialize(_texManag.getTexture("1P"));
@@ -207,7 +204,10 @@ void SelectChar::getNameOfButton(gdl::Input &input)
   if (mouse.x >= 1566 && mouse.x <= 1906 && mouse.y >= 949 && mouse.y <= 1039)
     {
       // BOUTON PLAY
-      _game->pushState(new World(_game, *_map, 2, 10));
+      if (_p2)
+	_game->pushState(new World(_game, *_map, 2, _nbrIA));
+      else
+	_game->pushState(new World(_game, *_map, 1, _nbrIA));
     }
   //PLAYER
   if (mouse.x >= 86 && mouse.x <= 212 && mouse.y >= 307 && mouse.y <= 431)
@@ -223,18 +223,20 @@ void SelectChar::getNameOfButton(gdl::Input &input)
       _p2 = true;
     }
   //IA
-  if (mouse.x >= 1700 && mouse.x <= 1828 && mouse.y >= 143 && mouse.y <= 275)
+  if (mouse.x >= 1700 && mouse.x <= 1830 && mouse.y >= 140 && mouse.y <= 275)
     {
       // IA 1
       _ia1 = _ia5 = _ia10 = _ia15 = _ia20 = false;
       _ia1 = true;
+      _nbrIA = 1;
     }
-  else if (mouse.x >= 1700 && mouse.x <= 1828 && mouse.y >= 309
+  else if (mouse.x >= 1700 && mouse.x <= 1830 && mouse.y >= 309
 	   && mouse.y <= 433)
     {
       // IA 5
       _ia1 = _ia5 = _ia10 = _ia15 = _ia20 = false;
       _ia5 = true;
+      _nbrIA = 5;
     }
   else if (mouse.x >= 1700 && mouse.x <= 1828 && mouse.y >= 471
 	   && mouse.y <= 593)
@@ -242,6 +244,7 @@ void SelectChar::getNameOfButton(gdl::Input &input)
       // IA 10
       _ia1 = _ia5 = _ia10 = _ia15 = _ia20 = false;
       _ia10 = true;
+      _nbrIA = 10;
     }
   else if (mouse.x >= 1700 && mouse.x <= 1828 && mouse.y >= 633
 	   && mouse.y <= 753)
@@ -249,6 +252,7 @@ void SelectChar::getNameOfButton(gdl::Input &input)
       // IA 15
       _ia1 = _ia5 = _ia10 = _ia15 = _ia20 = false;
       _ia15 = true;
+      _nbrIA = 15;
     }
   else if (mouse.x >= 1700 && mouse.x <= 1828 && mouse.y >= 799
 	   && mouse.y <= 919)
@@ -256,6 +260,7 @@ void SelectChar::getNameOfButton(gdl::Input &input)
       // IA 20
       _ia1 = _ia5 = _ia10 = _ia15 = _ia20 = false;
       _ia20 = true;
+      _nbrIA = 20;
     }
 }
 
@@ -307,28 +312,23 @@ void SelectChar::drawDisplayIA(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   if (_ia1)
     {
-      std::cout << "IL FAUT 1 IA" << std::endl;
-      _buttons["ONEIA"]->draw(shader, clock);
+      _buttons["1ia"]->draw(shader, clock);
     }
   else if (_ia5)
     {
-      std::cout << "IL FAUT 5 IA" << std::endl;
-      _buttons["5IA"]->draw(shader, clock);
+      _buttons["5ia"]->draw(shader, clock);
     }
   else if (_ia10)
     {
-      std::cout << "IL FAUT 10 IA" << std::endl;
-      _buttons["10IA"]->draw(shader, clock);
+      _buttons["10ia"]->draw(shader, clock);
     }
   else if (_ia15)
     {
-      std::cout << "IL FAUT 15 IA" << std::endl;
-      _buttons["15IA"]->draw(shader, clock);
+      _buttons["15ia"]->draw(shader, clock);
     }
   else if (_ia20)
     {
-      std::cout << "IL FAUT 20 IA" << std::endl;
-      _buttons["20IA"]->draw(shader, clock);
+      _buttons["20ia"]->draw(shader, clock);
     }
 }
 
