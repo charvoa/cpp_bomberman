@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Mon Jun  1 11:23:29 2015 Audibert Louis
+// Last update Tue Jun  2 11:22:06 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
@@ -14,6 +14,7 @@
 # include "AObject.hh"
 # include "ModelLoad.hh"
 # include "Position.hpp"
+# include "./Sound/SoundManager.hh"
 # include <Model.hh>
 # include <BasicShader.hh>
 # include <Clock.hh>
@@ -80,6 +81,7 @@ protected:
   World			*_world;
   float			_timer;
   bool			_canLaunchBomb;
+  static Sound		&_sound;
 };
 
 #endif
