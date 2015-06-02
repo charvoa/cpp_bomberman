@@ -5,12 +5,13 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue Jun  2 13:18:52 2015 Audibert Louis
+// Last update Tue Jun  2 14:27:55 2015 Audibert Louis
 //
 
 # include <iostream>
-#include "World.hh"
-#include "GameBackground.hh"
+# include "World.hh"
+# include "GameBackground.hh"
+# include "Flame.hh"
 
 TextureManager &World::_texManag = TextureManager::getInstance();
 
@@ -18,7 +19,6 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
 {
   (void)nb_ia;
   _inputManager = new InputManager();
-  _command = new Command(game, this);
   _game = game;
   _nbPlayers = nb_players;
   _nbIa = nb_ia;
@@ -34,6 +34,7 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
   _texManag.registerTexture("backgroundInGame", "backIG");
   this->loadBackground();
   findWall();
+  _command = new Command(game, this);
 }
 
 void	World::findWall()
@@ -250,5 +251,15 @@ const std::vector<HumanCharacter*>	World::getHumansPlayers()
 
 void		World::checkDamages(std::list<Flame*>& flames)
 {
-  (void)flames;
+  std::list<Flame*>::iterator it;
+
+  for (it = flames.begin() ; it != flames.end() ; ++it)
+    {
+      checkPlayersDeath(**it);
+    }
+}
+
+void			World::checkPlayersDeath(Flame& flame)
+{
+  std::cout << flame.getPos()._x << std::endl;
 }

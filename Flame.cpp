@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Mon Jun  1 11:09:17 2015 Nicolas Girardot
-// Last update Tue Jun  2 11:24:04 2015 Nicolas Girardot
+// Last update Tue Jun  2 13:36:11 2015 Antoine Garcia
 //
 
 #include "Flame.hh"
@@ -33,7 +33,7 @@ bool	Flame::initialize(const std::string &tex)
 
 void	Flame::update(gdl::Clock const &clock, gdl::Input &input)
 {
-  std::cout << "timer  = " << _timer  << std::endl;
+  //std::cout << "timer  = " << _timer  << std::endl;
   (void) input;
   if (_isPosed == true)
     {
@@ -41,7 +41,7 @@ void	Flame::update(gdl::Clock const &clock, gdl::Input &input)
     }
   if (_timer >= 3)
     {
-      std::cout << "size " <<  100 + (3 - _timer) * 100 << std::endl;
+      //std::cout << "size " <<  100 + (3 - _timer) * 100 << std::endl;
       _flame->scale(glm::vec3(4 - _timer, 4 - _timer, 4 - _timer));
     }
   if (_timer >= 4)

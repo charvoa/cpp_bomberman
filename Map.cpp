@@ -5,7 +5,7 @@
 // Login   <heitzl_s@epitech.net>
 //
 // Started on  Mon May 25 18:56:25 2015 Serge Heitzler
-// Last update Tue May 26 22:32:45 2015 Nicolas Girardot
+// Last update Mon Jun  1 16:48:26 2015 Nicolas Charvoz
 //
 
 #include "Map.hh"
@@ -71,12 +71,12 @@ void					Map::setMap(std::stringstream &map)
     }
 }
 
-int					Map::getWidth()
+int					Map::getWidth() const
 {
   return (this->_width);
 }
 
-int					Map::getHeight()
+int					Map::getHeight() const
 {
   return (this->_height);
 }
@@ -96,7 +96,7 @@ void					Map::setWidth(std::string &line)
   this->_width = stoi(line.substr((line.find("X") + 1)));
 }
 
-char					Map::getItemAtPosition(int x, int y)
+char					Map::getItemAtPosition(int x, int y) const
 {
   return (this->_map.at(y).at(x));
 }
@@ -104,4 +104,22 @@ char					Map::getItemAtPosition(int x, int y)
 void					Map::setItemAtPosition(int x, int y, char c)
 {
   this->_map.at(y).at(x) = c;
+}
+
+
+int	Map::getNumberOfFreeSpace() const
+{
+  int nbr = 0;
+
+  for (int y = 0; y <= this->getWidth(); ++y)
+    {
+      for (int x = 0; x <= this->getHeight() ; ++x)
+	{
+	  if (this->getItemAtPosition(x, y) == 'F')
+	    {
+	      nbr++;
+	    }
+	}
+    }
+  return nbr;
 }
