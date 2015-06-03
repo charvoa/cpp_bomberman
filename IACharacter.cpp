@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Mon Jun  1 12:05:46 2015 Audibert Louis
+// Last update Wed Jun  3 14:00:58 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -22,10 +22,17 @@ IACharacter::IACharacter(int id, World *world)
   _orientation = DOWN;
   _type = IA;
   _canLaunchBomb = true;
+  _timer = 0;
+  _isAnime = false;
+  _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");  
+  glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
+  this->translate(trans);
+  this->scale(glm::vec3(0.3, 0.3, 0.3));
 }
 
 IACharacter::~IACharacter()
 {
+  std::cout << "IA is dead..." << std::endl;
 }
 
 bool IACharacter::getAlive() const
@@ -36,6 +43,11 @@ bool IACharacter::getAlive() const
 void IACharacter::dropBomb()
 {
   std::cout << "I droped a bomb hahah" << std::endl;
+  if (_canLaunchBomb == true)
+    {
+      _world->dropBomb(&_pos);
+      _sound.playMusic("allahu");
+    }
 }
 
 void IACharacter::takeObject(AObject *object)
@@ -174,12 +186,35 @@ void	IACharacter::move(e_orientation ori, gdl::Clock &clock)
       pos = new Position(_pos._x - 1, _pos._y);
       x = -1;
     }
-  if (_world->setItemAtPosition(*pos, _id) == true)
+  if (_world->checkPlayerCanMove(pos->_x, pos->_y) == true)
     {
-      _pos = *pos;
       std::cout << "OK" << std::endl;
       glm::vec3 move(x * 100, 0, y * 100);
-      _model.setCurrentAnim(0, false);
-      this->translate(move * static_cast<float>(clock.getElapsed() * 20));
+      std::cout << "clock.getElapsed() = " << clock.getElapsed() << std::endl;
+      if (_isAnime == false)
+	{
+	  _model.setCurrentAnim(0, false);
+	  _isAnime = true;
+	}
+      _timer += 1.0f;
+      std::cout << "x = " << _pos._x << "; y = " << _pos._y << std::endl;
+      std::cout << "timer = " << _timer << std::endl;
+      if (_timer >= 2.0f)
+      	{
+	  this->translate(move);
+	  _world->setItemAtPosition(*pos, _id);
+	  _pos = *pos;
+      	  _timer = 0;
+      	}
     }
+}
+
+bool	IACharacter::getCanLaunchBomb() const
+{
+  return _canLaunchBomb;
+}
+
+void	IACharacter::setCanLaunchBomb(bool launch)
+{
+  _canLaunchBomb = launch;
 }

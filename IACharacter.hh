@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Fri May 29 14:45:38 2015 Audibert Louis
+// Last update Wed Jun  3 13:56:15 2015 Audibert Louis
 //
 
 #ifndef IACHARACTER_HH_
@@ -34,10 +34,12 @@ public:
   int getRange() const;
   int getOrientation() const;
   int getId() const;
+  bool getCanLaunchBomb() const;
 
   void setPos(Position &pos);
   void setRange(int range);
   void setOrientation(int orientation);
+  void setCanLaunchBomb(bool launch);
 
   void initColor();
   std::map<char, int> &getColor() const;
