@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Wed Jun  3 14:51:54 2015 Antoine Garcia
+// Last update Tue Jun  2 04:01:58 2015 Nicolas Charvoz
 //
 
 #include "SelectChar.hh"
@@ -48,10 +48,8 @@ void SelectChar::loadButtons()
   AObject *play = new SousMenuButton();
 
   play->initialize(_texManag.getTexture("playSM"));
-
-  glm::vec3 trans(-0.6, -0.40, 0);
+  glm::vec3 trans(-0.6, -0.43, 0);
   play->translate(trans);
-
   _buttons.push_back(play);
 }
 
