@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Wed Jun  3 15:03:28 2015 Audibert Louis
+// Last update Wed Jun  3 15:37:06 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -25,6 +25,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   this->_alive = true;
   _pos = pos;
   _model.load("./images/marvin.fbx");
+  // _model.load("/home/audibe_l/Downloads/Blender/GuardSoldier.FBX");
   _orientation = DOWN;
   _type = HUMAN;
   _timer = 0;
