@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Tue Jun  2 11:22:06 2015 Audibert Louis
+// Last update Wed Jun  3 13:54:30 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
@@ -51,10 +51,12 @@ public:
   virtual int getRange() const = 0;
   virtual int getOrientation() const = 0;
   virtual int getId() const = 0;
-
+  virtual bool getCanLaunchBomb() const = 0;
+  
   virtual void setPos(Position &pos) = 0;
   virtual void setRange(int range) = 0;
   virtual void setOrientation(int orientation) = 0;
+  virtual void setCanLaunchBomb(bool launch) = 0;
 
   virtual void initColor() = 0;
   virtual std::map<char, int> &getColor() const = 0;
@@ -82,6 +84,7 @@ protected:
   float			_timer;
   bool			_canLaunchBomb;
   static Sound		&_sound;
+  bool			_isAnime;
 };
 
 #endif
