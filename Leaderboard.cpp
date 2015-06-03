@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Tue Jun  2 14:55:42 2015 Nicolas Charvoz
+// Last update Wed Jun  3 02:08:27 2015 Nicolas Charvoz
 //
 
 #include "Leaderboard.hh"
@@ -64,6 +64,7 @@ void Leaderboard::loadLetters()
       std::cout << ss.str() << std::endl;
       _letters[ss.str()] = letter;
     }
+  this->buildWord("NICO", 0, 0);
 }
 
 void Leaderboard::loadButtons()
@@ -85,9 +86,41 @@ void Leaderboard::getScore()
     }
 }
 
+void Leaderboard::buildWord(const std::string &str, int x, int y)
+{
+  int i = 0;
+  AObject* letter;
+  std::stringstream ss;
+
+  (void) x;
+  (void) y;
+  _word.clear();
+  while (str[i])
+    {
+      ss.str("fonts/");
+      ss.clear();
+      ss << str[i];
+      letter = new Letters();
+      letter = _letters[ss.str()];
+      //letter->translate(glm::vec3(0.02 * (i +1) + x * 0.0001, 0 + y * 0.0001, 0));
+      _word.push_back(letter);
+      i++;
+    }
+}
+
 void Leaderboard::drawLetters(gdl::Clock& clock, gdl::BasicShader& shader)
 {
-  _letters["fonts/N"]->draw(shader, clock);
+  // for (std::vector<AObject*>::iterator it = _word.begin() ;
+  //      it != _word.end() ; ++it)
+  //   {
+  //     (*it).draw(shader, clock);
+  //   }
+  for (size_t i = 0; i < _word.size() ; ++i)
+    {
+      _word[i]->draw(shader, clock);
+    }
+  // (void)shader;
+  // (void)clock;
 }
 
 void Leaderboard::drawBackground(gdl::Clock& clock, gdl::BasicShader& shader)
@@ -110,8 +143,6 @@ void Leaderboard::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 
 bool Leaderboard::update(gdl::Clock& clock, gdl::Input& input)
 {
-  (void) clock;
-
   _command->exec(_inputManager->getTouche(input), clock);
 
   return true;
