@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue Jun  2 17:16:00 2015 Audibert Louis
+// Last update Tue Jun  2 17:20:10 2015 Audibert Louis
 //
 
 # include <iostream>
@@ -84,29 +84,22 @@ void	World::findWall()
 		  _objects.push_back(wall);
 		}
 	    }
-	  if (_fileMap->getItemAtPosition(x, y) == 'F' || (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2'))
-	    {
-	      if (x == 14 && y == 10);
-	      else
-		{
-		  wall = new Cube();
-		  wall->initialize("./images/floor1.tga");
-		  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, -100,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
-		  wall->translate(trans);
-		  wall->scale(glm::vec3(100, 100, 100));
-		  _objects.push_back(wall);
-		}
-	    }
-
+	  wall = new Cube();
+	  wall->initialize("./images/floor1.tga");
+	  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, -100,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
+	  wall->translate(trans);
+	  wall->scale(glm::vec3(100, 100, 100));
+	  _objects.push_back(wall);
 	  x++;
 	}
       y++;
     }
 }
-
 void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
-  this->drawBackground(clock, shader);
+  if (getHeight() >= 15);
+  else
+    this->drawBackground(clock, shader);
   for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
     {
       (*it)->draw(shader, clock);

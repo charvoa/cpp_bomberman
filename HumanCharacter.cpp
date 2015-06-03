@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Tue Jun  2 17:15:25 2015 Audibert Louis
+// Last update Wed Jun  3 14:01:08 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -50,8 +50,11 @@ void HumanCharacter::dropBomb()
 {
   std::cout << "I droped a bomb hahah" << std::endl;
   // _model.setCurrentAnim(4, false);
-  _world->dropBomb(&_pos);
-  _sound.playMusic("allahu");
+  if (_canLaunchBomb == true)
+    {
+      _world->dropBomb(&_pos);
+      _sound.playMusic("allahu");
+    }
 }
 
 void HumanCharacter::takeObject(AObject *object)
@@ -199,16 +202,25 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
 	  _model.setCurrentAnim(0, false);
 	  _isAnime = true;
 	}
-      //      if (timer == (_model.getAnimationFrameNumber(0) * _model.getFrameDuration()))
-      this->translate(move);
-      // _timer += 1.0f;
-      // std::cout << "x = " << _pos._x << "; y = " << _pos._y << std::endl;
-      // std::cout << "timer = " << _timer << std::endl;
-      // if (_timer >= 4.0f)
-      // 	{
-      _world->setItemAtPosition(*pos, _id);
-      _pos = *pos;
-      // 	  _timer = 0;
-      // 	}
+      _timer += 1.0f;
+      std::cout << "x = " << _pos._x << "; y = " << _pos._y << std::endl;
+      std::cout << "timer = " << _timer << std::endl;
+      if (_timer >= 2.0f)
+      	{
+	  this->translate(move);
+	  _world->setItemAtPosition(*pos, _id);
+	  _pos = *pos;
+      	  _timer = 0;
+      	}
     }
+}
+
+bool	HumanCharacter::getCanLaunchBomb() const
+{
+  return _canLaunchBomb;
+}
+
+void	HumanCharacter::setCanLaunchBomb(bool launch)
+{
+  _canLaunchBomb = launch;
 }
