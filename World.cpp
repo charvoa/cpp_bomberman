@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Wed Jun  3 14:58:34 2015 Nicolas Girardot
+// Last update Wed Jun  3 15:03:46 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -153,7 +153,7 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
   return true;
 }
 
-void	World::dropBomb(Position *pos)
+void	World::dropBomb(Position *pos, int id)
 {
   Bomb	*bomb;
   bomb = new Bomb(pos, this);
