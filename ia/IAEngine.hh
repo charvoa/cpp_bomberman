@@ -21,16 +21,16 @@ public:
   bool      	isHumanPlayerAroundMe(std::vector<char> &vector);
 
 private:
-  int           _w;
-  int           _l;
-  int           _xIA;
-  int           _yIA;
-  int           _xHuman;
-  int           _yHuman;
-  float   		_h1;
-  float    		_h2;
-  Math			_math;
-  std::vector<char> _aroundMe;
+  int                _w;
+  int                _l;
+  int                _xIA;
+  int                _yIA;
+  int                _xHuman;
+  int                _yHuman;
+  float   		       _h1;
+  float    		       _h2;
+  Math			         _math;
+  std::vector<char>  _aroundMe;
 
 };
 
