@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Wed Jun  3 15:03:28 2015 Audibert Louis
+// Last update Wed Jun  3 18:06:12 2015 Nicolas Girardot
 //
 
 #include <iostream>
@@ -30,7 +30,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   _timer = 0;
   _canLaunchBomb = true;
   _isAnime = false;
-  _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");  
+  _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
   this->scale(glm::vec3(0.3, 0.3, 0.3));
@@ -52,7 +52,7 @@ void HumanCharacter::dropBomb()
   // _model.setCurrentAnim(4, false);
   if (_canLaunchBomb == true)
     {
-      _world->dropBomb(&_pos, _id);
+      _world->dropBomb(_pos, _id);
       _sound.playMusic("allahu");
       _world->setItemAtPosition(_pos, 'T');
     }

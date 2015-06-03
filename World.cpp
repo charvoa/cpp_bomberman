@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Wed Jun  3 14:14:47 2015 Antoine Garcia
+// Last update Wed Jun  3 18:10:07 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -42,10 +42,10 @@ void	World::findWall()
   AObject *wall;
   int	y = 0;
   int	x;
-  wall = new Bomb(new Position(1, 1), this);
-  wall->initialize("hh");
-  wall = new Flame(new Position(1, 1), this);
-  wall->initialize("hh");
+  // wall = new Bomb(*Position(1, 1), this);
+  // wall->initialize("hh");
+  // wall = new Flame(new Position(1, 1), this);
+  // wall->initialize("hh");
   while(y < _fileMap->getHeight())
     {
       x = 0;
@@ -135,6 +135,7 @@ ACharacter*	World::getPlayerById(int id)
      }
    return NULL;
 }
+
 bool	World::update(gdl::Clock& clock, gdl::Input& input)
 {
   _command->exec(_inputManager->getTouche(input), clock);
@@ -148,12 +149,12 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
 	  break;
 	  // return true;
 	}
-   }
+    }
   clock = clock;
   return true;
 }
 
-void	World::dropBomb(Position *pos, int id)
+void	World::dropBomb(Position &pos, int id)
 {
   Bomb	*bomb;
   bomb = new Bomb(pos, this);
@@ -191,12 +192,15 @@ bool	World::setItemAtPosition(Position& pos, char c)
       return false;
     }
   else
-    _map.at(pos._y).at(pos._x) = c;
-  return false;
+    {
+      _map.at(pos._y).at(pos._x) = c;
+      std::cout << "Puting case here " << pos._x << " " << pos._y << std::endl;
+      return false;
+    }
 }
 
 char	World::getItemAtPosition(int x, int y)
-{
+  {
   return (_map.at(y).at(x));
 }
 

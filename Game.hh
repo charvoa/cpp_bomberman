@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:04:52 2015 Antoine Garcia
-// Last update Wed May 27 16:15:49 2015 Nicolas Charvoz
+// Last update Wed Jun  3 16:53:42 2015 Nicolas Girardot
 //
 
 #ifndef GAME_HH_
@@ -16,6 +16,7 @@
 #include "Menu.hh"
 #include "Sound/SoundManager.hh"
 #include "Camera.hh"
+#include "Random.hh"
 #include <stack>
 #include <Game.hh>
 #include <SdlContext.hh>

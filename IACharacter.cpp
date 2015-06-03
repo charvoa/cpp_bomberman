@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Wed Jun  3 15:05:43 2015 Audibert Louis
+// Last update Wed Jun  3 18:12:16 2015 Nicolas Girardot
 //
 
 #include "IACharacter.hh"
@@ -24,7 +24,7 @@ IACharacter::IACharacter(int id, World *world)
   _canLaunchBomb = true;
   _timer = 0;
   _isAnime = false;
-  _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");  
+  _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
   this->scale(glm::vec3(0.3, 0.3, 0.3));
@@ -45,7 +45,6 @@ void IACharacter::dropBomb()
   std::cout << "I droped a bomb hahah" << std::endl;
   if (_canLaunchBomb == true)
     {
-      _world->dropBomb(&_pos);
       _sound.playMusic("allahu");
     }
 }

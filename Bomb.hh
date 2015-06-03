@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 14:15:33 2015 Nicolas Girardot
-// Last update Tue Jun  2 11:04:10 2015 Nicolas Girardot
+// Last update Wed Jun  3 18:08:32 2015 Nicolas Girardot
 //
 
 #ifndef BOMB_HH_
@@ -27,14 +27,14 @@ private:
   bool		_isDestroyed = false;
   World		*_world;
   int		_range = 3;
-  Position	*_pos;
+  Position	_pos;
   double	_timer;
   bool		_isPlayed = 0;
   double	_otimer;
   std::list<Flame*>	_flames;
   bool		_isPoped = true;
 public:
-  Bomb(Position *, World *);
+  Bomb(Position &, World *);
   virtual ~Bomb();
   bool		initialize(const std::string &);
   void		update(gdl::Clock const &, gdl::Input &);

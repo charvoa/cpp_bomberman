@@ -5,14 +5,14 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Wed Jun  3 14:35:27 2015 Nicolas Girardot
+// Last update Wed Jun  3 18:11:11 2015 Nicolas Girardot
 //
 
 #include "Bomb.hh"
 
 Sound&	Bomb::_sound = Sound::getInstance();
 
-Bomb::Bomb(Position* pos, World *world)
+Bomb::Bomb(Position& pos, World *world)
 {
   _world = world;
   _pos = pos;
@@ -29,47 +29,47 @@ bool	Bomb::initialize(const std::string &tex)
 {
   Flame *fire;
   (void) tex;
-  std::cout << _pos->_x << " " << _pos->_y << std::endl;
+  std::cout << _pos._x << " " << _pos._y << std::endl;
   _bomb = new ModelLoad();
   _bomb->initialize("LibBomberman_linux_x64/assets/bomb.fbx");
-  glm::vec3 trans(0 + (_pos->_x * 100 - 710), 0, 750 * (-1) + (_pos->_y  - _world->getHeight() / 2) * 100);
-  // std::cout << _pos->_x * 100 - 750 << " hh " << 750 * (-1) + (_pos->_y - _world->getHeight() / 2) * 100 << std::endl;
+  glm::vec3 trans(0 + (_pos._x * 100 - 710), 0, 750 * (-1) + (_pos._y  - _world->getHeight() / 2) * 100);
+  // std::cout << _pos._x * 100 - 750 << " hh " << 750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100 << std::endl;
   _bomb->translate(trans);
   _bomb->scale(glm::vec3(0.3, 0.3, 0.3));
   _isPosed = true;
   for (int i = 1; i != _range; i++)
     {
-      if (_world->getItemAtPosition(_pos->_x + i, _pos->_y) == 'W')
+      if (_world->getItemAtPosition(_pos._x + i, _pos._y) == 'W')
 	break;
-      fire = new Flame(new Position(_pos->_x + i, _pos->_y), _world);
+      fire = new Flame(new Position(_pos._x + i, _pos._y), _world);
       fire->initialize("hello");
       _flames.push_back(fire);
     }
   for (int i = 1; i != _range; i++)
     {
-      if (_world->getItemAtPosition(_pos->_x, _pos->_y - i) == 'W')
+      if (_world->getItemAtPosition(_pos._x, _pos._y - i) == 'W')
 	break;
-      fire = new Flame(new Position(_pos->_x, _pos->_y - i), _world);
+      fire = new Flame(new Position(_pos._x, _pos._y - i), _world);
       fire->initialize("hello");
       _flames.push_back(fire);
     }
   for (int i = 1; i != _range; i++)
     {
-      if (_world->getItemAtPosition(_pos->_x, _pos->_y + i) == 'W')
+      if (_world->getItemAtPosition(_pos._x, _pos._y + i) == 'W')
 	break;
-      fire = new Flame(new Position(_pos->_x, _pos->_y + i), _world);
+      fire = new Flame(new Position(_pos._x, _pos._y + i), _world);
       fire->initialize("hello");
       _flames.push_back(fire);
     }
   for (int i = 1; i != _range; i++)
     {
-      if (_world->getItemAtPosition(_pos->_x - i, _pos->_y) == 'W')
+      if (_world->getItemAtPosition(_pos._x - i, _pos._y) == 'W')
 	break;
-      fire = new Flame(new Position(_pos->_x - i, _pos->_y), _world);
+      fire = new Flame(new Position(_pos._x - i, _pos._y), _world);
       fire->initialize("hello");
       _flames.push_back(fire);
     }
-  fire = new Flame(new Position(_pos->_x, _pos->_y), _world);
+  fire = new Flame(new Position(_pos._x, _pos._y), _world);
   fire->initialize("hello");
   _flames.push_back(fire);
   return (true);
@@ -100,6 +100,7 @@ void	Bomb::update(gdl::Clock const &clock, gdl::Input &input)
     {
       this->onDestroy();
     }
+  std::cout << _pos._x << " Pos Of Bomb " << _pos._y << std::endl;
 }
 
 void	Bomb::draw(gdl::AShader& shader ,gdl::Clock const  &clock)
@@ -133,5 +134,6 @@ bool	Bomb::getStatus()
 
 void	Bomb::onDestroy()
 {
+  _world->setItemAtPosition(_pos, 'F');
   _isDestroyed = true;
 }
