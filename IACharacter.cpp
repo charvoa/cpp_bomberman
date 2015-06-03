@@ -5,12 +5,13 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Wed Jun  3 20:10:47 2015 Nicolas Charvoz
+// Last update Tue Jun  9 15:33:50 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
 #include "World.hh"
 #include "ia/IAEngine.hh"
+#include <iostream>
 
 TextureManager &IACharacter::_texManag = TextureManager::getInstance();
 
@@ -49,11 +50,13 @@ void IACharacter::dropBomb()
 {
   if (_canLaunchBomb == true)
     {
-      std::cout << "I droped a bomb hahah" << std::endl;
-      _canLaunchBomb = false;
+      std::cout << "IA DROPING BOMB" << std::endl;
+      std::cout << "_pos.x = " << _pos._x << " _pos.y " << _pos._y << " ori = " << _orientation << " IAid = " << _IAid << std::endl;
       _world->dropBomb(_pos, _IAid);
       _sound.playMusic("allahu");
       _world->setItemAtPosition(_pos, 'T');
+      _canLaunchBomb = false;
+      std::cout << "End of IF in drop bomb" << std::endl;
     }
 }
 
@@ -176,6 +179,8 @@ void	IACharacter::move(e_orientation ori)
   int x = 0;
   int y = 0;
 
+  std::cout << "ET GOUT BITE" << std::endl;
+  std::cout << "_pos.x = " << _pos._x << " _pos.y " << _pos._y << " ori = " << ori << std::endl;
   this->rotate(trans, getAngle(_orientation, ori));
   _orientation = ori;
 
