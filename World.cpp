@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Mon Jun  1 22:47:57 2015 Nicolas Charvoz
+// Last update Wed Jun  3 14:49:31 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -42,6 +42,10 @@ void	World::findWall()
   AObject *wall;
   int	y = 0;
   int	x;
+  wall = new Bomb(new Position(1, 1), this);
+  wall->initialize("hh");
+  wall = new Flame(new Position(1, 1), this);
+  wall->initialize("hh");
   while(y < _fileMap->getHeight())
     {
       x = 0;
