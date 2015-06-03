@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Wed Jun  3 14:49:15 2015 Antoine Garcia
+// Last update Wed Jun  3 15:03:46 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -42,6 +42,10 @@ void	World::findWall()
   AObject *wall;
   int	y = 0;
   int	x;
+  wall = new Bomb(new Position(1, 1), this);
+  wall->initialize("hh");
+  wall = new Flame(new Position(1, 1), this);
+  wall->initialize("hh");
   while(y < _fileMap->getHeight())
     {
       x = 0;
@@ -149,7 +153,7 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
   return true;
 }
 
-void	World::dropBomb(Position *pos)
+void	World::dropBomb(Position *pos, int id)
 {
   Bomb	*bomb;
   bomb = new Bomb(pos, this);
