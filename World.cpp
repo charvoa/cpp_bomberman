@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Wed Jun  3 18:10:07 2015 Nicolas Girardot
+// Last update Wed Jun  3 18:48:01 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -194,7 +194,6 @@ bool	World::setItemAtPosition(Position& pos, char c)
   else
     {
       _map.at(pos._y).at(pos._x) = c;
-      std::cout << "Puting case here " << pos._x << " " << pos._y << std::endl;
       return false;
     }
 }

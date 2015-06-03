@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Wed Jun  3 18:11:11 2015 Nicolas Girardot
+// Last update Wed Jun  3 18:47:27 2015 Nicolas Girardot
 //
 
 #include "Bomb.hh"
@@ -100,7 +100,6 @@ void	Bomb::update(gdl::Clock const &clock, gdl::Input &input)
     {
       this->onDestroy();
     }
-  std::cout << _pos._x << " Pos Of Bomb " << _pos._y << std::endl;
 }
 
 void	Bomb::draw(gdl::AShader& shader ,gdl::Clock const  &clock)
