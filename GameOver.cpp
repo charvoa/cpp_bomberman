@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Wed Jun  3 22:23:56 2015 Nicolas Charvoz
+// Last update Wed Jun  3 23:20:32 2015 Nicolas Charvoz
 //
 
 #include "GameOver.hh"
@@ -89,6 +89,23 @@ void GameOver::getNameOfButton(gdl::Input &input)
   glm::ivec2 mouse = input.getMousePosition();
 
   std::cout << "X : " << mouse.x << " Y: " << mouse.y << std::endl;
+  if (mouse.x >= 792 && mouse.x <= 1132 && mouse.y >= 495 && mouse.y <= 581)
+    {
+      if (_player == 1 || _player == 2)
+	_sound.Pause("army_win");
+      else if (_player == 0)
+	_sound.Pause("terr_win");
+      _game->changeState(new SelectChar(_game));
+    }
+  else if (mouse.x >= 792 && mouse.x <= 1132
+	   && mouse.y >= 645 && mouse.y <= 737)
+    {
+      if (_player == 1 || _player == 2)
+	_sound.Pause("army_win");
+      else if (_player == 0)
+	_sound.Pause("terr_win");
+      _game->changeState(new Menu(_game));
+    }
 }
 
 void GameOver::draw(gdl::Clock& clock, gdl::BasicShader& shader)
