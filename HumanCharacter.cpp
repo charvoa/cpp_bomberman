@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Wed Jun  3 14:16:49 2015 Audibert Louis
+// Last update Wed Jun  3 15:03:28 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -52,8 +52,9 @@ void HumanCharacter::dropBomb()
   // _model.setCurrentAnim(4, false);
   if (_canLaunchBomb == true)
     {
-      _world->dropBomb(&_pos);
+      _world->dropBomb(&_pos, _id);
       _sound.playMusic("allahu");
+      _world->setItemAtPosition(_pos, 'T');
     }
 }
 
