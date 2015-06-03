@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Mon Jun  1 15:56:31 2015 Nicolas Charvoz
+// Last update Wed Jun  3 14:51:54 2015 Antoine Garcia
 //
 
 #include "SelectChar.hh"
@@ -31,7 +31,7 @@ SelectChar::SelectChar(Game *game)
   shader.setUniform("view", _game->_camera->getTransformation());
   shader.setUniform("projection", _game->_camera->getProjection());
   _inputManager = new InputManager();
-  _command = new Command(_game);
+  _command = new Command(_game, NULL, "SELECTCHAR");
   _map = new Map("./maps/basic.map");
 }
 
@@ -101,9 +101,10 @@ void SelectChar::getNameOfButton(gdl::Input &input)
       // RANDOM
       _map = new Map("./maps/lp.map");
     }
-  if (mouse.x >= 1394 && mouse.x <= 1820 && mouse.y >= 900 && mouse.y <= 1000)
+  if (mouse.x >= 1394 && mouse.x <= 1820 && mouse.y >= 919 && mouse.y <= 1025)
     {
-      _game->pushState(new World(_game, *_map, 2, 10));
+      // BOUTON PLAY
+      _game->pushState(new World(_game, *_map, 1, 10));
     }
 
 }
@@ -116,10 +117,7 @@ void SelectChar::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 
 bool SelectChar::update(gdl::Clock& clock, gdl::Input& input)
 {
-  (void) clock;
-
   _command->exec(_inputManager->getTouche(input), clock);
-
   if (input.getInput(SDL_BUTTON_LEFT, true) == true)
     this->getNameOfButton(input);
   return true;

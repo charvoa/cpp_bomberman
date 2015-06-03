@@ -5,12 +5,13 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Mon Jun  1 14:22:02 2015 Nicolas Girardot
+// Last update Wed Jun  3 15:03:46 2015 Antoine Garcia
 //
 
 # include <iostream>
-#include "World.hh"
-#include "GameBackground.hh"
+# include "World.hh"
+# include "GameBackground.hh"
+# include "Flame.hh"
 
 TextureManager &World::_texManag = TextureManager::getInstance();
 
@@ -18,7 +19,6 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
 {
   (void)nb_ia;
   _inputManager = new InputManager();
-  _command = new Command(game, this);
   _game = game;
   _nbPlayers = nb_players;
   _nbIa = nb_ia;
@@ -34,6 +34,7 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
   _texManag.registerTexture("backgroundInGame", "backIG");
   this->loadBackground();
   findWall();
+  _command = new Command(game, this);
 }
 
 void	World::findWall()
@@ -41,6 +42,10 @@ void	World::findWall()
   AObject *wall;
   int	y = 0;
   int	x;
+  wall = new Bomb(new Position(1, 1), this);
+  wall->initialize("hh");
+  wall = new Flame(new Position(1, 1), this);
+  wall->initialize("hh");
   while(y < _fileMap->getHeight())
     {
       x = 0;
@@ -62,15 +67,18 @@ void	World::findWall()
 	  if (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2')
 	    {
 	      Position pos(x, y);
-	      ACharacter *charac;
 	      if (x == 14 && y == 10);
 	      else
 		{
 		  if (_fileMap->getItemAtPosition(x,y) == '1')
-		    charac = new HumanCharacter('1', this, pos);
+		    this->createHumanPlayer('1', pos);
 		  else
-		    charac = new HumanCharacter('2', this, pos);
-		  _players.push_back(charac);
+		    {
+		      if (_nbPlayers == 2)
+			this->createHumanPlayer('2', pos);
+		      else
+			_map.at(y).at(x) = 'F';
+		    }
 		}
 	    }
 	  if (_fileMap->getItemAtPosition(x, y) == 'B')
@@ -83,29 +91,31 @@ void	World::findWall()
 		  _objects.push_back(wall);
 		}
 	    }
-	  if (_fileMap->getItemAtPosition(x, y) == 'F' || (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2'))
-	    {
-	      if (x == 14 && y == 10);
-	      else
-		{
-		  wall = new Cube();
-		  wall->initialize("./images/floor1.tga");
-		  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, -100,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
-		  wall->translate(trans);
-		  wall->scale(glm::vec3(100, 100, 100));
-		  _objects.push_back(wall);
-		}
-	    }
-
+	  wall = new Cube();
+	  wall->initialize("./images/floor1.tga");
+	  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, -100,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
+	  wall->translate(trans);
+	  wall->scale(glm::vec3(100, 100, 100));
+	  _objects.push_back(wall);
 	  x++;
 	}
       y++;
     }
 }
 
+void	World::createHumanPlayer(char id, Position &pos)
+{
+  ACharacter *charac;
+
+  charac = new HumanCharacter(id, this, pos);
+  _players.push_back(charac);
+}
+
 void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
-  this->drawBackground(clock, shader);
+  if (getHeight() >= 15);
+  else
+    this->drawBackground(clock, shader);
   for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
     {
       (*it)->draw(shader, clock);
@@ -128,14 +138,6 @@ ACharacter*	World::getPlayerById(int id)
 bool	World::update(gdl::Clock& clock, gdl::Input& input)
 {
   _command->exec(_inputManager->getTouche(input), clock);
-  // if (input.getKey(SDLK_UP))
-  //   getPlayerById(1)->move(UP);
-  // else if (input.getKey(SDLK_RIGHT))
-  //   getPlayerById(1)->move(RIGHT);
-  // else if (input.getKey(SDLK_DOWN))
-  //   getPlayerById(1)->move(DOWN);
-  // else if (input.getKey(SDLK_LEFT))
-  //   getPlayerById(1)->move(LEFT);
   for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
     {
       (*it)->update(clock, input);
@@ -143,14 +145,15 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
 	{
 	  delete (*it);
 	  _objects.erase(it);
-	  return true;
+	  break;
+	  // return true;
 	}
    }
   clock = clock;
   return true;
 }
 
-void	World::dropBomb(Position *pos)
+void	World::dropBomb(Position *pos, int id)
 {
   Bomb	*bomb;
   bomb = new Bomb(pos, this);
@@ -245,4 +248,49 @@ const std::vector<HumanCharacter*>	World::getHumansPlayers()
   if (player != NULL)
     players.push_back(player);
   return players;
+}
+
+void		World::checkDamages(std::list<Flame*>& flames)
+{
+  std::list<Flame*>::iterator it;
+
+  for (it = flames.begin() ; it != flames.end() ; ++it)
+    {
+      checkPlayersDeath(**it);
+      checkDestroyBoxes(**it);
+    }
+}
+
+void			World::checkPlayersDeath(Flame& flame)
+{
+  std::vector<ACharacter*>::iterator it;
+  for (it = _players.begin() ; it != _players.end() ; ++it)
+    {
+      if ((*it)->getPos() == flame.getPos())
+  	{
+	  delete *it;
+	  it = _players.erase(it);
+	  _map.at(flame.getPos()._y).at(flame.getPos()._x) = 'F';
+	  if (it == _players.end())
+	    break;
+  	}
+    }
+}
+
+void		World::checkDestroyBoxes(Flame& flame)
+{
+  std::vector<AObject*>::iterator it;
+  Box	*box;
+
+  for (it = _objects.begin(); it != _objects.end() ; ++it)
+    {
+      if ((box = dynamic_cast<Box *>(*it)))
+	{
+	  if (box->getPosition() == flame.getPos())
+	    {
+	      box->onDestroy();
+	      _map.at(flame.getPos()._y).at(flame.getPos()._x) = 'F';
+	    }
+	}
+    }
 }

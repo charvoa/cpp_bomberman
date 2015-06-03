@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Sun May 31 00:23:30 2015 Antoine Garcia
+// Last update Wed Jun  3 15:06:16 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -27,6 +27,7 @@
 #include "Box.hh"
 #include "Bomb.hh"
 
+class	Flame;
 class	Command;
 class	World : public GameState
 {
@@ -43,6 +44,9 @@ private:
   AObject		*_background;
   InputManager		*_inputManager;
   Command		*_command;
+  void			checkPlayersDeath(Flame&);
+  void			checkDestroyBoxes(Flame&);
+  void			createHumanPlayer(char id, Position & pos);
 public:
   World(Game *game, Map &map, int nb_players, int nb_ia);
   ~World(){};
@@ -60,9 +64,10 @@ public:
   int		getHeight() const;
   bool checkPlayerCanMove(int x, int y);
   ACharacter*		getPlayerById(int id);
-  void	dropBomb(Position *);
+  void	dropBomb(Position *, int id = 0);
   Map			*_fileMap;
   const std::vector<HumanCharacter*> getHumansPlayers();
+  void					checkDamages(std::list<Flame*>&);
 };
 
 #endif

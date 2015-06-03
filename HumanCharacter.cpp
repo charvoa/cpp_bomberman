@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Mon Jun  1 14:49:55 2015 Nicolas Girardot
+// Last update Wed Jun  3 15:03:28 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -13,11 +13,13 @@
 #include "World.hh"
 #include "Bomb.hh"
 
-TextureManager &HumanCharacter::_texManag = TextureManager::getInstance();
+TextureManager&	HumanCharacter::_texManag = TextureManager::getInstance();
+Sound&	ACharacter::_sound = Sound::getInstance();
 
 HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
 {
   _world = world;
+  initColor();
   std::cout << "id = " << id << std::endl;
   this->_id = id;
   this->_alive = true;
@@ -27,6 +29,8 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   _type = HUMAN;
   _timer = 0;
   _canLaunchBomb = true;
+  _isAnime = false;
+  _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");  
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
   this->scale(glm::vec3(0.3, 0.3, 0.3));
@@ -34,6 +38,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
 
 HumanCharacter::~HumanCharacter()
 {
+  std::cout << "Im dead..." << std::endl;
 }
 
 bool HumanCharacter::getAlive() const
@@ -44,7 +49,13 @@ bool HumanCharacter::getAlive() const
 void HumanCharacter::dropBomb()
 {
   std::cout << "I droped a bomb hahah" << std::endl;
-  _world->dropBomb(&_pos);
+  // _model.setCurrentAnim(4, false);
+  if (_canLaunchBomb == true)
+    {
+      _world->dropBomb(&_pos, _id);
+      _sound.playMusic("allahu");
+      _world->setItemAtPosition(_pos, 'T');
+    }
 }
 
 void HumanCharacter::takeObject(AObject *object)
@@ -160,7 +171,6 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
   int x = 0;
   int y = 0;
 
-  _timer = 0;
   this->rotate(trans, getAngle(_orientation, ori));
   _orientation = ori;
   if (ori == UP)
@@ -187,17 +197,31 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
     {
       std::cout << "OK" << std::endl;
       glm::vec3 move(x * 100, 0, y * 100);
-      _model.setCurrentAnim(0, false);
       std::cout << "clock.getElapsed() = " << clock.getElapsed() << std::endl;
-      // if (timer == (_model.getAnimationFrameNumber(0) * _model.getFrameDuration()))
-      this->translate(move);
-      // this->translate(move * static_cast<float>(clock.getElapsed() * 10));
-      // _timer += clock.getElapsed() * 10;
-      // std::cout << "timer = " << _timer << std::endl;
-      // if (_timer > 0.30f)
-      // 	{
+      if (_isAnime == false)
+	{
+	  _model.setCurrentAnim(0, false);
+	  _isAnime = true;
+	}
+      _timer += 1.0f;
+      std::cout << "x = " << _pos._x << "; y = " << _pos._y << std::endl;
+      std::cout << "timer = " << _timer << std::endl;
+      if (_timer >= 2.0f)
+      	{
+	  this->translate(move);
 	  _world->setItemAtPosition(*pos, _id);
 	  _pos = *pos;
-	// }
+      	  _timer = 0;
+      	}
     }
+}
+
+bool	HumanCharacter::getCanLaunchBomb() const
+{
+  return _canLaunchBomb;
+}
+
+void	HumanCharacter::setCanLaunchBomb(bool launch)
+{
+  _canLaunchBomb = launch;
 }

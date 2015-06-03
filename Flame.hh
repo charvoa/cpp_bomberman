@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Mon Jun  1 10:58:30 2015 Nicolas Girardot
-// Last update Mon Jun  1 12:03:43 2015 Nicolas Girardot
+// Last update Tue Jun  2 11:22:13 2015 Nicolas Girardot
 //
 
 #ifndef FLAME_HH_
@@ -30,6 +30,7 @@ public:
   bool	initialize(const std::string &);
   void	update(gdl::Clock const &, gdl::Input &);
   void	draw(gdl::AShader&, gdl::Clock const &);
+  Position &getPos() const;
   bool	getStatus();
   void	onDrop();
   void	onDestroy();

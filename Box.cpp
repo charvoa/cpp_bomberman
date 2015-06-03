@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Fri May 29 15:28:41 2015 Nicolas Girardot
-// Last update Fri May 29 17:13:51 2015 Nicolas Girardot
+// Last update Tue Jun  2 15:10:09 2015 Nicolas Girardot
 //
 
 #include "Box.hh"
@@ -56,4 +56,9 @@ void	Box::onDestroy()
 {
   _isDestroyed = true;
   _sound.playMusic("crush");
+}
+
+Position&	Box::getPosition() const
+{
+  return (*_pos);
 }
