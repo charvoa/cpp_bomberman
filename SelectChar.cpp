@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Mon Jun  1 23:53:42 2015 Nicolas Charvoz
+// Last update Wed Jun  3 14:38:15 2015 Antoine Garcia
 //
 
 #include "SelectChar.hh"
@@ -104,7 +104,7 @@ void SelectChar::getNameOfButton(gdl::Input &input)
   if (mouse.x >= 1394 && mouse.x <= 1820 && mouse.y >= 919 && mouse.y <= 1025)
     {
       // BOUTON PLAY
-      _game->pushState(new World(_game, *_map, 2, 10));
+      _game->pushState(new World(_game, *_map, 1, 10));
     }
 
 }

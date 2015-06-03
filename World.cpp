@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Mon Jun  1 22:47:57 2015 Nicolas Charvoz
+// Last update Wed Jun  3 14:38:49 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -63,15 +63,18 @@ void	World::findWall()
 	  if (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2')
 	    {
 	      Position pos(x, y);
-	      ACharacter *charac;
 	      if (x == 14 && y == 10);
 	      else
 		{
 		  if (_fileMap->getItemAtPosition(x,y) == '1')
-		    charac = new HumanCharacter('1', this, pos);
+		    this->createHumanPlayer('1', pos);
 		  else
-		    charac = new HumanCharacter('2', this, pos);
-		  _players.push_back(charac);
+		    {
+		      if (_nbPlayers == 2)
+			this->createHumanPlayer('2', pos);
+		      else
+			_map.at(y).at(x) = 'F';
+		    }
 		}
 	    }
 	  if (_fileMap->getItemAtPosition(x, y) == 'B')
@@ -95,6 +98,15 @@ void	World::findWall()
       y++;
     }
 }
+
+void	World::createHumanPlayer(char id, Position &pos)
+{
+  ACharacter *charac;
+
+  charac = new HumanCharacter(id, this, pos);
+  _players.push_back(charac);
+}
+
 void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   if (getHeight() >= 15);
