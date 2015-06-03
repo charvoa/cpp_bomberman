@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue Jun  2 17:20:10 2015 Audibert Louis
+// Last update Wed Jun  3 14:15:42 2015 Audibert Louis
 //
 
 # include <iostream>
@@ -122,14 +122,6 @@ ACharacter*	World::getPlayerById(int id)
 bool	World::update(gdl::Clock& clock, gdl::Input& input)
 {
   _command->exec(_inputManager->getTouche(input), clock);
-  // if (input.getKey(SDLK_UP))
-  //   getPlayerById(1)->move(UP);
-  // else if (input.getKey(SDLK_RIGHT))
-  //   getPlayerById(1)->move(RIGHT);
-  // else if (input.getKey(SDLK_DOWN))
-  //   getPlayerById(1)->move(DOWN);
-  // else if (input.getKey(SDLK_LEFT))
-  //   getPlayerById(1)->move(LEFT);
   for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
     {
       (*it)->update(clock, input);

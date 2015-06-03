@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 14:45:44 2015 Nicolas Charvoz
-// Last update Thu May 28 20:57:01 2015 Nicolas Charvoz
+// Last update Mon Jun  1 23:55:02 2015 Nicolas Charvoz
 //
 
 #include "InputManager.hh"
@@ -46,5 +46,7 @@ InputManager::touche InputManager::getTouche(gdl::Input &input) const
     return DOWN2;
   else if (input.getInput(SDLK_RIGHT) == true)
     return RIGHT2;
+  else if (input.getInput(SDLK_RETURN) == true)
+    return ENTER;
   return NO;
 }

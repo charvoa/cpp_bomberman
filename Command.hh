@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:34:46 2015 Nicolas Charvoz
-// Last update Mon Jun  1 19:39:29 2015 Nicolas Charvoz
+// Last update Mon Jun  1 23:51:16 2015 Nicolas Charvoz
 //
 
 #ifndef COMMAND_HH_
@@ -34,9 +34,12 @@ private:
   bool _mute;
   bool _twoPlayers;
   bool _pause;
+  bool _selectChar;
+  Game *_game;
+  World *_world;
 
 public:
-  Command(Game*, World *world = NULL, bool pause = false);
+  Command(Game*, World *world = NULL, const std::string& str = "");
   ~Command();
   void exec(InputManager::touche, gdl::Clock&);
   void no(gdl::Clock&);
@@ -54,9 +57,7 @@ public:
   void left2(gdl::Clock&);
   void right2(gdl::Clock&);
   void down2(gdl::Clock&);
-
-  Game *_game;
-  World *_world;
+  void enter(gdl::Clock&);
 };
 
 #endif
