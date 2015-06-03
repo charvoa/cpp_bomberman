@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Mon Jun  8 15:42:32 2015 Nicolas Girardot
+// Last update Wed Jun  3 22:11:32 2015 Nicolas Charvoz
 //
 
 # include <iostream>
@@ -107,14 +107,14 @@ void	World::findWall()
 
 void	World::createIaPlayer()
 {
-  IACharacter *charac;
-  Position p = Position(3, 3);
+  // IACharacter *charac;
+  // Position p = Position(3, 3);
 
-  std::cout << getItemAtPosition(p._x, p._y) << std::endl;
-  charac = new IACharacter(3, this, p);;
-  //IAEngine *engine = new IAEngine(*charac, *this);
-  _players.push_back(charac);
-  //(void)engine;
+  // std::cout << getItemAtPosition(p._x, p._y) << std::endl;
+  // charac = new IACharacter(3, this, p);;
+  // //IAEngine *engine = new IAEngine(*charac, *this);
+  // _players.push_back(charac);
+  // //(void)engine;
 }
 
 void	World::createHumanPlayer(char id, Position &pos)

@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Wed Jun  3 11:56:36 2015 Nicolas Charvoz
+// Last update Wed Jun  3 22:13:17 2015 Nicolas Charvoz
 //
 
 #include "GameOver.hh"
@@ -17,12 +17,17 @@
 #include <Texture.hh>
 
 TextureManager &GameOver::_texManag = TextureManager::getInstance();
+Sound &GameOver::_sound = Sound::getInstance();
 
 GameOver::GameOver(Game *game, int player)
 {
   _game = game;
   std::cout << "Je suis dans GameOver" << std::endl;
-
+  _player = player;
+  _sound.registerSound("./reources/sounds/terrorist_win_effect.wav",
+		       "terr_win");
+  _sound.registerSound("./reources/sounds/credit.mp3",
+		       "army_win");
   _texManag.registerTexture("GameOverIA", "GoIA");
   _texManag.registerTexture("GameOverPlayer1", "Go1");
   _texManag.registerTexture("GameOverPlayer2", "Go2");
@@ -36,7 +41,6 @@ GameOver::GameOver(Game *game, int player)
   shader.setUniform("projection", _game->_camera->getProjection());
   _inputManager = new InputManager();
   _command = new Command(_game, NULL, "GAMEOVER");
-  _player = player;
 }
 
 void GameOver::loadBackground()
@@ -44,11 +48,20 @@ void GameOver::loadBackground()
   AObject *background = new MenuBackground();
 
   if (_player == 0)
-    background->initialize(_texManag.getTexture("GoIA"));
+    {
+      _sound.playMusic("terr_win");
+      background->initialize(_texManag.getTexture("GoIA"));
+    }
   else if (_player == 1)
-    background->initialize(_texManag.getTexture("Go1"));
+    {
+      _sound.playMusic("terr_win");
+      background->initialize(_texManag.getTexture("Go1"));
+    }
   else if (_player == 2)
-    background->initialize(_texManag.getTexture("Go2"));
+    {
+      _sound.playMusic("usa_win");
+      background->initialize(_texManag.getTexture("Go2"));
+    }
   else
     background->initialize(_texManag.getTexture("GoOri"));
   _background = background;
