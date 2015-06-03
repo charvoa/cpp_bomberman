@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Tue Jun  9 14:59:51 2015 Antoine Garcia
+// Last update Wed Jun  3 22:23:56 2015 Nicolas Charvoz
 //
 
 #include "GameOver.hh"
@@ -26,9 +26,9 @@ GameOver::GameOver(Game *game, int player)
   std::cout << "Je suis dans GameOver" << std::endl;
   std::cout << player << std::endl;
   _player = player;
-  _sound.registerSound("./reources/sounds/terrorist_win_effect.wav",
+  _sound.registerSound("./resources/sounds/terrorist_win_effect.wav",
 		       "terr_win");
-  _sound.registerSound("./reources/sounds/credit.mp3",
+  _sound.registerSound("./resources/sounds/credit.mp3",
 		       "army_win");
   _texManag.registerTexture("GameOverIA", "GoIA");
   _texManag.registerTexture("GameOverPlayer1", "Go1");
@@ -56,12 +56,12 @@ void GameOver::loadBackground()
     }
   else if (_player == 1)
     {
-      _sound.playMusic("terr_win");
+      _sound.playMusic("army_win");
       background->initialize(_texManag.getTexture("Go1"));
     }
   else if (_player == 2)
     {
-      _sound.playMusic("usa_win");
+      _sound.playMusic("army_win");
       background->initialize(_texManag.getTexture("Go2"));
     }
   else
