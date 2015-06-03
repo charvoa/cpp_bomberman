@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Wed Jun  3 16:43:54 2015 Antoine Garcia
+// Last update Wed Jun  3 14:14:47 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -182,7 +182,7 @@ bool	World::setItemAtPosition(Position& pos, char c)
 	{
 	  Position oldPos = getPlayerById(c - '0')->getPos();
 	  if (getItemAtPosition(oldPos._x, oldPos._y) == 'T')
-	    std::cout << "DETECT T" << std::endl;
+	    _map.at(oldPos._y).at(oldPos._x) = 'E';
 	  else
 	    _map.at(oldPos._y).at(oldPos._x) = 'F';
 	  _map.at(pos._y).at(pos._x) = c;
