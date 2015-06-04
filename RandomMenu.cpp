@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Tue Jun  2 19:34:50 2015 Nicolas Charvoz
+// Last update Thu Jun  4 16:14:41 2015 Nicolas Charvoz
 //
 
 #include "RandomMenu.hh"
@@ -22,6 +22,51 @@ RandomMenu::RandomMenu(Game *game)
   _texManag.registerTexture("backgroundRandom", "backRM");
   this->loadBackground();
   this->loadButtons();
+  _inputManager = new InputManager();
+  _command = new Command(_game);
+
+}
+
+void RandomMenu::loadLetters()
+{
+  AObject *letter = new Letters();
+  std::stringstream ss;
+
+  for (char c = 'A'; c <= 'Z'; ++c)
+    {
+      ss.str("");
+      ss.clear();
+      ss << "fonts/" << c;
+      letter = new Letters();
+      _texManag.registerTexture(ss.str(), ss.str());
+      letter->initialize(_texManag.getTexture(ss.str()));
+      _letters[ss.str()] = letter;
+    }
+  for (char c = '0'; c <= '9'; ++c)
+    {
+      ss.str("");
+      ss.clear();
+      ss << "fonts/" << c;
+      letter = new Letters();
+      _texManag.registerTexture(ss.str(), ss.str());
+      letter->initialize(_texManag.getTexture(ss.str()));
+      _letters[ss.str()] = letter;
+    }
+}
+
+void RandomMenu::displayIA(int nb)
+{
+  std::cout << "IA NB : " << nb << std::endl;
+}
+
+void RandomMenu::displayX(int nb)
+{
+  std::cout << "X MAP : " << nb << std::endl;
+}
+
+void RandomMenu::displayY(int nb)
+{
+  std::cout << "Y MAP : " << nb << std::endl;
 }
 
 void RandomMenu::loadBackground()
@@ -53,13 +98,20 @@ void RandomMenu::draw(gdl::Clock& clock, gdl::BasicShader& shader)
   this->drawBackground(clock, shader);
 }
 
-bool RandomMenu::update(gdl::Clock& shader, gdl::Input& input)
+void RandomMenu::getNameOfButton(gdl::Input &input)
 {
-  (void) shader;
-  if (input.getInput(SDLK_BACKSPACE) == true)
-    {
-      _game->popState();
-    }
+  glm::ivec2 mouse = input.getMousePosition();
+  std::cout << "X : " << mouse.x << "Y : " << std::endl;
+
+
+  (void) mouse;
+}
+
+bool RandomMenu::update(gdl::Clock& clock, gdl::Input& input)
+{
+  _command->exec(_inputManager->getTouche(input), clock);
+  if (input.getInput(SDL_BUTTON_LEFT, true) == true)
+    this->getNameOfButton(input);
   return true;
 }
 

@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Thu Jun  4 07:55:06 2015 Nicolas Charvoz
+// Last update Thu Jun  4 09:06:39 2015 Nicolas Charvoz
 //
 
 #ifndef LEADERBOARD_HH_
@@ -57,6 +57,7 @@ private:
   std::map<std::string, AObject*> _letters;
   std::vector<AObject*> _word;
   std::vector< std::vector<AObject*> > _words;
+
 };
 
 #endif
