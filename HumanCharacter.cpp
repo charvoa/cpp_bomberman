@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu Jun  4 17:25:54 2015 Audibert Louis
+// Last update Thu Jun  4 18:10:47 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -59,7 +59,7 @@ void HumanCharacter::dropBomb()
   if (_canLaunchBomb == true)
     {
       _canLaunchBomb = false;
-      _world->dropBomb(_pos, _id);
+      _world->dropBomb(_pos, (_id - '0'));
       _sound.playMusic("allahu");
       _world->setItemAtPosition(_pos, 'T');
     }
@@ -230,5 +230,6 @@ bool	HumanCharacter::getCanLaunchBomb() const
 
 void	HumanCharacter::setCanLaunchBomb(bool launch)
 {
+  std::cout << "_canLaunchBomb at " << launch << std::endl;
   _canLaunchBomb = launch;
 }

@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu Jun  4 18:01:04 2015 Audibert Louis
+// Last update Thu Jun  4 18:09:30 2015 Audibert Louis
 //
 
 # include <iostream>
@@ -158,10 +158,10 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
 void	World::dropBomb(Position &pos, int id)
 {
   Bomb	*bomb;
+  std::cout << "ID IN DROP BOMB WORLD " << id << std::endl;
   bomb = new Bomb(pos, this, id);
   bomb->initialize("hello");
   _objects.push_back(bomb);
-  getPlayerById(id)->setCanLaunchBomb(true);
 }
 
 void	World::loadBackground()
