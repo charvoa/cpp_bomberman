@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu Jun  4 07:54:47 2015 Nicolas Charvoz
+// Last update Thu Jun  4 07:56:06 2015 Nicolas Charvoz
 //
 
 #include "Leaderboard.hh"
@@ -141,8 +141,7 @@ void Leaderboard::getScore()
     {
       ss.str("");
       ss.clear();
-      ss << (*it).first << ' ' << (*it).second;
-      std::cout << ss.str() << std::endl;
+      ss << (*it).second << ' ' << (*it).first;
       _bestScore.push_back(ss.str());
       ++it;
     }
