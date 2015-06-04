@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu Jun  4 07:56:06 2015 Nicolas Charvoz
+// Last update Thu Jun  4 16:25:01 2015 Nicolas Charvoz
 //
 
 #include "Leaderboard.hh"
@@ -135,15 +135,18 @@ void Leaderboard::loadButtons()
 void Leaderboard::getScore()
 {
   std::stringstream ss;
+  typedef std::multimap<std::string, std::string> multimap_type;
+  typedef std::reverse_iterator<multimap_type::iterator> reverse_iterator;
 
-  std::multimap<std::string, std::string>::iterator it = _scores.begin();
-  while (it != _scores.end())
+  for (auto it = _scores.rbegin(),
+	 end = _scores.rend();
+       it != end;
+       it = reverse_iterator(_scores.lower_bound(it->first)))
     {
       ss.str("");
       ss.clear();
       ss << (*it).second << ' ' << (*it).first;
       _bestScore.push_back(ss.str());
-      ++it;
     }
 }
 

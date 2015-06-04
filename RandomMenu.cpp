@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu Jun  4 16:14:41 2015 Nicolas Charvoz
+// Last update Thu Jun  4 16:17:20 2015 Nicolas Charvoz
 //
 
 #include "RandomMenu.hh"
@@ -102,7 +102,6 @@ void RandomMenu::getNameOfButton(gdl::Input &input)
 {
   glm::ivec2 mouse = input.getMousePosition();
   std::cout << "X : " << mouse.x << "Y : " << std::endl;
-
 
   (void) mouse;
 }
