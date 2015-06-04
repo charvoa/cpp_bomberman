@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Wed Jun  3 13:56:12 2015 Audibert Louis
+// Last update Thu Jun  4 13:36:19 2015 Audibert Louis
 //
 
 #ifndef HUMANCHARACTER_HH_
