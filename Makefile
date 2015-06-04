@@ -5,7 +5,7 @@
 ## Login   <girard_s@epitech.net>
 ##
 ## Started on  Tue May 26 17:42:11 2015 Nicolas Girardot
-## Last update Wed Jun  3 16:54:51 2015 Nicolas Girardot
+## Last update Tue Jun  2 12:33:08 2015 Nicolas Charvoz
 ##
 
 MAIN		=	bomberman
@@ -35,7 +35,8 @@ SRC		+=	Button.cpp			\
 			Pause.cpp			\
 			Box.cpp				\
 			Flame.cpp			\
-			Random.cpp
+			Random.cpp			\
+			RandomMenu.cpp
 
 SRC_MAIN	=	$(SRC) main.cpp
 
@@ -45,6 +46,7 @@ LDFLAGS		=	-L./LibBomberman_linux_x64/libs/ -lgdl_gl	\
 			-lGLEW -lrt -lfbxsdk -lSDL2 -lpthread		\
 			-ldl -lGL -lGLU -lSDL_image			\
 			-L ./Sound/lib -lfmodex64 -lglut		\
+			-lSDL_ttf
 
 CPPFLAGS	=	-Wall -Wextra -std=c++11 -Wno-ignored-qualifiers
 CPPFLAGS	+=	-I./LibBomberman_linux_x64/includes/
