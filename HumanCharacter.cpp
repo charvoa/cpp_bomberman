@@ -5,11 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-<<<<<<< HEAD
-// Last update Thu Jun  4 16:33:54 2015 Nicolas Charvoz
-=======
-// Last update Thu Jun 11 16:17:09 2015 Nicolas Girardot
->>>>>>> cc80256c42554db80a19f8a8dfb5cfd27fce9ccd
+// Last update Thu Jun  4 19:22:35 2015 Nicolas Charvoz
 //
 
 #include <iostream>
@@ -66,10 +62,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
 HumanCharacter::~HumanCharacter()
 {
   std::cout << "Human is dead..." << std::endl;
-<<<<<<< HEAD
   //sleep(5);
-=======
->>>>>>> cc80256c42554db80a19f8a8dfb5cfd27fce9ccd
 }
 
 bool HumanCharacter::getAlive() const
