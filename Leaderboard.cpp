@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu Jun  4 07:52:35 2015 Nicolas Charvoz
+// Last update Thu Jun  4 07:54:47 2015 Nicolas Charvoz
 //
 
 #include "Leaderboard.hh"
