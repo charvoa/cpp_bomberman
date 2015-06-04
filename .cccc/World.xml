@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module World-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="303" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="61" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="27" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="11.222" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="2.259" level="0" />
+<weighted_methods_per_class_unity value="23" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="16" level="0" />
+<IF4 value="4096" level="2" />
+<IF4_per_member_function value="********" level="2" />
+<IF4_visible value="4096" level="2" />
+<IF4_visible_per_member_function value="********" level="2" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>World(Game *,Map &amp;,int,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="19" />
+</extent>
+<lines_of_code value="22" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>checkDamages(list &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="337" />
+</extent>
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>checkDestroyBoxes(Flame &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="364" />
+</extent>
+<lines_of_code value="16" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>checkPlayerCanMove(int,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="284" />
+</extent>
+<lines_of_code value="16" level="0" />
+<McCabes_cyclomatic_complexity value="8" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+</member_function>
+<member_function>
+<name>checkPlayersDeath(Flame &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="348" />
+</extent>
+<lines_of_code value="15" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>createHumanPlayer(char,Position &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="126" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>createIaPlayer()</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="109" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>draw(Clock &amp;,BasicShader &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="134" />
+</extent>
+<lines_of_code value="14" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="24" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>drawBackground(Clock &amp;,BasicShader &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="243" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>dropBomb(Position &amp;,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="226" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>findWall()</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="42" />
+</extent>
+<lines_of_code value="66" level="1" />
+<McCabes_cyclomatic_complexity value="14" level="1" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+</member_function>
+<member_function>
+<name>gameOver()</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="183" />
+</extent>
+<lines_of_code value="23" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="0" />
+</member_function>
+<member_function>
+<name>getHeight()</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="307" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getHumansPlayers()</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="323" />
+</extent>
+<lines_of_code value="12" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getItemAtPosition(int,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="279" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getPlayerById(int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="173" />
+</extent>
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getPlayers()</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="318" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getWidth()</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="302" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getWorld()</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="312" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>loadBackground()</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="235" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setBonus(Position &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="271" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setItemAtPosition(Position &amp;,char)</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="248" />
+</extent>
+<lines_of_code value="22" level="0" />
+<McCabes_cyclomatic_complexity value="7" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+</member_function>
+<member_function>
+<name>update(Clock &amp;,Input &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="World.cpp" line="207" />
+</extent>
+<lines_of_code value="17" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>World</name>
+<client_module>
+<name>Bomb</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Bomb.cpp" line="15" />
+</extent>
+<name>Bonus</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Bonus.cpp" line="13" />
+</extent>
+<name>Box</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Box.cpp" line="15" />
+</extent>
+<name>Command</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="15" />
+</extent>
+<name>Flame</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Flame.cpp" line="13" />
+</extent>
+<name>HumanCharacter</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="HumanCharacter.cpp" line="19" />
+</extent>
+<name>IACharacter</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="IACharacter.cpp" line="18" />
+</extent>
+<name>Pause</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Pause.cpp" line="21" />
+</extent>
+</client_module>
+<supplier_module>
+<name>BasicShader</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="134" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="243" />
+</extent>
+<name>Clock</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="134" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="207" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="243" />
+</extent>
+<name>Flame</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="348" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="364" />
+</extent>
+<name>Game</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="19" />
+</extent>
+<name>Input</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="207" />
+</extent>
+<name>Map</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="19" />
+</extent>
+<name>Position</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="126" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="226" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="248" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="271" />
+</extent>
+<name>list</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="337" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

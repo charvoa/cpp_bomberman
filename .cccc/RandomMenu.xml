@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module RandomMenu-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="203" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="39" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="4" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="50.750" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="9.750" level="1" />
+<weighted_methods_per_class_unity value="12" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="4" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>RandomMenu(Game *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="RandomMenu.cpp" line="18" />
+</extent>
+<lines_of_code value="12" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayIA(int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="RandomMenu.cpp" line="31" />
+</extent>
+<lines_of_code value="25" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayX(int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="RandomMenu.cpp" line="58" />
+</extent>
+<lines_of_code value="25" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>displayY(int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="RandomMenu.cpp" line="85" />
+</extent>
+<lines_of_code value="25" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>draw(Clock &amp;,BasicShader &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="RandomMenu.cpp" line="153" />
+</extent>
+<lines_of_code value="17" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>drawBackground(Clock &amp;,BasicShader &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="RandomMenu.cpp" line="142" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>drawButtons(Clock &amp;,BasicShader &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="RandomMenu.cpp" line="147" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getNameOfButton(Input &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="RandomMenu.cpp" line="173" />
+</extent>
+<lines_of_code value="57" level="1" />
+<McCabes_cyclomatic_complexity value="31" level="2" />
+<lines_of_comment value="4" level="0" />
+<lines_of_code_per_line_of_comment value="14.250" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="7.750" level="1" />
+</member_function>
+<member_function>
+<name>loadBackground()</name>
+<extent>
+<description>definition</description>
+<source_reference file="RandomMenu.cpp" line="112" />
+</extent>
+<lines_of_code value="21" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>loadButtons()</name>
+<extent>
+<description>definition</description>
+<source_reference file="RandomMenu.cpp" line="138" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>update(Clock &amp;,Input &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="RandomMenu.cpp" line="236" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>~RandomMenu()</name>
+<extent>
+<description>definition</description>
+<source_reference file="RandomMenu.cpp" line="244" />
+</extent>
+<lines_of_code value="2" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>RandomMenu</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>BasicShader</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="RandomMenu.cpp" line="142" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="RandomMenu.cpp" line="147" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="RandomMenu.cpp" line="153" />
+</extent>
+<name>Clock</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="RandomMenu.cpp" line="142" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="RandomMenu.cpp" line="147" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="RandomMenu.cpp" line="153" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="RandomMenu.cpp" line="236" />
+</extent>
+<name>Game</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="RandomMenu.cpp" line="18" />
+</extent>
+<name>Input</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="RandomMenu.cpp" line="173" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="RandomMenu.cpp" line="236" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

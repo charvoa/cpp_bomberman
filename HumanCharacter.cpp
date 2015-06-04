@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Wed Jun 10 14:11:33 2015 Audibert Louis
+// Last update Thu Jun  4 16:33:54 2015 Nicolas Charvoz
 //
 
 #include <iostream>
@@ -62,7 +62,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
 HumanCharacter::~HumanCharacter()
 {
   std::cout << "Human is dead..." << std::endl;
-  sleep(5);
+  //sleep(5);
 }
 
 bool HumanCharacter::getAlive() const

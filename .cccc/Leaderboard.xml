@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module Leaderboard-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="178" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="15" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="********" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+<weighted_methods_per_class_unity value="17" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="6" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>Leaderboard(Game *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="21" />
+</extent>
+<lines_of_code value="19" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>buildScore()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="116" />
+</extent>
+<lines_of_code value="13" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>buildWord(const string &amp;,int,int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="153" />
+</extent>
+<lines_of_code value="21" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>draw(Clock &amp;,BasicShader &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="207" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>drawBackground(Clock &amp;,BasicShader &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="184" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>drawButtons(Clock &amp;,BasicShader &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="189" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>drawLetters(Clock &amp;,BasicShader &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="176" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>drawScore(Clock &amp;,BasicShader &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="195" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getScore()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="135" />
+</extent>
+<lines_of_code value="16" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>handleWords(vector &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="89" />
+</extent>
+<lines_of_code value="19" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>loadBackground()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="43" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>loadButtons()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="131" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>loadLetters()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="51" />
+</extent>
+<lines_of_code value="26" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>split2(const string &amp;,char,vector &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="79" />
+</extent>
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="2" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>splitWord(const string &amp;,char)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="110" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>update(Clock &amp;,Input &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="215" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>~Leaderboard()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Leaderboard.cpp" line="221" />
+</extent>
+<lines_of_code value="2" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>Leaderboard</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>BasicShader</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="176" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="184" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="189" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="195" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="207" />
+</extent>
+<name>Clock</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="176" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="184" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="189" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="195" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="207" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="215" />
+</extent>
+<name>Game</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="21" />
+</extent>
+<name>Input</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="215" />
+</extent>
+<name>string</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="79" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="110" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="153" />
+</extent>
+<name>vector</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="79" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="89" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>
