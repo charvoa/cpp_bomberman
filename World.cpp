@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu Jun  4 14:01:11 2015 Nicolas Girardot
+// Last update Thu Jun  4 17:26:51 2015 Audibert Louis
 //
 
 # include <iostream>
@@ -161,6 +161,7 @@ void	World::dropBomb(Position &pos, int id)
   bomb = new Bomb(pos, this);
   bomb->initialize("hello");
   _objects.push_back(bomb);
+  getPlayerById(id)->setCanLaunchBomb(true);
 }
 
 void	World::loadBackground()
