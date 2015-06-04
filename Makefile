@@ -23,6 +23,7 @@ SRC		+=	Button.cpp			\
 			SelectChar.cpp			\
 			Camera.cpp			\
 			./Sound/SoundManager.cpp	\
+			./ia/IAEngine.cpp		\
 			TextureManager.cpp		\
 			HumanCharacter.cpp		\
 			World.cpp			\
