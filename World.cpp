@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Wed Jun  3 16:43:54 2015 Antoine Garcia
+// Last update Thu Jun  4 14:01:11 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -42,7 +42,8 @@ void	World::findWall()
   AObject *wall;
   int	y = 0;
   int	x;
-  wall = new Bomb(new Position(1, 1), this);
+  Position p = Position(1, 1);
+  wall = new Bomb(p, this);
   wall->initialize("hh");
   wall = new Flame(new Position(1, 1), this);
   wall->initialize("hh");
@@ -135,6 +136,7 @@ ACharacter*	World::getPlayerById(int id)
      }
    return NULL;
 }
+
 bool	World::update(gdl::Clock& clock, gdl::Input& input)
 {
   _command->exec(_inputManager->getTouche(input), clock);
@@ -148,12 +150,12 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
 	  break;
 	  // return true;
 	}
-   }
+    }
   clock = clock;
   return true;
 }
 
-void	World::dropBomb(Position *pos, int id)
+void	World::dropBomb(Position &pos, int id)
 {
   Bomb	*bomb;
   bomb = new Bomb(pos, this);
@@ -182,7 +184,7 @@ bool	World::setItemAtPosition(Position& pos, char c)
 	{
 	  Position oldPos = getPlayerById(c - '0')->getPos();
 	  if (getItemAtPosition(oldPos._x, oldPos._y) == 'T')
-	    std::cout << "DETECT T" << std::endl;
+	    _map.at(oldPos._y).at(oldPos._x) = 'E';
 	  else
 	    _map.at(oldPos._y).at(oldPos._x) = 'F';
 	  _map.at(pos._y).at(pos._x) = c;
@@ -191,12 +193,14 @@ bool	World::setItemAtPosition(Position& pos, char c)
       return false;
     }
   else
-    _map.at(pos._y).at(pos._x) = c;
-  return false;
+    {
+      _map.at(pos._y).at(pos._x) = c;
+      return false;
+    }
 }
 
 char	World::getItemAtPosition(int x, int y)
-{
+  {
   return (_map.at(y).at(x));
 }
 

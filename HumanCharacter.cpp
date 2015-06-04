@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu Jun  4 14:10:41 2015 Audibert Louis
+// Last update Thu Jun  4 15:26:45 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -35,11 +35,10 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   _timer = 0;
   _canLaunchBomb = true;
   _isAnime = false;
-  _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");  
+  _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
-  this->scale(glm::vec3(0.05, 0.05, 0.05));
-  // this->scale(glm::vec3(0.3, 0.3, 0.3));
+  this->scale(glm::vec3(0.3, 0.3, 0.3));
   // this->scale(glm::vec3(3, 3, 3));
 }
 
@@ -59,7 +58,7 @@ void HumanCharacter::dropBomb()
   // _model.setCurrentAnim(4, false);
   if (_canLaunchBomb == true)
     {
-      _world->dropBomb(&_pos, _id);
+      _world->dropBomb(_pos, _id);
       _sound.playMusic("allahu");
       _world->setItemAtPosition(_pos, 'T');
     }
@@ -202,18 +201,18 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
     }
   if (_world->checkPlayerCanMove(pos->_x, pos->_y) == true)
     {
-      std::cout << "OK" << std::endl;
-      glm::vec3 move(x * 100, 0, y * 100);
-      std::cout << "clock.getElapsed() = " << clock.getElapsed() << std::endl;
       if (_isAnime == false)
 	{
 	  _model.setCurrentAnim(0, false);
-	  _isAnime = true;
+	  // _isAnime = true;
 	}
+      std::cout << "OK" << std::endl;
+      glm::vec3 move(x * 100, 0, y * 100);
+      std::cout << "clock.getElapsed() = " << clock.getElapsed() << std::endl;
       _timer += 1.0f;
       std::cout << "x = " << _pos._x << "; y = " << _pos._y << std::endl;
       std::cout << "timer = " << _timer << std::endl;
-      if (_timer >= 2.0f)
+      if (_timer >= 6.0f)
       	{
 	  this->translate(move);
 	  _world->setItemAtPosition(*pos, _id);
