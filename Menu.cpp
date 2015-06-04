@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Tue Jun  2 12:15:41 2015 Nicolas Charvoz
+// Last update Thu Jun  4 02:57:53 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
@@ -101,18 +101,18 @@ void Menu::getNameOfButton(gdl::Input& input)
   std::cout << "X : " << mouse.x << " Y: " << mouse.y << std::endl;
   if (mouse.x >= 996 && mouse.x <= 1746 && mouse.y >= 279 && mouse.y <= 731)
     {
-      std::cout << "PLAY" << std::endl;
+      _sound.playMusic("shot");
       _game->pushState(new SelectChar(_game));
     }
   else if (mouse.x >= 174 && mouse.x <= 928 && mouse.y >= 519 && mouse.y <= 729)
     {
-      std::cout << "LEADERBOARD" << std::endl;
+      _sound.playMusic("shot");
       _game->pushState(new Leaderboard(_game));
     }
   else if (mouse.x >= 996 && mouse.x <= 1746 && mouse.y >= 759
 	   && mouse.y <= 967)
     {
-      std::cout << "EXIT" << std::endl;
+      _sound.playMusic("shot");
       _game->pushState(new Exit(_game));
     }
 }
@@ -123,7 +123,6 @@ bool Menu::update(gdl::Clock& clock, gdl::Input& input)
     _buttons[i]->update(clock, input);
   if (input.getInput(SDL_BUTTON_LEFT, true) == true)
     {
-      _sound.playMusic("shot");
       this->getNameOfButton(input);
     }
   return true;
