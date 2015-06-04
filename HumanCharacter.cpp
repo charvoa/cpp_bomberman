@@ -5,7 +5,11 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
+<<<<<<< HEAD
 // Last update Thu Jun  4 16:33:54 2015 Nicolas Charvoz
+=======
+// Last update Thu Jun 11 16:17:09 2015 Nicolas Girardot
+>>>>>>> cc80256c42554db80a19f8a8dfb5cfd27fce9ccd
 //
 
 #include <iostream>
@@ -62,7 +66,10 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
 HumanCharacter::~HumanCharacter()
 {
   std::cout << "Human is dead..." << std::endl;
+<<<<<<< HEAD
   //sleep(5);
+=======
+>>>>>>> cc80256c42554db80a19f8a8dfb5cfd27fce9ccd
 }
 
 bool HumanCharacter::getAlive() const
@@ -76,10 +83,10 @@ void HumanCharacter::dropBomb()
   if (_canLaunchBomb == true)
     {
       std::cout << "I droped a bomb hahah" << std::endl;
-      _canLaunchBomb = false;
       _world->dropBomb(_pos, (_id - '0'));
       _sound.playMusic("USAbomb");
       _world->setItemAtPosition(_pos, 'T');
+      _canLaunchBomb = false;
     }
 }
 
