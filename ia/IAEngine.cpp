@@ -1,10 +1,16 @@
 #include "IAEngine.hh"
 
+// OPT
+#include "../IACharacter.hh"
+#include "../HumanCharacter.hh"
+#include "../World.hh"
+
 IAEngine::IAEngine(IACharacter &ia, World &world)
 {
   ACharacter *target;
 
   _math = Math();
+  _pos(1, 1);
   _math.initSRand(_math.initTime(NULL));
   while (world->getHumanPlayers().size() != 0)
   {
@@ -12,10 +18,10 @@ IAEngine::IAEngine(IACharacter &ia, World &world)
 //    this->leaveThisPosition(ia, world);
     target = this.getTarget(ia, world);
 
-
     this.isPossibleToJoinTarget(ia, world, *target);
 
-    this.actLikeAMan();
+//    this.actLikeAMan();
+
   }
 }
 
@@ -82,7 +88,7 @@ bool                isBonusAroundMe(std::vector<char> &vector)
 
 
 
-std::vector<char>  IAEngine::whatIsAroundMe(IACharacter &ia, world &world)
+std::vector<char>  IAEngine::whatIsAroundMe(IACharacter &ia, World &world)
 {
   _aroundMe.erase();
   _xIA = ia.getPos().getX();
@@ -94,7 +100,7 @@ std::vector<char>  IAEngine::whatIsAroundMe(IACharacter &ia, world &world)
 }
 
 
-void   IAEngine::leaveThisPosition(IACharacter &ia, world &world)
+void   IAEngine::leaveThisPosition(IACharacter &ia, World &world)
 {
 
 }
@@ -142,23 +148,68 @@ HumanCharacter	*IAEngine::getTarget(IACharacter &ia, World &world)
     return this.findClosestHumanPlayer(ia, world);
 }
 
+int          *IAEngine::setOperand(IACharacter &ia, HumanCharacter &target)
+{
+  int         ope[4];
+
+  if (ia.getPos()._x < target.getPos()._x)
+  {
+    ope[0] = 1;
+    ope[1] = 0;
+  }
+  else if (ia.getPos()._x == target.getPos()._x)
+  {
+    ope[0] = 0;
+    ope[1] = 0;    
+  }
+  else
+  {
+    ope[0] = -1;
+    ope[1] = 0;
+  }
+
+
+  if (ia.getPos()._y < target.getPos()._y)
+  {
+    ope[2] = 0;
+    ope[3] = 1;
+  }
+  else if (ia.getPos()._y == target.getPos()._y)
+  {
+    ope[2] = 0;
+    ope[3] = 0;
+  }
+  else
+  {
+    ope[2] = 0;
+    ope[3] = -1;
+  }
+  return (ope);
+}
+
 bool	       IAEngine::isPossibleToJoinTarget(IACharacter &ia, World &world, HumanCharacter &target)
 {
-  int         ope[2];
+  int         ope[4];
+
+  // Mettre ces variables dans la classe
   std::vector<std::map<int:int>> route;
   std::vector<std::vector<char >> map;
 
-
+  ope = this.setOperand(ia, target);
   map = world.getWorld();
   if (this.routeToTarget(ia.getPos()._x, ia.getPos()._y, map, route) == true)
       {
-        // PRINT LA ROUTE
+        _pos._x = route.at(1).at(0);
+        _pos._y = route.at(1).at(1);
+        world.setItemAtPosition(_pos, 'I');
         return true;
       }
+//  std::cout << "Pas trouvé de chemin vers une target" << std::endl;
+  world.setItemAtPosition(_pos, 'I');
   return false;
 }
 
-bool      IAEngine::routeToTarget(int x, int y, std::vector<std::vector<char >> &map, std::vector &route, IACharacter &ia, HumanCharacter &target)
+bool      IAEngine::routeToTarget(int x, int y, std::vector<std::vector<char >> &map, std::vector<std::map<int:int>> &route, IACharacter &ia, HumanCharacter &target)
 {
     // Check dimension du labyrinthe == W || '-'?
     // Check si == F || X || E
@@ -166,27 +217,35 @@ bool      IAEngine::routeToTarget(int x, int y, std::vector<std::vector<char >> 
     // Return true si on est à la position du Human Player sinon return false dans tous les autres cas
 
     if (map.at(y).at(x) == 'W' || map.at(y).at(x) == '-' || map.at(y).at(x) == 'I')
+    {
       return false;
-    else if (map.at(y).at(x) == 'F' || map.at(y).at(x) == 'X' || map.at(y).at(x) == 'E'
+    }
+    else if (map.at(y).at(x) == 'F' || map.at(y).at(x) == 'X' || map.at(y).at(x) == 'E' || map.at(y).at(x) == 'T'
             || (x == ia.getPos()._x && y == ia.getPos()._y))
       {
         map.at(y).at(x) = '-';
-        if (this.routeToTarget(x, y - 1, map, route, ia, target) == true)
+        route.insert(x + ope[0], y + ope[1]);
+        if (this.routeToTarget(x + ope[0], y + ope[1], map, route, ia, target) == true)
           return true;
-        if (this.routeToTarget(x + 1, y, map, route, ia, target) == true)
+        route.pop_back();
+        route.insert(x + ope[2], y + ope[3]);
+        if (this.routeToTarget(x + ope[2], y + ope[3], map, route, ia, target) == true)
           return true;
-        if (this.routeToTarget(x, y + 1, map, route, ia, target) == true)
+        route.pop_back();
+        route.insert(x + (ope[0] * (-1)), y + (ope[1] * (-1)));
+        if (this.routeToTarget(x + (ope[0] * (-1)), y + (ope[1] * (-1)), map, route, ia, target) == true)
           return true;
-        if (this.routeToTarget(x - 1, y, map, route, ia, target) == true)
+        route.pop_back();
+        route.insert(x + (ope[2] * (-1)), y + (ope[3] * (-1)));
+        if (this.routeToTarget(x + (ope[2] * (-1)), y + (ope[3] * (-1)), map, route, ia, target) == true)
           return true;
+        route.pop_back();
       }
     else if (x == target.getPos()._x && y == target.getPos()._y)
       {
-
         return true;
       }
-
-
+      return false;
 }
 
 
