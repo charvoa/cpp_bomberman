@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Thu Jun  4 14:01:11 2015 Nicolas Girardot
+// Last update Thu Jun  4 17:32:29 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -43,7 +43,7 @@ void	World::findWall()
   int	y = 0;
   int	x;
   Position p = Position(1, 1);
-  wall = new Bomb(p, this);
+  wall = new Bomb(p, this, 5);
   wall->initialize("hh");
   wall = new Flame(new Position(1, 1), this);
   wall->initialize("hh");
@@ -158,7 +158,7 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
 void	World::dropBomb(Position &pos, int id)
 {
   Bomb	*bomb;
-  bomb = new Bomb(pos, this);
+  bomb = new Bomb(pos, this, id);
   bomb->initialize("hello");
   _objects.push_back(bomb);
 }

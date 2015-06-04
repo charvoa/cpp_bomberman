@@ -5,15 +5,16 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Wed Jun  3 18:47:27 2015 Nicolas Girardot
+// Last update Thu Jun  4 17:35:59 2015 Nicolas Girardot
 //
 
 #include "Bomb.hh"
 
 Sound&	Bomb::_sound = Sound::getInstance();
 
-Bomb::Bomb(Position& pos, World *world)
+Bomb::Bomb(Position& pos, World *world, int id)
 {
+  _id = id;
   _world = world;
   _pos = pos;
   _isPosed = false;
