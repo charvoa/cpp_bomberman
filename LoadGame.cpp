@@ -31,11 +31,7 @@ void		LoadGame::setInitialMap(std::ifstream &file)
 
   getline(file, tmp);
   filename = tmp.substr((tmp.find("MAP NAME ")));
-  tmp.clear();
-  tmp = "./maps/";
-  filename += (".map");
-  tmp += filename;
-  _initialMap = new Map(tmp);
+  _initialMap = new Map(filename);
 }
 
 void		LoadGame::setPlayersInfo(std::ifstream &file)
