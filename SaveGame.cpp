@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Wed May 20 10:56:14 2015 Serge Heitzler
-// Last update Fri Jun  5 12:11:22 2015 Nicolas Charvoz
+// Last update Fri Jun  5 12:38:21 2015 Nicolas Charvoz
 //
 
 #include "SaveGame.hh"
@@ -22,20 +22,20 @@ SaveGame::SaveGame(World &world, const std::string mapName)
       strCopy.replace(pos, 7, "");
     }
 
-  std::cout << "MapName = " << strCopy << std::endl;
-  std::cout << "SaveGame >> " << std::endl;
   root = "./saves/";
   root += strCopy;
   root += ".save";
+
   _world = &world;
   _map = _world->getWorld();
-  std::ofstream file;//(root, std::ios::in | std::ios::trunc | std::ios::app);
+  std::ofstream file;
 
   // raplced mapName by strCopy
-  file.open(root, std::ios::in | std::ios::trunc | std::ios::app);
-  this->writeMapName(file, strCopy);
+  file.open(root);
+  this->writeMapName(file, mapName);
   this->writeInfo(file, world.getPlayers());
   this->writeMap(file);
+  file.close();
   std::cout << "SaveGame << " << std::endl;
 }
 
@@ -87,7 +87,6 @@ void			SaveGame::writeInfo(std::ofstream & file, std::vector<ACharacter*> charac
       file << separator << std::endl;
       i++;
     }
-  file.close();
 }
 
 SaveGame::~SaveGame()

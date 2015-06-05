@@ -5,12 +5,12 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Thu May 21 16:14:04 2015 Serge Heitzler
-// Last update Thu Jun  4 19:09:16 2015 Nicolas Charvoz
+// Last update Fri Jun  5 12:59:22 2015 Nicolas Charvoz
 //
 
 #include "LoadGame.hh"
 
-LoadGame::LoadGame(Game *game, std::string &filename)
+LoadGame::LoadGame(Game *game)
 {
   std::ifstream	file;
 

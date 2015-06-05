@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:43:01 2015 Antoine Garcia
-// Last update Thu Jun 11 17:26:48 2015 Audibert Louis
+// Last update Fri Jun  5 12:54:07 2015 Nicolas Charvoz
 //
 
 #include "Menu.hh"
@@ -108,6 +108,11 @@ void Menu::getNameOfButton(gdl::Input& input)
     {
       _sound.playMusic("shot");
       _game->pushState(new Leaderboard(_game));
+    }
+  else if (mouse.x >= 174 && mouse.x <= 928 && mouse.y >= 283 && mouse.y <= 493)
+    {
+      _sound.playMusic("shot");
+      LoadGame(_game);
     }
   else if (mouse.x >= 996 && mouse.x <= 1746 && mouse.y >= 759
 	   && mouse.y <= 967)
