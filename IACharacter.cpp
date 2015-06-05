@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Fri Jun  5 15:56:26 2015 Audibert Louis
+// Last update Fri Jun  5 16:07:57 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -209,7 +209,8 @@ void	IACharacter::move(e_orientation ori, gdl::Clock &clock)
       if (_timer >= 2.0f)
       	{
 	  this->translate(move);
-	  _world->setItemAtPosition(*pos, _id);
+	  _world->setItemAtPosition(_pos, 'F');
+	  _world->setItemAtPosition(*pos, 'I');
 	  _pos = *pos;
       	  _timer = 0;
       	}
