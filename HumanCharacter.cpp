@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu Jun  4 18:10:47 2015 Audibert Louis
+// Last update Tue Jun  2 14:25:08 2015 Nicolas Charvoz
 //
 
 #include <iostream>
@@ -24,12 +24,12 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   this->_id = id;
   this->_alive = true;
   _pos = pos;
-  // int save = (id - '0') % 2;
-  // if (save == 1)
-  //   _model.load("./images/marvin.fbx");
-  // else
-  //   _model.load("./images/marvin.fbx");
-  _model.load("/home/audibe_l/Downloads/Blender/GuardSoldier.FBX");
+  int save = (id - '0') % 2;
+  if (save == 1)
+    _model.load("./images/marvin.fbx");
+  else
+    _model.load("./images/marvin.fbx");
+  //_model.load("/home/audibe_l/Downloads/Blender/GuardSoldier.FBX");
   _orientation = DOWN;
   _type = HUMAN;
   _timer = 0;
@@ -38,8 +38,8 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
-  // this->scale(glm::vec3(0.3, 0.3, 0.3));
-  this->scale(glm::vec3(3, 3, 3));
+  this->scale(glm::vec3(0.3, 0.3, 0.3));
+  //this->scale(glm::vec3(3, 3, 3));
 }
 
 HumanCharacter::~HumanCharacter()
@@ -213,7 +213,7 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
       _timer += 1.0f;
       std::cout << "x = " << _pos._x << "; y = " << _pos._y << std::endl;
       std::cout << "timer = " << _timer << std::endl;
-      if (_timer >= 6.0f)
+      if (_timer >= 2.0f)
       	{
 	  this->translate(move);
 	  _world->setItemAtPosition(*pos, _id);

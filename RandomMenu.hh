@@ -5,47 +5,36 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Tue Jun  2 14:40:17 2015 Nicolas Charvoz
+// Last update Tue Jun  2 14:33:49 2015 Nicolas Charvoz
 //
 
-#ifndef LEADERBOARD_HH_
-# define LEADERBOARD_HH_
+#ifndef RANDOMMENU_HH_
+# define RANDOMMENU_HH_
 
 #include "./Sound/SoundManager.hh"
 #include "SousMenuButton.hh"
 #include "Game.hh"
 #include "GameState.hh"
-#include "Camera.hh"
 #include "TextureManager.hh"
-#include "InputManager.hh"
-#include "Command.hh"
-#include "Scoring.hh"
+#include "Letters.hh"
 
-class Command;
-
-class Leaderboard : public GameState {
+class RandomMenu : public GameState {
 
 public:
-  Leaderboard(Game *game);
-  virtual ~Leaderboard();
+  RandomMenu(Game *game);
+  virtual ~RandomMenu();
   virtual void draw(gdl::Clock&, gdl::BasicShader&);
   virtual bool update(gdl::Clock&, gdl::Input&);
   void loadBackground();
   void loadButtons();
   void drawBackground(gdl::Clock&, gdl::BasicShader&);
   void drawButtons(gdl::Clock&, gdl::BasicShader&);
-  void loadLetters();
-  void drawLetters(gdl::Clock&, gdl::BasicShader&);
-  void getScore();
+  void drawLetters(gdl::Clock&, gdl::BasicShader&, int, int);
 
 private:
   static Sound& _sound;
   static TextureManager& _texManag;
-  InputManager *_inputManager;
-  Command *_command;
   AObject *_background;
-  std::multimap<std::string, std::string> _scores;
-  std::vector<std::string> _bestScore;
   std::map<std::string, AObject*> _letters;
 };
 
