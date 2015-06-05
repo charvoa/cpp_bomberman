@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Sun Jun 14 15:50:44 2015 Nicolas Girardot
+// Last update Sun Jun 14 18:30:47 2015 Audibert Louis
 //
 
 #include "Bomb.hh"
@@ -34,14 +34,10 @@ bool	Bomb::initialize(const std::string &tex)
   _bomb = new ModelLoad();
   _bomb->initialize("LibBomberman_linux_x64/assets/bomb.fbx");
   glm::vec3 trans(0 + (_pos._x * 100 - 710), 0, 750 * (-1) + (_pos._y  - _world->getHeight() / 2) * 100);
-  // std::cout << _pos._x * 100 - 750 << " hh " << 750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100 << std::endl;
   if (_world->getPlayerById(_id))
     my_range = _world->getPlayerById(_id)->getRange();
-  std::cout << "BOMB INITIALIZE BEFORE TRANSLATE" << std::endl;
   _bomb->translate(trans);
-  std::cout << "BOMB INITIALIZE AFTER TRANSLATE" << std::endl;
   _bomb->scale(glm::vec3(0.3, 0.3, 0.3));
-  std::cout << "BOMB INITIALIZE AFTER SCALE" << std::endl;
   _isPosed = true;
   for (int i = 1; i <= my_range; i++)
     {
