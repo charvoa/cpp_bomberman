@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Fri Jun  5 14:44:55 2015 Antoine Garcia
+// Last update Fri Jun  5 14:48:19 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -32,7 +32,6 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
   shader.setUniform("projection", _game->_camera->getProjection());
   _map = _fileMap->getMap();
   _texManag.registerTexture("backgroundInGame", "backIG");
-  createIaPlayer();
   this->loadBackground();
   findWall();
   _command = new Command(game, this);
