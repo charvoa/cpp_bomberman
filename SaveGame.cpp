@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Wed May 20 10:56:14 2015 Serge Heitzler
-// Last update Fri Jun  5 13:00:43 2015 Nicolas Charvoz
+// Last update Fri Jun  5 13:01:14 2015 Nicolas Charvoz
 //
 
 #include "SaveGame.hh"
@@ -13,7 +13,7 @@
 SaveGame::SaveGame(World &world, const std::string mapName)
 {
   std::string	root;
-
+  std::ofstream file;
   std::string strCopy(mapName);
 
   size_t pos = strCopy.find("./maps/");
@@ -22,17 +22,12 @@ SaveGame::SaveGame(World &world, const std::string mapName)
       strCopy.replace(pos, 7, "");
     }
 
-  root = "./saves/";
-  root += strCopy;
-  root += ".save";
-
+  root = "./saves/lastgame.save";
   _world = &world;
   _map = _world->getWorld();
-  std::ofstream file;
+  file.open(root, std::ofstream::out | std::ofstream::trunc | std::ofstream::app);
 
-  // raplced mapName by strCopy
-  file.open(root);
-  this->writeMapName(file, mapName);
+  this->writeMapName(file, strCopy);
   this->writeInfo(file, world.getPlayers());
   this->writeMap(file);
   file.close();
