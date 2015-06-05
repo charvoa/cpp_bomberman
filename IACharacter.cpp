@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Fri Jun  5 15:45:05 2015 Audibert Louis
+// Last update Fri Jun  5 15:49:08 2015 Antoine Garcia
 //
 
 #include "IACharacter.hh"
@@ -16,7 +16,7 @@ TextureManager &IACharacter::_texManag = TextureManager::getInstance();
 
 IACharacter::IACharacter(int id, World *world, Position& pos)
 {
-  _brain = new IAEngine(*this, *world);
+  // _brain = new IAEngine(*this, *world);
   _world = world;
   this->_IAid = id;
   this->_alive = true;
