@@ -5,7 +5,7 @@
 ## Login   <nicolaschr@epitech.net>
 ## 
 ## Started on  Fri Jun  5 08:03:55 2015 Nicolas Charvoz
-## Last update Fri Jun  5 08:04:00 2015 Nicolas Charvoz
+## Last update Fri Jun  5 09:38:29 2015 Nicolas Charvoz
 ##
 
 MAIN		=	bomberman
@@ -39,8 +39,7 @@ SRC		+=	Button.cpp			\
 			RandomMenu.cpp			\
 			Bonus.cpp			\
 			GameOver.cpp			\
-			Intro.cpp			\
-			SaveGame.cpp
+			Intro.cpp
 
 SRC_MAIN	=	$(SRC) main.cpp
 

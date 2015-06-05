@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Fri Jun  5 07:59:30 2015 Nicolas Charvoz
+// Last update Fri Jun  5 09:39:19 2015 Nicolas Charvoz
 //
 
 #include "Pause.hh"
@@ -70,7 +70,7 @@ void Pause::getNameOfButton(gdl::Input &input)
 	    && mouse.y <= 427)
      {
        //SaveGame(_world->getWorld(), "FAKE");
-       SaveGame(*_world, _world->getMapName());
+       //SaveGame(*_world, _world->getMapName());
      }
    else if (mouse.x >= 812 && mouse.x <= 1166 && mouse.y >= 627
 	    && mouse.y <= 723)
