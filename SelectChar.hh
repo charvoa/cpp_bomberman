@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Tue Jun  2 09:58:02 2015 Nicolas Charvoz
+// Last update Tue Jun  2 14:19:23 2015 Nicolas Charvoz
 //
 
 #ifndef SELECTCHAR_HH_
@@ -38,6 +38,8 @@ public:
   void drawButtons(gdl::Clock&, gdl::BasicShader&);
   void getNameOfButton(gdl::Input&);
   void drawDisplayButton(gdl::Clock&, gdl::BasicShader&);
+  void drawDisplayIA(gdl::Clock&, gdl::BasicShader&);
+  void drawDisplayMap(gdl::Clock&, gdl::BasicShader&);
 
 private:
   static Sound& _sound;
@@ -63,6 +65,7 @@ private:
   bool _ia10;
   bool _ia15;
   bool _ia20;
+  int _nbrIA;
 };
 
 #endif
