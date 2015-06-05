@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Thu May 21 16:14:04 2015 Serge Heitzler
-// Last update Fri Jun  5 13:56:57 2015 Nicolas Charvoz
+// Last update Fri Jun  5 14:08:48 2015 Nicolas Charvoz
 //
 
 #include "LoadGame.hh"
@@ -30,8 +30,9 @@ void		LoadGame::setInitialMap(std::ifstream &file)
   std::string	tmp;
 
   getline(file, tmp);
-  filename = tmp.substr((tmp.find("MAP NAME ")));
+  filename = tmp.substr(tmp.find(":") + 1);
   _initialMap = new Map(filename);
+  //_initialMap = new Map("./maps/x.map");
 }
 
 void		LoadGame::setPlayersInfo(std::ifstream &file)

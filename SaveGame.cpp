@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Wed May 20 10:56:14 2015 Serge Heitzler
-// Last update Sun Jun 14 18:21:51 2015 Antoine Garcia
+// Last update Fri Jun  5 14:06:45 2015 Nicolas Charvoz
 //
 
 #include "SaveGame.hh"
@@ -29,7 +29,7 @@ SaveGame::SaveGame(World &world, const std::string mapName)
 
 void		SaveGame::writeMapName(std::ofstream & file, const std::string & mapName)
 {
-  file << "MAP NAME " << mapName << "\n";
+  file << "MAPNAME:" << mapName << "\n";
 }
 
 void		SaveGame::writeMap(std::ofstream & file)
