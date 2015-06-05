@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Fri Jun  5 15:52:58 2015 Audibert Louis
+// Last update Fri Jun  5 15:56:26 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -27,6 +27,7 @@ IACharacter::IACharacter(int id, World *world, Position& pos)
   _timer = 0;
   _isAnime = false;
   _pos = pos;
+  _world->setItemAtPosition(_pos, 'I');
   _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
