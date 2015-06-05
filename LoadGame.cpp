@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Thu May 21 16:14:04 2015 Serge Heitzler
-// Last update Sun Jun 14 18:18:00 2015 Antoine Garcia
+// Last update Fri Jun  5 13:56:57 2015 Nicolas Charvoz
 //
 
 #include "LoadGame.hh"
@@ -14,7 +14,7 @@ LoadGame::LoadGame(Game *game)
 {
   std::ifstream	file;
 
-  file.open("lastgame.save");
+  file.open("./saves/lastgame.save");
   _nbHumanPlayers = 1;
   _game = game;
   this->setInitialMap(file);

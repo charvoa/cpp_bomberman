@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Sat May 16 10:19:32 2015 Serge Heitzler
-// Last update Sun Jun 14 12:23:24 2015 Antoine Garcia
+// Last update Fri Jun  5 13:32:39 2015 Nicolas Charvoz
 //
 
 #ifndef MAP_HH_
@@ -36,7 +36,7 @@ public:
   void					setItemAtPosition(int x, int y,
 							  char c);
   int					getNumberOfFreeSpace() const;
-  void					mapGenerator(int width, int height, int human, int ia);
+  const Map				&mapGenerator(int width, int height, int human, int ia);
   const std::string &  			getMapName();
 
   private:

@@ -1,3 +1,13 @@
+//
+// IAEngine.cpp for  in /home/nicolaschr/Work/cpp_bomberman
+//
+// Made by Nicolas Charvoz
+// Login   <nicolaschr@epitech.net>
+//
+// Started on  Fri Jun  5 13:13:29 2015 Nicolas Charvoz
+// Last update Fri Jun  5 13:13:30 2015 Nicolas Charvoz
+//
+
 #include <unistd.h>
 #include "IAEngine.hh"
 #include "../IACharacter.hh"

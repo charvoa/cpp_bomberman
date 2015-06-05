@@ -1,3 +1,13 @@
+//
+// Math.hpp for  in /home/nicolaschr/Work/cpp_bomberman
+//
+// Made by Nicolas Charvoz
+// Login   <nicolaschr@epitech.net>
+//
+// Started on  Fri Jun  5 13:13:50 2015 Nicolas Charvoz
+// Last update Fri Jun  5 13:13:51 2015 Nicolas Charvoz
+//
+
 #ifndef MATH_HPP_
 # define MATH_HPP_
 

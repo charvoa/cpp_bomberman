@@ -5,7 +5,7 @@
 // Login   <heitzl_s@epitech.net>
 //
 // Started on  Mon May 25 18:56:25 2015 Serge Heitzler
-// Last update Sun Jun 14 12:23:37 2015 Antoine Garcia
+// Last update Fri Jun  5 13:38:30 2015 Nicolas Charvoz
 //
 
 #include "Map.hh"
@@ -132,7 +132,7 @@ int	Map::getNumberOfFreeSpace() const
   return nbr;
 }
 
-void	Map::mapGenerator(int width, int height, int human, int ia)
+const Map	&Map::mapGenerator(int width, int height, int human, int ia)
 {
   int					i;
   int					j;
@@ -158,4 +158,5 @@ void	Map::mapGenerator(int width, int height, int human, int ia)
       std::cout << std::endl;
       j++;
     }
+  return *this;
 }
