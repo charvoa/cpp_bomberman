@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Fri Jun  5 15:44:47 2015 Nicolas Girardot
-// Last update Fri Jun 12 13:27:54 2015 Nicolas Girardot
+// Last update Fri Jun 12 16:27:11 2015 Nicolas Girardot
 //
 
 #include "Bonus.hh"
@@ -14,6 +14,7 @@ Bonus::Bonus(Position& pos, World *world)
 {
   _world = world;
   _pos = pos;
+  _isDestroyed = false;
 }
 
 Bonus::~Bonus()
@@ -51,4 +52,15 @@ Position &Bonus::getPos()
 {
   //il est beau ce GetPOS()
   return (_pos);
+}
+
+bool	Bonus::getStatus()
+{
+  return (!_isDestroyed);
+}
+
+int	Bonus::onCollect()
+{
+  _isDestroyed = true;
+  return (rand() % 3);
 }

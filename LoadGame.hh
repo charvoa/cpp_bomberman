@@ -16,23 +16,38 @@
 #include <vector>
 #include <string>
 #include "Map.hh"
+#include "Game.hh"
+#include "ACharacter.hh"
+#include "HumanCharacter.hh"
+#include "IACharacter.hh"
 
 class		LoadGame
 {
 public:
-  LoadGame(std::string &filename);
+  LoadGame(Game *game,std::string &filename);
   ~LoadGame();
-  void				setInitialMap(std::ofstram &file);
-  void				setPlayersInfo(std::ofstream &file);
-  std::string&			determineStartMap();
-  std::list<ACharacter *>	getPlayers(std::ofstream &file);
+  void				setInitialMap(std::ifstream &file);
+  void				setPlayersInfo(std::ifstream &file);
+  void				determineStartMap();
+  std::vector<ACharacter *>	getPlayers(std::ifstream &file);
   std::stringstream&		getBufferForMap(std::ifstream &file);
   void				setSavedMap(std::stringstream &map);
+  void				getPlayerType(std::string &line);
+  void				getPlayerPosition(std::string &line);
+  void				getPlayerHP(std::string &line);
+  void				getPlayerRange(std::string &line);
 
 private:
   Map					*_initialMap;
-  std::vector<std::vector<char> >	savedMap;
-
+  World					*_world;
+  std::vector<std::vector<char> >	_savedMap;
+  std::string				_startMap;
+  std::stringstream			_bufferGetBufferForMap;
+  e_type				_type;
+  int					_id;
+  Position				_pos;
+  int					_hp;
+  int					_range;
 };
 
 #endif

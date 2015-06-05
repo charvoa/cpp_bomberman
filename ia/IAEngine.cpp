@@ -1,6 +1,4 @@
 #include "IAEngine.hh"
-
-// OPT
 #include "../IACharacter.hh"
 #include "../HumanCharacter.hh"
 #include "../World.hh"
@@ -322,13 +320,6 @@ bool			IAEngine::isPossibleToJoinTarget(HumanCharacter &target)
 	      _pos._y = _routes.at(index).first.at(o).second;
 	      o++;
 	    }
-	  //	  o++;
-
-	  std::cout << "o = " << o << std::endl;
-	  std::cout << "size = " << _routes.at(index).first.size() << std::endl;
-
-
-
 
 	  // PRINT
 	  j = 0;

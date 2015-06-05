@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Fri Jun 12 14:51:45 2015 Antoine Garcia
+// Last update Sat Jun 13 15:44:42 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -47,7 +47,7 @@ void	World::findWall()
   Position p = Position(1, 1);
   wall = new Bomb(p, this, 5);
   wall->initialize("hh");
-  wall = new Flame(new Position(1, 1), this);
+  wall = new Flame(new Position(0, 0), this, 0);
   wall->initialize("hh");
   while(y < _fileMap->getHeight())
     {
@@ -56,43 +56,31 @@ void	World::findWall()
 	{
 	  if (_fileMap->getItemAtPosition(x, y) == 'W')
 	    {
-	      if (x == 14 && y == 10);
-	      else
-		{
-		  wall = new Cube();
-		  wall->initialize("./images/wall.tga");
-		  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, 0,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
-		  wall->translate(trans);
-		  wall->scale(glm::vec3(100, 100, 100));
-		  _objects.push_back(wall);
-		}
+	      wall = new Cube();
+	      wall->initialize("./images/wall.tga");
+	      glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, 0,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
+	      wall->translate(trans);
+	      wall->scale(glm::vec3(100, 100, 100));
+	      _objects.push_back(wall);
 	    }
 	  if (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2')
 	    {
 	      Position pos(x, y);
-	      if (x == 14 && y == 10);
+	      if (_fileMap->getItemAtPosition(x,y) == '1')
+		this->createHumanPlayer('1', pos);
 	      else
 		{
-		  if (_fileMap->getItemAtPosition(x,y) == '1')
-		    this->createHumanPlayer('1', pos);
+		  if (_nbPlayers == 2)
+		    this->createHumanPlayer('2', pos);
 		  else
-		    {
-		      if (_nbPlayers == 2)
-			this->createHumanPlayer('2', pos);
-		      else
-			_map.at(y).at(x) = 'F';
-		    }
+		    _map.at(y).at(x) = 'F';
 		}
 	    }
 	  if (_fileMap->getItemAtPosition(x, y) == 'B')
 	    {
-	      if (x == 14 && y == 10);
-	      else
-		{
-		  wall = new Box(new Position(x, y), this);
-		  wall->initialize("hello");
+	      wall = new Box(new Position(x, y), this);
+	      wall->initialize("hello");
 		  _objects.push_back(wall);
-		}
 	    }
 	  wall = new Cube();
 	  wall->initialize("./images/floor1.tga");
@@ -136,12 +124,12 @@ void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
   gdl::BasicShader shadera;
   if (_nbPlayers == 2)
     {
-      glViewport (0, 0, 1920/2, 1080);
+      glViewport (1920/2, 0, 1920/2, 1080);
       ACharacter *player = getPlayerById(1);
       if (player == NULL);
       else
 	{
-	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 50), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
+	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 100 - 1000), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
 	  shadera = _game->getShader();
 	  shadera.bind();
 	  shadera.setUniform("view", _game->_camera->getTransformation());
@@ -155,12 +143,12 @@ void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 	      (*it)->draw(shader, clock);
 	    }
 	}
-      glViewport (1920/2, 0, 1920/2, 1080);
+      glViewport (0, 0, 1920/2, 1080);
       player = getPlayerById(2);
       if (player == NULL);
       else
 	{
-	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 50), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
+	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 100 - 1000), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
 	  shadera.bind();
 	  shadera.setUniform("view", _game->_camera->getTransformation());
 	  shadera.setUniform("projection", _game->_camera->getProjection());
@@ -209,9 +197,16 @@ void	World::gameOver()
   _game->getShader().setUniform("projection", _game->_camera->getProjection());
   players = getHumansPlayers();
   if (_players.size() == 0)
-    std::cout << "GAME OVER" << std::endl;
+    {
+      glViewport (0, 0, 1920, 1080);
+      sleep(1);
+      _game->pushState(new GameOver(_game, 42));
+    }
   else if (players.size() == 1 && _players.size() == 1)
     {
+      Scoring	score;
+
+      score.storeScore("Player" + std::to_string(players[0]->getId()), players[0]->getScore());
       glViewport (0, 0, 1920, 1080);
       sleep(1);
       _game->pushState(new GameOver(_game, players[0]->getId()));
@@ -231,7 +226,7 @@ void	World::checkBonus(Bonus &bonus)
   for (it = _players.begin() ; it != _players.end() ; ++it)
     {
       if (bonus.getPos() == (*it)->getPos())
-	std::cout << "I HAVE THE BONUS" << std::endl;
+	(*it)->setBonus(bonus.onCollect());
     }
 }
 
@@ -241,9 +236,9 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
   Bonus	*bonus;
   for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
     {
+      (*it)->update(clock, input);
       if ((bonus = dynamic_cast<Bonus *>(*it)))
 	this->checkBonus(*bonus);
-      (*it)->update(clock, input);
       if ((*it)->getStatus() == false)
 	{
 	  delete (*it);
@@ -386,6 +381,7 @@ void			World::checkPlayersDeath(Flame& flame)
     {
       if ((*it)->getPos() == flame.getPos())
   	{
+	  getPlayerById(flame.getIdPlayer())->setScore(getPlayerById(flame.getIdPlayer())->getScore() + 100);
 	  delete *it;
 	  it = _players.erase(it);
 	  _map.at(flame.getPos()._y).at(flame.getPos()._x) = 'F';
@@ -406,6 +402,7 @@ void		World::checkDestroyBoxes(Flame& flame)
 	{
 	  if (box->getPosition() == flame.getPos())
 	    {
+	      getPlayerById(flame.getIdPlayer())->setScore(getPlayerById(flame.getIdPlayer())->getScore() + 10);
 	      box->onDestroy();
 	      _map.at(flame.getPos()._y).at(flame.getPos()._x) = 'F';
 	    }

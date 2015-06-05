@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Wed Jun 10 15:10:24 2015 Audibert Louis
+// Last update Sat Jun 13 13:51:16 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -32,6 +32,7 @@ IACharacter::IACharacter(int id, World *world, Position& pos)
   _isAnime = false;
   _pos = pos;
   _range = 1;
+  _score = 0;
   _world->setItemAtPosition(_pos, 'I');
   _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, 0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
@@ -127,26 +128,6 @@ void	IACharacter::setRange(int range)
 void	IACharacter::setOrientation(int orientation)
 {
   _orientation = (e_orientation)orientation;
-}
-
-void	IACharacter::initColor()
-{
-  srand(time(NULL));
-  _color.insert(std::pair<char,int>('r', rand() % 256));
-  _color.insert(std::pair<char,int>('g', rand() % 256));
-  _color.insert(std::pair<char,int>('b', rand() % 256));
-}
-
-std::map<char, int> &IACharacter::getColor() const
-{
-  return (std::map<char, int> &) _color;
-}
-
-void	IACharacter::setColor(int r, int g, int b)
-{
-  _color.insert(std::pair<char,int>('r', r));
-  _color.insert(std::pair<char,int>('g', g));
-  _color.insert(std::pair<char,int>('b', b));
 }
 
 int	IACharacter::getType() const
@@ -251,4 +232,21 @@ bool	IACharacter::getCanLaunchBomb() const
 void	IACharacter::setCanLaunchBomb(bool launch)
 {
   _canLaunchBomb = launch;
+}
+
+void	IACharacter::setBonus(int bonus)
+{
+  (void) bonus;
+  std::cout << "setBonus IACharacter" << std::endl;
+}
+
+int	IACharacter::getScore() const
+{
+  return _score;
+}
+
+void	IACharacter::setScore(int score)
+{
+  _score = score;
+  std::cout << "setScore IACharacter " << _score << std::endl;
 }
