@@ -2,13 +2,13 @@
 <!--Detailed report on module SaveGame-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="57" level="0" />
+<lines_of_code value="52" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="6" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
 <lines_of_code value="8" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="7.125" level="1" />
+<lines_of_code_per_line_of_comment value="6.500" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="0.750" level="0" />
 <weighted_methods_per_class_unity value="6" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
@@ -26,12 +26,12 @@
 </module_detail>
 <procedural_detail>
 <member_function>
-<name>SaveGame(vector,const string &amp;)</name>
+<name>SaveGame(World &amp;,const string &amp;)</name>
 <extent>
 <description>definition</description>
 <source_reference file="SaveGame.cpp" line="13" />
 </extent>
-<lines_of_code value="7" level="0" />
+<lines_of_code value="8" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="8" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -41,19 +41,19 @@
 <name>writeInfo(ifstream &amp;,list)</name>
 <extent>
 <description>definition</description>
-<source_reference file="SaveGame.cpp" line="53" />
+<source_reference file="SaveGame.cpp" line="54" />
 </extent>
-<lines_of_code value="20" level="0" />
+<lines_of_code value="14" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
 <lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="******" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>writeMap(ifstream &amp;,vector)</name>
+<name>writeMap(ifstream &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="SaveGame.cpp" line="27" />
+<source_reference file="SaveGame.cpp" line="28" />
 </extent>
 <lines_of_code value="17" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
@@ -65,7 +65,7 @@
 <name>writeMapName(ifstream &amp;,const string &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="SaveGame.cpp" line="22" />
+<source_reference file="SaveGame.cpp" line="23" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -77,7 +77,7 @@
 <name>writeType(e_type *,int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="SaveGame.cpp" line="46" />
+<source_reference file="SaveGame.cpp" line="47" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="3" level="0" />
@@ -89,7 +89,7 @@
 <name>~SaveGame()</name>
 <extent>
 <description>definition</description>
-<source_reference file="SaveGame.cpp" line="75" />
+<source_reference file="SaveGame.cpp" line="70" />
 </extent>
 <lines_of_code value="3" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -104,34 +104,41 @@
 <client_module>
 </client_module>
 <supplier_module>
+<name>World</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="SaveGame.cpp" line="13" />
+</extent>
 <name>e_type</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="SaveGame.cpp" line="46" />
+<source_reference file="SaveGame.cpp" line="47" />
 </extent>
 <name>ifstream</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="SaveGame.cpp" line="22" />
+<source_reference file="SaveGame.cpp" line="23" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="SaveGame.cpp" line="27" />
+<source_reference file="SaveGame.cpp" line="28" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="SaveGame.cpp" line="53" />
+<source_reference file="SaveGame.cpp" line="54" />
 </extent>
 <name>list</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="SaveGame.cpp" line="53" />
+<source_reference file="SaveGame.cpp" line="54" />
 </extent>
 <name>string</name>
 <visible>true</visible>
@@ -142,18 +149,7 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="SaveGame.cpp" line="22" />
-</extent>
-<name>vector</name>
-<visible>true</visible>
-<concrete>true</concrete>
-<extent>
-<description>pass by value</description>
-<source_reference file="SaveGame.cpp" line="13" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="SaveGame.cpp" line="27" />
+<source_reference file="SaveGame.cpp" line="23" />
 </extent>
 </supplier_module>
 </module>

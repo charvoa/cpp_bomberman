@@ -1,4 +1,3 @@
-CCCC_Module@ACharacter@@
 CCCC_Module@AObject@@
 CCCC_Module@BasicShader@@
 CCCC_Module@Bomb@@
@@ -17,6 +16,7 @@ CCCC_Module@HumanCharacter@@
 CCCC_Module@IACharacter@@
 CCCC_Module@Input@@
 CCCC_Module@InputManager@@
+CCCC_Module@Intro@@
 CCCC_Module@Leaderboard@@
 CCCC_Module@Load@@
 CCCC_Module@LoadGame@@
@@ -48,7 +48,6 @@ CCCC_ModExt@int@builtin@<nofile>@0@builtin definition@d?????@@0@d@
 CCCC_Module@list@@
 CCCC_Module@long@builtin@
 CCCC_ModExt@long@builtin@<nofile>@0@builtin definition@d?????@@0@d@
-CCCC_Module@ofstream@@
 CCCC_Module@string@@
 CCCC_Module@stringstream@@
 CCCC_Module@touche@@
@@ -75,15 +74,21 @@ CCCC_MemExt@Bomb@update@@(...)@Bomb.cpp@81@definition@F????@LOC:24 COM:1 MVG:5@?
 CCCC_Member@Bomb@~Bomb@@()@
 CCCC_MemExt@Bomb@~Bomb@@()@Bomb.cpp@24@definition@F????@LOC:3 COM:0 MVG:0@?@d@
 CCCC_Member@Bonus@Bonus@@(Position &,World *)@
-CCCC_MemExt@Bonus@Bonus@@(Position &,World *)@Bonus.cpp@13@definition@F????@LOC:5 COM:8 MVG:0@?@d@
+CCCC_MemExt@Bonus@Bonus@@(Position &,World *)@Bonus.cpp@13@definition@F????@LOC:6 COM:8 MVG:0@?@d@
 CCCC_Member@Bonus@draw@@(...)@
-CCCC_MemExt@Bonus@draw@@(...)@Bonus.cpp@45@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@Bonus@draw@@(...)@Bonus.cpp@46@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@Bonus@getPos@@()@
+CCCC_MemExt@Bonus@getPos@@()@Bonus.cpp@51@definition@F????@LOC:4 COM:1 MVG:1@?@d@
+CCCC_Member@Bonus@getStatus@@()@
+CCCC_MemExt@Bonus@getStatus@@()@Bonus.cpp@57@definition@F????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@Bonus@initialize@@(const string &)@
-CCCC_MemExt@Bonus@initialize@@(const string &)@Bonus.cpp@24@definition@F????@LOC:10 COM:0 MVG:1@?@d@
+CCCC_MemExt@Bonus@initialize@@(const string &)@Bonus.cpp@25@definition@F????@LOC:10 COM:0 MVG:1@?@d@
+CCCC_Member@Bonus@onCollect@@()@
+CCCC_MemExt@Bonus@onCollect@@()@Bonus.cpp@62@definition@F????@LOC:5 COM:0 MVG:1@?@d@
 CCCC_Member@Bonus@update@@(...)@
-CCCC_MemExt@Bonus@update@@(...)@Bonus.cpp@35@definition@F????@LOC:9 COM:0 MVG:1@?@d@
+CCCC_MemExt@Bonus@update@@(...)@Bonus.cpp@36@definition@F????@LOC:9 COM:0 MVG:1@?@d@
 CCCC_Member@Bonus@~Bonus@@()@
-CCCC_MemExt@Bonus@~Bonus@@()@Bonus.cpp@19@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_MemExt@Bonus@~Bonus@@()@Bonus.cpp@20@definition@F????@LOC:3 COM:0 MVG:0@?@d@
 CCCC_Member@Box@Box@@(Position *,World *)@
 CCCC_MemExt@Box@Box@@(Position *,World *)@Box.cpp@15@definition@F????@LOC:6 COM:0 MVG:0@?@d@
 CCCC_Member@Box@draw@@(...)@
@@ -119,51 +124,51 @@ CCCC_MemExt@Camera@Camera@@(vec3,vec3)@Camera.cpp@13@definition@F????@LOC:3 COM:
 CCCC_Member@Camera@Init@@()@
 CCCC_MemExt@Camera@Init@@()@Camera.cpp@22@definition@F????@LOC:5 COM:0 MVG:0@?@d@
 CCCC_Member@Camera@getProjection@@()@
-CCCC_MemExt@Camera@getProjection@@()@Camera.cpp@39@definition@F????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@Camera@getProjection@@()@Camera.cpp@38@definition@F????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@Camera@getTransformation@@()@
-CCCC_MemExt@Camera@getTransformation@@()@Camera.cpp@34@definition@F????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@Camera@getTransformation@@()@Camera.cpp@33@definition@F????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@Camera@move@@(vec3,vec3)@
-CCCC_MemExt@Camera@move@@(vec3,vec3)@Camera.cpp@28@definition@F????@LOC:5 COM:0 MVG:0@?@d@
+CCCC_MemExt@Camera@move@@(vec3,vec3)@Camera.cpp@28@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@Camera@~Camera@@()@
 CCCC_MemExt@Camera@~Camera@@()@Camera.cpp@17@definition@F????@LOC:3 COM:0 MVG:0@?@d@
 CCCC_Member@Command@Command@@(Game *,World *,const string &)@
-CCCC_MemExt@Command@Command@@(Game *,World *,const string &)@Command.cpp@15@definition@F????@LOC:31 COM:0 MVG:4@?@d@
+CCCC_MemExt@Command@Command@@(Game *,World *,const string &)@Command.cpp@15@definition@F????@LOC:33 COM:0 MVG:5@?@d@
 CCCC_Member@Command@back@@(Clock &)@
-CCCC_MemExt@Command@back@@(Clock &)@Command.cpp@107@definition@F????@LOC:7 COM:0 MVG:1@?@d@
+CCCC_MemExt@Command@back@@(Clock &)@Command.cpp@109@definition@F????@LOC:9 COM:0 MVG:3@?@d@
 CCCC_Member@Command@down@@(Clock &)@
-CCCC_MemExt@Command@down@@(Clock &)@Command.cpp@149@definition@F????@LOC:10 COM:0 MVG:5@?@d@
+CCCC_MemExt@Command@down@@(Clock &)@Command.cpp@153@definition@F????@LOC:10 COM:0 MVG:5@?@d@
 CCCC_Member@Command@down2@@(Clock &)@
-CCCC_MemExt@Command@down2@@(Clock &)@Command.cpp@193@definition@F????@LOC:10 COM:0 MVG:5@?@d@
+CCCC_MemExt@Command@down2@@(Clock &)@Command.cpp@197@definition@F????@LOC:10 COM:0 MVG:5@?@d@
 CCCC_Member@Command@enter@@(Clock &)@
-CCCC_MemExt@Command@enter@@(Clock &)@Command.cpp@204@definition@F????@LOC:6 COM:0 MVG:1@?@d@
+CCCC_MemExt@Command@enter@@(Clock &)@Command.cpp@208@definition@F????@LOC:6 COM:0 MVG:1@?@d@
 CCCC_Member@Command@exec@@(touche,Clock &)@
-CCCC_MemExt@Command@exec@@(touche,Clock &)@Command.cpp@211@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@Command@exec@@(touche,Clock &)@Command.cpp@215@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@Command@left@@(Clock &)@
-CCCC_MemExt@Command@left@@(Clock &)@Command.cpp@127@definition@F????@LOC:10 COM:0 MVG:5@?@d@
+CCCC_MemExt@Command@left@@(Clock &)@Command.cpp@131@definition@F????@LOC:10 COM:0 MVG:5@?@d@
 CCCC_Member@Command@left2@@(Clock &)@
-CCCC_MemExt@Command@left2@@(Clock &)@Command.cpp@171@definition@F????@LOC:10 COM:0 MVG:5@?@d@
+CCCC_MemExt@Command@left2@@(Clock &)@Command.cpp@175@definition@F????@LOC:10 COM:0 MVG:5@?@d@
 CCCC_Member@Command@lshift@@(Clock &)@
-CCCC_MemExt@Command@lshift@@(Clock &)@Command.cpp@66@definition@F????@LOC:8 COM:0 MVG:3@?@d@
+CCCC_MemExt@Command@lshift@@(Clock &)@Command.cpp@68@definition@F????@LOC:8 COM:0 MVG:3@?@d@
 CCCC_Member@Command@mute@@(Clock &)@
-CCCC_MemExt@Command@mute@@(Clock &)@Command.cpp@85@definition@F????@LOC:9 COM:0 MVG:1@?@d@
+CCCC_MemExt@Command@mute@@(Clock &)@Command.cpp@87@definition@F????@LOC:9 COM:0 MVG:1@?@d@
 CCCC_Member@Command@no@@(Clock &)@
-CCCC_MemExt@Command@no@@(Clock &)@Command.cpp@49@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@Command@no@@(Clock &)@Command.cpp@51@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@Command@pause@@(Clock &)@
-CCCC_MemExt@Command@pause@@(Clock &)@Command.cpp@75@definition@F????@LOC:9 COM:0 MVG:1@?@d@
+CCCC_MemExt@Command@pause@@(Clock &)@Command.cpp@77@definition@F????@LOC:9 COM:0 MVG:1@?@d@
 CCCC_Member@Command@right@@(Clock &)@
-CCCC_MemExt@Command@right@@(Clock &)@Command.cpp@138@definition@F????@LOC:10 COM:0 MVG:5@?@d@
+CCCC_MemExt@Command@right@@(Clock &)@Command.cpp@142@definition@F????@LOC:10 COM:0 MVG:5@?@d@
 CCCC_Member@Command@right2@@(Clock &)@
-CCCC_MemExt@Command@right2@@(Clock &)@Command.cpp@182@definition@F????@LOC:10 COM:0 MVG:5@?@d@
+CCCC_MemExt@Command@right2@@(Clock &)@Command.cpp@186@definition@F????@LOC:10 COM:0 MVG:5@?@d@
 CCCC_Member@Command@space@@(Clock &)@
-CCCC_MemExt@Command@space@@(Clock &)@Command.cpp@54@definition@F????@LOC:11 COM:0 MVG:4@?@d@
+CCCC_MemExt@Command@space@@(Clock &)@Command.cpp@56@definition@F????@LOC:11 COM:0 MVG:4@?@d@
 CCCC_Member@Command@unmute@@(Clock &)@
-CCCC_MemExt@Command@unmute@@(Clock &)@Command.cpp@96@definition@F????@LOC:9 COM:0 MVG:1@?@d@
+CCCC_MemExt@Command@unmute@@(Clock &)@Command.cpp@98@definition@F????@LOC:9 COM:0 MVG:1@?@d@
 CCCC_Member@Command@up@@(Clock &)@
-CCCC_MemExt@Command@up@@(Clock &)@Command.cpp@116@definition@F????@LOC:10 COM:0 MVG:5@?@d@
+CCCC_MemExt@Command@up@@(Clock &)@Command.cpp@120@definition@F????@LOC:10 COM:0 MVG:5@?@d@
 CCCC_Member@Command@up2@@(Clock &)@
-CCCC_MemExt@Command@up2@@(Clock &)@Command.cpp@160@definition@F????@LOC:10 COM:0 MVG:5@?@d@
+CCCC_MemExt@Command@up2@@(Clock &)@Command.cpp@164@definition@F????@LOC:10 COM:0 MVG:5@?@d@
 CCCC_Member@Command@~Command@@()@
-CCCC_MemExt@Command@~Command@@()@Command.cpp@47@definition@F????@LOC:1 COM:0 MVG:0@?@d@
+CCCC_MemExt@Command@~Command@@()@Command.cpp@49@definition@F????@LOC:1 COM:0 MVG:0@?@d@
 CCCC_Member@Exit@Exit@@(Game *)@
 CCCC_MemExt@Exit@Exit@@(Game *)@Exit.cpp@21@definition@F????@LOC:13 COM:0 MVG:0@?@d@
 CCCC_Member@Exit@draw@@(Clock &,BasicShader &)@
@@ -180,42 +185,46 @@ CCCC_Member@Exit@update@@(Clock &,Input &)@
 CCCC_MemExt@Exit@update@@(Clock &,Input &)@Exit.cpp@65@definition@F????@LOC:7 COM:0 MVG:1@?@d@
 CCCC_Member@Exit@~Exit@@()@
 CCCC_MemExt@Exit@~Exit@@()@Exit.cpp@73@definition@F????@LOC:2 COM:0 MVG:0@?@d@
-CCCC_Member@Flame@Flame@@(Position *,World *)@
-CCCC_MemExt@Flame@Flame@@(Position *,World *)@Flame.cpp@13@definition@F????@LOC:6 COM:8 MVG:0@?@d@
+CCCC_Member@Flame@Flame@@(Position *,World *,int)@
+CCCC_MemExt@Flame@Flame@@(Position *,World *,int)@Flame.cpp@13@definition@F????@LOC:7 COM:8 MVG:0@?@d@
 CCCC_Member@Flame@draw@@(...)@
-CCCC_MemExt@Flame@draw@@(...)@Flame.cpp@56@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@Flame@draw@@(...)@Flame.cpp@57@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@Flame@getIdPlayer@@()@
+CCCC_MemExt@Flame@getIdPlayer@@()@Flame.cpp@72@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@Flame@getPos@@()@
-CCCC_MemExt@Flame@getPos@@()@Flame.cpp@51@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@Flame@getPos@@()@Flame.cpp@52@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@Flame@getStatus@@()@
-CCCC_MemExt@Flame@getStatus@@()@Flame.cpp@61@definition@F????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@Flame@getStatus@@()@Flame.cpp@62@definition@F????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@Flame@initialize@@(const string &)@
-CCCC_MemExt@Flame@initialize@@(const string &)@Flame.cpp@22@definition@F????@LOC:11 COM:0 MVG:1@?@d@
+CCCC_MemExt@Flame@initialize@@(const string &)@Flame.cpp@23@definition@F????@LOC:11 COM:0 MVG:1@?@d@
 CCCC_Member@Flame@onDestroy@@()@
-CCCC_MemExt@Flame@onDestroy@@()@Flame.cpp@66@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@Flame@onDestroy@@()@Flame.cpp@67@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@Flame@update@@(...)@
-CCCC_MemExt@Flame@update@@(...)@Flame.cpp@34@definition@F????@LOC:14 COM:2 MVG:3@?@d@
+CCCC_MemExt@Flame@update@@(...)@Flame.cpp@35@definition@F????@LOC:14 COM:2 MVG:3@?@d@
 CCCC_Member@Flame@~Flame@@()@
-CCCC_MemExt@Flame@~Flame@@()@Flame.cpp@20@definition@F????@LOC:1 COM:0 MVG:0@?@d@
+CCCC_MemExt@Flame@~Flame@@()@Flame.cpp@21@definition@F????@LOC:1 COM:0 MVG:0@?@d@
 CCCC_Member@Game@Game@@()@
 CCCC_MemExt@Game@Game@@()@Game.cpp@15@definition@F????@LOC:3 COM:0 MVG:0@?@d@
 CCCC_Member@Game@changeState@@(GameState *)@
-CCCC_MemExt@Game@changeState@@(GameState *)@Game.cpp@85@definition@F????@LOC:6 COM:0 MVG:1@?@d@
+CCCC_MemExt@Game@changeState@@(GameState *)@Game.cpp@84@definition@F????@LOC:6 COM:0 MVG:1@?@d@
 CCCC_Member@Game@draw@@()@
-CCCC_MemExt@Game@draw@@()@Game.cpp@59@definition@F????@LOC:7 COM:0 MVG:0@?@d@
+CCCC_MemExt@Game@draw@@()@Game.cpp@58@definition@F????@LOC:7 COM:0 MVG:0@?@d@
+CCCC_Member@Game@flushContext@@()@
+CCCC_MemExt@Game@flushContext@@()@Game.cpp@103@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@Game@getShader@@()@
-CCCC_MemExt@Game@getShader@@()@Game.cpp@99@definition@F????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@Game@getShader@@()@Game.cpp@98@definition@F????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@Game@initialize@@()@
-CCCC_MemExt@Game@initialize@@()@Game.cpp@24@definition@F????@LOC:17 COM:2 MVG:3@?@d@
+CCCC_MemExt@Game@initialize@@()@Game.cpp@24@definition@F????@LOC:17 COM:1 MVG:3@?@d@
 CCCC_Member@Game@peekState@@()@
-CCCC_MemExt@Game@peekState@@()@Game.cpp@92@definition@F????@LOC:6 COM:0 MVG:3@?@d@
+CCCC_MemExt@Game@peekState@@()@Game.cpp@91@definition@F????@LOC:6 COM:0 MVG:3@?@d@
 CCCC_Member@Game@popState@@()@
-CCCC_MemExt@Game@popState@@()@Game.cpp@79@definition@F????@LOC:5 COM:0 MVG:0@?@d@
+CCCC_MemExt@Game@popState@@()@Game.cpp@78@definition@F????@LOC:5 COM:0 MVG:0@?@d@
 CCCC_Member@Game@pushState@@(GameState *)@
-CCCC_MemExt@Game@pushState@@(GameState *)@Game.cpp@74@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@Game@pushState@@(GameState *)@Game.cpp@73@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@Game@run@@()@
-CCCC_MemExt@Game@run@@()@Game.cpp@67@definition@F????@LOC:6 COM:0 MVG:1@?@d@
+CCCC_MemExt@Game@run@@()@Game.cpp@66@definition@F????@LOC:6 COM:0 MVG:1@?@d@
 CCCC_Member@Game@update@@()@
-CCCC_MemExt@Game@update@@()@Game.cpp@47@definition@F????@LOC:10 COM:1 MVG:6@?@d@
+CCCC_MemExt@Game@update@@()@Game.cpp@46@definition@F????@LOC:10 COM:1 MVG:6@?@d@
 CCCC_Member@Game@~Game@@()@
 CCCC_MemExt@Game@~Game@@()@Game.cpp@19@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@GameOver@GameOver@@(Game *,int)@
@@ -247,13 +256,11 @@ CCCC_MemExt@HumanCharacter@dropBomb@@()@HumanCharacter.cpp@73@definition@F????@L
 CCCC_Member@HumanCharacter@getAlive@@()@
 CCCC_MemExt@HumanCharacter@getAlive@@()@HumanCharacter.cpp@68@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@HumanCharacter@getAngle@@(e_orientation,e_orientation)@
-CCCC_MemExt@HumanCharacter@getAngle@@(e_orientation,e_orientation)@HumanCharacter.cpp@172@definition@F????@LOC:19 COM:0 MVG:28@?@d@
+CCCC_MemExt@HumanCharacter@getAngle@@(e_orientation,e_orientation)@HumanCharacter.cpp@152@definition@F????@LOC:19 COM:0 MVG:28@?@d@
 CCCC_Member@HumanCharacter@getCanLaunchBomb@@()@
-CCCC_MemExt@HumanCharacter@getCanLaunchBomb@@()@HumanCharacter.cpp@246@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@HumanCharacter@getCanLaunchBomb@@()@HumanCharacter.cpp@226@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@HumanCharacter@getCharacter@@()@
-CCCC_MemExt@HumanCharacter@getCharacter@@()@HumanCharacter.cpp@167@definition@F????@LOC:4 COM:0 MVG:1@?@d@
-CCCC_Member@HumanCharacter@getColor@@()@
-CCCC_MemExt@HumanCharacter@getColor@@()@HumanCharacter.cpp@150@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@HumanCharacter@getCharacter@@()@HumanCharacter.cpp@147@definition@F????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@HumanCharacter@getId@@()@
 CCCC_MemExt@HumanCharacter@getId@@()@HumanCharacter.cpp@122@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@HumanCharacter@getOrientation@@()@
@@ -262,22 +269,24 @@ CCCC_Member@HumanCharacter@getPos@@()@
 CCCC_MemExt@HumanCharacter@getPos@@()@HumanCharacter.cpp@107@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@HumanCharacter@getRange@@()@
 CCCC_MemExt@HumanCharacter@getRange@@()@HumanCharacter.cpp@112@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_Member@HumanCharacter@getScore@@()@
+CCCC_MemExt@HumanCharacter@getScore@@()@HumanCharacter.cpp@243@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@HumanCharacter@getType@@()@
-CCCC_MemExt@HumanCharacter@getType@@()@HumanCharacter.cpp@162@definition@T????@LOC:4 COM:0 MVG:1@?@d@
-CCCC_Member@HumanCharacter@initColor@@()@
-CCCC_MemExt@HumanCharacter@initColor@@()@HumanCharacter.cpp@142@definition@F????@LOC:7 COM:0 MVG:0@?@d@
+CCCC_MemExt@HumanCharacter@getType@@()@HumanCharacter.cpp@142@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@HumanCharacter@move@@(e_orientation,Clock &)@
-CCCC_MemExt@HumanCharacter@move@@(e_orientation,Clock &)@HumanCharacter.cpp@192@definition@F????@LOC:51 COM:1 MVG:9@?@d@
+CCCC_MemExt@HumanCharacter@move@@(e_orientation,Clock &)@HumanCharacter.cpp@172@definition@F????@LOC:51 COM:1 MVG:9@?@d@
+CCCC_Member@HumanCharacter@setBonus@@(int)@
+CCCC_MemExt@HumanCharacter@setBonus@@(int)@HumanCharacter.cpp@237@definition@F????@LOC:5 COM:0 MVG:0@?@d@
 CCCC_Member@HumanCharacter@setCanLaunchBomb@@(bool)@
-CCCC_MemExt@HumanCharacter@setCanLaunchBomb@@(bool)@HumanCharacter.cpp@251@definition@F????@LOC:5 COM:0 MVG:0@?@d@
-CCCC_Member@HumanCharacter@setColor@@(int,int,int)@
-CCCC_MemExt@HumanCharacter@setColor@@(int,int,int)@HumanCharacter.cpp@155@definition@F????@LOC:6 COM:0 MVG:0@?@d@
+CCCC_MemExt@HumanCharacter@setCanLaunchBomb@@(bool)@HumanCharacter.cpp@231@definition@F????@LOC:5 COM:0 MVG:0@?@d@
 CCCC_Member@HumanCharacter@setOrientation@@(int)@
 CCCC_MemExt@HumanCharacter@setOrientation@@(int)@HumanCharacter.cpp@137@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@HumanCharacter@setPos@@(Position &)@
 CCCC_MemExt@HumanCharacter@setPos@@(Position &)@HumanCharacter.cpp@127@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@HumanCharacter@setRange@@(int)@
 CCCC_MemExt@HumanCharacter@setRange@@(int)@HumanCharacter.cpp@132@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@HumanCharacter@setScore@@(int)@
+CCCC_MemExt@HumanCharacter@setScore@@(int)@HumanCharacter.cpp@248@definition@F????@LOC:5 COM:0 MVG:0@?@d@
 CCCC_Member@HumanCharacter@takeObject@@(AObject *)@
 CCCC_MemExt@HumanCharacter@takeObject@@(AObject *)@HumanCharacter.cpp@86@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@HumanCharacter@update@@()@
@@ -285,79 +294,91 @@ CCCC_MemExt@HumanCharacter@update@@()@HumanCharacter.cpp@102@definition@F????@LO
 CCCC_Member@HumanCharacter@~HumanCharacter@@()@
 CCCC_MemExt@HumanCharacter@~HumanCharacter@@()@HumanCharacter.cpp@62@definition@F????@LOC:4 COM:1 MVG:0@?@d@
 CCCC_Member@IACharacter@IACharacter@@(int,World *,Position &)@
-CCCC_MemExt@IACharacter@IACharacter@@(int,World *,Position &)@IACharacter.cpp@18@definition@F????@LOC:27 COM:0 MVG:2@?@d@
+CCCC_MemExt@IACharacter@IACharacter@@(int,World *,Position &)@IACharacter.cpp@18@definition@F????@LOC:28 COM:0 MVG:2@?@d@
 CCCC_Member@IACharacter@die@@()@
-CCCC_MemExt@IACharacter@die@@()@IACharacter.cpp@81@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@IACharacter@die@@()@IACharacter.cpp@82@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@IACharacter@draw@@(...)@
-CCCC_MemExt@IACharacter@draw@@(...)@IACharacter.cpp@86@definition@F????@LOC:5 COM:1 MVG:0@?@d@
+CCCC_MemExt@IACharacter@draw@@(...)@IACharacter.cpp@87@definition@F????@LOC:5 COM:1 MVG:0@?@d@
 CCCC_Member@IACharacter@dropBomb@@()@
-CCCC_MemExt@IACharacter@dropBomb@@()@IACharacter.cpp@62@definition@F????@LOC:13 COM:0 MVG:1@?@d@
+CCCC_MemExt@IACharacter@dropBomb@@()@IACharacter.cpp@63@definition@F????@LOC:13 COM:0 MVG:1@?@d@
 CCCC_Member@IACharacter@getAlive@@()@
-CCCC_MemExt@IACharacter@getAlive@@()@IACharacter.cpp@52@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@IACharacter@getAlive@@()@IACharacter.cpp@53@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@IACharacter@getAngle@@(e_orientation,e_orientation)@
-CCCC_MemExt@IACharacter@getAngle@@(e_orientation,e_orientation)@IACharacter.cpp@162@definition@F????@LOC:19 COM:0 MVG:28@?@d@
+CCCC_MemExt@IACharacter@getAngle@@(e_orientation,e_orientation)@IACharacter.cpp@143@definition@F????@LOC:19 COM:0 MVG:28@?@d@
 CCCC_Member@IACharacter@getCanLaunchBomb@@()@
-CCCC_MemExt@IACharacter@getCanLaunchBomb@@()@IACharacter.cpp@246@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@IACharacter@getCanLaunchBomb@@()@IACharacter.cpp@227@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@IACharacter@getCharacter@@()@
-CCCC_MemExt@IACharacter@getCharacter@@()@IACharacter.cpp@157@definition@F????@LOC:4 COM:0 MVG:1@?@d@
-CCCC_Member@IACharacter@getColor@@()@
-CCCC_MemExt@IACharacter@getColor@@()@IACharacter.cpp@140@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@IACharacter@getCharacter@@()@IACharacter.cpp@138@definition@F????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@IACharacter@getId@@()@
-CCCC_MemExt@IACharacter@getId@@()@IACharacter.cpp@112@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@IACharacter@getId@@()@IACharacter.cpp@113@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@IACharacter@getOrientation@@()@
-CCCC_MemExt@IACharacter@getOrientation@@()@IACharacter.cpp@107@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@IACharacter@getOrientation@@()@IACharacter.cpp@108@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@IACharacter@getPos@@()@
-CCCC_MemExt@IACharacter@getPos@@()@IACharacter.cpp@97@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@IACharacter@getPos@@()@IACharacter.cpp@98@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@IACharacter@getRange@@()@
-CCCC_MemExt@IACharacter@getRange@@()@IACharacter.cpp@102@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@IACharacter@getRange@@()@IACharacter.cpp@103@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_Member@IACharacter@getScore@@()@
+CCCC_MemExt@IACharacter@getScore@@()@IACharacter.cpp@243@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@IACharacter@getType@@()@
-CCCC_MemExt@IACharacter@getType@@()@IACharacter.cpp@152@definition@T????@LOC:4 COM:0 MVG:1@?@d@
-CCCC_Member@IACharacter@initColor@@()@
-CCCC_MemExt@IACharacter@initColor@@()@IACharacter.cpp@132@definition@F????@LOC:7 COM:0 MVG:0@?@d@
+CCCC_MemExt@IACharacter@getType@@()@IACharacter.cpp@133@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@IACharacter@move@@(e_orientation)@
-CCCC_MemExt@IACharacter@move@@(e_orientation)@IACharacter.cpp@189@definition@F????@LOC:53 COM:1 MVG:9@?@d@
+CCCC_MemExt@IACharacter@move@@(e_orientation)@IACharacter.cpp@170@definition@F????@LOC:53 COM:1 MVG:9@?@d@
 CCCC_Member@IACharacter@move@@(e_orientation,Clock &)@
-CCCC_MemExt@IACharacter@move@@(e_orientation,Clock &)@IACharacter.cpp@182@definition@F????@LOC:6 COM:0 MVG:1@?@d@
+CCCC_MemExt@IACharacter@move@@(e_orientation,Clock &)@IACharacter.cpp@163@definition@F????@LOC:6 COM:0 MVG:1@?@d@
 CCCC_Member@IACharacter@setAlive@@(bool)@
-CCCC_MemExt@IACharacter@setAlive@@(bool)@IACharacter.cpp@57@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@IACharacter@setAlive@@(bool)@IACharacter.cpp@58@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@IACharacter@setBonus@@(int)@
+CCCC_MemExt@IACharacter@setBonus@@(int)@IACharacter.cpp@237@definition@F????@LOC:5 COM:0 MVG:0@?@d@
 CCCC_Member@IACharacter@setCanLaunchBomb@@(bool)@
-CCCC_MemExt@IACharacter@setCanLaunchBomb@@(bool)@IACharacter.cpp@251@definition@F????@LOC:4 COM:0 MVG:0@?@d@
-CCCC_Member@IACharacter@setColor@@(int,int,int)@
-CCCC_MemExt@IACharacter@setColor@@(int,int,int)@IACharacter.cpp@145@definition@F????@LOC:6 COM:0 MVG:0@?@d@
+CCCC_MemExt@IACharacter@setCanLaunchBomb@@(bool)@IACharacter.cpp@232@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@IACharacter@setOrientation@@(int)@
-CCCC_MemExt@IACharacter@setOrientation@@(int)@IACharacter.cpp@127@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@IACharacter@setOrientation@@(int)@IACharacter.cpp@128@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@IACharacter@setPos@@(Position &)@
-CCCC_MemExt@IACharacter@setPos@@(Position &)@IACharacter.cpp@117@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@IACharacter@setPos@@(Position &)@IACharacter.cpp@118@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@IACharacter@setRange@@(int)@
-CCCC_MemExt@IACharacter@setRange@@(int)@IACharacter.cpp@122@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@IACharacter@setRange@@(int)@IACharacter.cpp@123@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@IACharacter@setScore@@(int)@
+CCCC_MemExt@IACharacter@setScore@@(int)@IACharacter.cpp@248@definition@F????@LOC:5 COM:0 MVG:0@?@d@
 CCCC_Member@IACharacter@takeObject@@(AObject *)@
-CCCC_MemExt@IACharacter@takeObject@@(AObject *)@IACharacter.cpp@76@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@IACharacter@takeObject@@(AObject *)@IACharacter.cpp@77@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@IACharacter@update@@()@
-CCCC_MemExt@IACharacter@update@@()@IACharacter.cpp@93@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_MemExt@IACharacter@update@@()@IACharacter.cpp@94@definition@F????@LOC:3 COM:0 MVG:0@?@d@
 CCCC_Member@IACharacter@~IACharacter@@()@
-CCCC_MemExt@IACharacter@~IACharacter@@()@IACharacter.cpp@46@definition@F????@LOC:4 COM:1 MVG:0@?@d@
+CCCC_MemExt@IACharacter@~IACharacter@@()@IACharacter.cpp@47@definition@F????@LOC:4 COM:1 MVG:0@?@d@
 CCCC_Member@InputManager@InputManager@@()@
 CCCC_MemExt@InputManager@InputManager@@()@InputManager.cpp@13@definition@F????@LOC:2 COM:8 MVG:0@?@d@
 CCCC_Member@InputManager@getTouche@@(Input &)@
 CCCC_MemExt@InputManager@getTouche@@(Input &)@InputManager.cpp@19@definition@T????@LOC:34 COM:0 MVG:31@?@d@
 CCCC_Member@InputManager@~InputManager@@()@
 CCCC_MemExt@InputManager@~InputManager@@()@InputManager.cpp@16@definition@F????@LOC:2 COM:0 MVG:0@?@d@
+CCCC_Member@Intro@Intro@@(Game *)@
+CCCC_MemExt@Intro@Intro@@(Game *)@Intro.cpp@23@definition@F????@LOC:8 COM:0 MVG:0@?@d@
+CCCC_Member@Intro@draw@@(Clock &,BasicShader &)@
+CCCC_MemExt@Intro@draw@@(Clock &,BasicShader &)@Intro.cpp@68@definition@F????@LOC:6 COM:0 MVG:0@?@d@
+CCCC_Member@Intro@drawBackground@@(Clock &,BasicShader &)@
+CCCC_MemExt@Intro@drawBackground@@(Clock &,BasicShader &)@Intro.cpp@55@definition@F????@LOC:12 COM:0 MVG:1@?@d@
+CCCC_Member@Intro@loadImages@@()@
+CCCC_MemExt@Intro@loadImages@@()@Intro.cpp@36@definition@F????@LOC:17 COM:0 MVG:1@?@d@
+CCCC_Member@Intro@update@@(Clock &,Input &)@
+CCCC_MemExt@Intro@update@@(Clock &,Input &)@Intro.cpp@75@definition@F????@LOC:6 COM:0 MVG:1@?@d@
+CCCC_Member@Intro@~Intro@@()@
+CCCC_MemExt@Intro@~Intro@@()@Intro.cpp@33@definition@F????@LOC:2 COM:0 MVG:0@?@d@
 CCCC_Member@Leaderboard@Leaderboard@@(Game *)@
 CCCC_MemExt@Leaderboard@Leaderboard@@(Game *)@Leaderboard.cpp@21@definition@F????@LOC:19 COM:0 MVG:0@?@d@
 CCCC_Member@Leaderboard@buildScore@@()@
 CCCC_MemExt@Leaderboard@buildScore@@()@Leaderboard.cpp@116@definition@F????@LOC:13 COM:0 MVG:1@?@d@
 CCCC_Member@Leaderboard@buildWord@@(const string &,int,int)@
-CCCC_MemExt@Leaderboard@buildWord@@(const string &,int,int)@Leaderboard.cpp@153@definition@F????@LOC:21 COM:0 MVG:1@?@d@
+CCCC_MemExt@Leaderboard@buildWord@@(const string &,int,int)@Leaderboard.cpp@153@definition@F????@LOC:23 COM:0 MVG:1@?@d@
 CCCC_Member@Leaderboard@draw@@(Clock &,BasicShader &)@
-CCCC_MemExt@Leaderboard@draw@@(Clock &,BasicShader &)@Leaderboard.cpp@207@definition@F????@LOC:7 COM:0 MVG:0@?@d@
+CCCC_MemExt@Leaderboard@draw@@(Clock &,BasicShader &)@Leaderboard.cpp@209@definition@F????@LOC:6 COM:1 MVG:0@?@d@
 CCCC_Member@Leaderboard@drawBackground@@(Clock &,BasicShader &)@
-CCCC_MemExt@Leaderboard@drawBackground@@(Clock &,BasicShader &)@Leaderboard.cpp@184@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@Leaderboard@drawBackground@@(Clock &,BasicShader &)@Leaderboard.cpp@186@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@Leaderboard@drawButtons@@(Clock &,BasicShader &)@
-CCCC_MemExt@Leaderboard@drawButtons@@(Clock &,BasicShader &)@Leaderboard.cpp@189@definition@F????@LOC:5 COM:0 MVG:0@?@d@
+CCCC_MemExt@Leaderboard@drawButtons@@(Clock &,BasicShader &)@Leaderboard.cpp@191@definition@F????@LOC:5 COM:0 MVG:0@?@d@
 CCCC_Member@Leaderboard@drawLetters@@(Clock &,BasicShader &)@
-CCCC_MemExt@Leaderboard@drawLetters@@(Clock &,BasicShader &)@Leaderboard.cpp@176@definition@F????@LOC:7 COM:0 MVG:1@?@d@
+CCCC_MemExt@Leaderboard@drawLetters@@(Clock &,BasicShader &)@Leaderboard.cpp@178@definition@F????@LOC:7 COM:0 MVG:1@?@d@
 CCCC_Member@Leaderboard@drawScore@@(Clock &,BasicShader &)@
-CCCC_MemExt@Leaderboard@drawScore@@(Clock &,BasicShader &)@Leaderboard.cpp@195@definition@F????@LOC:11 COM:0 MVG:2@?@d@
+CCCC_MemExt@Leaderboard@drawScore@@(Clock &,BasicShader &)@Leaderboard.cpp@197@definition@F????@LOC:11 COM:0 MVG:2@?@d@
 CCCC_Member@Leaderboard@getScore@@()@
 CCCC_MemExt@Leaderboard@getScore@@()@Leaderboard.cpp@135@definition@F????@LOC:16 COM:0 MVG:1@?@d@
 CCCC_Member@Leaderboard@handleWords@@(vector &)@
@@ -373,9 +394,9 @@ CCCC_MemExt@Leaderboard@split2@@(const string &,char,vector &)@Leaderboard.cpp@7
 CCCC_Member@Leaderboard@splitWord@@(const string &,char)@
 CCCC_MemExt@Leaderboard@splitWord@@(const string &,char)@Leaderboard.cpp@110@definition@F????@LOC:5 COM:0 MVG:1@?@d@
 CCCC_Member@Leaderboard@update@@(Clock &,Input &)@
-CCCC_MemExt@Leaderboard@update@@(Clock &,Input &)@Leaderboard.cpp@215@definition@F????@LOC:5 COM:0 MVG:1@?@d@
+CCCC_MemExt@Leaderboard@update@@(Clock &,Input &)@Leaderboard.cpp@217@definition@F????@LOC:5 COM:0 MVG:1@?@d@
 CCCC_Member@Leaderboard@~Leaderboard@@()@
-CCCC_MemExt@Leaderboard@~Leaderboard@@()@Leaderboard.cpp@221@definition@F????@LOC:2 COM:0 MVG:0@?@d@
+CCCC_MemExt@Leaderboard@~Leaderboard@@()@Leaderboard.cpp@223@definition@F????@LOC:2 COM:0 MVG:0@?@d@
 CCCC_Member@Load@Load@@(Game *)@
 CCCC_MemExt@Load@Load@@(Game *)@Load.cpp@16@definition@F????@LOC:7 COM:8 MVG:0@?@d@
 CCCC_Member@Load@draw@@(Clock &,BasicShader &)@
@@ -392,34 +413,30 @@ CCCC_Member@Load@update@@(Clock &,Input &)@
 CCCC_MemExt@Load@update@@(Clock &,Input &)@Load.cpp@50@definition@F????@LOC:9 COM:0 MVG:2@?@d@
 CCCC_Member@Load@~Load@@()@
 CCCC_MemExt@Load@~Load@@()@Load.cpp@60@definition@F????@LOC:2 COM:0 MVG:0@?@d@
-CCCC_Member@LoadGame@LoadGame@@(string &)@
-CCCC_MemExt@LoadGame@LoadGame@@(string &)@LoadGame.cpp@13@definition@F????@LOC:9 COM:8 MVG:0@?@d@
+CCCC_Member@LoadGame@LoadGame@@(Game *,string &)@
+CCCC_MemExt@LoadGame@LoadGame@@(Game *,string &)@LoadGame.cpp@13@definition@F????@LOC:9 COM:8 MVG:0@?@d@
 CCCC_Member@LoadGame@determineStartMap@@()@
-CCCC_MemExt@LoadGame@determineStartMap@@()@LoadGame.cpp@38@definition@F????@LOC:13 COM:0 MVG:2@?@d@
+CCCC_MemExt@LoadGame@determineStartMap@@()@LoadGame.cpp@43@definition@F????@LOC:13 COM:0 MVG:1@?@d@
 CCCC_Member@LoadGame@getBufferForMap@@(ifstream &)@
-CCCC_MemExt@LoadGame@getBufferForMap@@(ifstream &)@LoadGame.cpp@105@definition@F????@LOC:9 COM:0 MVG:2@?@d@
-CCCC_Member@LoadGame@getPlayerBomb@@(ACharacter *,string &)@
-CCCC_MemExt@LoadGame@getPlayerBomb@@(ACharacter *,string &)@LoadGame.cpp@62@definition@F????@LOC:2 COM:0 MVG:0@?@d@
-CCCC_Member@LoadGame@getPlayerColor@@(ACharacter *,string &)@
-CCCC_MemExt@LoadGame@getPlayerColor@@(ACharacter *,string &)@LoadGame.cpp@66@definition@F????@LOC:2 COM:0 MVG:0@?@d@
-CCCC_Member@LoadGame@getPlayerHP@@(ACharacter *,string &)@
-CCCC_MemExt@LoadGame@getPlayerHP@@(ACharacter *,string &)@LoadGame.cpp@60@definition@F????@LOC:2 COM:0 MVG:0@?@d@
-CCCC_Member@LoadGame@getPlayerPosition@@(ACharacter *,string &)@
-CCCC_MemExt@LoadGame@getPlayerPosition@@(ACharacter *,string &)@LoadGame.cpp@56@definition@F????@LOC:3 COM:0 MVG:0@?@d@
-CCCC_Member@LoadGame@getPlayerRange@@(ACharacter *,string &)@
-CCCC_MemExt@LoadGame@getPlayerRange@@(ACharacter *,string &)@LoadGame.cpp@64@definition@F????@LOC:2 COM:0 MVG:0@?@d@
+CCCC_MemExt@LoadGame@getBufferForMap@@(ifstream &)@LoadGame.cpp@113@definition@F????@LOC:9 COM:0 MVG:2@?@d@
+CCCC_Member@LoadGame@getPlayerHP@@(string &)@
+CCCC_MemExt@LoadGame@getPlayerHP@@(string &)@LoadGame.cpp@72@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@LoadGame@getPlayerPosition@@(string &)@
+CCCC_MemExt@LoadGame@getPlayerPosition@@(string &)@LoadGame.cpp@67@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_Member@LoadGame@getPlayerRange@@(string &)@
+CCCC_MemExt@LoadGame@getPlayerRange@@(string &)@LoadGame.cpp@77@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@LoadGame@getPlayerType@@(string &)@
-CCCC_MemExt@LoadGame@getPlayerType@@(string &)@LoadGame.cpp@53@definition@F????@LOC:2 COM:0 MVG:0@?@d@
-CCCC_Member@LoadGame@getPlayers@@(ofstream &)@
-CCCC_MemExt@LoadGame@getPlayers@@(ofstream &)@LoadGame.cpp@70@definition@F????@LOC:30 COM:0 MVG:4@?@d@
-CCCC_Member@LoadGame@setInitialMap@@(ofstream &)@
-CCCC_MemExt@LoadGame@setInitialMap@@(ofstream &)@LoadGame.cpp@23@definition@F????@LOC:8 COM:0 MVG:0@?@d@
-CCCC_Member@LoadGame@setPlayersInfo@@(ofstream &)@
-CCCC_MemExt@LoadGame@setPlayersInfo@@(ofstream &)@LoadGame.cpp@33@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_MemExt@LoadGame@getPlayerType@@(string &)@LoadGame.cpp@58@definition@F????@LOC:8 COM:0 MVG:1@?@d@
+CCCC_Member@LoadGame@getPlayers@@(ifstream &)@
+CCCC_MemExt@LoadGame@getPlayers@@(ifstream &)@LoadGame.cpp@82@definition@F????@LOC:28 COM:0 MVG:5@?@d@
+CCCC_Member@LoadGame@setInitialMap@@(ifstream &)@
+CCCC_MemExt@LoadGame@setInitialMap@@(ifstream &)@LoadGame.cpp@24@definition@F????@LOC:12 COM:0 MVG:0@?@d@
+CCCC_Member@LoadGame@setPlayersInfo@@(ifstream &)@
+CCCC_MemExt@LoadGame@setPlayersInfo@@(ifstream &)@LoadGame.cpp@38@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@LoadGame@setSavedMap@@(stringstream &)@
-CCCC_MemExt@LoadGame@setSavedMap@@(stringstream &)@LoadGame.cpp@116@definition@F????@LOC:19 COM:0 MVG:2@?@d@
+CCCC_MemExt@LoadGame@setSavedMap@@(stringstream &)@LoadGame.cpp@124@definition@F????@LOC:19 COM:0 MVG:2@?@d@
 CCCC_Member@LoadGame@~LoadGame@@()@
-CCCC_MemExt@LoadGame@~LoadGame@@()@LoadGame.cpp@137@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_MemExt@LoadGame@~LoadGame@@()@LoadGame.cpp@145@definition@F????@LOC:3 COM:0 MVG:0@?@d@
 CCCC_Member@Map@Map@@(const string &)@
 CCCC_MemExt@Map@Map@@(const string &)@Map.cpp@13@definition@F????@LOC:15 COM:8 MVG:1@?@d@
 CCCC_Member@Map@getBufferForMap@@(ifstream &)@
@@ -479,7 +496,7 @@ CCCC_MemExt@Options@update@@(Clock &,Input &)@Options.cpp@52@definition@F????@LO
 CCCC_Member@Options@~Options@@()@
 CCCC_MemExt@Options@~Options@@()@Options.cpp@62@definition@F????@LOC:2 COM:0 MVG:0@?@d@
 CCCC_Member@Pause@Pause@@(Game *,World *)@
-CCCC_MemExt@Pause@Pause@@(Game *,World *)@Pause.cpp@21@definition@F????@LOC:11 COM:5 MVG:0@?@d@
+CCCC_MemExt@Pause@Pause@@(Game *,World *)@Pause.cpp@21@definition@F????@LOC:16 COM:0 MVG:0@?@d@
 CCCC_Member@Pause@draw@@(Clock &,BasicShader &)@
 CCCC_MemExt@Pause@draw@@(Clock &,BasicShader &)@Pause.cpp@81@definition@F????@LOC:5 COM:0 MVG:0@?@d@
 CCCC_Member@Pause@drawBackground@@(Clock &,BasicShader &)@
@@ -528,18 +545,18 @@ CCCC_Member@RandomMenu@update@@(Clock &,Input &)@
 CCCC_MemExt@RandomMenu@update@@(Clock &,Input &)@RandomMenu.cpp@236@definition@F????@LOC:7 COM:0 MVG:2@?@d@
 CCCC_Member@RandomMenu@~RandomMenu@@()@
 CCCC_MemExt@RandomMenu@~RandomMenu@@()@RandomMenu.cpp@244@definition@F????@LOC:2 COM:0 MVG:0@?@d@
-CCCC_Member@SaveGame@SaveGame@@(vector,const string &)@
-CCCC_MemExt@SaveGame@SaveGame@@(vector,const string &)@SaveGame.cpp@13@definition@F????@LOC:7 COM:8 MVG:0@?@d@
+CCCC_Member@SaveGame@SaveGame@@(World &,const string &)@
+CCCC_MemExt@SaveGame@SaveGame@@(World &,const string &)@SaveGame.cpp@13@definition@F????@LOC:8 COM:8 MVG:0@?@d@
 CCCC_Member@SaveGame@writeInfo@@(ifstream &,list)@
-CCCC_MemExt@SaveGame@writeInfo@@(ifstream &,list)@SaveGame.cpp@53@definition@F????@LOC:20 COM:0 MVG:1@?@d@
-CCCC_Member@SaveGame@writeMap@@(ifstream &,vector)@
-CCCC_MemExt@SaveGame@writeMap@@(ifstream &,vector)@SaveGame.cpp@27@definition@F????@LOC:17 COM:0 MVG:2@?@d@
+CCCC_MemExt@SaveGame@writeInfo@@(ifstream &,list)@SaveGame.cpp@54@definition@F????@LOC:14 COM:0 MVG:1@?@d@
+CCCC_Member@SaveGame@writeMap@@(ifstream &)@
+CCCC_MemExt@SaveGame@writeMap@@(ifstream &)@SaveGame.cpp@28@definition@F????@LOC:17 COM:0 MVG:2@?@d@
 CCCC_Member@SaveGame@writeMapName@@(ifstream &,const string &)@
-CCCC_MemExt@SaveGame@writeMapName@@(ifstream &,const string &)@SaveGame.cpp@22@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@SaveGame@writeMapName@@(ifstream &,const string &)@SaveGame.cpp@23@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@SaveGame@writeType@@(e_type *,int)@
-CCCC_MemExt@SaveGame@writeType@@(e_type *,int)@SaveGame.cpp@46@definition@F????@LOC:6 COM:0 MVG:3@?@d@
+CCCC_MemExt@SaveGame@writeType@@(e_type *,int)@SaveGame.cpp@47@definition@F????@LOC:6 COM:0 MVG:3@?@d@
 CCCC_Member@SaveGame@~SaveGame@@()@
-CCCC_MemExt@SaveGame@~SaveGame@@()@SaveGame.cpp@75@definition@F????@LOC:3 COM:0 MVG:0@?@d@
+CCCC_MemExt@SaveGame@~SaveGame@@()@SaveGame.cpp@70@definition@F????@LOC:3 COM:0 MVG:0@?@d@
 CCCC_Member@Scoring@Scoring@@()@
 CCCC_MemExt@Scoring@Scoring@@()@Scoring.cpp@13@definition@F????@LOC:3 COM:8 MVG:0@?@d@
 CCCC_Member@Scoring@getLowestScore@@()@
@@ -586,53 +603,54 @@ CCCC_Member@TextureManager@registerTexture@@(const string &,const string &)@
 CCCC_MemExt@TextureManager@registerTexture@@(const string &,const string &)@TextureManager.cpp@19@definition@F????@LOC:7 COM:0 MVG:0@?@d@
 CCCC_Member@World@World@@(Game *,Map &,int,int)@
 CCCC_MemExt@World@World@@(Game *,Map &,int,int)@World.cpp@19@definition@F????@LOC:22 COM:0 MVG:0@?@d@
+CCCC_Member@World@checkBonus@@(Bonus &)@
+CCCC_MemExt@World@checkBonus@@(Bonus &)@World.cpp@222@definition@F????@LOC:9 COM:0 MVG:2@?@d@
 CCCC_Member@World@checkDamages@@(list &)@
-CCCC_MemExt@World@checkDamages@@(list &)@World.cpp@337@definition@F????@LOC:9 COM:0 MVG:1@?@d@
+CCCC_MemExt@World@checkDamages@@(list &)@World.cpp@366@definition@F????@LOC:9 COM:0 MVG:1@?@d@
 CCCC_Member@World@checkDestroyBoxes@@(Flame &)@
-CCCC_MemExt@World@checkDestroyBoxes@@(Flame &)@World.cpp@364@definition@F????@LOC:16 COM:0 MVG:3@?@d@
+CCCC_MemExt@World@checkDestroyBoxes@@(Flame &)@World.cpp@396@definition@F????@LOC:19 COM:0 MVG:5@?@d@
 CCCC_Member@World@checkPlayerCanMove@@(int,int)@
-CCCC_MemExt@World@checkPlayerCanMove@@(int,int)@World.cpp@284@definition@F????@LOC:16 COM:0 MVG:8@?@d@
+CCCC_MemExt@World@checkPlayerCanMove@@(int,int)@World.cpp@313@definition@F????@LOC:16 COM:0 MVG:8@?@d@
 CCCC_Member@World@checkPlayersDeath@@(Flame &)@
-CCCC_MemExt@World@checkPlayersDeath@@(Flame &)@World.cpp@348@definition@F????@LOC:15 COM:0 MVG:4@?@d@
+CCCC_MemExt@World@checkPlayersDeath@@(Flame &)@World.cpp@377@definition@F????@LOC:18 COM:0 MVG:6@?@d@
 CCCC_Member@World@createHumanPlayer@@(char,Position &)@
-CCCC_MemExt@World@createHumanPlayer@@(char,Position &)@World.cpp@126@definition@F????@LOC:6 COM:0 MVG:0@?@d@
+CCCC_MemExt@World@createHumanPlayer@@(char,Position &)@World.cpp@114@definition@F????@LOC:6 COM:0 MVG:0@?@d@
 CCCC_Member@World@createIaPlayer@@()@
-CCCC_MemExt@World@createIaPlayer@@()@World.cpp@109@definition@F????@LOC:11 COM:2 MVG:0@?@d@
+CCCC_MemExt@World@createIaPlayer@@()@World.cpp@97@definition@F????@LOC:3 COM:10 MVG:0@?@d@
 CCCC_Member@World@draw@@(Clock &,BasicShader &)@
-CCCC_MemExt@World@draw@@(Clock &,BasicShader &)@World.cpp@134@definition@F????@LOC:14 COM:24 MVG:3@?@d@
+CCCC_MemExt@World@draw@@(Clock &,BasicShader &)@World.cpp@122@definition@F????@LOC:58 COM:0 MVG:10@?@d@
 CCCC_Member@World@drawBackground@@(Clock &,BasicShader &)@
-CCCC_MemExt@World@drawBackground@@(Clock &,BasicShader &)@World.cpp@243@definition@F????@LOC:4 COM:0 MVG:0@?@d@
+CCCC_MemExt@World@drawBackground@@(Clock &,BasicShader &)@World.cpp@272@definition@F????@LOC:4 COM:0 MVG:0@?@d@
 CCCC_Member@World@dropBomb@@(Position &,int)@
-CCCC_MemExt@World@dropBomb@@(Position &,int)@World.cpp@226@definition@F????@LOC:8 COM:0 MVG:0@?@d@
+CCCC_MemExt@World@dropBomb@@(Position &,int)@World.cpp@255@definition@F????@LOC:8 COM:0 MVG:0@?@d@
 CCCC_Member@World@findWall@@()@
-CCCC_MemExt@World@findWall@@()@World.cpp@42@definition@F????@LOC:66 COM:0 MVG:14@?@d@
+CCCC_MemExt@World@findWall@@()@World.cpp@42@definition@F????@LOC:54 COM:0 MVG:8@?@d@
 CCCC_Member@World@gameOver@@()@
-CCCC_MemExt@World@gameOver@@()@World.cpp@183@definition@F????@LOC:23 COM:0 MVG:5@?@d@
+CCCC_MemExt@World@gameOver@@()@World.cpp@191@definition@F????@LOC:29 COM:0 MVG:5@?@d@
 CCCC_Member@World@getHeight@@()@
-CCCC_MemExt@World@getHeight@@()@World.cpp@307@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@World@getHeight@@()@World.cpp@336@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@World@getHumansPlayers@@()@
-CCCC_MemExt@World@getHumansPlayers@@()@World.cpp@323@definition@F????@LOC:12 COM:0 MVG:3@?@d@
+CCCC_MemExt@World@getHumansPlayers@@()@World.cpp@352@definition@F????@LOC:12 COM:0 MVG:3@?@d@
 CCCC_Member@World@getItemAtPosition@@(int,int)@
-CCCC_MemExt@World@getItemAtPosition@@(int,int)@World.cpp@279@definition@F????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@World@getItemAtPosition@@(int,int)@World.cpp@308@definition@F????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@World@getPlayerById@@(int)@
-CCCC_MemExt@World@getPlayerById@@(int)@World.cpp@173@definition@F????@LOC:9 COM:0 MVG:4@?@d@
+CCCC_MemExt@World@getPlayerById@@(int)@World.cpp@181@definition@F????@LOC:9 COM:0 MVG:4@?@d@
 CCCC_Member@World@getPlayers@@()@
-CCCC_MemExt@World@getPlayers@@()@World.cpp@318@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@World@getPlayers@@()@World.cpp@347@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@World@getWidth@@()@
-CCCC_MemExt@World@getWidth@@()@World.cpp@302@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@World@getWidth@@()@World.cpp@331@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@World@getWorld@@()@
-CCCC_MemExt@World@getWorld@@()@World.cpp@312@definition@T????@LOC:4 COM:0 MVG:1@?@d@
+CCCC_MemExt@World@getWorld@@()@World.cpp@341@definition@T????@LOC:4 COM:0 MVG:1@?@d@
 CCCC_Member@World@loadBackground@@()@
-CCCC_MemExt@World@loadBackground@@()@World.cpp@235@definition@F????@LOC:6 COM:0 MVG:0@?@d@
+CCCC_MemExt@World@loadBackground@@()@World.cpp@264@definition@F????@LOC:6 COM:0 MVG:0@?@d@
 CCCC_Member@World@setBonus@@(Position &)@
-CCCC_MemExt@World@setBonus@@(Position &)@World.cpp@271@definition@F????@LOC:7 COM:0 MVG:0@?@d@
+CCCC_MemExt@World@setBonus@@(Position &)@World.cpp@300@definition@F????@LOC:7 COM:0 MVG:0@?@d@
 CCCC_Member@World@setItemAtPosition@@(Position &,char)@
-CCCC_MemExt@World@setItemAtPosition@@(Position &,char)@World.cpp@248@definition@F????@LOC:22 COM:0 MVG:7@?@d@
+CCCC_MemExt@World@setItemAtPosition@@(Position &,char)@World.cpp@277@definition@F????@LOC:22 COM:0 MVG:7@?@d@
 CCCC_Member@World@update@@(Clock &,Input &)@
-CCCC_MemExt@World@update@@(Clock &,Input &)@World.cpp@207@definition@F????@LOC:17 COM:1 MVG:4@?@d@
+CCCC_MemExt@World@update@@(Clock &,Input &)@World.cpp@233@definition@F????@LOC:20 COM:1 MVG:5@?@d@
 CCCC_Member@anonymous@main@@()@
 CCCC_MemExt@anonymous@main@@()@main.cpp@13@definition@F????@LOC:8 COM:8 MVG:1@?@d@
-CCCC_MemExt@anonymous@main@@()@testWorld.cpp@13@definition@F????@LOC:7 COM:9 MVG:0@?@d@
 CCCC_UseRel@Position@Bomb@
 CCCC_UseExt@Position@Bomb@Bomb.cpp@15@pass by reference@?????@*@?@p@
 CCCC_UseRel@World@Bomb@
@@ -644,7 +662,7 @@ CCCC_UseExt@Position@Bonus@Bonus.cpp@13@pass by reference@?????@*@?@p@
 CCCC_UseRel@World@Bonus@
 CCCC_UseExt@World@Bonus@Bonus.cpp@13@pass by reference@?????@*@?@p@
 CCCC_UseRel@string@Bonus@
-CCCC_UseExt@string@Bonus@Bonus.cpp@24@pass by reference@F????@*@?@p@
+CCCC_UseExt@string@Bonus@Bonus.cpp@25@pass by reference@F????@*@?@p@
 CCCC_UseRel@Position@Box@
 CCCC_UseExt@Position@Box@Box.cpp@15@pass by reference@?????@*@?@p@
 CCCC_UseRel@World@Box@
@@ -659,23 +677,23 @@ CCCC_UseExt@vec3@Camera@Camera.cpp@13@pass by value@?????@*@?@P@
 CCCC_UseExt@vec3@Camera@Camera.cpp@28@pass by value@F????@*@?@P@
 CCCC_UseExt@vec3@Camera@Camera.cpp@28@pass by value@F????@*@?@P@
 CCCC_UseRel@Clock@Command@
-CCCC_UseExt@Clock@Command@Command.cpp@49@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@54@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@66@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@75@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@85@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@96@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@107@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@116@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@127@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@138@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@149@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@160@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@171@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@182@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@193@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@204@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Command@Command.cpp@211@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@51@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@56@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@68@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@77@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@87@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@98@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@109@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@120@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@131@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@142@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@153@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@164@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@175@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@186@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@197@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@208@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Command@Command.cpp@215@pass by reference@F????@*@?@p@
 CCCC_UseRel@Game@Command@
 CCCC_UseExt@Game@Command@Command.cpp@15@pass by reference@?????@*@?@p@
 CCCC_UseRel@World@Command@
@@ -683,7 +701,7 @@ CCCC_UseExt@World@Command@Command.cpp@15@pass by reference@?????@*@?@p@
 CCCC_UseRel@string@Command@
 CCCC_UseExt@string@Command@Command.cpp@15@pass by reference@?????@*@?@p@
 CCCC_UseRel@touche@Command@
-CCCC_UseExt@touche@Command@Command.cpp@211@pass by value@F????@*@?@P@
+CCCC_UseExt@touche@Command@Command.cpp@215@pass by value@F????@*@?@P@
 CCCC_UseRel@BasicShader@Exit@
 CCCC_UseExt@BasicShader@Exit@Exit.cpp@48@pass by reference@F????@*@?@p@
 CCCC_UseExt@BasicShader@Exit@Exit.cpp@53@pass by reference@F????@*@?@p@
@@ -702,10 +720,10 @@ CCCC_UseExt@Position@Flame@Flame.cpp@13@pass by reference@?????@*@?@p@
 CCCC_UseRel@World@Flame@
 CCCC_UseExt@World@Flame@Flame.cpp@13@pass by reference@?????@*@?@p@
 CCCC_UseRel@string@Flame@
-CCCC_UseExt@string@Flame@Flame.cpp@22@pass by reference@F????@*@?@p@
+CCCC_UseExt@string@Flame@Flame.cpp@23@pass by reference@F????@*@?@p@
 CCCC_UseRel@GameState@Game@
-CCCC_UseExt@GameState@Game@Game.cpp@74@pass by reference@F????@*@?@p@
-CCCC_UseExt@GameState@Game@Game.cpp@85@pass by reference@F????@*@?@p@
+CCCC_UseExt@GameState@Game@Game.cpp@73@pass by reference@F????@*@?@p@
+CCCC_UseExt@GameState@Game@Game.cpp@84@pass by reference@F????@*@?@p@
 CCCC_UseRel@BasicShader@GameOver@
 CCCC_UseExt@BasicShader@GameOver@GameOver.cpp@76@pass by reference@F????@*@?@p@
 CCCC_UseExt@BasicShader@GameOver@GameOver.cpp@81@pass by reference@F????@*@?@p@
@@ -723,54 +741,65 @@ CCCC_UseExt@Input@GameOver@GameOver.cpp@117@pass by reference@F????@*@?@p@
 CCCC_UseRel@AObject@HumanCharacter@
 CCCC_UseExt@AObject@HumanCharacter@HumanCharacter.cpp@86@pass by reference@F????@*@?@p@
 CCCC_UseRel@Clock@HumanCharacter@
-CCCC_UseExt@Clock@HumanCharacter@HumanCharacter.cpp@192@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@HumanCharacter@HumanCharacter.cpp@172@pass by reference@F????@*@?@p@
 CCCC_UseRel@Position@HumanCharacter@
 CCCC_UseExt@Position@HumanCharacter@HumanCharacter.cpp@19@pass by reference@?????@*@?@p@
 CCCC_UseExt@Position@HumanCharacter@HumanCharacter.cpp@127@pass by reference@T????@*@?@p@
 CCCC_UseRel@World@HumanCharacter@
 CCCC_UseExt@World@HumanCharacter@HumanCharacter.cpp@19@pass by reference@?????@*@?@p@
 CCCC_UseRel@bool@HumanCharacter@
-CCCC_UseExt@bool@HumanCharacter@HumanCharacter.cpp@251@pass by value@T????@*@?@P@
+CCCC_UseExt@bool@HumanCharacter@HumanCharacter.cpp@231@pass by value@T????@*@?@P@
 CCCC_UseRel@e_orientation@HumanCharacter@
+CCCC_UseExt@e_orientation@HumanCharacter@HumanCharacter.cpp@152@pass by value@F????@*@?@P@
+CCCC_UseExt@e_orientation@HumanCharacter@HumanCharacter.cpp@152@pass by value@F????@*@?@P@
 CCCC_UseExt@e_orientation@HumanCharacter@HumanCharacter.cpp@172@pass by value@F????@*@?@P@
-CCCC_UseExt@e_orientation@HumanCharacter@HumanCharacter.cpp@172@pass by value@F????@*@?@P@
-CCCC_UseExt@e_orientation@HumanCharacter@HumanCharacter.cpp@192@pass by value@F????@*@?@P@
 CCCC_UseRel@AObject@IACharacter@
-CCCC_UseExt@AObject@IACharacter@IACharacter.cpp@76@pass by reference@F????@*@?@p@
+CCCC_UseExt@AObject@IACharacter@IACharacter.cpp@77@pass by reference@F????@*@?@p@
 CCCC_UseRel@Clock@IACharacter@
-CCCC_UseExt@Clock@IACharacter@IACharacter.cpp@182@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@IACharacter@IACharacter.cpp@163@pass by reference@F????@*@?@p@
 CCCC_UseRel@Position@IACharacter@
 CCCC_UseExt@Position@IACharacter@IACharacter.cpp@18@pass by reference@?????@*@?@p@
-CCCC_UseExt@Position@IACharacter@IACharacter.cpp@117@pass by reference@T????@*@?@p@
+CCCC_UseExt@Position@IACharacter@IACharacter.cpp@118@pass by reference@T????@*@?@p@
 CCCC_UseRel@World@IACharacter@
 CCCC_UseExt@World@IACharacter@IACharacter.cpp@18@pass by reference@?????@*@?@p@
 CCCC_UseRel@bool@IACharacter@
-CCCC_UseExt@bool@IACharacter@IACharacter.cpp@57@pass by value@T????@*@?@P@
-CCCC_UseExt@bool@IACharacter@IACharacter.cpp@251@pass by value@T????@*@?@P@
+CCCC_UseExt@bool@IACharacter@IACharacter.cpp@58@pass by value@T????@*@?@P@
+CCCC_UseExt@bool@IACharacter@IACharacter.cpp@232@pass by value@T????@*@?@P@
 CCCC_UseRel@e_orientation@IACharacter@
-CCCC_UseExt@e_orientation@IACharacter@IACharacter.cpp@162@pass by value@F????@*@?@P@
-CCCC_UseExt@e_orientation@IACharacter@IACharacter.cpp@162@pass by value@F????@*@?@P@
-CCCC_UseExt@e_orientation@IACharacter@IACharacter.cpp@182@pass by value@F????@*@?@P@
-CCCC_UseExt@e_orientation@IACharacter@IACharacter.cpp@189@pass by value@F????@*@?@P@
+CCCC_UseExt@e_orientation@IACharacter@IACharacter.cpp@143@pass by value@F????@*@?@P@
+CCCC_UseExt@e_orientation@IACharacter@IACharacter.cpp@143@pass by value@F????@*@?@P@
+CCCC_UseExt@e_orientation@IACharacter@IACharacter.cpp@163@pass by value@F????@*@?@P@
+CCCC_UseExt@e_orientation@IACharacter@IACharacter.cpp@170@pass by value@F????@*@?@P@
 CCCC_UseRel@Input@InputManager@
 CCCC_UseExt@Input@InputManager@InputManager.cpp@19@pass by reference@F????@*@?@p@
+CCCC_UseRel@BasicShader@Intro@
+CCCC_UseExt@BasicShader@Intro@Intro.cpp@55@pass by reference@F????@*@?@p@
+CCCC_UseExt@BasicShader@Intro@Intro.cpp@68@pass by reference@F????@*@?@p@
+CCCC_UseRel@Clock@Intro@
+CCCC_UseExt@Clock@Intro@Intro.cpp@55@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Intro@Intro.cpp@68@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Intro@Intro.cpp@75@pass by reference@F????@*@?@p@
+CCCC_UseRel@Game@Intro@
+CCCC_UseExt@Game@Intro@Intro.cpp@23@pass by reference@?????@*@?@p@
+CCCC_UseRel@Input@Intro@
+CCCC_UseExt@Input@Intro@Intro.cpp@75@pass by reference@F????@*@?@p@
 CCCC_UseRel@BasicShader@Leaderboard@
-CCCC_UseExt@BasicShader@Leaderboard@Leaderboard.cpp@176@pass by reference@F????@*@?@p@
-CCCC_UseExt@BasicShader@Leaderboard@Leaderboard.cpp@184@pass by reference@F????@*@?@p@
-CCCC_UseExt@BasicShader@Leaderboard@Leaderboard.cpp@189@pass by reference@F????@*@?@p@
-CCCC_UseExt@BasicShader@Leaderboard@Leaderboard.cpp@195@pass by reference@F????@*@?@p@
-CCCC_UseExt@BasicShader@Leaderboard@Leaderboard.cpp@207@pass by reference@F????@*@?@p@
+CCCC_UseExt@BasicShader@Leaderboard@Leaderboard.cpp@178@pass by reference@F????@*@?@p@
+CCCC_UseExt@BasicShader@Leaderboard@Leaderboard.cpp@186@pass by reference@F????@*@?@p@
+CCCC_UseExt@BasicShader@Leaderboard@Leaderboard.cpp@191@pass by reference@F????@*@?@p@
+CCCC_UseExt@BasicShader@Leaderboard@Leaderboard.cpp@197@pass by reference@F????@*@?@p@
+CCCC_UseExt@BasicShader@Leaderboard@Leaderboard.cpp@209@pass by reference@F????@*@?@p@
 CCCC_UseRel@Clock@Leaderboard@
-CCCC_UseExt@Clock@Leaderboard@Leaderboard.cpp@176@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Leaderboard@Leaderboard.cpp@184@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Leaderboard@Leaderboard.cpp@189@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Leaderboard@Leaderboard.cpp@195@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Leaderboard@Leaderboard.cpp@207@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@Leaderboard@Leaderboard.cpp@215@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Leaderboard@Leaderboard.cpp@178@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Leaderboard@Leaderboard.cpp@186@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Leaderboard@Leaderboard.cpp@191@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Leaderboard@Leaderboard.cpp@197@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Leaderboard@Leaderboard.cpp@209@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@Leaderboard@Leaderboard.cpp@217@pass by reference@F????@*@?@p@
 CCCC_UseRel@Game@Leaderboard@
 CCCC_UseExt@Game@Leaderboard@Leaderboard.cpp@21@pass by reference@?????@*@?@p@
 CCCC_UseRel@Input@Leaderboard@
-CCCC_UseExt@Input@Leaderboard@Leaderboard.cpp@215@pass by reference@F????@*@?@p@
+CCCC_UseExt@Input@Leaderboard@Leaderboard.cpp@217@pass by reference@F????@*@?@p@
 CCCC_UseRel@string@Leaderboard@
 CCCC_UseExt@string@Leaderboard@Leaderboard.cpp@79@pass by reference@F????@*@?@p@
 CCCC_UseExt@string@Leaderboard@Leaderboard.cpp@110@pass by reference@F????@*@?@p@
@@ -791,28 +820,21 @@ CCCC_UseRel@Game@Load@
 CCCC_UseExt@Game@Load@Load.cpp@16@pass by reference@?????@*@?@p@
 CCCC_UseRel@Input@Load@
 CCCC_UseExt@Input@Load@Load.cpp@50@pass by reference@F????@*@?@p@
-CCCC_UseRel@ACharacter@LoadGame@
-CCCC_UseExt@ACharacter@LoadGame@LoadGame.cpp@56@pass by reference@F????@*@?@p@
-CCCC_UseExt@ACharacter@LoadGame@LoadGame.cpp@60@pass by reference@F????@*@?@p@
-CCCC_UseExt@ACharacter@LoadGame@LoadGame.cpp@62@pass by reference@F????@*@?@p@
-CCCC_UseExt@ACharacter@LoadGame@LoadGame.cpp@64@pass by reference@F????@*@?@p@
-CCCC_UseExt@ACharacter@LoadGame@LoadGame.cpp@66@pass by reference@F????@*@?@p@
+CCCC_UseRel@Game@LoadGame@
+CCCC_UseExt@Game@LoadGame@LoadGame.cpp@13@pass by reference@?????@*@?@p@
 CCCC_UseRel@ifstream@LoadGame@
-CCCC_UseExt@ifstream@LoadGame@LoadGame.cpp@105@pass by reference@F????@*@?@p@
-CCCC_UseRel@ofstream@LoadGame@
-CCCC_UseExt@ofstream@LoadGame@LoadGame.cpp@23@pass by reference@F????@*@?@p@
-CCCC_UseExt@ofstream@LoadGame@LoadGame.cpp@33@pass by reference@F????@*@?@p@
-CCCC_UseExt@ofstream@LoadGame@LoadGame.cpp@70@pass by reference@F????@*@?@p@
+CCCC_UseExt@ifstream@LoadGame@LoadGame.cpp@24@pass by reference@F????@*@?@p@
+CCCC_UseExt@ifstream@LoadGame@LoadGame.cpp@38@pass by reference@F????@*@?@p@
+CCCC_UseExt@ifstream@LoadGame@LoadGame.cpp@82@pass by reference@F????@*@?@p@
+CCCC_UseExt@ifstream@LoadGame@LoadGame.cpp@113@pass by reference@F????@*@?@p@
 CCCC_UseRel@string@LoadGame@
 CCCC_UseExt@string@LoadGame@LoadGame.cpp@13@pass by reference@?????@*@?@p@
-CCCC_UseExt@string@LoadGame@LoadGame.cpp@53@pass by reference@F????@*@?@p@
-CCCC_UseExt@string@LoadGame@LoadGame.cpp@56@pass by reference@F????@*@?@p@
-CCCC_UseExt@string@LoadGame@LoadGame.cpp@60@pass by reference@F????@*@?@p@
-CCCC_UseExt@string@LoadGame@LoadGame.cpp@62@pass by reference@F????@*@?@p@
-CCCC_UseExt@string@LoadGame@LoadGame.cpp@64@pass by reference@F????@*@?@p@
-CCCC_UseExt@string@LoadGame@LoadGame.cpp@66@pass by reference@F????@*@?@p@
+CCCC_UseExt@string@LoadGame@LoadGame.cpp@58@pass by reference@F????@*@?@p@
+CCCC_UseExt@string@LoadGame@LoadGame.cpp@67@pass by reference@F????@*@?@p@
+CCCC_UseExt@string@LoadGame@LoadGame.cpp@72@pass by reference@F????@*@?@p@
+CCCC_UseExt@string@LoadGame@LoadGame.cpp@77@pass by reference@F????@*@?@p@
 CCCC_UseRel@stringstream@LoadGame@
-CCCC_UseExt@stringstream@LoadGame@LoadGame.cpp@116@pass by reference@F????@*@?@p@
+CCCC_UseExt@stringstream@LoadGame@LoadGame.cpp@124@pass by reference@F????@*@?@p@
 CCCC_UseRel@ifstream@Map@
 CCCC_UseExt@ifstream@Map@Map.cpp@34@pass by reference@F????@*@?@p@
 CCCC_UseRel@string@Map@
@@ -878,20 +900,19 @@ CCCC_UseExt@Game@RandomMenu@RandomMenu.cpp@18@pass by reference@?????@*@?@p@
 CCCC_UseRel@Input@RandomMenu@
 CCCC_UseExt@Input@RandomMenu@RandomMenu.cpp@173@pass by reference@F????@*@?@p@
 CCCC_UseExt@Input@RandomMenu@RandomMenu.cpp@236@pass by reference@F????@*@?@p@
+CCCC_UseRel@World@SaveGame@
+CCCC_UseExt@World@SaveGame@SaveGame.cpp@13@pass by reference@?????@*@?@p@
 CCCC_UseRel@e_type@SaveGame@
-CCCC_UseExt@e_type@SaveGame@SaveGame.cpp@46@pass by reference@F????@*@?@p@
+CCCC_UseExt@e_type@SaveGame@SaveGame.cpp@47@pass by reference@F????@*@?@p@
 CCCC_UseRel@ifstream@SaveGame@
-CCCC_UseExt@ifstream@SaveGame@SaveGame.cpp@22@pass by reference@F????@*@?@p@
-CCCC_UseExt@ifstream@SaveGame@SaveGame.cpp@27@pass by reference@F????@*@?@p@
-CCCC_UseExt@ifstream@SaveGame@SaveGame.cpp@53@pass by reference@F????@*@?@p@
+CCCC_UseExt@ifstream@SaveGame@SaveGame.cpp@23@pass by reference@F????@*@?@p@
+CCCC_UseExt@ifstream@SaveGame@SaveGame.cpp@28@pass by reference@F????@*@?@p@
+CCCC_UseExt@ifstream@SaveGame@SaveGame.cpp@54@pass by reference@F????@*@?@p@
 CCCC_UseRel@list@SaveGame@
-CCCC_UseExt@list@SaveGame@SaveGame.cpp@53@pass by value@F????@*@?@P@
+CCCC_UseExt@list@SaveGame@SaveGame.cpp@54@pass by value@F????@*@?@P@
 CCCC_UseRel@string@SaveGame@
 CCCC_UseExt@string@SaveGame@SaveGame.cpp@13@pass by reference@?????@*@?@p@
-CCCC_UseExt@string@SaveGame@SaveGame.cpp@22@pass by reference@F????@*@?@p@
-CCCC_UseRel@vector@SaveGame@
-CCCC_UseExt@vector@SaveGame@SaveGame.cpp@13@pass by value@?????@*@?@P@
-CCCC_UseExt@vector@SaveGame@SaveGame.cpp@27@pass by value@F????@*@?@P@
+CCCC_UseExt@string@SaveGame@SaveGame.cpp@23@pass by reference@F????@*@?@p@
 CCCC_UseRel@string@Scoring@
 CCCC_UseExt@string@Scoring@Scoring.cpp@75@pass by value@F????@*@?@P@
 CCCC_UseRel@BasicShader@SelectChar@
@@ -920,28 +941,30 @@ CCCC_UseExt@string@TextureManager@TextureManager.cpp@20@pass by reference@F????@
 CCCC_UseExt@string@TextureManager@TextureManager.cpp@28@pass by reference@F????@*@?@p@
 CCCC_UseExt@string@TextureManager@TextureManager.cpp@35@pass by reference@F????@*@?@p@
 CCCC_UseRel@BasicShader@World@
-CCCC_UseExt@BasicShader@World@World.cpp@134@pass by reference@F????@*@?@p@
-CCCC_UseExt@BasicShader@World@World.cpp@243@pass by reference@F????@*@?@p@
+CCCC_UseExt@BasicShader@World@World.cpp@122@pass by reference@F????@*@?@p@
+CCCC_UseExt@BasicShader@World@World.cpp@272@pass by reference@F????@*@?@p@
+CCCC_UseRel@Bonus@World@
+CCCC_UseExt@Bonus@World@World.cpp@222@pass by reference@F????@*@?@p@
 CCCC_UseRel@Clock@World@
-CCCC_UseExt@Clock@World@World.cpp@134@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@World@World.cpp@207@pass by reference@F????@*@?@p@
-CCCC_UseExt@Clock@World@World.cpp@243@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@World@World.cpp@122@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@World@World.cpp@233@pass by reference@F????@*@?@p@
+CCCC_UseExt@Clock@World@World.cpp@272@pass by reference@F????@*@?@p@
 CCCC_UseRel@Flame@World@
-CCCC_UseExt@Flame@World@World.cpp@348@pass by reference@F????@*@?@p@
-CCCC_UseExt@Flame@World@World.cpp@364@pass by reference@F????@*@?@p@
+CCCC_UseExt@Flame@World@World.cpp@377@pass by reference@F????@*@?@p@
+CCCC_UseExt@Flame@World@World.cpp@396@pass by reference@F????@*@?@p@
 CCCC_UseRel@Game@World@
 CCCC_UseExt@Game@World@World.cpp@19@pass by reference@?????@*@?@p@
 CCCC_UseRel@Input@World@
-CCCC_UseExt@Input@World@World.cpp@207@pass by reference@F????@*@?@p@
+CCCC_UseExt@Input@World@World.cpp@233@pass by reference@F????@*@?@p@
 CCCC_UseRel@Map@World@
 CCCC_UseExt@Map@World@World.cpp@19@pass by reference@?????@*@?@p@
 CCCC_UseRel@Position@World@
-CCCC_UseExt@Position@World@World.cpp@126@pass by reference@F????@*@?@p@
-CCCC_UseExt@Position@World@World.cpp@226@pass by reference@F????@*@?@p@
-CCCC_UseExt@Position@World@World.cpp@248@pass by reference@F????@*@?@p@
-CCCC_UseExt@Position@World@World.cpp@271@pass by reference@F????@*@?@p@
+CCCC_UseExt@Position@World@World.cpp@114@pass by reference@F????@*@?@p@
+CCCC_UseExt@Position@World@World.cpp@255@pass by reference@F????@*@?@p@
+CCCC_UseExt@Position@World@World.cpp@277@pass by reference@F????@*@?@p@
+CCCC_UseExt@Position@World@World.cpp@300@pass by reference@F????@*@?@p@
 CCCC_UseRel@list@World@
-CCCC_UseExt@list@World@World.cpp@337@pass by reference@F????@*@?@p@
+CCCC_UseExt@list@World@World.cpp@366@pass by reference@F????@*@?@p@
 CCCC_RejExt@Bomb.cpp@1@<file scope items>@F????@LOC:1 COM:9 MVG:0@?@r@
 CCCC_RejExt@Bonus.cpp@1@<file scope items>@F????@LOC:1 COM:1 MVG:0@?@r@
 CCCC_RejExt@Box.cpp@1@<file scope items>@T????@LOC:2 COM:9 MVG:0@?@r@
@@ -949,12 +972,13 @@ CCCC_RejExt@Button.cpp@1@<file scope items>@T????@LOC:2 COM:9 MVG:0@?@r@
 CCCC_RejExt@Camera.cpp@1@<file scope items>@F????@LOC:1 COM:1 MVG:0@?@r@
 CCCC_RejExt@Command.cpp@1@<file scope items>@F????@LOC:2 COM:9 MVG:0@?@r@
 CCCC_RejExt@Exit.cpp@1@<file scope items>@F????@LOC:2 COM:9 MVG:0@?@r@
-CCCC_RejExt@Flame.cpp@1@<file scope items>@F????@LOC:1 COM:1 MVG:0@?@r@
+CCCC_RejExt@Flame.cpp@1@<file scope items>@T????@LOC:1 COM:1 MVG:0@?@r@
 CCCC_RejExt@Game.cpp@1@<file scope items>@F????@LOC:2 COM:9 MVG:0@?@r@
 CCCC_RejExt@GameOver.cpp@1@<file scope items>@F????@LOC:3 COM:9 MVG:0@?@r@
 CCCC_RejExt@HumanCharacter.cpp@1@<file scope items>@F????@LOC:3 COM:9 MVG:0@?@r@
 CCCC_RejExt@IACharacter.cpp@1@<file scope items>@F????@LOC:2 COM:9 MVG:0@?@r@
 CCCC_RejExt@InputManager.cpp@1@<file scope items>@T????@LOC:1 COM:1 MVG:0@?@r@
+CCCC_RejExt@Intro.cpp@1@<file scope items>@F????@LOC:3 COM:9 MVG:0@?@r@
 CCCC_RejExt@Leaderboard.cpp@1@<file scope items>@F????@LOC:2 COM:9 MVG:0@?@r@
 CCCC_RejExt@Load.cpp@1@<file scope items>@F????@LOC:1 COM:1 MVG:0@?@r@
 CCCC_RejExt@LoadGame.cpp@1@<file scope items>@F????@LOC:1 COM:1 MVG:0@?@r@
@@ -968,6 +992,5 @@ CCCC_RejExt@RandomMenu.cpp@1@<file scope items>@F????@LOC:2 COM:9 MVG:0@?@r@
 CCCC_RejExt@SaveGame.cpp@1@<file scope items>@F????@LOC:1 COM:1 MVG:0@?@r@
 CCCC_RejExt@Scoring.cpp@1@<file scope items>@F????@LOC:1 COM:1 MVG:0@?@r@
 CCCC_RejExt@SelectChar.cpp@1@<file scope items>@F????@LOC:2 COM:9 MVG:0@?@r@
-CCCC_RejExt@testWorld.cpp@1@<file scope items>@F????@LOC:1 COM:1 MVG:0@?@r@
 CCCC_RejExt@TextureManager.cpp@1@<file scope items>@F????@LOC:1 COM:1 MVG:0@?@r@
 CCCC_RejExt@World.cpp@1@<file scope items>@F????@LOC:2 COM:9 MVG:0@?@r@

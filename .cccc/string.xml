@@ -42,7 +42,7 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Bonus.cpp" line="24" />
+<source_reference file="Bonus.cpp" line="25" />
 </extent>
 <name>Box</name>
 <visible>true</visible>
@@ -70,7 +70,7 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Flame.cpp" line="22" />
+<source_reference file="Flame.cpp" line="23" />
 </extent>
 <name>Leaderboard</name>
 <visible>true</visible>
@@ -96,27 +96,19 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="53" />
+<source_reference file="LoadGame.cpp" line="58" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="56" />
+<source_reference file="LoadGame.cpp" line="67" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="60" />
+<source_reference file="LoadGame.cpp" line="72" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="62" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="64" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="66" />
+<source_reference file="LoadGame.cpp" line="77" />
 </extent>
 <name>Map</name>
 <visible>true</visible>
@@ -142,7 +134,7 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="SaveGame.cpp" line="22" />
+<source_reference file="SaveGame.cpp" line="23" />
 </extent>
 <name>Scoring</name>
 <visible>true</visible>

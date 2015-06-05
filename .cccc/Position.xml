@@ -78,26 +78,26 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="IACharacter.cpp" line="117" />
+<source_reference file="IACharacter.cpp" line="118" />
 </extent>
 <name>World</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="World.cpp" line="126" />
+<source_reference file="World.cpp" line="114" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="World.cpp" line="226" />
+<source_reference file="World.cpp" line="255" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="World.cpp" line="248" />
+<source_reference file="World.cpp" line="277" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="World.cpp" line="271" />
+<source_reference file="World.cpp" line="300" />
 </extent>
 </client_module>
 <supplier_module>

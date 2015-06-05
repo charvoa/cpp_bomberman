@@ -2,9 +2,9 @@
 <!--Detailed report on module Command-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="179" level="0" />
+<lines_of_code value="183" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="56" level="0" />
+<McCabes_cyclomatic_complexity value="59" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
 <lines_of_code value="0" level="0" />
 <lines_of_code_per_member_function value="********" level="0" />
@@ -31,20 +31,20 @@
 <description>definition</description>
 <source_reference file="Command.cpp" line="15" />
 </extent>
-<lines_of_code value="31" level="1" />
-<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_code value="33" level="1" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="******" level="2" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="0" />
 </member_function>
 <member_function>
 <name>back(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="107" />
+<source_reference file="Command.cpp" line="109" />
 </extent>
-<lines_of_code value="7" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
@@ -53,7 +53,7 @@
 <name>down(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="149" />
+<source_reference file="Command.cpp" line="153" />
 </extent>
 <lines_of_code value="10" level="0" />
 <McCabes_cyclomatic_complexity value="5" level="0" />
@@ -65,7 +65,7 @@
 <name>down2(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="193" />
+<source_reference file="Command.cpp" line="197" />
 </extent>
 <lines_of_code value="10" level="0" />
 <McCabes_cyclomatic_complexity value="5" level="0" />
@@ -77,7 +77,7 @@
 <name>enter(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="204" />
+<source_reference file="Command.cpp" line="208" />
 </extent>
 <lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -89,7 +89,7 @@
 <name>exec(touche,Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="211" />
+<source_reference file="Command.cpp" line="215" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -101,7 +101,7 @@
 <name>left(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="127" />
+<source_reference file="Command.cpp" line="131" />
 </extent>
 <lines_of_code value="10" level="0" />
 <McCabes_cyclomatic_complexity value="5" level="0" />
@@ -113,7 +113,7 @@
 <name>left2(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="171" />
+<source_reference file="Command.cpp" line="175" />
 </extent>
 <lines_of_code value="10" level="0" />
 <McCabes_cyclomatic_complexity value="5" level="0" />
@@ -125,7 +125,7 @@
 <name>lshift(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="66" />
+<source_reference file="Command.cpp" line="68" />
 </extent>
 <lines_of_code value="8" level="0" />
 <McCabes_cyclomatic_complexity value="3" level="0" />
@@ -137,7 +137,7 @@
 <name>mute(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="85" />
+<source_reference file="Command.cpp" line="87" />
 </extent>
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -149,7 +149,7 @@
 <name>no(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="49" />
+<source_reference file="Command.cpp" line="51" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -161,7 +161,7 @@
 <name>pause(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="75" />
+<source_reference file="Command.cpp" line="77" />
 </extent>
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -173,7 +173,7 @@
 <name>right(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="138" />
+<source_reference file="Command.cpp" line="142" />
 </extent>
 <lines_of_code value="10" level="0" />
 <McCabes_cyclomatic_complexity value="5" level="0" />
@@ -185,7 +185,7 @@
 <name>right2(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="182" />
+<source_reference file="Command.cpp" line="186" />
 </extent>
 <lines_of_code value="10" level="0" />
 <McCabes_cyclomatic_complexity value="5" level="0" />
@@ -197,7 +197,7 @@
 <name>space(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="54" />
+<source_reference file="Command.cpp" line="56" />
 </extent>
 <lines_of_code value="11" level="0" />
 <McCabes_cyclomatic_complexity value="4" level="0" />
@@ -209,7 +209,7 @@
 <name>unmute(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="96" />
+<source_reference file="Command.cpp" line="98" />
 </extent>
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -221,7 +221,7 @@
 <name>up(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="116" />
+<source_reference file="Command.cpp" line="120" />
 </extent>
 <lines_of_code value="10" level="0" />
 <McCabes_cyclomatic_complexity value="5" level="0" />
@@ -233,7 +233,7 @@
 <name>up2(Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="160" />
+<source_reference file="Command.cpp" line="164" />
 </extent>
 <lines_of_code value="10" level="0" />
 <McCabes_cyclomatic_complexity value="5" level="0" />
@@ -245,7 +245,7 @@
 <name>~Command()</name>
 <extent>
 <description>definition</description>
-<source_reference file="Command.cpp" line="47" />
+<source_reference file="Command.cpp" line="49" />
 </extent>
 <lines_of_code value="1" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -265,71 +265,71 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="49" />
+<source_reference file="Command.cpp" line="51" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="54" />
+<source_reference file="Command.cpp" line="56" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="66" />
+<source_reference file="Command.cpp" line="68" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="75" />
+<source_reference file="Command.cpp" line="77" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="85" />
+<source_reference file="Command.cpp" line="87" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="96" />
+<source_reference file="Command.cpp" line="98" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="107" />
+<source_reference file="Command.cpp" line="109" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="116" />
+<source_reference file="Command.cpp" line="120" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="127" />
+<source_reference file="Command.cpp" line="131" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="138" />
+<source_reference file="Command.cpp" line="142" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="149" />
+<source_reference file="Command.cpp" line="153" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="160" />
+<source_reference file="Command.cpp" line="164" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="171" />
+<source_reference file="Command.cpp" line="175" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="182" />
+<source_reference file="Command.cpp" line="186" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="193" />
+<source_reference file="Command.cpp" line="197" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="204" />
+<source_reference file="Command.cpp" line="208" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="211" />
+<source_reference file="Command.cpp" line="215" />
 </extent>
 <name>Game</name>
 <visible>true</visible>
@@ -357,7 +357,7 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="Command.cpp" line="211" />
+<source_reference file="Command.cpp" line="215" />
 </extent>
 </supplier_module>
 </module>

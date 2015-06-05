@@ -35,34 +35,34 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="HumanCharacter.cpp" line="172" />
+<source_reference file="HumanCharacter.cpp" line="152" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="HumanCharacter.cpp" line="152" />
 </extent>
 <extent>
 <description>pass by value</description>
 <source_reference file="HumanCharacter.cpp" line="172" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="HumanCharacter.cpp" line="192" />
 </extent>
 <name>IACharacter</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="IACharacter.cpp" line="162" />
+<source_reference file="IACharacter.cpp" line="143" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="IACharacter.cpp" line="162" />
+<source_reference file="IACharacter.cpp" line="143" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="IACharacter.cpp" line="182" />
+<source_reference file="IACharacter.cpp" line="163" />
 </extent>
 <extent>
 <description>pass by value</description>
-<source_reference file="IACharacter.cpp" line="189" />
+<source_reference file="IACharacter.cpp" line="170" />
 </extent>
 </client_module>
 <supplier_module>

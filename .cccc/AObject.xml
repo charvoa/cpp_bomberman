@@ -42,7 +42,7 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="IACharacter.cpp" line="76" />
+<source_reference file="IACharacter.cpp" line="77" />
 </extent>
 </client_module>
 <supplier_module>
