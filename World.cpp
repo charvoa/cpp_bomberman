@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Fri Jun  5 14:48:19 2015 Antoine Garcia
+// Last update Fri Jun  5 15:48:48 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -34,6 +34,7 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
   _texManag.registerTexture("backgroundInGame", "backIG");
   this->loadBackground();
   findWall();
+  createIaPlayer();
   _command = new Command(game, this);
 }
 
@@ -109,7 +110,7 @@ void	World::createIaPlayer()
   IACharacter *charac;
   Position p = Position(3, 3);
 
-  std::cout << "IACHARACTER" << std::endl;
+  std::cout << getItemAtPosition(p._x, p._y) << std::endl;
   charac = new IACharacter(3, this, p);;
   //IAEngine *engine = new IAEngine(*charac, *this);
   _players.push_back(charac);

@@ -5,17 +5,19 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Fri Jun  5 14:54:11 2015 Audibert Louis
+// Last update Fri Jun  5 16:07:57 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
 #include "World.hh"
+#include "ia/IAEngine.hh"
 
 TextureManager &IACharacter::_texManag = TextureManager::getInstance();
 
 IACharacter::IACharacter(int id, World *world, Position& pos)
 {
-  (void) world;
+  // _brain = new IAEngine(*this, *world);
+  _world = world;
   this->_IAid = id;
   this->_alive = true;
   _model.load("./images/marvin.fbx");
@@ -25,6 +27,7 @@ IACharacter::IACharacter(int id, World *world, Position& pos)
   _timer = 0;
   _isAnime = false;
   _pos = pos;
+  _world->setItemAtPosition(_pos, 'I');
   _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
@@ -33,6 +36,7 @@ IACharacter::IACharacter(int id, World *world, Position& pos)
 
 IACharacter::~IACharacter()
 {
+  //delete _brain;
   std::cout << "IA is dead..." << std::endl;
 }
 
@@ -205,7 +209,8 @@ void	IACharacter::move(e_orientation ori, gdl::Clock &clock)
       if (_timer >= 2.0f)
       	{
 	  this->translate(move);
-	  _world->setItemAtPosition(*pos, _id);
+	  _world->setItemAtPosition(_pos, 'F');
+	  _world->setItemAtPosition(*pos, 'I');
 	  _pos = *pos;
       	  _timer = 0;
       	}
