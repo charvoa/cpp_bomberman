@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Fri Jun  5 14:22:28 2015 Antoine Garcia
+// Last update Fri Jun  5 15:45:16 2015 Audibert Louis
 //
 
 #ifndef IACHARACTER_HH_
@@ -16,6 +16,7 @@
 # include "ModelLoad.hh"
 
 class World;
+class IAEngine;
 
 class IACharacter : public ACharacter {
 
@@ -54,6 +55,7 @@ public:
 private:
 
   static TextureManager& _texManag;
+  IAEngine		*_brain;
 };
 
 #endif /* IACHARACTER_HH_ */
