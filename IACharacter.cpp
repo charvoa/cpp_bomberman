@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Fri Jun  5 14:22:26 2015 Antoine Garcia
+// Last update Fri Jun  5 14:54:11 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -46,7 +46,10 @@ void IACharacter::dropBomb()
   std::cout << "I droped a bomb hahah" << std::endl;
   if (_canLaunchBomb == true)
     {
+      _canLaunchBomb = false;
+      _world->dropBomb(_pos, _IAid);
       _sound.playMusic("allahu");
+      _world->setItemAtPosition(_pos, 'T');
     }
 }
 
@@ -194,7 +197,7 @@ void	IACharacter::move(e_orientation ori, gdl::Clock &clock)
       if (_isAnime == false)
 	{
 	  _model.setCurrentAnim(0, false);
-	  _isAnime = true;
+	  // _isAnime = true;
 	}
       _timer += 1.0f;
       std::cout << "x = " << _pos._x << "; y = " << _pos._y << std::endl;

@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Thu Jun  4 18:12:25 2015 Audibert Louis
+// Last update Fri Jun  5 14:55:37 2015 Audibert Louis
 //
 
 #include "Bomb.hh"
@@ -136,5 +136,6 @@ void	Bomb::onDestroy()
 {
   _world->setItemAtPosition(_pos, 'F');
   _isDestroyed = true;
-  _world->getPlayerById(_id)->setCanLaunchBomb(true);
+  if (_world->getPlayerById(_id) != NULL)
+    _world->getPlayerById(_id)->setCanLaunchBomb(true);
 }
