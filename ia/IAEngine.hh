@@ -20,7 +20,7 @@ public:
   float		        calculDistance(IACharacter &ia, HumanCharacter &human);
   HumanCharacter        *findClosestHumanPlayer(IACharacter &ia, World &world);
   HumanCharacter	*getTarget(IACharacter &ia, World &world);
-  std::vector<char>	whatIsAroundMe(IACharacter &ia, World &world);
+  void			whatIsAroundMe(IACharacter &ia, World &world);
   void			setOperand(IACharacter &ia, HumanCharacter &target);
   bool			isPossibleToJoinTarget(IACharacter &ia, World &world, HumanCharacter &target);
   void			leaveThisPosition(IACharacter &ia, World &world);
