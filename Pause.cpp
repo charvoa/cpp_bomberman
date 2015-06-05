@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Sun Jun 14 15:52:52 2015 Audibert Louis
+// Last update Fri Jun  5 11:52:28 2015 Nicolas Charvoz
 //
 
 #include "Pause.hh"
@@ -66,11 +66,11 @@ void Pause::getNameOfButton(gdl::Input &input)
 
    if (mouse.x >= 812 && mouse.x <= 1166 && mouse.y >= 337 && mouse.y <= 427)
      _game->popState();
-   else if (mouse.x >= 812 && mouse.x <= 1166 && mouse.y >= 337
-	    && mouse.y <= 427)
+   else if (mouse.x >= 812 && mouse.x <= 1166 && mouse.y >= 483
+	    && mouse.y <= 569)
      {
-       //SaveGame(_world->getWorld(), "FAKE");
-       //SaveGame(*_world, _world->getMapName());
+       std::cout << "PAUSE : " << _world->getMapName() << std::endl;
+       SaveGame(*_world, _world->getMapName());
      }
    else if (mouse.x >= 812 && mouse.x <= 1166 && mouse.y >= 627
 	    && mouse.y <= 723)
