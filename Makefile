@@ -5,7 +5,7 @@
 ## Login   <girard_s@epitech.net>
 ##
 ## Started on  Tue May 26 17:42:11 2015 Nicolas Girardot
-## Last update Tue Jun  2 12:33:08 2015 Nicolas Charvoz
+## Last update Tue Jun  2 19:34:19 2015 Nicolas Charvoz
 ##
 
 MAIN		=	bomberman
@@ -48,7 +48,8 @@ LDFLAGS		=	-L./LibBomberman_linux_x64/libs/ -lgdl_gl	\
 			-L ./Sound/lib -lfmodex64 -lglut		\
 			-lSDL_ttf
 
-CPPFLAGS	=	-Wall -Wextra -std=c++11 -Wno-ignored-qualifiers
+CPPFLAGS	=	-Wall -Wextra -std=c++11 -Wno-ignored-qualifiers \
+			-Werror
 CPPFLAGS	+=	-I./LibBomberman_linux_x64/includes/
 
 ifeq ($(DEBUG), YES)

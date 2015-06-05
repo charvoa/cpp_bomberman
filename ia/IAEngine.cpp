@@ -14,7 +14,7 @@ IAEngine::IAEngine(IACharacter &ia, World &world)
   _math.initSRand(_math.initTime(NULL));
   while (world.getHumansPlayers().size() != 0)
   {
-    _aroundMe = this->whatIsAroundMe(ia, world);
+    this->whatIsAroundMe(ia, world);
 //    this->leaveThisPosition(ia, world);
     target = this->getTarget(ia, world);
 
@@ -30,7 +30,7 @@ IAEngine::~IAEngine()
   
 }
 
-bool                isHumanPlayerAroundMe(std::vector<char> &vector)
+bool                IAEngine::isHumanPlayerAroundMe(std::vector<char> &vector)
 {
   unsigned int               i;
 
@@ -44,7 +44,7 @@ bool                isHumanPlayerAroundMe(std::vector<char> &vector)
   return false;
 }
 
-bool                isBoxAroundMe(std::vector<char> &vector)
+bool                IAEngine::isBoxAroundMe(std::vector<char> &vector)
 {
   unsigned int               i;
 
@@ -58,7 +58,7 @@ bool                isBoxAroundMe(std::vector<char> &vector)
   return false;
 }
 
-bool                isBombAroundMe(std::vector<char> &vector)
+bool                IAEngine::isBombAroundMe(std::vector<char> &vector)
 {
   unsigned int               i;
 
@@ -72,7 +72,7 @@ bool                isBombAroundMe(std::vector<char> &vector)
   return false;
 }
 
-bool                isBonusAroundMe(std::vector<char> &vector)
+bool			IAEngine::isBonusAroundMe(std::vector<char> &vector)
 {
   unsigned int               i;
 
@@ -86,7 +86,7 @@ bool                isBonusAroundMe(std::vector<char> &vector)
   return false;
 }
 
-std::vector<char>  IAEngine::whatIsAroundMe(IACharacter &ia, World &world)
+void			IAEngine::whatIsAroundMe(IACharacter &ia, World &world)
 {
   _aroundMe.clear();
   _xIA = ia.getPos()._x;
@@ -97,23 +97,23 @@ std::vector<char>  IAEngine::whatIsAroundMe(IACharacter &ia, World &world)
   _aroundMe.push_back(world.getItemAtPosition(_xIA - 1, _yIA));
 }
 
-void   IAEngine::leaveThisPosition(IACharacter &ia, World &world)
+void			IAEngine::leaveThisPosition(IACharacter &ia, World &world)
 {
   (void)ia;
   (void)world;
 }
 
-int    IAEngine::calculLength(int firstPosX, int secondPosX)
+int			IAEngine::calculLength(int firstPosX, int secondPosX)
 {
     return (_math.absolute(firstPosX - secondPosX));
 }
 
-int    IAEngine::calculWidth(int firstPosY, int secondPosY)
+int			IAEngine::calculWidth(int firstPosY, int secondPosY)
 {
      return (_math.absolute(firstPosY - secondPosY));
 }
 
-float           IAEngine::calculDistance(IACharacter &ia, HumanCharacter &human)
+float			IAEngine::calculDistance(IACharacter &ia, HumanCharacter &human)
 {
   _xIA = ia.getPos()._x;
   _yIA = ia.getPos()._y;
@@ -124,7 +124,7 @@ float           IAEngine::calculDistance(IACharacter &ia, HumanCharacter &human)
   return (_math.squareRoot((_w * _w) + (_l * _l)));
 }
 
-HumanCharacter  *IAEngine::findClosestHumanPlayer(IACharacter &ia, World &world)
+HumanCharacter		*IAEngine::findClosestHumanPlayer(IACharacter &ia, World &world)
 {
   _h1 = this->calculDistance(ia, *world.getHumansPlayers().at(0));
   _h2 = this->calculDistance(ia, *world.getHumansPlayers().at(1));
@@ -135,7 +135,7 @@ HumanCharacter  *IAEngine::findClosestHumanPlayer(IACharacter &ia, World &world)
   return (world.getHumansPlayers().at(1));
 }
 
-HumanCharacter	*IAEngine::getTarget(IACharacter &ia, World &world)
+HumanCharacter		*IAEngine::getTarget(IACharacter &ia, World &world)
 {
   if (world.getHumansPlayers().size() == 0)
     return NULL;
@@ -144,7 +144,7 @@ HumanCharacter	*IAEngine::getTarget(IACharacter &ia, World &world)
   return (this->findClosestHumanPlayer(ia, world));
 }
 
-void          IAEngine::setOperand(IACharacter &ia, HumanCharacter &target)
+void			IAEngine::setOperand(IACharacter &ia, HumanCharacter &target)
 {
   if (ia.getPos()._x < target.getPos()._x)
   {
@@ -179,7 +179,7 @@ void          IAEngine::setOperand(IACharacter &ia, HumanCharacter &target)
   }
 }
 
-bool	       IAEngine::isPossibleToJoinTarget(IACharacter &ia, World &world, HumanCharacter &target)
+bool			IAEngine::isPossibleToJoinTarget(IACharacter &ia, World &world, HumanCharacter &target)
 {
   // Mettre ces variables dans la classe
 
@@ -198,7 +198,7 @@ bool	       IAEngine::isPossibleToJoinTarget(IACharacter &ia, World &world, Huma
   return false;
 }
 
-bool      IAEngine::routeToTarget(int x, int y, IACharacter &ia, HumanCharacter &target)
+bool			IAEngine::routeToTarget(int x, int y, IACharacter &ia, HumanCharacter &target)
 {
     // Check dimension du labyrinthe == W || '-'?
     // Check si == F || X || E
