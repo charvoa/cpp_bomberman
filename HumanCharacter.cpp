@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Fri Jun  5 13:31:14 2015 Audibert Louis
+// Last update Fri Jun  5 13:47:36 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -24,11 +24,12 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   this->_id = id;
   this->_alive = true;
   _pos = pos;
-  int save = (id - '0') % 2;
-  if (save == 1)
-    _model.load("./images/marvin.fbx");
-  else
-  _model.load("./images/test.obj");
+  // int save = (id - '0') % 2;
+  // if (save == 1)
+  //   _model.load("./images/marvin.fbx");
+  // else
+  //   _model.load("./images/marvin.fbx");
+  _model.load("./images/marvin.fbx");
   // _model.load("/home/audibe_l/Downloads/marvin/Soldier_mercenary.obj");
   // _model.load("/home/audibe_l/Downloads/Blender/GuardSoldier.FBX");
   _orientation = DOWN;
