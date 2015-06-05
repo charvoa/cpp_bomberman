@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Wed Jun  3 18:00:00 2015 Nicolas Girardot
+// Last update Fri Jun  5 14:25:25 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -23,6 +23,8 @@
 #include "Game.hh"
 #include "Position.hpp"
 #include "HumanCharacter.hh"
+#include "IACharacter.hh"
+#include "ia/IAEngine.hh"
 #include "Cube.hh"
 #include "Box.hh"
 #include "Bomb.hh"
@@ -47,6 +49,7 @@ private:
   void			checkPlayersDeath(Flame&);
   void			checkDestroyBoxes(Flame&);
   void			createHumanPlayer(char id, Position & pos);
+  void			createIaPlayer();
 public:
   World(Game *game, Map &map, int nb_players, int nb_ia);
   ~World(){};

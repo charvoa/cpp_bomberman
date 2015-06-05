@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Wed Jun  3 13:56:15 2015 Audibert Louis
+// Last update Fri Jun  5 14:22:28 2015 Antoine Garcia
 //
 
 #ifndef IACHARACTER_HH_
@@ -21,7 +21,7 @@ class IACharacter : public ACharacter {
 
 public:
 
-  IACharacter(int, World *);
+  IACharacter(int, World *, Position&);
   virtual ~IACharacter();
   bool	getAlive() const;
   void dropBomb();
