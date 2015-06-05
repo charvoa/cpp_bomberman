@@ -1,11 +1,11 @@
 //
 // Intro.hh for bomberman in /home/audibe_l/rendu/cpp_bomberman
-// 
+//
 // Made by Audibert Louis
 // Login   <audibe_l@epitech.net>
-// 
+//
 // Started on  Wed Jun 10 14:45:05 2015 Audibert Louis
-// Last update Thu Jun 11 17:48:01 2015 Audibert Louis
+// Last update Fri Jun  5 13:01:52 2015 Nicolas Charvoz
 //
 
 #ifndef _INTRO_HH_
@@ -19,7 +19,6 @@
 #include "Button.hh"
 #include "Options.hh"
 #include "Leaderboard.hh"
-#include "Load.hh"
 #include "Exit.hh"
 #include <OpenGL.hh>
 #include <iostream>
