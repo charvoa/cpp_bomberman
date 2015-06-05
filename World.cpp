@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Fri Jun  5 14:30:53 2015 Antoine Garcia
+// Last update Fri Jun  5 14:43:53 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -32,8 +32,8 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
   shader.setUniform("projection", _game->_camera->getProjection());
   _map = _fileMap->getMap();
   _texManag.registerTexture("backgroundInGame", "backIG");
+  createIaPlayer()
   this->loadBackground();
-  createIaPlayer();
   findWall();
   _command = new Command(game, this);
 }
@@ -111,7 +111,7 @@ void	World::createIaPlayer()
   Position p = Position(3, 3);
 
   std::cout << "IACHARACTER" << std::endl;
-  charac = new IACharacter(1, this, p);;
+  charac = new IACharacter(3, this, p);;
   //IAEngine *engine = new IAEngine(*charac, *this);
   _players.push_back(charac);
   //(void)engine;
