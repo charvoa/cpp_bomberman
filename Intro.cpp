@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed Jun 10 14:53:07 2015 Audibert Louis
-// Last update Fri Jun  5 01:50:08 2015 Nicolas Charvoz
+// Last update Fri Jun  5 01:54:16 2015 Nicolas Charvoz
 //
 
 #include "Intro.hh"
@@ -44,7 +44,6 @@ void Intro::loadImages()
       ss.str("");
       ss.clear();
       ss << "batman" << i;
-      std::cout << "file " << ss.str() << std::endl;
       _texManag.registerTexture(ss.str(), ss.str());
       image = new MenuBackground();
       image->initialize(_texManag.getTexture(ss.str()));
