@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 14:15:33 2015 Nicolas Girardot
-// Last update Thu Jun  4 17:35:40 2015 Nicolas Girardot
+// Last update Fri Jun  5 16:11:08 2015 Nicolas Girardot
 //
 
 #ifndef BOMB_HH_
@@ -15,6 +15,7 @@
 #include "World.hh"
 #include "Position.hpp"
 #include "Flame.hh"
+#include "Bonus.hh"
 
 class Flame;
 
@@ -41,6 +42,7 @@ public:
   void		update(gdl::Clock const &, gdl::Input &);
   void		draw(gdl::AShader&, gdl::Clock const &);
   bool		getStatus();
+  void		setRange(int);
   void		onDrop();
   void		onDestroy();
 };

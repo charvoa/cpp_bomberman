@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Fri Jun  5 14:55:37 2015 Audibert Louis
+// Last update Fri Jun  5 16:10:19 2015 Nicolas Girardot
 //
 
 #include "Bomb.hh"
@@ -130,6 +130,11 @@ void	Bomb::onDrop()
 bool	Bomb::getStatus()
 {
    return (!_isDestroyed);
+}
+
+void	Bomb::setRange(int a)
+{
+  _range += a;
 }
 
 void	Bomb::onDestroy()
