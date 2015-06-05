@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Fri Jun  5 15:49:08 2015 Antoine Garcia
+// Last update Fri Jun  5 15:52:58 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -35,7 +35,7 @@ IACharacter::IACharacter(int id, World *world, Position& pos)
 
 IACharacter::~IACharacter()
 {
-  delete _brain;
+  //delete _brain;
   std::cout << "IA is dead..." << std::endl;
 }
 
