@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sat Jun 13 15:44:42 2015 Antoine Garcia
+// Last update Fri Jun  5 06:30:04 2015 Nicolas Charvoz
 //
 
 # include <iostream>
@@ -381,6 +381,8 @@ void			World::checkPlayersDeath(Flame& flame)
     {
       if ((*it)->getPos() == flame.getPos())
   	{
+	  if (!getPlayerById(flame.getIdPlayer()))
+	    break;
 	  getPlayerById(flame.getIdPlayer())->setScore(getPlayerById(flame.getIdPlayer())->getScore() + 100);
 	  delete *it;
 	  it = _players.erase(it);
@@ -402,6 +404,8 @@ void		World::checkDestroyBoxes(Flame& flame)
 	{
 	  if (box->getPosition() == flame.getPos())
 	    {
+	      if (!getPlayerById(flame.getIdPlayer()))
+		break;
 	      getPlayerById(flame.getIdPlayer())->setScore(getPlayerById(flame.getIdPlayer())->getScore() + 10);
 	      box->onDestroy();
 	      _map.at(flame.getPos()._y).at(flame.getPos()._x) = 'F';
