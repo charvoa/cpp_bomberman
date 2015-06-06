@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Fri Jun  5 15:48:48 2015 Antoine Garcia
+// Last update Sun Jun  7 00:32:22 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -150,6 +150,23 @@ ACharacter*	World::getPlayerById(int id)
    return NULL;
 }
 
+void	World::gameOver()
+{
+  std::vector<HumanCharacter *> players;
+
+  players = getHumansPlayers();
+  if (players.size() == 0)
+    std::cout << "GAME OVER" << std::endl;
+  else if (players.size() == 1 && _players.size() == 1)
+    {
+      std::cout << players[0]->getId() << "Won the game" << std::endl;
+    }
+  else
+    {
+      std::cout << "IA WON THE GAME" << std::endl;
+    }
+}
+
 bool	World::update(gdl::Clock& clock, gdl::Input& input)
 {
   _command->exec(_inputManager->getTouche(input), clock);
@@ -164,6 +181,7 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
 	  // return true;
 	}
     }
+  gameOver();
   clock = clock;
   return true;
 }
