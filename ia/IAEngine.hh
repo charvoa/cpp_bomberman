@@ -30,6 +30,7 @@ public:
   bool			isHumanPlayerAroundMe(std::vector<char> &vector);
   bool			isBonusAroundMe(std::vector<char> &vector);
   bool			routeToTarget(int x, int y, HumanCharacter &target);
+  e_orientation		giveOrientation();
   virtual void *backRun(void *Class);
 private:
   int			_w;
