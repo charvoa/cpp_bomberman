@@ -9,8 +9,9 @@
 #include "../IACharacter.hh"
 #include "../HumanCharacter.hh"
 #include "Math.hpp"
+#include "../IBrun.hh"
 
-class		IAEngine
+class		IAEngine : IBrun
 {
 public:
   IAEngine(IACharacter &ia, World &world);
@@ -29,6 +30,7 @@ public:
   bool			isHumanPlayerAroundMe(std::vector<char> &vector);
   bool			isBonusAroundMe(std::vector<char> &vector);
   bool			routeToTarget(int x, int y, IACharacter &ia, HumanCharacter &target);
+  virtual void *backRun(void *Class);
 private:
   int			_w;
   int			_l;
@@ -44,7 +46,8 @@ private:
   int			_ope[4];
   std::vector<std::pair<int,int>> _route;
   std::vector<std::vector<char>> _map;
-
+  Thread			*_thread;
+  void				*run();
 };
 
 #endif

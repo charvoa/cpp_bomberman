@@ -7,11 +7,20 @@
 
 IAEngine::IAEngine(IACharacter &ia, World &world)
 {
-  HumanCharacter *target;
-
   _math = Math();
   _pos = Position(1, 1);
   _math.initSRand(_math.initTime(NULL));
+  _thread = new Thread(this);
+}
+
+IAEngine::~IAEngine()
+{
+
+}
+
+void	*run()
+{
+  HumanCharacter *target;
   while (world.getHumansPlayers().size() != 0)
   {
     this->whatIsAroundMe(ia, world);
@@ -25,9 +34,9 @@ IAEngine::IAEngine(IACharacter &ia, World &world)
   }
 }
 
-IAEngine::~IAEngine()
+void *backRun(void *Class)
 {
-  
+  return (IAEngine *)Class)->run();
 }
 
 bool                IAEngine::isHumanPlayerAroundMe(std::vector<char> &vector)
@@ -154,7 +163,7 @@ void			IAEngine::setOperand(IACharacter &ia, HumanCharacter &target)
   else if (ia.getPos()._x == target.getPos()._x)
   {
     _ope[0] = 0;
-    _ope[1] = 0;    
+    _ope[1] = 0;
   }
   else
   {
