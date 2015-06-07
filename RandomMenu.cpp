@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Tue Jun  2 19:32:58 2015 Nicolas Charvoz
+// Last update Tue Jun  2 19:34:50 2015 Nicolas Charvoz
 //
 
 #include "RandomMenu.hh"
@@ -28,7 +28,7 @@ void RandomMenu::loadBackground()
 {
   AObject *background = new MenuBackground();
 
-  background->initialize(_texManag.getTexture("backgroundRM"));
+  background->initialize(_texManag.getTexture("backRM"));
   _background = background;
 }
 
