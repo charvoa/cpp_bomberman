@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Mon Jun  8 14:37:12 2015 Nicolas Girardot
+// Last update Mon Jun  8 15:42:32 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -229,6 +229,14 @@ bool	World::setItemAtPosition(Position& pos, char c)
       _map.at(pos._y).at(pos._x) = c;
       return false;
     }
+}
+
+void	World::setBonus(Position &pos)
+{
+  AObject *bonus;
+  bonus = new Bonus(pos, this);
+  bonus->initialize("hh");
+  _objects.push_back(bonus);
 }
 
 char	World::getItemAtPosition(int x, int y)

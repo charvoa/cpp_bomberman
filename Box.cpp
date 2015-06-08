@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Fri May 29 15:28:41 2015 Nicolas Girardot
-// Last update Wed Jun  3 17:43:43 2015 Nicolas Girardot
+// Last update Mon Jun  8 17:22:57 2015 Nicolas Girardot
 //
 
 #include "Box.hh"
@@ -54,8 +54,11 @@ bool	Box::getStatus()
 
 void	Box::onDestroy()
 {
-  Random *m = new Random(15);
-  std::cout << "Bonus  = " << m->getRandom() << std::endl;
+  Random *m = new Random(33);
+  if (m->getRandom())
+    {
+      _world->setBonus(*_pos);
+    }
   _isDestroyed = true;
   _sound.playMusic("crush");
 }
