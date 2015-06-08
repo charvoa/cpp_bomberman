@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Fri Jun  5 16:07:57 2015 Audibert Louis
+// Last update Mon Jun  8 14:27:06 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -163,7 +163,7 @@ float	IACharacter::getAngle(e_orientation before, e_orientation after)
   return (0.0f);
 }
 
-void	IACharacter::move(e_orientation ori, gdl::Clock &clock)
+void	IACharacter::move(e_orientation ori)
 {
   glm::vec3 trans(0, 1, 0);
   Position *pos;
@@ -197,7 +197,6 @@ void	IACharacter::move(e_orientation ori, gdl::Clock &clock)
     {
       std::cout << "OK" << std::endl;
       glm::vec3 move(x * 100, 0, y * 100);
-      std::cout << "clock.getElapsed() = " << clock.getElapsed() << std::endl;
       if (_isAnime == false)
 	{
 	  _model.setCurrentAnim(0, false);
