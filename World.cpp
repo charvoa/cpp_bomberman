@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sun Jun  7 00:32:22 2015 Antoine Garcia
+// Last update Sun Jun  7 06:43:34 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -155,13 +155,13 @@ void	World::gameOver()
   std::vector<HumanCharacter *> players;
 
   players = getHumansPlayers();
-  if (players.size() == 0)
+  if (_players.size() == 0)
     std::cout << "GAME OVER" << std::endl;
   else if (players.size() == 1 && _players.size() == 1)
     {
       std::cout << players[0]->getId() << "Won the game" << std::endl;
     }
-  else
+  else if (players.size() == 0 && _players.size() >= 1)
     {
       std::cout << "IA WON THE GAME" << std::endl;
     }

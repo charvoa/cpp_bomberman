@@ -9,42 +9,47 @@
 #include "../IACharacter.hh"
 #include "../HumanCharacter.hh"
 #include "Math.hpp"
+#include "../IBrun.hh"
 
-class		IAEngine
+class		IAEngine : IBrun
 {
 public:
   IAEngine(IACharacter &ia, World &world);
   ~IAEngine();
   int			calculLength(int firstPosX, int secondPosX);
   int			calculWidth(int firstPosY, int secondPosY);
-  float		        calculDistance(IACharacter &ia, HumanCharacter &human);
-  HumanCharacter        *findClosestHumanPlayer(IACharacter &ia, World &world);
-  HumanCharacter	*getTarget(IACharacter &ia, World &world);
-  void			whatIsAroundMe(IACharacter &ia, World &world);
-  void			setOperand(IACharacter &ia, HumanCharacter &target);
-  bool			isPossibleToJoinTarget(IACharacter &ia, World &world, HumanCharacter &target);
-  void			leaveThisPosition(IACharacter &ia, World &world);
+  float		        calculDistance(HumanCharacter &target);
+  HumanCharacter        *findClosestHumanPlayer();
+  HumanCharacter	*getTarget();
+  void			whatIsAroundMe();
+  void			setOperand(HumanCharacter &target);
+  bool			isPossibleToJoinTarget(HumanCharacter &target);
+  void			leaveThisPosition();
   bool			isBombAroundMe(std::vector<char> &vector);
   bool			isBoxAroundMe(std::vector<char> &vector);
   bool			isHumanPlayerAroundMe(std::vector<char> &vector);
   bool			isBonusAroundMe(std::vector<char> &vector);
-  bool			routeToTarget(int x, int y, IACharacter &ia, HumanCharacter &target);
+  bool			routeToTarget(int x, int y, HumanCharacter &target);
+  virtual void *backRun(void *Class);
 private:
   int			_w;
   int			_l;
   int			_xIA;
   int			_yIA;
-  int			_xHuman;
-  int			_yHuman;
+  int			_xTarget;
+  int			_yTarget;
   float   	        _h1;
   float    		_h2;
   Math			_math;
   std::vector<char>	_aroundMe;
   Position		_pos;
   int			_ope[4];
+  World			*_world;
+  IACharacter		*_ia;
   std::vector<std::pair<int,int>> _route;
   std::vector<std::vector<char>> _map;
-
+  Thread			*_thread;
+  void				*run();
 };
 
 #endif

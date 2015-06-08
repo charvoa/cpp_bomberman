@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Tue Jun  2 14:40:17 2015 Nicolas Charvoz
+// Last update Wed Jun  3 01:47:29 2015 Nicolas Charvoz
 //
 
 #ifndef LEADERBOARD_HH_
@@ -37,6 +37,7 @@ public:
   void loadLetters();
   void drawLetters(gdl::Clock&, gdl::BasicShader&);
   void getScore();
+  void buildWord(const std::string&, int, int);
 
 private:
   static Sound& _sound;
@@ -47,6 +48,7 @@ private:
   std::multimap<std::string, std::string> _scores;
   std::vector<std::string> _bestScore;
   std::map<std::string, AObject*> _letters;
+  std::vector<AObject*> _word;
 };
 
 #endif

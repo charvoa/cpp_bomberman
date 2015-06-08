@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Mon Jun  8 14:25:55 2015 Audibert Louis
+// Last update Mon Jun  8 14:32:18 2015 Audibert Louis
 //
 
 #ifndef IACHARACTER_HH_
@@ -14,6 +14,7 @@
 # include "ACharacter.hh"
 # include "TextureManager.hh"
 # include "ModelLoad.hh"
+# include "Thread.hpp"
 
 class World;
 class IAEngine;
