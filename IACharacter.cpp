@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Fri Jun  5 16:07:57 2015 Audibert Louis
+// Last update Mon Jun  8 15:11:07 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -16,7 +16,6 @@ TextureManager &IACharacter::_texManag = TextureManager::getInstance();
 
 IACharacter::IACharacter(int id, World *world, Position& pos)
 {
-  // _brain = new IAEngine(*this, *world);
   _world = world;
   this->_IAid = id;
   this->_alive = true;
@@ -32,6 +31,7 @@ IACharacter::IACharacter(int id, World *world, Position& pos)
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
   this->scale(glm::vec3(0.3, 0.3, 0.3));
+  _brain = new IAEngine(*this, *_world);
 }
 
 IACharacter::~IACharacter()
@@ -165,6 +165,12 @@ float	IACharacter::getAngle(e_orientation before, e_orientation after)
 
 void	IACharacter::move(e_orientation ori, gdl::Clock &clock)
 {
+  (void) ori;
+  (void) clock;
+}
+
+void	IACharacter::move(e_orientation ori)
+{
   glm::vec3 trans(0, 1, 0);
   Position *pos;
   int x = 0;
@@ -197,7 +203,6 @@ void	IACharacter::move(e_orientation ori, gdl::Clock &clock)
     {
       std::cout << "OK" << std::endl;
       glm::vec3 move(x * 100, 0, y * 100);
-      std::cout << "clock.getElapsed() = " << clock.getElapsed() << std::endl;
       if (_isAnime == false)
 	{
 	  _model.setCurrentAnim(0, false);

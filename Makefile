@@ -5,7 +5,7 @@
 ## Login   <girard_s@epitech.net>
 ##
 ## Started on  Tue May 26 17:42:11 2015 Nicolas Girardot
-## Last update Fri Jun  5 13:50:02 2015 Antoine Garcia
+## Last update Mon Jun  8 14:37:43 2015 Nicolas Girardot
 ##
 
 MAIN		=	bomberman
@@ -36,7 +36,9 @@ SRC		+=	Button.cpp			\
 			Box.cpp				\
 			Flame.cpp			\
 			Random.cpp			\
-			RandomMenu.cpp
+			RandomMenu.cpp			\
+			Bonus.cpp			\
+			GameOver.cpp
 
 SRC_MAIN	=	$(SRC) main.cpp
 

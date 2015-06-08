@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Fri Jun  5 14:53:19 2015 Audibert Louis
+// Last update Mon Jun  8 15:14:28 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -24,14 +24,15 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   this->_id = id;
   this->_alive = true;
   _pos = pos;
-  // int save = (id - '0') % 2;
-  // if (save == 1)
-  //   _model.load("./images/marvin.fbx");
-  // else
-  //   _model.load("./images/marvin.fbx");
-  _model.load("./images/marvin.fbx");
-  // _model.load("/home/audibe_l/Downloads/marvin/Soldier_mercenary.obj");
+  int save = (id - '0') % 2;
+  if (save == 1)
+    _model.load("./images/marvin.fbx");
+  else
+    _model.load("./images/marvin.fbx");
+  // _model.load("/home/audibe_l/Downloads/marvin/War_Machine_Iron_Patriot.obj");
   // _model.load("/home/audibe_l/Downloads/Blender/GuardSoldier.FBX");
+  // _model.load("/home/audibe_l/Downloads/marvin/npcenemydlc.obj");
+  // _model.load("/home/audibe_l/Downloads/marvin/IronMan.obj");
   _orientation = DOWN;
   _type = HUMAN;
   _timer = 0;
@@ -41,6 +42,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
   this->scale(glm::vec3(0.3, 0.3, 0.3));
+  // this->scale(glm::vec3(80, 80, 80));
   // this->scale(glm::vec3(3, 3, 3));
 }
 

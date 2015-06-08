@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Sun Jun  7 06:59:42 2015 Antoine Garcia
+// Last update Mon Jun  8 15:10:30 2015 Audibert Louis
 //
 
 #ifndef IACHARACTER_HH_
@@ -50,7 +50,8 @@ public:
   int	getType() const;
   ACharacter &getCharacter();
 
-  void move(e_orientation ori, gdl::Clock &);
+  void move(e_orientation ori, gdl::Clock &clock);
+  void move(e_orientation ori);
   float	getAngle(e_orientation before, e_orientation after);
 
 private:
