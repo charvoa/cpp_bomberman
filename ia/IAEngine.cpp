@@ -32,8 +32,7 @@ void		*IAEngine::run()
 //    this->leaveThisPosition(ia, world);
     target = this->getTarget();
 
-    if (this->isPossibleToJoinTarget(*target) == true)
-      std::cout << "OKIA" << std::endl;
+    this->isPossibleToJoinTarget(*target);
 
 //    this.actLikeAMan();
 
@@ -113,10 +112,6 @@ void			IAEngine::whatIsAroundMe()
   _aroundMe.push_back(_world->getItemAtPosition(_xIA - 1, _yIA));
 }
 
-void			IAEngine::leaveThisPosition()
-{
-}
-
 int			IAEngine::calculLength(int firstPosX, int secondPosX)
 {
     return (_math.absolute(firstPosX - secondPosX));
@@ -165,11 +160,11 @@ void			IAEngine::setOperand(HumanCharacter &target)
     _ope[0] = 1;
     _ope[1] = 0;
   }
-  // else if (_ia->getPos()._x == target.getPos()._x)
-  // {
-  //   _ope[0] = -1;
-  //   _ope[1] = 1;
-  // }
+  else if (_ia->getPos()._x == target.getPos()._x)
+  {
+    _ope[0] = -1;
+    _ope[1] = 1;
+  }
   else
   {
     _ope[0] = -1;
@@ -181,11 +176,11 @@ void			IAEngine::setOperand(HumanCharacter &target)
     _ope[2] = 0;
     _ope[3] = 1;
   }
-  // else if (_ia->getPos()._y == target.getPos()._y)
-  // {
-  //   _ope[2] = -1;
-  //   _ope[3] = 1;
-  // }
+  else if (_ia->getPos()._y == target.getPos()._y)
+  {
+    _ope[2] = -1;
+    _ope[3] = 1;
+  }
   else
   {
     _ope[2] = 0;
@@ -196,9 +191,6 @@ void			IAEngine::setOperand(HumanCharacter &target)
 
 e_orientation		IAEngine::giveOrientation()
 {
-  std::cout << "_pos._x " << _pos._x << " ia[x] " << _ia->getPos()._x << std::endl;
-  std::cout << "_pos._y " << _pos._y << " ia[y] " << _ia->getPos()._y << std::endl;
-
   if (_pos._x > _ia->getPos()._x)
     return LEFT;
   if (_pos._y > _ia->getPos()._y)
@@ -210,6 +202,43 @@ e_orientation		IAEngine::giveOrientation()
   return UNKNOWN;
 }
 
+void			IAEngine::leaveThisPosition()
+{
+  if (_aroundMe.at(0) == 'F')
+    _pos._x -= 1;
+  if (_aroundMe.at(1) == 'F')
+    _pos._y += 1;
+  if (_aroundMe.at(2) == 'F')
+    _pos._x += 1;
+  if (_aroundMe.at(3) == 'F')
+    _pos._y -= 1;
+}
+
+bool			IAEngine::move()
+{
+  if (this->isBombAroundMe(_aroundMe) == true)
+    {
+      this->leaveThisPosition();
+      return true;
+    }
+  else if (this->isHumanPlayerAroundMe(_aroundMe) == true)
+    {
+      _ia->dropBomb();
+      return true;
+    }
+  else if (this->isBoxAroundMe(_aroundMe) == true)
+    {
+      _ia->dropBomb();
+      return true;
+    }
+  else if (this->isBonusAroundMe(_aroundMe) == true)
+    {
+      this->leaveThisPosition();
+      return true;
+    }
+  return false;
+}
+
 bool			IAEngine::isPossibleToJoinTarget(HumanCharacter &target)
 {
   this->setOperand(target);
@@ -217,11 +246,17 @@ bool			IAEngine::isPossibleToJoinTarget(HumanCharacter &target)
   _route.clear();
   if (this->routeToTarget(_ia->getPos()._x, _ia->getPos()._y, target) == true)
       {
-        _pos._x = _route.at(1).first;
-        _pos._y = _route.at(1).second;
+	if (this->move() == true)
+	  ;
+	else
+	  {
+	    _pos._x = _route.at(1).first;
+	    _pos._y = _route.at(1).second;
+	  }
 	_ia->move(this->giveOrientation());
         return true;
       }
+  this->move();
 //  std::cout << "Pas trouvé de chemin vers une target" << std::endl;
   return false;
 }
