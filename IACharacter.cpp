@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Sun Jun  7 10:02:46 2015 Antoine Garcia
+// Last update Mon Jun  8 15:11:07 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -161,6 +161,12 @@ float	IACharacter::getAngle(e_orientation before, e_orientation after)
 	   || (before == LEFT && after == DOWN))
     return (270.0f);
   return (0.0f);
+}
+
+void	IACharacter::move(e_orientation ori, gdl::Clock &clock)
+{
+  (void) ori;
+  (void) clock;
 }
 
 void	IACharacter::move(e_orientation ori)
