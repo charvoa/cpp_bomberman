@@ -214,29 +214,29 @@ void			IAEngine::leaveThisPosition()
     _pos._y -= 1;
 }
 
-bool			IAEngine::move()
+int			IAEngine::move()
 {
   if (this->isBombAroundMe(_aroundMe) == true)
     {
       this->leaveThisPosition();
-      return true;
+      return 0;
     }
   else if (this->isHumanPlayerAroundMe(_aroundMe) == true)
     {
       _ia->dropBomb();
-      return true;
+      return 1;
     }
   else if (this->isBoxAroundMe(_aroundMe) == true)
     {
       _ia->dropBomb();
-      return true;
+      return 1;
     }
   else if (this->isBonusAroundMe(_aroundMe) == true)
     {
-      this->leaveThisPosition();
-      return true;
+      //      this->leaveThisPosition();
+      return 1;
     }
-  return false;
+  return -1;
 }
 
 bool			IAEngine::isPossibleToJoinTarget(HumanCharacter &target)
@@ -246,7 +246,7 @@ bool			IAEngine::isPossibleToJoinTarget(HumanCharacter &target)
   _route.clear();
   if (this->routeToTarget(_ia->getPos()._x, _ia->getPos()._y, target) == true)
       {
-	if (this->move() == true)
+	if (this->move() == 0)
 	  ;
 	else
 	  {

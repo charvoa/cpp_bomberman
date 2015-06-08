@@ -31,7 +31,7 @@ public:
   bool			routeToTarget(int x, int y, HumanCharacter &target
 );
   void			leaveThisPosition();
-  bool			move();
+  int			move();
 
   e_orientation		giveOrientation();
   virtual void *backRun(void *Class);
