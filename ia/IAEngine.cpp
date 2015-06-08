@@ -5,6 +5,8 @@
 #include "../HumanCharacter.hh"
 #include "../World.hh"
 
+#include <unistd.h>
+
 IAEngine::IAEngine(IACharacter &ia, World &world)
 {
   _ia = &ia;
@@ -30,7 +32,8 @@ void		*IAEngine::run()
 //    this->leaveThisPosition(ia, world);
     target = this->getTarget();
 
-    this->isPossibleToJoinTarget(*target);
+    if (this->isPossibleToJoinTarget(*target) == true)
+      std::cout << "OKIA" << std::endl;
 
 //    this.actLikeAMan();
 
@@ -162,11 +165,11 @@ void			IAEngine::setOperand(HumanCharacter &target)
     _ope[0] = 1;
     _ope[1] = 0;
   }
-  else if (_ia->getPos()._x == target.getPos()._x)
-  {
-    _ope[0] = 0;
-    _ope[1] = 0;
-  }
+  // else if (_ia->getPos()._x == target.getPos()._x)
+  // {
+  //   _ope[0] = -1;
+  //   _ope[1] = 1;
+  // }
   else
   {
     _ope[0] = -1;
@@ -178,16 +181,33 @@ void			IAEngine::setOperand(HumanCharacter &target)
     _ope[2] = 0;
     _ope[3] = 1;
   }
-  else if (_ia->getPos()._y == target.getPos()._y)
-  {
-    _ope[2] = 0;
-    _ope[3] = 0;
-  }
+  // else if (_ia->getPos()._y == target.getPos()._y)
+  // {
+  //   _ope[2] = -1;
+  //   _ope[3] = 1;
+  // }
   else
   {
     _ope[2] = 0;
     _ope[3] = -1;
   }
+
+}
+
+e_orientation		IAEngine::giveOrientation()
+{
+  std::cout << "_pos._x " << _pos._x << " ia[x] " << _ia->getPos()._x << std::endl;
+  std::cout << "_pos._y " << _pos._y << " ia[y] " << _ia->getPos()._y << std::endl;
+
+  if (_pos._x > _ia->getPos()._x)
+    return LEFT;
+  if (_pos._y > _ia->getPos()._y)
+    return UP;
+  if (_pos._x < _ia->getPos()._x)
+    return RIGHT;
+  if (_pos._y < _ia->getPos()._y)
+    return DOWN;
+  return UNKNOWN;
 }
 
 bool			IAEngine::isPossibleToJoinTarget(HumanCharacter &target)
@@ -199,11 +219,10 @@ bool			IAEngine::isPossibleToJoinTarget(HumanCharacter &target)
       {
         _pos._x = _route.at(1).first;
         _pos._y = _route.at(1).second;
-        _world->setItemAtPosition(_pos, 'I');
+	_ia->move(this->giveOrientation());
         return true;
       }
 //  std::cout << "Pas trouvé de chemin vers une target" << std::endl;
-  _world->setItemAtPosition(_pos, 'I');
   return false;
 }
 
@@ -214,7 +233,36 @@ bool			IAEngine::routeToTarget(int x, int y, HumanCharacter &target)
     // Est-ce egale à la position du Human Player qui est target ?
     // Return true si on est à la position du Human Player sinon return false dans tous les autres cas
 
-    if (_map.at(y).at(x) == 'W' || _map.at(y).at(x) == '-' || _map.at(y).at(x) == 'I')
+  int i;
+  int j;
+  int h;
+
+  i = 0;
+  j = 0;
+  h = 0;
+
+  while (h < 4)
+    {
+      std::cout << _ope[h] << std::endl;
+      h++;
+    }
+
+  while (j < _world->getHeight())
+    {
+      i = 0;
+      while (i < _world->getWidth())
+	{
+	  std::cout << _map.at(j).at(i);
+	  i++;
+	}
+      std::cout << std::endl;
+      j++;
+    }
+
+   usleep(5000);
+
+
+    if (_map.at(y).at(x) == 'W' || _map.at(y).at(x) == '-'/* || _map.at(y).at(x) == 'I'*/)
     {
       return false;
     }
