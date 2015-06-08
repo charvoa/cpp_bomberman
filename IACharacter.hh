@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Fri Jun  5 15:45:16 2015 Audibert Louis
+// Last update Mon Jun  8 14:32:18 2015 Audibert Louis
 //
 
 #ifndef IACHARACTER_HH_
@@ -14,6 +14,7 @@
 # include "ACharacter.hh"
 # include "TextureManager.hh"
 # include "ModelLoad.hh"
+# include "Thread.hpp"
 
 class World;
 class IAEngine;
@@ -49,7 +50,7 @@ public:
   int	getType() const;
   ACharacter &getCharacter();
 
-  void move(e_orientation ori, gdl::Clock &);
+  void move(e_orientation ori);
   float	getAngle(e_orientation before, e_orientation after);
 
 private:

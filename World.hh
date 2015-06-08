@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Mon Jun  8 14:11:34 2015 Nicolas Girardot
+// Last update Mon Jun  8 14:36:56 2015 Nicolas Girardot
 //
 
 #ifndef WORLD_HH__
@@ -51,6 +51,7 @@ private:
   void			checkDestroyBoxes(Flame&);
   void			createHumanPlayer(char id, Position & pos);
   void			createIaPlayer();
+  void			gameOver();
 public:
   World(Game *game, Map &map, int nb_players, int nb_ia);
   ~World(){};

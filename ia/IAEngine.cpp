@@ -7,27 +7,40 @@
 
 IAEngine::IAEngine(IACharacter &ia, World &world)
 {
-  HumanCharacter *target;
-
+  _ia = &ia;
+  _world = &world;
   _math = Math();
   _pos = Position(1, 1);
   _math.initSRand(_math.initTime(NULL));
-  while (world.getHumansPlayers().size() != 0)
-  {
-    this->whatIsAroundMe(ia, world);
-//    this->leaveThisPosition(ia, world);
-    target = this->getTarget(ia, world);
-
-    this->isPossibleToJoinTarget(ia, world, *target);
-
-//    this.actLikeAMan();
-
-  }
+  _thread = new Thread(this);
 }
 
 IAEngine::~IAEngine()
 {
-  
+
+}
+
+void		*IAEngine::run()
+{
+  HumanCharacter *target;
+
+  while (_world->getHumansPlayers().size() != 0)
+  {
+    this->whatIsAroundMe();
+//    this->leaveThisPosition(ia, world);
+    target = this->getTarget();
+
+    this->isPossibleToJoinTarget(*target);
+
+//    this.actLikeAMan();
+
+  }
+  return 0;
+}
+
+void		*IAEngine::backRun(void *Class)
+{
+  return (((IAEngine *)Class)->run());
 }
 
 bool                IAEngine::isHumanPlayerAroundMe(std::vector<char> &vector)
@@ -86,21 +99,19 @@ bool			IAEngine::isBonusAroundMe(std::vector<char> &vector)
   return false;
 }
 
-void			IAEngine::whatIsAroundMe(IACharacter &ia, World &world)
+void			IAEngine::whatIsAroundMe()
 {
   _aroundMe.clear();
-  _xIA = ia.getPos()._x;
-  _yIA = ia.getPos()._y;
-  _aroundMe.push_back(world.getItemAtPosition(_xIA, _yIA - 1));
-  _aroundMe.push_back(world.getItemAtPosition(_xIA + 1, _yIA));
-  _aroundMe.push_back(world.getItemAtPosition(_xIA, _yIA + 1));
-  _aroundMe.push_back(world.getItemAtPosition(_xIA - 1, _yIA));
+  _xIA = _ia->getPos()._x;
+  _yIA = _ia->getPos()._y;
+  _aroundMe.push_back(_world->getItemAtPosition(_xIA, _yIA - 1));
+  _aroundMe.push_back(_world->getItemAtPosition(_xIA + 1, _yIA));
+  _aroundMe.push_back(_world->getItemAtPosition(_xIA, _yIA + 1));
+  _aroundMe.push_back(_world->getItemAtPosition(_xIA - 1, _yIA));
 }
 
-void			IAEngine::leaveThisPosition(IACharacter &ia, World &world)
+void			IAEngine::leaveThisPosition()
 {
-  (void)ia;
-  (void)world;
 }
 
 int			IAEngine::calculLength(int firstPosX, int secondPosX)
@@ -113,48 +124,48 @@ int			IAEngine::calculWidth(int firstPosY, int secondPosY)
      return (_math.absolute(firstPosY - secondPosY));
 }
 
-float			IAEngine::calculDistance(IACharacter &ia, HumanCharacter &human)
+float			IAEngine::calculDistance(HumanCharacter &target)
 {
-  _xIA = ia.getPos()._x;
-  _yIA = ia.getPos()._y;
-  _xHuman = human.getPos()._x;
-  _yHuman = human.getPos()._y;
-  _l = this->calculLength(_xIA, _xHuman);
-  _w = this->calculWidth(_yIA, _yHuman);
+  _xIA = _ia->getPos()._x;
+  _yIA = _ia->getPos()._y;
+  _xTarget = target.getPos()._x;
+  _yTarget = target.getPos()._y;
+  _l = this->calculLength(_xIA, _xTarget);
+  _w = this->calculWidth(_yIA, _yTarget);
   return (_math.squareRoot((_w * _w) + (_l * _l)));
 }
 
-HumanCharacter		*IAEngine::findClosestHumanPlayer(IACharacter &ia, World &world)
+HumanCharacter		*IAEngine::findClosestHumanPlayer()
 {
-  _h1 = this->calculDistance(ia, *world.getHumansPlayers().at(0));
-  _h2 = this->calculDistance(ia, *world.getHumansPlayers().at(1));
+  _h1 = this->calculDistance(*_world->getHumansPlayers().at(0));
+  _h2 = this->calculDistance(*_world->getHumansPlayers().at(1));
   if (_h1 < _h2)
-    return (world.getHumansPlayers().at(0));
+    return (_world->getHumansPlayers().at(0));
   else if (_h1 == _h2)
-    return (world.getHumansPlayers().at(_math.useRand() % 2));
-  return (world.getHumansPlayers().at(1));
+    return (_world->getHumansPlayers().at(_math.useRand() % 2));
+  return (_world->getHumansPlayers().at(1));
 }
 
-HumanCharacter		*IAEngine::getTarget(IACharacter &ia, World &world)
+HumanCharacter		*IAEngine::getTarget()
 {
-  if (world.getHumansPlayers().size() == 0)
+  if (_world->getHumansPlayers().size() == 0)
     return NULL;
-  else if (world.getHumansPlayers().size() == 1)
-    return (world.getHumansPlayers().at(0));
-  return (this->findClosestHumanPlayer(ia, world));
+  else if (_world->getHumansPlayers().size() == 1)
+    return (_world->getHumansPlayers().at(0));
+  return (this->findClosestHumanPlayer());
 }
 
-void			IAEngine::setOperand(IACharacter &ia, HumanCharacter &target)
+void			IAEngine::setOperand(HumanCharacter &target)
 {
-  if (ia.getPos()._x < target.getPos()._x)
+  if (_ia->getPos()._x < target.getPos()._x)
   {
     _ope[0] = 1;
     _ope[1] = 0;
   }
-  else if (ia.getPos()._x == target.getPos()._x)
+  else if (_ia->getPos()._x == target.getPos()._x)
   {
     _ope[0] = 0;
-    _ope[1] = 0;    
+    _ope[1] = 0;
   }
   else
   {
@@ -162,12 +173,12 @@ void			IAEngine::setOperand(IACharacter &ia, HumanCharacter &target)
     _ope[1] = 0;
   }
 
-  if (ia.getPos()._y < target.getPos()._y)
+  if (_ia->getPos()._y < target.getPos()._y)
   {
     _ope[2] = 0;
     _ope[3] = 1;
   }
-  else if (ia.getPos()._y == target.getPos()._y)
+  else if (_ia->getPos()._y == target.getPos()._y)
   {
     _ope[2] = 0;
     _ope[3] = 0;
@@ -179,26 +190,24 @@ void			IAEngine::setOperand(IACharacter &ia, HumanCharacter &target)
   }
 }
 
-bool			IAEngine::isPossibleToJoinTarget(IACharacter &ia, World &world, HumanCharacter &target)
+bool			IAEngine::isPossibleToJoinTarget(HumanCharacter &target)
 {
-  // Mettre ces variables dans la classe
-
-  this->setOperand(ia, target);
-  _map = world.getWorld();
+  this->setOperand(target);
+  _map = _world->getWorld();
   _route.clear();
-  if (this->routeToTarget(ia.getPos()._x, ia.getPos()._y, ia, target) == true)
+  if (this->routeToTarget(_ia->getPos()._x, _ia->getPos()._y, target) == true)
       {
         _pos._x = _route.at(1).first;
         _pos._y = _route.at(1).second;
-        world.setItemAtPosition(_pos, 'I');
+        _world->setItemAtPosition(_pos, 'I');
         return true;
       }
 //  std::cout << "Pas trouvé de chemin vers une target" << std::endl;
-  world.setItemAtPosition(_pos, 'I');
+  _world->setItemAtPosition(_pos, 'I');
   return false;
 }
 
-bool			IAEngine::routeToTarget(int x, int y, IACharacter &ia, HumanCharacter &target)
+bool			IAEngine::routeToTarget(int x, int y, HumanCharacter &target)
 {
     // Check dimension du labyrinthe == W || '-'?
     // Check si == F || X || E
@@ -210,23 +219,23 @@ bool			IAEngine::routeToTarget(int x, int y, IACharacter &ia, HumanCharacter &ta
       return false;
     }
     else if (_map.at(y).at(x) == 'F' || _map.at(y).at(x) == 'X' || _map.at(y).at(x) == 'E' || _map.at(y).at(x) == 'T'
-            || (x == ia.getPos()._x && y == ia.getPos()._y))
+            || (x == _ia->getPos()._x && y == _ia->getPos()._y))
       {
         _map.at(y).at(x) = '-';
 	_route.push_back(std::make_pair(x + _ope[0], y + _ope[1]));
-        if (this->routeToTarget(x + _ope[0], y + _ope[1], ia, target) == true)
+        if (this->routeToTarget(x + _ope[0], y + _ope[1], target) == true)
           return true;
         _route.pop_back();
 	_route.push_back(std::make_pair(x + _ope[2], y + _ope[3]));
-        if (this->routeToTarget(x + _ope[2], y + _ope[3], ia, target) == true)
+        if (this->routeToTarget(x + _ope[2], y + _ope[3], target) == true)
           return true;
         _route.pop_back();
 	_route.push_back(std::make_pair(x + (_ope[0] * (-1)), y + (_ope[1] * (-1))));
-        if (this->routeToTarget(x + (_ope[0] * (-1)), y + (_ope[1] * (-1)), ia, target) == true)
+        if (this->routeToTarget(x + (_ope[0] * (-1)), y + (_ope[1] * (-1)), target) == true)
           return true;
         _route.pop_back();
 	_route.push_back(std::make_pair(x + (_ope[2] * (-1)), y + (_ope[3] * (-1))));
-        if (this->routeToTarget(x + (_ope[2] * (-1)), y + (_ope[3] * (-1)), ia, target) == true)
+        if (this->routeToTarget(x + (_ope[2] * (-1)), y + (_ope[3] * (-1)), target) == true)
           return true;
         _route.pop_back();
       }
