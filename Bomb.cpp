@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Mon Jun  8 14:08:23 2015 Nicolas Girardot
+// Last update Mon Jun  8 15:24:51 2015 Nicolas Girardot
 //
 
 #include "Bomb.hh"
@@ -37,7 +37,7 @@ bool	Bomb::initialize(const std::string &tex)
   _bomb->translate(trans);
   _bomb->scale(glm::vec3(0.3, 0.3, 0.3));
   _isPosed = true;
-  for (int i = 1; i != _range; i++)
+  for (int i = 1; i <= _range; i++)
     {
       if (_world->getItemAtPosition(_pos._x + i, _pos._y) == 'W')
 	break;
@@ -45,7 +45,7 @@ bool	Bomb::initialize(const std::string &tex)
       fire->initialize("hello");
       _flames.push_back(fire);
     }
-  for (int i = 1; i != _range; i++)
+  for (int i = 1; i <= _range; i++)
     {
       if (_world->getItemAtPosition(_pos._x, _pos._y - i) == 'W')
 	break;
@@ -53,7 +53,7 @@ bool	Bomb::initialize(const std::string &tex)
       fire->initialize("hello");
       _flames.push_back(fire);
     }
-  for (int i = 1; i != _range; i++)
+  for (int i = 1; i <= _range; i++)
     {
       if (_world->getItemAtPosition(_pos._x, _pos._y + i) == 'W')
 	break;
@@ -61,7 +61,7 @@ bool	Bomb::initialize(const std::string &tex)
       fire->initialize("hello");
       _flames.push_back(fire);
     }
-  for (int i = 1; i != _range; i++)
+  for (int i = 1; i <= _range; i++)
     {
       if (_world->getItemAtPosition(_pos._x - i, _pos._y) == 'W')
 	break;
@@ -111,6 +111,8 @@ void	Bomb::draw(gdl::AShader& shader ,gdl::Clock const  &clock)
       if (_isPoped == true)
 	{
 	  _world->checkDamages(_flames);
+	  if (_world->getPlayerById(_id) != NULL)
+	    _world->getPlayerById(_id)->setCanLaunchBomb(true);
 	  _isPoped = false;
 	}
       for (std::list<Flame*>::iterator it = _flames.begin(); it != _flames.end(); ++it)
@@ -140,6 +142,4 @@ void	Bomb::onDestroy()
 {
   _world->setItemAtPosition(_pos, 'F');
   _isDestroyed = true;
-  if (_world->getPlayerById(_id) != NULL)
-    _world->getPlayerById(_id)->setCanLaunchBomb(true);
 }

@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 14:15:33 2015 Nicolas Girardot
-// Last update Mon Jun  8 14:06:41 2015 Nicolas Girardot
+// Last update Mon Jun  8 15:22:42 2015 Nicolas Girardot
 //
 
 #ifndef BOMB_HH_
@@ -28,7 +28,7 @@ private:
   bool		_isPosed;
   bool		_isDestroyed = false;
   World		*_world;
-  int		_range = 2;
+  int		_range = 1;
   Position	_pos;
   double	_timer;
   bool		_isPlayed = 0;
