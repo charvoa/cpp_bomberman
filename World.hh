@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Sun Jun  7 00:19:16 2015 Antoine Garcia
+// Last update Mon Jun  8 15:42:50 2015 Nicolas Girardot
 //
 
 #ifndef WORLD_HH__
@@ -28,6 +28,7 @@
 #include "Cube.hh"
 #include "Box.hh"
 #include "Bomb.hh"
+#include "Bonus.hh"
 
 class	Flame;
 class	Command;
@@ -66,6 +67,7 @@ public:
   Game		*_game;
   int		getWidth() const;
   int		getHeight() const;
+  void		setBonus(Position &);
   bool checkPlayerCanMove(int x, int y);
   ACharacter*		getPlayerById(int id);
   void	dropBomb(Position &, int id = 0);

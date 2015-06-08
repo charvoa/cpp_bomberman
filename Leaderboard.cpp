@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Wed Jun  3 02:08:27 2015 Nicolas Charvoz
+// Last update Wed Jun  3 12:55:23 2015 Nicolas Charvoz
 //
 
 #include "Leaderboard.hh"
@@ -110,11 +110,6 @@ void Leaderboard::buildWord(const std::string &str, int x, int y)
 
 void Leaderboard::drawLetters(gdl::Clock& clock, gdl::BasicShader& shader)
 {
-  // for (std::vector<AObject*>::iterator it = _word.begin() ;
-  //      it != _word.end() ; ++it)
-  //   {
-  //     (*it).draw(shader, clock);
-  //   }
   for (size_t i = 0; i < _word.size() ; ++i)
     {
       _word[i]->draw(shader, clock);
