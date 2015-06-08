@@ -243,7 +243,7 @@ bool			IAEngine::routeToTarget(int x, int y, HumanCharacter &target)
 
   while (h < 4)
     {
-      std::cout << _ope[h] << std::endl;
+      // std::cout << _ope[h] << std::endl;
       h++;
     }
 
@@ -252,10 +252,10 @@ bool			IAEngine::routeToTarget(int x, int y, HumanCharacter &target)
       i = 0;
       while (i < _world->getWidth())
 	{
-	  std::cout << _map.at(j).at(i);
+	  // std::cout << _map.at(j).at(i);
 	  i++;
 	}
-      std::cout << std::endl;
+      // std::cout << std::endl;
       j++;
     }
 

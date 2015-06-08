@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Mon Jun  8 15:14:28 2015 Audibert Louis
+// Last update Mon Jun  8 17:41:31 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -31,14 +31,13 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
     _model.load("./images/marvin.fbx");
   // _model.load("/home/audibe_l/Downloads/marvin/War_Machine_Iron_Patriot.obj");
   // _model.load("/home/audibe_l/Downloads/Blender/GuardSoldier.FBX");
-  // _model.load("/home/audibe_l/Downloads/marvin/npcenemydlc.obj");
-  // _model.load("/home/audibe_l/Downloads/marvin/IronMan.obj");
+  // _model.load("/home/audibe_l/Downloads/marvin/turboSquid/FREE Mixamo Soldier - Military BIPED RIGGED MODEL from MIXAMO WEBSITE/Soldier_animated_jump.fbx");
   _orientation = DOWN;
   _type = HUMAN;
   _timer = 0;
   _canLaunchBomb = true;
   _isAnime = false;
-  _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");
+  _sound.registerSound("./resources/sounds/USAbomb.mp3", "USAbomb");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
   this->scale(glm::vec3(0.3, 0.3, 0.3));
@@ -64,7 +63,7 @@ void HumanCharacter::dropBomb()
     {
       _canLaunchBomb = false;
       _world->dropBomb(_pos, (_id - '0'));
-      _sound.playMusic("allahu");
+      _sound.playMusic("USAbomb");
       _world->setItemAtPosition(_pos, 'T');
     }
 }
