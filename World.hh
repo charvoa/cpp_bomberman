@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Fri Jun  5 14:25:25 2015 Antoine Garcia
+// Last update Mon Jun  8 14:11:34 2015 Nicolas Girardot
 //
 
 #ifndef WORLD_HH__
@@ -28,6 +28,7 @@
 #include "Cube.hh"
 #include "Box.hh"
 #include "Bomb.hh"
+#include "Bonus.hh"
 
 class	Flame;
 class	Command;

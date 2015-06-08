@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Fri Jun  5 16:10:19 2015 Nicolas Girardot
+// Last update Mon Jun  8 14:08:23 2015 Nicolas Girardot
 //
 
 #include "Bomb.hh"
@@ -23,14 +23,13 @@ Bomb::Bomb(Position& pos, World *world, int id)
 
 Bomb::~Bomb()
 {
-  std::cout << "i'm being destroyed" << std::endl;
+
 }
 
 bool	Bomb::initialize(const std::string &tex)
 {
   Flame *fire;
   (void) tex;
-  std::cout << _pos._x << " " << _pos._y << std::endl;
   _bomb = new ModelLoad();
   _bomb->initialize("LibBomberman_linux_x64/assets/bomb.fbx");
   glm::vec3 trans(0 + (_pos._x * 100 - 710), 0, 750 * (-1) + (_pos._y  - _world->getHeight() / 2) * 100);
@@ -134,7 +133,7 @@ bool	Bomb::getStatus()
 
 void	Bomb::setRange(int a)
 {
-  _range += a;
+  _range = a;
 }
 
 void	Bomb::onDestroy()
