@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Fri May 29 16:42:30 2015 Nicolas Charvoz
+// Last update Wed Jun  3 12:14:06 2015 Nicolas Charvoz
 //
 
 #ifndef PAUSE_HH_
@@ -27,7 +27,7 @@ class Command;
 class Pause : public GameState {
 
 public:
-  Pause(Game *game);
+  Pause(Game *game, World *world);
   virtual ~Pause();
   virtual void draw(gdl::Clock&, gdl::BasicShader&);
   virtual bool update(gdl::Clock&, gdl::Input&);
@@ -45,6 +45,7 @@ private:
   Camera *_camera;
   InputManager *_inputManager;
   Command *_command;
+  World *_world;
 };
 
 #endif

@@ -5,21 +5,23 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Mon Jun  1 23:51:57 2015 Nicolas Charvoz
+// Last update Wed Jun  3 12:41:56 2015 Nicolas Charvoz
 //
 
 #include "Pause.hh"
 #include "SousMenuButton.hh"
 #include "MenuBackground.hh"
+#include "SaveGame.hh"
 #include <OpenGL.hh>
 #include <iostream>
 #include <Texture.hh>
 
 TextureManager &Pause::_texManag = TextureManager::getInstance();
 
-Pause::Pause(Game *game)
+Pause::Pause(Game *game, World *world)
 {
   _game = game;
+  _world = world;
   std::cout << "Je suis dans Pause" << std::endl;
   _texManag.registerTexture("backgroundPause", "backPause");
   this->loadBackground();
@@ -59,7 +61,21 @@ void Pause::drawButtons(gdl::Clock& clock, gdl::BasicShader& shader)
 void Pause::getNameOfButton(gdl::Input &input)
 {
    glm::ivec2 mouse = input.getMousePosition();
-   (void) mouse;
+
+   std::cout << "X : " << mouse.x << " Y : " << mouse.y << std::endl;
+
+   if (mouse.x >= 812 && mouse.x <= 1166 && mouse.y >= 337 && mouse.y <= 427)
+     _game->popState();
+   else if (mouse.x >= 812 && mouse.x <= 1166 && mouse.y >= 337
+	    && mouse.y <= 427)
+     {
+       //SaveGame(_world->getWorld(), "FAKE");
+     }
+   else if (mouse.x >= 812 && mouse.x <= 1166 && mouse.y >= 627
+	    && mouse.y <= 723)
+     {
+       _game->pushState(new Exit(_game));
+     }
 }
 
 void Pause::draw(gdl::Clock& clock, gdl::BasicShader& shader)

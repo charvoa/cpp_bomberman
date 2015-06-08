@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Fri May 29 15:01:23 2015 Nicolas Girardot
-// Last update Tue Jun  2 15:10:12 2015 Nicolas Girardot
+// Last update Mon Jun  8 15:51:04 2015 Nicolas Girardot
 //
 
 #ifndef BOX_HH_
