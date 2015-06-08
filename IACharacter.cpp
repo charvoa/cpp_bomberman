@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Mon Jun  8 14:27:06 2015 Audibert Louis
+// Last update Sun Jun  7 10:02:46 2015 Antoine Garcia
 //
 
 #include "IACharacter.hh"
@@ -16,7 +16,6 @@ TextureManager &IACharacter::_texManag = TextureManager::getInstance();
 
 IACharacter::IACharacter(int id, World *world, Position& pos)
 {
-  // _brain = new IAEngine(*this, *world);
   _world = world;
   this->_IAid = id;
   this->_alive = true;
@@ -32,6 +31,7 @@ IACharacter::IACharacter(int id, World *world, Position& pos)
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
   this->scale(glm::vec3(0.3, 0.3, 0.3));
+  _brain = new IAEngine(*this, *_world);
 }
 
 IACharacter::~IACharacter()
