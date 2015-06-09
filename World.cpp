@@ -5,14 +5,15 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Mon Jun  8 15:42:32 2015 Nicolas Girardot
+// Last update Tue Jun  9 11:49:46 2015 Antoine Garcia
 //
 
 # include <iostream>
 # include "World.hh"
 # include "GameBackground.hh"
 # include "Flame.hh"
-
+# include "GameOver.hh"
+# include <unistd.h>
 TextureManager &World::_texManag = TextureManager::getInstance();
 
 World::World(Game *game, Map &map, int nb_players, int nb_ia)
@@ -107,14 +108,14 @@ void	World::findWall()
 
 void	World::createIaPlayer()
 {
-  IACharacter *charac;
-  Position p = Position(3, 3);
+  // IACharacter *charac;
+  // Position p = Position(3, 3);
 
-  std::cout << getItemAtPosition(p._x, p._y) << std::endl;
-  charac = new IACharacter(3, this, p);;
-  //IAEngine *engine = new IAEngine(*charac, *this);
-  _players.push_back(charac);
-  //(void)engine;
+  // std::cout << getItemAtPosition(p._x, p._y) << std::endl;
+  // charac = new IACharacter(3, this, p);;
+  // IAEngine *engine = new IAEngine(*charac, *this);
+  // _players.push_back(charac);
+  // (void)engine;
 }
 
 void	World::createHumanPlayer(char id, Position &pos)
@@ -159,11 +160,13 @@ void	World::gameOver()
     std::cout << "GAME OVER" << std::endl;
   else if (players.size() == 1 && _players.size() == 1)
     {
-      std::cout << players[0]->getId() << "Won the game" << std::endl;
+      sleep(1);
+      _game->pushState(new GameOver(_game, players[0]->getId()));
     }
   else if (players.size() == 0 && _players.size() >= 1)
     {
-      std::cout << "IA WON THE GAME" << std::endl;
+      sleep(1);
+      _game->pushState(new GameOver(_game, 0));
     }
 }
 

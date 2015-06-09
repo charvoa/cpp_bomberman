@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Wed Jun  3 11:56:36 2015 Nicolas Charvoz
+// Last update Tue Jun  9 11:37:11 2015 Antoine Garcia
 //
 
 #include "GameOver.hh"
@@ -21,8 +21,9 @@ TextureManager &GameOver::_texManag = TextureManager::getInstance();
 GameOver::GameOver(Game *game, int player)
 {
   _game = game;
+  _player = player;
   std::cout << "Je suis dans GameOver" << std::endl;
-
+  std::cout << player << std::endl;
   _texManag.registerTexture("GameOverIA", "GoIA");
   _texManag.registerTexture("GameOverPlayer1", "Go1");
   _texManag.registerTexture("GameOverPlayer2", "Go2");
@@ -36,7 +37,6 @@ GameOver::GameOver(Game *game, int player)
   shader.setUniform("projection", _game->_camera->getProjection());
   _inputManager = new InputManager();
   _command = new Command(_game, NULL, "GAMEOVER");
-  _player = player;
 }
 
 void GameOver::loadBackground()
