@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Mon Jun  8 18:21:11 2015 Audibert Louis
+// Last update Tue Jun  9 12:43:13 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -57,10 +57,10 @@ bool HumanCharacter::getAlive() const
 
 void HumanCharacter::dropBomb()
 {
-  std::cout << "I droped a bomb hahah" << std::endl;
   // _model.setCurrentAnim(4, false);
   if (_canLaunchBomb == true)
     {
+      std::cout << "I droped a bomb hahah" << std::endl;
       _canLaunchBomb = false;
       _world->dropBomb(_pos, (_id - '0'));
       _sound.playMusic("USAbomb");

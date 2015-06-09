@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Mon Jun  8 15:11:07 2015 Audibert Louis
+// Last update Wed Jun  3 20:10:47 2015 Nicolas Charvoz
 //
 
 #include "IACharacter.hh"
@@ -47,9 +47,9 @@ bool IACharacter::getAlive() const
 
 void IACharacter::dropBomb()
 {
-  std::cout << "I droped a bomb hahah" << std::endl;
   if (_canLaunchBomb == true)
     {
+      std::cout << "I droped a bomb hahah" << std::endl;
       _canLaunchBomb = false;
       _world->dropBomb(_pos, _IAid);
       _sound.playMusic("allahu");

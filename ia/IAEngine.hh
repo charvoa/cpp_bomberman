@@ -24,12 +24,15 @@ public:
   void			whatIsAroundMe();
   void			setOperand(HumanCharacter &target);
   bool			isPossibleToJoinTarget(HumanCharacter &target);
-  void			leaveThisPosition();
   bool			isBombAroundMe(std::vector<char> &vector);
   bool			isBoxAroundMe(std::vector<char> &vector);
   bool			isHumanPlayerAroundMe(std::vector<char> &vector);
   bool			isBonusAroundMe(std::vector<char> &vector);
-  bool			routeToTarget(int x, int y, HumanCharacter &target);
+  bool			routeToTarget(int x, int y, HumanCharacter &target
+);
+  void			leaveThisPosition();
+  int			move();
+
   e_orientation		giveOrientation();
   virtual void *backRun(void *Class);
 private:
