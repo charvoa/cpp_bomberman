@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue Jun  9 14:57:58 2015 Antoine Garcia
+// Last update Tue Jun  9 14:59:15 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -113,15 +113,14 @@ void	World::createIaPlayer()
 
   // std::cout << getItemAtPosition(p._x, p._y) << std::endl;
   // charac = new IACharacter(3, this, p);;
-<<<<<<< HEAD
+
   // IAEngine *engine = new IAEngine(*charac, *this);
   // _players.push_back(charac);
   // (void)engine;
-=======
+
   // //IAEngine *engine = new IAEngine(*charac, *this);
   // _players.push_back(charac);
   // //(void)engine;
->>>>>>> 36c63271e766cdb7c932181f2bc6d195c02b16c5
 }
 
 void	World::createHumanPlayer(char id, Position &pos)
