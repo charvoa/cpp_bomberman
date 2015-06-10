@@ -19,14 +19,14 @@ IAEngine::IAEngine(IACharacter &ia, World &world)
 
 IAEngine::~IAEngine()
 {
-
+  _ia->setAlive(false);
 }
 
 void		*IAEngine::run()
 {
   HumanCharacter *target;
 
-  while (_world->getHumansPlayers().size() != 0)
+  while (_world->getHumansPlayers().size() != 0 && _ia->getAlive() == true)
   {
     this->whatIsAroundMe();
 //    this->leaveThisPosition(ia, world);
@@ -153,40 +153,36 @@ HumanCharacter		*IAEngine::getTarget()
   return (this->findClosestHumanPlayer());
 }
 
-void			IAEngine::setOperand(HumanCharacter &target)
+void			IAEngine::setOperand(int opt)
 {
-  if (_ia->getPos()._x < target.getPos()._x)
+  if (opt == 0)
   {
     _ope[0] = 1;
     _ope[1] = 0;
+    _ope[2] = 0;
+    _ope[3] = 1;
   }
-  else if (_ia->getPos()._x == target.getPos()._x)
+  if (opt == 1)
   {
-    _ope[0] = -1;
+    _ope[0] = 0;
     _ope[1] = 1;
+    _ope[2] = 1;
+    _ope[3] = 0;
   }
-  else
+  if (opt == 2)
   {
-    _ope[0] = -1;
+    _ope[0] = 0;
+    _ope[1] = 1;
+    _ope[2] = 0;
+    _ope[3] = 1;
+  }
+  if (opt == 3)
+  {
+    _ope[0] = 1;
     _ope[1] = 0;
+    _ope[2] = 1;
+    _ope[3] = 0;
   }
-
-  if (_ia->getPos()._y < target.getPos()._y)
-  {
-    _ope[2] = 0;
-    _ope[3] = 1;
-  }
-  else if (_ia->getPos()._y == target.getPos()._y)
-  {
-    _ope[2] = -1;
-    _ope[3] = 1;
-  }
-  else
-  {
-    _ope[2] = 0;
-    _ope[3] = -1;
-  }
-
 }
 
 e_orientation		IAEngine::giveOrientation()
@@ -241,23 +237,117 @@ int			IAEngine::move()
 
 bool			IAEngine::isPossibleToJoinTarget(HumanCharacter &target)
 {
-  this->setOperand(target);
+  unsigned int r;
+  unsigned int o;
+
+  r = 0;
+
   _map = _world->getWorld();
-  _route.clear();
+
+  this->setOperand(0);
   if (this->routeToTarget(_ia->getPos()._x, _ia->getPos()._y, target) == true)
-      {
-	if (this->move() == 0)
-	  ;
-	else
-	  {
-	    _pos._x = _route.at(1).first;
-	    _pos._y = _route.at(1).second;
-	  }
-	_ia->move(this->giveOrientation());
-        return true;
-      }
-  this->move();
-//  std::cout << "Pas trouvé de chemin vers une target" << std::endl;
+    _routes.push_back(std::make_pair(_route, _route.size()));
+  _route.clear();
+  this->setOperand(1);
+  if (this->routeToTarget(_ia->getPos()._x, _ia->getPos()._y, target) == true)
+    _routes.push_back(std::make_pair(_route, _route.size()));
+  _route.clear();
+  this->setOperand(2);
+  if (this->routeToTarget(_ia->getPos()._x, _ia->getPos()._y, target) == true)
+    _routes.push_back(std::make_pair(_route, _route.size()));
+  _route.clear();
+  this->setOperand(3);
+  if (this->routeToTarget(_ia->getPos()._x, _ia->getPos()._y, target) == true)
+    _routes.push_back(std::make_pair(_route, _route.size()));
+  _route.clear();
+
+  while (r < _routes.size())
+    {
+      std::cout << _routes.size() << " " << _routes.at(r).second  << std::endl;
+      o = 0;
+      while (o < _routes.at(r).first.size())
+	{
+	  std::cout << " " << _routes.at(r).first.at(o).first << " " <<  _routes.at(r).first.at(o).second << " || ";
+	  o++;
+	}
+      std::cout << std::endl;
+      r++;
+    }
+
+  sleep(10);
+  _routes.clear();
+
+  // if (this->routeToTarget(_ia->getPos()._x, _ia->getPos()._y, target) == true)
+  //     {
+  // 	// if (this->move() == 0)
+  // 	//   ;
+  // 	// else
+  // 	//   {
+  // 	//     _pos._x = _route.at(1).first;
+  // 	//     _pos._y = _route.at(1).second;
+  // 	//   }
+  // 	// o = 1;
+
+
+  // 	while (o < _route.size())
+  // 	  {
+
+
+  // 	    _pos._x = _route.at(o).first;
+  // 	    _pos._y = _route.at(o).second;
+
+  // 	    // if (this->move() == 0)
+  // 	    //   ;
+  // 	    // else
+
+  // 	    // std::cout << "route size = " << _route.size() << std::endl;
+  // 	    // if (_ia->move(this->giveOrientation()) == true)
+  // 	    //   std::cout << "IA can move to ";
+  // 	    // else
+  // 	    //   std::cout << "IA can't move to ";
+  // 	    // std::cout << "[" << _route.at(o).first << " : " << _route.at(o).second << "]" << " - node (" << o << ")" << std::endl;
+
+	    
+  // 	    std::cout << _route.size() << std::endl;
+  // 	    j = 0;
+  // 	    while (j < _world->getHeight())
+  // 	      {
+  // 		i = 0;
+  // 		while (i < _world->getWidth())
+  // 		  {
+  // 		    std::cout << _world->getWorld().at(j).at(i);
+  // 		    i++;
+  // 		  }
+  // 		std::cout << std::endl;
+  // 		j++;
+  // 	      }
+
+
+
+
+
+  // 	    r = 0;
+  // 	    while (r < _route.size())
+  // 	      {
+  // 	    	std::cout << " " << _route.at(r).first;
+  // 	    	std::cout << " " << _route.at(r).second << " || ";
+  // 	    	// PRINT ROUTE
+  // 	    	r++;
+  // 	      }
+  // 	    std::cout << std::endl;
+
+
+
+
+
+
+  // 	    sleep(2);
+  // 	    o++;
+  // 	  }
+  //       return true;
+  //     }
+  //  this->move();
+  //  std::cout << "Pas trouvé de chemin vers une target" << std::endl;
   return false;
 }
 
@@ -276,48 +366,47 @@ bool			IAEngine::routeToTarget(int x, int y, HumanCharacter &target)
   j = 0;
   h = 0;
 
-  while (h < 4)
-    {
-      // std::cout << _ope[h] << std::endl;
-      h++;
-    }
+  (void)i;
+  (void)j;
+  (void)h;
 
-  while (j < _world->getHeight())
-    {
-      i = 0;
-      while (i < _world->getWidth())
-	{
-	  // std::cout << _map.at(j).at(i);
-	  i++;
-	}
-      // std::cout << std::endl;
-      j++;
-    }
 
-   usleep(5000);
+  // while (h < 4)
+  //   {
+  //     std::cout << _ope[h] << std::endl;
+  //     h++;
+  //   }
+
+  // while (j < _world->getHeight())
+  //   {
+  //     i = 0;
+  //     while (i < _world->getWidth())
+  // 	{
+  // 	  std::cout << _map.at(j).at(i);
+  // 	  i++;
+  // 	}
+  //     std::cout << std::endl;
+  //     j++;
+  //   }
+
+  //  usleep(50000);
 
 
     if (_map.at(y).at(x) == 'W' || _map.at(y).at(x) == '-'/* || _map.at(y).at(x) == 'I'*/)
-    {
-      return false;
-    }
+      {
+	return false;
+      }
     else if (_map.at(y).at(x) == 'F' || _map.at(y).at(x) == 'X' || _map.at(y).at(x) == 'E' || _map.at(y).at(x) == 'T'
             || (x == _ia->getPos()._x && y == _ia->getPos()._y))
       {
         _map.at(y).at(x) = '-';
-	_route.push_back(std::make_pair(x + _ope[0], y + _ope[1]));
+	_route.push_back(std::make_pair(x, y));
         if (this->routeToTarget(x + _ope[0], y + _ope[1], target) == true)
           return true;
-        _route.pop_back();
-	_route.push_back(std::make_pair(x + _ope[2], y + _ope[3]));
         if (this->routeToTarget(x + _ope[2], y + _ope[3], target) == true)
           return true;
-        _route.pop_back();
-	_route.push_back(std::make_pair(x + (_ope[0] * (-1)), y + (_ope[1] * (-1))));
         if (this->routeToTarget(x + (_ope[0] * (-1)), y + (_ope[1] * (-1)), target) == true)
           return true;
-        _route.pop_back();
-	_route.push_back(std::make_pair(x + (_ope[2] * (-1)), y + (_ope[3] * (-1))));
         if (this->routeToTarget(x + (_ope[2] * (-1)), y + (_ope[3] * (-1)), target) == true)
           return true;
         _route.pop_back();
@@ -326,5 +415,5 @@ bool			IAEngine::routeToTarget(int x, int y, HumanCharacter &target)
       {
         return true;
       }
-      return false;
+    return false;
 }

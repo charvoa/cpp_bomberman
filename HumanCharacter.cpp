@@ -186,7 +186,7 @@ float	HumanCharacter::getAngle(e_orientation before, e_orientation after)
   return (0.0f);
 }
 
-void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
+bool	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
 {
   glm::vec3 trans(0, 1, 0);
   Position *pos;
@@ -235,7 +235,9 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
 	  _pos = *pos;
       	  _timer = 0;
       	}
+      return true;
     }
+  return false;
 }
 
 bool	HumanCharacter::getCanLaunchBomb() const
