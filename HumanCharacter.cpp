@@ -57,9 +57,12 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   // this->scale(glm::vec3(1, 1, 1));
 }
 
+#include <unistd.h>
+
 HumanCharacter::~HumanCharacter()
 {
-  std::cout << "Im dead..." << std::endl;
+  std::cout << "Human is dead..." << std::endl;
+  sleep(5);
 }
 
 bool HumanCharacter::getAlive() const

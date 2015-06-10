@@ -108,19 +108,19 @@ void	World::findWall()
 
 void	World::createIaPlayer()
 {
-  // IACharacter *charac;
-  // Position p = Position(3, 3);
+  IACharacter *charac;
+  Position p = Position(3, 3);
 
-  // std::cout << getItemAtPosition(p._x, p._y) << std::endl;
-  // charac = new IACharacter(3, this, p);;
+  std::cout << getItemAtPosition(p._x, p._y) << std::endl;
+  charac = new IACharacter(3, this, p);;
 
-  // IAEngine *engine = new IAEngine(*charac, *this);
-  // _players.push_back(charac);
-  // (void)engine;
+  IAEngine *engine = new IAEngine(*charac, *this);
+  _players.push_back(charac);
+  (void)engine;
 
-  // //IAEngine *engine = new IAEngine(*charac, *this);
-  // _players.push_back(charac);
-  // //(void)engine;
+  //IAEngine *engine = new IAEngine(*charac, *this);
+  _players.push_back(charac);
+  //(void)engine;
 }
 
 void	World::createHumanPlayer(char id, Position &pos)
