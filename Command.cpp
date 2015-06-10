@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:36:27 2015 Nicolas Charvoz
-// Last update Wed Jun  3 14:19:08 2015 Audibert Louis
+// Last update Wed Jun  3 12:13:30 2015 Nicolas Charvoz
 //
 
 #include "Command.hh"
@@ -77,7 +77,7 @@ void Command::pause(gdl::Clock& clock)
   (void) clock;
   if (_world)
     {
-      _game->pushState(new Pause(_game));
+      _game->pushState(new Pause(_game, _world));
       _pause = true;
     }
 }

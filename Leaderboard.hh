@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Wed Jun  3 01:47:29 2015 Nicolas Charvoz
+// Last update Thu Jun  4 01:07:30 2015 Nicolas Charvoz
 //
 
 #ifndef LEADERBOARD_HH_
@@ -20,6 +20,7 @@
 #include "InputManager.hh"
 #include "Command.hh"
 #include "Scoring.hh"
+#include <memory>
 
 class Command;
 
@@ -36,8 +37,10 @@ public:
   void drawButtons(gdl::Clock&, gdl::BasicShader&);
   void loadLetters();
   void drawLetters(gdl::Clock&, gdl::BasicShader&);
+  void drawScore(gdl::Clock&, gdl::BasicShader&);
   void getScore();
   void buildWord(const std::string&, int, int);
+  void buildScore();
 
 private:
   static Sound& _sound;
@@ -49,6 +52,7 @@ private:
   std::vector<std::string> _bestScore;
   std::map<std::string, AObject*> _letters;
   std::vector<AObject*> _word;
+  std::vector< std::vector<AObject*> > _words;
 };
 
 #endif

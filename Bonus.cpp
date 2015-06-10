@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Fri Jun  5 15:44:47 2015 Nicolas Girardot
-// Last update Mon Jun  8 14:36:19 2015 Nicolas Girardot
+// Last update Mon Jun  8 17:22:49 2015 Nicolas Girardot
 //
 
 #include "Bonus.hh"
@@ -26,7 +26,7 @@ bool	Bonus::initialize(const std::string &tex)
   (void) tex;
   _bonus = new Cube();
   _bonus->initialize("images/bonus.tga");
-  glm::vec3 trans(_pos._x * 100 - (_world->getWidth() / 2) * 100, 20, 750 * (-1) + ((_pos._y - _world->getHeight()) / 2 * 100));
+  glm::vec3 trans(0 + (_pos._x * 100 - (_world->getWidth() / 2 * 100)), 20, 750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   _bonus->translate(trans);
   _bonus->scale(glm::vec3(60, 60, 60));
   return (true);

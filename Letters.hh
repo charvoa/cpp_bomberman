@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Thu May 28 15:03:51 2015 Nicolas Charvoz
-// Last update Thu May 28 15:38:34 2015 Nicolas Charvoz
+// Last update Thu Jun  4 01:06:07 2015 Nicolas Charvoz
 //
 
 #ifndef LETTERS_HH_
@@ -65,6 +65,7 @@ public:
     _texture.bind();
     _geometry.draw(shader, getTransformation(), GL_QUADS);
   }
+
 };
 
 #endif

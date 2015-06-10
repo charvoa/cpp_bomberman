@@ -5,21 +5,26 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Mon Jun  8 15:11:07 2015 Audibert Louis
+// Last update Wed Jun 10 12:51:25 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
 #include "World.hh"
 #include "ia/IAEngine.hh"
+#include <iostream>
 
 TextureManager &IACharacter::_texManag = TextureManager::getInstance();
 
 IACharacter::IACharacter(int id, World *world, Position& pos)
 {
+  int save = (id - '0') % 2;
   _world = world;
   this->_IAid = id;
   this->_alive = true;
-  _model.load("./images/marvin.fbx");
+  if (save == 1)
+    _model.load("./images/model/thug.obj");
+  else
+    _model.load("./images/model/thug2.obj");
   _orientation = DOWN;
   _type = IA;
   _canLaunchBomb = true;
@@ -28,9 +33,12 @@ IACharacter::IACharacter(int id, World *world, Position& pos)
   _pos = pos;
   _world->setItemAtPosition(_pos, 'I');
   _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");
-  glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
+  glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, 0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
-  this->scale(glm::vec3(0.3, 0.3, 0.3));
+  if (save == 1)
+    this->scale(glm::vec3(7, 7, 7));
+  else
+    this->scale(glm::vec3(1, 1, 1));
   _brain = new IAEngine(*this, *_world);
 }
 
@@ -47,13 +55,15 @@ bool IACharacter::getAlive() const
 
 void IACharacter::dropBomb()
 {
-  std::cout << "I droped a bomb hahah" << std::endl;
   if (_canLaunchBomb == true)
     {
-      _canLaunchBomb = false;
+      std::cout << "IA DROPING BOMB" << std::endl;
+      std::cout << "_pos.x = " << _pos._x << " _pos.y " << _pos._y << " ori = " << _orientation << " IAid = " << _IAid << std::endl;
       _world->dropBomb(_pos, _IAid);
       _sound.playMusic("allahu");
       _world->setItemAtPosition(_pos, 'T');
+      _canLaunchBomb = false;
+      std::cout << "End of IF in drop bomb" << std::endl;
     }
 }
 
@@ -176,6 +186,8 @@ void	IACharacter::move(e_orientation ori)
   int x = 0;
   int y = 0;
 
+  std::cout << "ET GOUT BITE" << std::endl;
+  std::cout << "_pos.x = " << _pos._x << " _pos.y " << _pos._y << " ori = " << ori << std::endl;
   this->rotate(trans, getAngle(_orientation, ori));
   _orientation = ori;
 

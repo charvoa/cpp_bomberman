@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu May 28 21:03:32 2015 Nicolas Charvoz
+// Last update Wed Jun  3 12:42:46 2015 Nicolas Charvoz
 //
 
 #include "Exit.hh"
@@ -23,6 +23,12 @@ Exit::Exit(Game *game)
   _game = game;
   std::cout << "Je suis dans Exit" << std::endl;
   _texManag.registerTexture("BackgroundCredit", "backEnd");
+  _game->_camera->move(glm::vec3(0, 0, -0.0001), glm::vec3(0, 0, 0));
+  gdl::BasicShader shader = _game->getShader();
+  shader.bind();
+  shader.setUniform("view", _game->_camera->getTransformation());
+  shader.setUniform("projection", _game->_camera->getProjection());
+
   this->loadBackground();
   this->loadButtons();
 }
