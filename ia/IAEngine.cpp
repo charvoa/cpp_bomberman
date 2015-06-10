@@ -26,15 +26,16 @@ void		*IAEngine::run()
 {
   HumanCharacter *target;
 
-  while (_world->getHumansPlayers().size() != 0 /* && _ia->getAlive() == true*/ )
+  while (_world->getHumansPlayers().size() != 0 && _ia->getAlive() == true)
   {
-    this->whatIsAroundMe();
-//    this->leaveThisPosition(ia, world);
-    target = this->getTarget();
 
+    _ia->dropBomb();
+
+
+    this->whatIsAroundMe();
+    target = this->getTarget();
     this->isPossibleToJoinTarget(*target);
 
-//    this.actLikeAMan();
 
   }
   return 0;
