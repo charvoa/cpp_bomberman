@@ -5,32 +5,41 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Wed Jun  3 20:10:47 2015 Nicolas Charvoz
+// Last update Wed Jun 10 15:10:24 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
 #include "World.hh"
 #include "ia/IAEngine.hh"
+#include <iostream>
 
 TextureManager &IACharacter::_texManag = TextureManager::getInstance();
 
 IACharacter::IACharacter(int id, World *world, Position& pos)
 {
+  int save = (id - '0') % 2;
   _world = world;
   this->_IAid = id;
   this->_alive = true;
-  _model.load("./images/marvin.fbx");
+  if (save == 1)
+    _model.load("./images/model/thug.obj");
+  else
+    _model.load("./images/model/thug2.obj");
   _orientation = DOWN;
   _type = IA;
   _canLaunchBomb = true;
   _timer = 0;
   _isAnime = false;
   _pos = pos;
+  _range = 1;
   _world->setItemAtPosition(_pos, 'I');
   _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");
-  glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
+  glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, 0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
-  this->scale(glm::vec3(0.3, 0.3, 0.3));
+  if (save == 1)
+    this->scale(glm::vec3(7, 7, 7));
+  else
+    this->scale(glm::vec3(1, 1, 1));
   _brain = new IAEngine(*this, *_world);
 }
 
@@ -45,15 +54,22 @@ bool IACharacter::getAlive() const
   return _alive;
 }
 
+void IACharacter::setAlive(bool isalive)
+{
+  _alive = isalive;
+}
+
 void IACharacter::dropBomb()
 {
   if (_canLaunchBomb == true)
     {
-      std::cout << "I droped a bomb hahah" << std::endl;
-      _canLaunchBomb = false;
+      std::cout << "IA DROPING BOMB" << std::endl;
+      std::cout << "_pos.x = " << _pos._x << " _pos.y " << _pos._y << " ori = " << _orientation << " IAid = " << _IAid << std::endl;
       _world->dropBomb(_pos, _IAid);
       _sound.playMusic("allahu");
       _world->setItemAtPosition(_pos, 'T');
+      _canLaunchBomb = false;
+      std::cout << "End of IF in drop bomb" << std::endl;
     }
 }
 
@@ -163,19 +179,22 @@ float	IACharacter::getAngle(e_orientation before, e_orientation after)
   return (0.0f);
 }
 
-void	IACharacter::move(e_orientation ori, gdl::Clock &clock)
+bool	IACharacter::move(e_orientation ori, gdl::Clock &clock)
 {
   (void) ori;
   (void) clock;
+  return true;
 }
 
-void	IACharacter::move(e_orientation ori)
+bool	IACharacter::move(e_orientation ori)
 {
   glm::vec3 trans(0, 1, 0);
   Position *pos;
   int x = 0;
   int y = 0;
 
+  std::cout << "ET GOUT BITE" << std::endl;
+  std::cout << "_pos.x = " << _pos._x << " _pos.y " << _pos._y << " ori = " << ori << std::endl;
   this->rotate(trans, getAngle(_orientation, ori));
   _orientation = ori;
 
@@ -219,7 +238,9 @@ void	IACharacter::move(e_orientation ori)
 	  _pos = *pos;
       	  _timer = 0;
       	}
+      return true;
     }
+  return false;
 }
 
 bool	IACharacter::getCanLaunchBomb() const

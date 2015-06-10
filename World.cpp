@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Wed Jun 10 15:17:39 2015 Nicolas Girardot
+// Last update Wed Jun 10 15:20:14 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -26,7 +26,7 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
   _fileMap = &map;
   _height = _fileMap->getHeight();
   _width = _fileMap->getWidth();
-  _game->_camera->move(glm::vec3(0, 900, 0), glm::vec3(0, 0, -750));
+  _game->_camera->move(glm::vec3(0, 1500, 0), glm::vec3(0, 0, -750));
   gdl::BasicShader shader = _game->getShader();
   shader.bind();
   shader.setUniform("view", _game->_camera->getTransformation());

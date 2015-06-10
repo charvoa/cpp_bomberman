@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Wed Jun  3 19:20:48 2015 Nicolas Charvoz
+// Last update Thu Jun  4 07:54:47 2015 Nicolas Charvoz
 //
 
 #include "Leaderboard.hh"
@@ -23,9 +23,6 @@ Leaderboard::Leaderboard(Game *game)
   _game = game;
   std::cout << "Je suis dans Leaderboard" << std::endl;
   _texManag.registerTexture("LeaderBoardMenu", "lbMenu");
-  this->loadBackground();
-  this->loadButtons();
-  this->loadLetters();
   _game->_camera->move(glm::vec3(0, 0, -0.0001), glm::vec3(0, 0, 0));
   gdl::BasicShader shader = _game->getShader();
 
@@ -38,6 +35,9 @@ Leaderboard::Leaderboard(Game *game)
   Scoring scoring;
   _scores = scoring.highScore();
   this->getScore();
+  this->loadBackground();
+  this->loadButtons();
+  this->loadLetters();
 }
 
 void Leaderboard::loadBackground()
@@ -61,7 +61,6 @@ void Leaderboard::loadLetters()
       letter = new Letters();
       _texManag.registerTexture(ss.str(), ss.str());
       letter->initialize(_texManag.getTexture(ss.str()));
-      std::cout << ss.str() << std::endl;
       _letters[ss.str()] = letter;
     }
   for (char c = '0'; c <= '9'; ++c)
@@ -72,13 +71,61 @@ void Leaderboard::loadLetters()
       letter = new Letters();
       _texManag.registerTexture(ss.str(), ss.str());
       letter->initialize(_texManag.getTexture(ss.str()));
-      std::cout << ss.str() << std::endl;
       _letters[ss.str()] = letter;
     }
-  this->buildWord("NAME", 70, 20);
-  this->buildWord("KLO", -60, 20);
-  this->buildWord("KLO", -60, 30);
-  //this->buildWord("NAME", 10, 10);
+  this->buildScore();
+}
+
+std::vector<std::string> &Leaderboard::split2(const std::string &s, char delim, std::vector<std::string> &elems) {
+  std::stringstream ss(s);
+  std::string item;
+  while (std::getline(ss, item, delim))
+    {
+      elems.push_back(item);
+    }
+  return elems;
+}
+
+void Leaderboard::handleWords(std::vector<std::string> &words)
+{
+  static int i = 0;
+  static int y = 20;
+
+  for (std::vector<std::string>::iterator it = words.begin();
+       it != words.end(); ++it)
+    {
+      if (i % 2 == 0)
+	{
+	  this->buildWord(*it, 70, y);
+	}
+      else if (i % 2 != 0)
+	{
+	  this->buildWord(*it, -60, y);
+	  y -= 12;
+	}
+      i++;
+    }
+}
+
+std::vector<std::string> Leaderboard::splitWord(const std::string &s, char delim) {
+  std::vector<std::string> elems;
+  this->split2(s, delim, elems);
+  return elems;
+}
+
+void Leaderboard::buildScore()
+{
+  std::cout << "buildScore() >> " << std::endl;
+  std::vector<std::string> elems;
+
+  for (std::vector<std::string>::iterator it = _bestScore.begin();
+       it != _bestScore.end() ; ++it)
+    {
+      elems.clear();
+      std::transform((*it).begin(), (*it).end(), (*it).begin(), ::toupper);
+      elems = this->splitWord(*it, ' ');
+      this->handleWords(elems);
+    }
 }
 
 void Leaderboard::loadButtons()
@@ -95,6 +142,7 @@ void Leaderboard::getScore()
       ss.str("");
       ss.clear();
       ss << (*it).first << ' ' << (*it).second;
+      std::cout << ss.str() << std::endl;
       _bestScore.push_back(ss.str());
       ++it;
     }
@@ -114,13 +162,13 @@ void Leaderboard::buildWord(const std::string &str, int x, int y)
       ss << "fonts/";
       ss << str[i];
       letter = new Letters();
-      letter = _letters[ss.str()];
+      letter->initialize(_texManag.getTexture(ss.str()));
       letter->translate(glm::vec3(-0.06 * (i + 1) + x * 0.01,
 				  0 + y * 0.01, 0));
       _word.push_back(letter);
-      _words.push_back(_word);
       i++;
     }
+  _words.push_back(_word);
 }
 
 void Leaderboard::drawLetters(gdl::Clock& clock, gdl::BasicShader& shader)
@@ -159,7 +207,6 @@ void Leaderboard::draw(gdl::Clock& clock, gdl::BasicShader& shader)
   this->drawLetters(clock, shader);
   this->drawButtons(clock, shader);
   this->drawBackground(clock, shader);
-  //this->drawLetters(clock, shader);
   this->drawScore(clock, shader);
 }
 

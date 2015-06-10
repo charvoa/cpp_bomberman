@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sun May 17 15:06:38 2015 Nicolas Charvoz
-// Last update Tue Jun  2 14:50:49 2015 Nicolas Charvoz
+// Last update Thu Jun  4 01:10:12 2015 Nicolas Charvoz
 //
 
 #include "TextureManager.hh"
@@ -22,7 +22,6 @@ void	TextureManager::registerTexture(const std::string &filename,
   std::stringstream ss;
 
   ss << "./images/" << filename << ".tga";
-  std::cout << "Texturemanager : " <<ss.str() << std::endl;
   _textures[title] = ss.str();
 }
 
