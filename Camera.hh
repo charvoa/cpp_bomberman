@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Thu May 21 16:43:10 2015 Nicolas Girardot
-// Last update Tue May 26 16:11:48 2015 Nicolas Girardot
+// Last update Tue Jun  9 16:08:34 2015 Nicolas Girardot
 //
 
 #ifndef CAMERA_HH_
@@ -17,6 +17,7 @@
 #include <Clock.hh>
 #include <Input.hh>
 #include <BasicShader.hh>
+#include <iostream>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <vector>

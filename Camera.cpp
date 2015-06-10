@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Thu May 21 16:43:06 2015 Nicolas Girardot
-// Last update Fri May 29 13:49:13 2015 Nicolas Girardot
+// Last update Wed Jun 10 13:34:31 2015 Nicolas Girardot
 //
 
 #include "Camera.hh"
@@ -28,6 +28,7 @@ void	Camera::Init()
 void	Camera::move(glm::vec3 cameraP, glm::vec3 cameraS)
 {
   _transformation = glm::lookAt(cameraP, cameraS, glm::vec3(0, 1, 0));
+  std::cout << "testing" << std::endl;
 }
 
 glm::mat4 Camera::getTransformation()
