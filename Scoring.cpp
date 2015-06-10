@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Fri May 15 13:53:19 2015 Nicolas Girardot
-// Last update Tue May 26 15:03:26 2015 Nicolas Girardot
+// Last update Wed Jun 10 15:18:46 2015 Nicolas Girardot
 //
 
 #include "Scoring.hh"
@@ -132,7 +132,7 @@ std::multimap<std::string, std::string> &Scoring::highScore()
       ss << line;
       getline(ss, name, ' ');
       getline(ss, score, ' ');
-      _high.insert(std::pair<std::string, std::string>(name, score));
+      _high.insert(std::pair<std::string, std::string>(score, name));
       i++;
     }
   return (_high);
