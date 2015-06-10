@@ -29,9 +29,6 @@ void		*IAEngine::run()
   while (_world->getHumansPlayers().size() != 0 && _ia->getAlive() == true)
   {
 
-    _ia->dropBomb();
-
-
     this->whatIsAroundMe();
     target = this->getTarget();
     this->isPossibleToJoinTarget(*target);
