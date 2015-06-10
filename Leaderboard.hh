@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Wed Jun  3 19:18:55 2015 Nicolas Charvoz
+// Last update Thu Jun  4 01:07:30 2015 Nicolas Charvoz
 //
 
 #ifndef LEADERBOARD_HH_
@@ -40,6 +40,7 @@ public:
   void drawScore(gdl::Clock&, gdl::BasicShader&);
   void getScore();
   void buildWord(const std::string&, int, int);
+  void buildScore();
 
 private:
   static Sound& _sound;

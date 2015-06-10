@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Wed Jun  3 20:11:04 2015 Nicolas Charvoz
+// Last update Wed Jun 10 14:11:33 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -18,31 +18,43 @@ Sound&	ACharacter::_sound = Sound::getInstance();
 
 HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
 {
+  int save = (id - '0') % 2;
   _world = world;
   initColor();
   std::cout << "id = " << id << std::endl;
   this->_id = id;
   this->_alive = true;
   _pos = pos;
-  int save = (id - '0') % 2;
   if (save == 1)
-    _model.load("./images/marvin.fbx");
+    _model.load("./images/model/marvin.fbx");
   else
-    _model.load("./images/marvin.fbx");
+    _model.load("./images/model/GuardSoldier.FBX");
+  // if (save == 1)
+  //   _model.load("./images/model/thug.obj");
+  // else
+  //   _model.load("./images/model/thug2.obj");
   // _model.load("/home/audibe_l/Downloads/marvin/War_Machine_Iron_Patriot.obj");
   // _model.load("/home/audibe_l/Downloads/Blender/GuardSoldier.FBX");
-  // _model.load("/home/audibe_l/Downloads/marvin/turboSquid/FREE Mixamo Soldier - Military BIPED RIGGED MODEL from MIXAMO WEBSITE/Soldier_animated_jump.fbx");
+  // _model.load("/home/audibe_l/Downloads/marvin/joker/thug2.obj");
   _orientation = DOWN;
   _type = HUMAN;
   _timer = 0;
   _canLaunchBomb = true;
   _isAnime = false;
+  _range = 1;
   _sound.registerSound("./resources/sounds/USAbomb.mp3", "USAbomb");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
+  // glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
-  this->scale(glm::vec3(0.3, 0.3, 0.3));
-  // this->scale(glm::vec3(80, 80, 80));
-  // this->scale(glm::vec3(3, 3, 3));
+  if (save == 1)
+    this->scale(glm::vec3(0.3, 0.3, 0.3));
+  else
+    this->scale(glm::vec3(2.7, 2.7, 2.7));
+  // if (save == 1)
+  //   this->scale(glm::vec3(7, 7, 7));
+  // else
+  //   this->scale(glm::vec3(1, 1, 1));
+  // this->scale(glm::vec3(1, 1, 1));
 }
 
 HumanCharacter::~HumanCharacter()

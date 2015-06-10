@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Mon Jun  8 15:10:30 2015 Audibert Louis
+// Last update Wed Jun 10 15:10:37 2015 Audibert Louis
 //
 
 #ifndef IACHARACTER_HH_
@@ -25,19 +25,20 @@ public:
 
   IACharacter(int, World *, Position&);
   virtual ~IACharacter();
-  bool	getAlive() const;
   void dropBomb();
   void takeObject(AObject *);
   void die();
   void draw(gdl::AShader &, gdl::Clock const &);
   void update();
 
+  bool	getAlive() const;
   Position &getPos() const;
   int getRange() const;
   int getOrientation() const;
   int getId() const;
   bool getCanLaunchBomb() const;
 
+  void setAlive(bool isalive);
   void setPos(Position &pos);
   void setRange(int range);
   void setOrientation(int orientation);
