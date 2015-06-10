@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Wed Jun 10 11:50:15 2015 Audibert Louis
+// Last update Wed Jun 10 12:51:25 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -22,9 +22,9 @@ IACharacter::IACharacter(int id, World *world, Position& pos)
   this->_IAid = id;
   this->_alive = true;
   if (save == 1)
-    _model.load("./images/thug.obj");
+    _model.load("./images/model/thug.obj");
   else
-    _model.load("./images/thug2.obj");
+    _model.load("./images/model/thug2.obj");
   _orientation = DOWN;
   _type = IA;
   _canLaunchBomb = true;
