@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Wed Jun 10 13:02:22 2015 Audibert Louis
+// Last update Wed Jun 10 14:11:33 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -41,6 +41,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   _timer = 0;
   _canLaunchBomb = true;
   _isAnime = false;
+  _range = 1;
   _sound.registerSound("./resources/sounds/USAbomb.mp3", "USAbomb");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   // glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
