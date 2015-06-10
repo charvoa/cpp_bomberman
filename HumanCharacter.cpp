@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Wed Jun 10 11:42:18 2015 Audibert Louis
+// Last update Wed Jun 10 11:50:51 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -31,7 +31,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
     _model.load("/home/audibe_l/Downloads/Blender/GuardSoldier.FBX");
   // _model.load("/home/audibe_l/Downloads/marvin/War_Machine_Iron_Patriot.obj");
   // _model.load("/home/audibe_l/Downloads/Blender/GuardSoldier.FBX");
-  // _model.load("/home/audibe_l/Downloads/marvin/thug/thug.obj");
+  // _model.load("/home/audibe_l/Downloads/marvin/joker/thug2.obj");
   _orientation = DOWN;
   _type = HUMAN;
   _timer = 0;
@@ -44,8 +44,8 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   if (save == 1)
     this->scale(glm::vec3(0.3, 0.3, 0.3));
   else
-    this->scale(glm::vec3(2.7, 2.7, 2.7));    
-  // this->scale(glm::vec3(7, 7, 7));
+    this->scale(glm::vec3(2.7, 2.7, 2.7));
+  // this->scale(glm::vec3(1, 1, 1));
 }
 
 HumanCharacter::~HumanCharacter()

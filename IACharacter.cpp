@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Wed Jun 10 11:40:11 2015 Audibert Louis
+// Last update Wed Jun 10 11:50:15 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -17,10 +17,14 @@ TextureManager &IACharacter::_texManag = TextureManager::getInstance();
 
 IACharacter::IACharacter(int id, World *world, Position& pos)
 {
+  int save = (id - '0') % 2;
   _world = world;
   this->_IAid = id;
   this->_alive = true;
-  _model.load("./images/thug.obj");
+  if (save == 1)
+    _model.load("./images/thug.obj");
+  else
+    _model.load("./images/thug2.obj");
   _orientation = DOWN;
   _type = IA;
   _canLaunchBomb = true;
@@ -31,7 +35,10 @@ IACharacter::IACharacter(int id, World *world, Position& pos)
   _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, 0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
-  this->scale(glm::vec3(7, 7, 7));
+  if (save == 1)
+    this->scale(glm::vec3(7, 7, 7));
+  else
+    this->scale(glm::vec3(1, 1, 1));
   _brain = new IAEngine(*this, *_world);
 }
 
