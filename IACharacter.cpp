@@ -163,13 +163,14 @@ float	IACharacter::getAngle(e_orientation before, e_orientation after)
   return (0.0f);
 }
 
-void	IACharacter::move(e_orientation ori, gdl::Clock &clock)
+bool	IACharacter::move(e_orientation ori, gdl::Clock &clock)
 {
   (void) ori;
   (void) clock;
+  return true;
 }
 
-void	IACharacter::move(e_orientation ori)
+bool	IACharacter::move(e_orientation ori)
 {
   glm::vec3 trans(0, 1, 0);
   Position *pos;
@@ -219,7 +220,9 @@ void	IACharacter::move(e_orientation ori)
 	  _pos = *pos;
       	  _timer = 0;
       	}
+      return true;
     }
+  return false;
 }
 
 bool	IACharacter::getCanLaunchBomb() const

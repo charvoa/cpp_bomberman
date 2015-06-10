@@ -50,8 +50,8 @@ public:
   int	getType() const;
   ACharacter &getCharacter();
 
-  void move(e_orientation ori, gdl::Clock &clock);
-  void move(e_orientation ori);
+  bool move(e_orientation ori, gdl::Clock &clock);
+  bool move(e_orientation ori);
   float	getAngle(e_orientation before, e_orientation after);
 
 private:

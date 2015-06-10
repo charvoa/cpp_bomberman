@@ -22,7 +22,7 @@ public:
   HumanCharacter        *findClosestHumanPlayer();
   HumanCharacter	*getTarget();
   void			whatIsAroundMe();
-  void			setOperand(HumanCharacter &target);
+  void			setOperand(int opt);
   bool			isPossibleToJoinTarget(HumanCharacter &target);
   bool			isBombAroundMe(std::vector<char> &vector);
   bool			isBoxAroundMe(std::vector<char> &vector);
@@ -51,7 +51,8 @@ private:
   World			*_world;
   IACharacter		*_ia;
   std::vector<std::pair<int,int>> _route;
-  std::vector<std::vector<char>> _map;
+  std::vector<std::pair<std::vector<std::pair<int,int>>, int>> _routes;
+  std::vector<std::vector<char> >_map;
   Thread			*_thread;
   void				*run();
 };

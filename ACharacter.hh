@@ -66,7 +66,7 @@ public:
   virtual int getType() const = 0;
   virtual ACharacter &getCharacter() = 0;
 
-  virtual void move(e_orientation ori, gdl::Clock &clock) = 0;
+  virtual bool move(e_orientation ori, gdl::Clock &clock) = 0;
 
 protected:
 
