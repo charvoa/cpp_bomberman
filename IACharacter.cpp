@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Tue Jun  9 15:33:50 2015 Audibert Louis
+// Last update Wed Jun 10 11:40:11 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -20,7 +20,7 @@ IACharacter::IACharacter(int id, World *world, Position& pos)
   _world = world;
   this->_IAid = id;
   this->_alive = true;
-  _model.load("./images/marvin.fbx");
+  _model.load("./images/thug.obj");
   _orientation = DOWN;
   _type = IA;
   _canLaunchBomb = true;
@@ -29,9 +29,9 @@ IACharacter::IACharacter(int id, World *world, Position& pos)
   _pos = pos;
   _world->setItemAtPosition(_pos, 'I');
   _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");
-  glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
+  glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, 0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
-  this->scale(glm::vec3(0.3, 0.3, 0.3));
+  this->scale(glm::vec3(7, 7, 7));
   _brain = new IAEngine(*this, *_world);
 }
 

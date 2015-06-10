@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Tue Jun  9 16:07:18 2015 Audibert Louis
+// Last update Wed Jun 10 11:42:18 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -31,7 +31,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
     _model.load("/home/audibe_l/Downloads/Blender/GuardSoldier.FBX");
   // _model.load("/home/audibe_l/Downloads/marvin/War_Machine_Iron_Patriot.obj");
   // _model.load("/home/audibe_l/Downloads/Blender/GuardSoldier.FBX");
-  // _model.load("/home/audibe_l/Downloads/marvin/turboSquid/FREE Mixamo Soldier - Military BIPED RIGGED MODEL from MIXAMO WEBSITE/Soldier_animated_jump.fbx");
+  // _model.load("/home/audibe_l/Downloads/marvin/thug/thug.obj");
   _orientation = DOWN;
   _type = HUMAN;
   _timer = 0;
@@ -39,12 +39,13 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   _isAnime = false;
   _sound.registerSound("./resources/sounds/USAbomb.mp3", "USAbomb");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
+  // glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
   if (save == 1)
     this->scale(glm::vec3(0.3, 0.3, 0.3));
   else
-    this->scale(glm::vec3(3, 3, 3));    
-  // this->scale(glm::vec3(80, 80, 80));
+    this->scale(glm::vec3(2.7, 2.7, 2.7));    
+  // this->scale(glm::vec3(7, 7, 7));
 }
 
 HumanCharacter::~HumanCharacter()
