@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Wed Jun 10 15:21:18 2015 Nicolas Girardot
+// Last update Thu Jun 11 15:51:14 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -133,41 +133,61 @@ void	World::createHumanPlayer(char id, Position &pos)
 
 void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
-  // glViewport (0, 0, 1920/2, 1080);
-  // ACharacter *player = getPlayerById(1);
-  // _game->_camera->move(glm::vec3((-1 * this->getWidth() / 2 * 100) + player->getPos()._x * 100, 1000, player->getPos()._y * 100), glm::vec3((-1 * this->getWidth() / 2 * 100) + player->getPos()._x * 100, 900, 0));
-  // gdl::BasicShader shadera = _game->getShader();
-  // shadera.bind();
-  // shadera.setUniform("view", _game->_camera->getTransformation());
-  // shadera.setUniform("projection", _game->_camera->getProjection());
-  if (getHeight() >= 15);
+  gdl::BasicShader shadera;
+  if (_nbPlayers == 2)
+    {
+      glViewport (0, 0, 1920/2, 1080);
+      ACharacter *player = getPlayerById(1);
+      if (player == NULL);
+      else
+	{
+	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 50), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
+	  shadera = _game->getShader();
+	  shadera.bind();
+	  shadera.setUniform("view", _game->_camera->getTransformation());
+	  shadera.setUniform("projection", _game->_camera->getProjection());
+	  for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
+	    {
+	      (*it)->draw(shader, clock);
+	    }
+	  for (std::vector<ACharacter*>::iterator it = _players.begin(); it != _players.end(); ++it)
+	    {
+	      (*it)->draw(shader, clock);
+	    }
+	}
+      glViewport (1920/2, 0, 1920/2, 1080);
+      player = getPlayerById(2);
+      if (player == NULL);
+      else
+	{
+	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 50), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
+	  shadera.bind();
+	  shadera.setUniform("view", _game->_camera->getTransformation());
+	  shadera.setUniform("projection", _game->_camera->getProjection());
+	  for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
+	    {
+	      (*it)->draw(shader, clock);
+	    }
+	  for (std::vector<ACharacter*>::iterator it = _players.begin(); it != _players.end(); ++it)
+	    {
+	      (*it)->draw(shader, clock);
+	    }
+	}
+    }
   else
-    this->drawBackground(clock, shader);
-  for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
     {
-      (*it)->draw(shader, clock);
+      if (getHeight() >= 15);
+      else
+        this->drawBackground(clock, shader);
+      for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
+        {
+          (*it)->draw(shader, clock);
+        }
+      for (std::vector<ACharacter*>::iterator it = _players.begin(); it != _players.end(); ++it)
+        {
+          (*it)->draw(shader, clock);
+        }
     }
-  for (std::vector<ACharacter*>::iterator it = _players.begin(); it != _players.end(); ++it)
-    {
-      (*it)->draw(shader, clock);
-    }
-  // glViewport (1920/2, 0, 1920/2, 1080);
-  // player = getPlayerById(2);
-  // _game->_camera->move(glm::vec3((-1 * this->getWidth() / 2 * 100) + player->getPos()._x * 100, 1000, player->getPos()._y * 100), glm::vec3((-1 * this->getWidth() / 2 * 100) + player->getPos()._x * 100, 900,  -1 * (player->getPos()._y * 100)));
-  // shadera.bind();
-  // shadera.setUniform("view", _game->_camera->getTransformation());
-  // shadera.setUniform("projection", _game->_camera->getProjection());
-  // if (getHeight() >= 15);
-  // else
-  //   this->drawBackground(clock, shader);
-  // for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
-  //   {
-  //     (*it)->draw(shader, clock);
-  //   }
-  // for (std::vector<ACharacter*>::iterator it = _players.begin(); it != _players.end(); ++it)
-  //   {
-  //     (*it)->draw(shader, clock);
-  //   }
 }
 
 ACharacter*	World::getPlayerById(int id)
