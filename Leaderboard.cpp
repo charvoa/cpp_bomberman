@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Wed Jun 10 15:16:33 2015 Audibert Louis
+// Last update Thu Jun  4 07:56:06 2015 Nicolas Charvoz
 //
 
 #include "Leaderboard.hh"
@@ -74,19 +74,58 @@ void Leaderboard::loadLetters()
       _letters[ss.str()] = letter;
     }
   this->buildScore();
-  // this->buildWord("NAME", 70, 20);
-  // this->buildWord("123", -60, 20);
-  // this->buildWord("ANA" , 70, 10);
+}
+
+std::vector<std::string> &Leaderboard::split2(const std::string &s, char delim, std::vector<std::string> &elems) {
+  std::stringstream ss(s);
+  std::string item;
+  while (std::getline(ss, item, delim))
+    {
+      elems.push_back(item);
+    }
+  return elems;
+}
+
+void Leaderboard::handleWords(std::vector<std::string> &words)
+{
+  static int i = 0;
+  static int y = 20;
+
+  for (std::vector<std::string>::iterator it = words.begin();
+       it != words.end(); ++it)
+    {
+      if (i % 2 == 0)
+	{
+	  this->buildWord(*it, 70, y);
+	}
+      else if (i % 2 != 0)
+	{
+	  this->buildWord(*it, -60, y);
+	  y -= 12;
+	}
+      i++;
+    }
+}
+
+std::vector<std::string> Leaderboard::splitWord(const std::string &s, char delim) {
+  std::vector<std::string> elems;
+  this->split2(s, delim, elems);
+  return elems;
 }
 
 void Leaderboard::buildScore()
 {
   std::cout << "buildScore() >> " << std::endl;
+  std::vector<std::string> elems;
+
   for (std::vector<std::string>::iterator it = _bestScore.begin();
        it != _bestScore.end() ; ++it)
-  {
-      std::cout << *it << std::endl;
-  }
+    {
+      elems.clear();
+      std::transform((*it).begin(), (*it).end(), (*it).begin(), ::toupper);
+      elems = this->splitWord(*it, ' ');
+      this->handleWords(elems);
+    }
 }
 
 void Leaderboard::loadButtons()
@@ -102,7 +141,7 @@ void Leaderboard::getScore()
     {
       ss.str("");
       ss.clear();
-      ss << (*it).first << ' ' << (*it).second;
+      ss << (*it).second << ' ' << (*it).first;
       _bestScore.push_back(ss.str());
       ++it;
     }

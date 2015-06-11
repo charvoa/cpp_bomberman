@@ -28,8 +28,7 @@ public:
   bool			isBoxAroundMe(std::vector<char> &vector);
   bool			isHumanPlayerAroundMe(std::vector<char> &vector);
   bool			isBonusAroundMe(std::vector<char> &vector);
-  bool			routeToTarget(int x, int y, HumanCharacter &target
-);
+  bool			routeToTarget(int x, int y, HumanCharacter &target);
   void			leaveThisPosition();
   int			move();
 
