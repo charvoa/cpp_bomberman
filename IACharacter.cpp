@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Wed Jun 10 12:51:25 2015 Audibert Louis
+// Last update Wed Jun 10 15:10:24 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -31,6 +31,7 @@ IACharacter::IACharacter(int id, World *world, Position& pos)
   _timer = 0;
   _isAnime = false;
   _pos = pos;
+  _range = 1;
   _world->setItemAtPosition(_pos, 'I');
   _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, 0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
@@ -51,6 +52,11 @@ IACharacter::~IACharacter()
 bool IACharacter::getAlive() const
 {
   return _alive;
+}
+
+void IACharacter::setAlive(bool isalive)
+{
+  _alive = isalive;
 }
 
 void IACharacter::dropBomb()
@@ -173,13 +179,14 @@ float	IACharacter::getAngle(e_orientation before, e_orientation after)
   return (0.0f);
 }
 
-void	IACharacter::move(e_orientation ori, gdl::Clock &clock)
+bool	IACharacter::move(e_orientation ori, gdl::Clock &clock)
 {
   (void) ori;
   (void) clock;
+  return true;
 }
 
-void	IACharacter::move(e_orientation ori)
+bool	IACharacter::move(e_orientation ori)
 {
   glm::vec3 trans(0, 1, 0);
   Position *pos;
@@ -231,7 +238,9 @@ void	IACharacter::move(e_orientation ori)
 	  _pos = *pos;
       	  _timer = 0;
       	}
+      return true;
     }
+  return false;
 }
 
 bool	IACharacter::getCanLaunchBomb() const

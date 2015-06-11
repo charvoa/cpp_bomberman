@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Thu Jun  4 01:07:30 2015 Nicolas Charvoz
+// Last update Thu Jun  4 09:06:39 2015 Nicolas Charvoz
 //
 
 #ifndef LEADERBOARD_HH_
@@ -20,7 +20,6 @@
 #include "InputManager.hh"
 #include "Command.hh"
 #include "Scoring.hh"
-#include <memory>
 
 class Command;
 
@@ -41,6 +40,11 @@ public:
   void getScore();
   void buildWord(const std::string&, int, int);
   void buildScore();
+  std::vector<std::string> &split2(const std::string &s, char delim,
+				  std::vector<std::string> &elems);
+  std::vector<std::string> splitWord(const std::string &s,
+				     char delim);
+  void handleWords(std::vector<std::string>&);
 
 private:
   static Sound& _sound;
@@ -53,6 +57,7 @@ private:
   std::map<std::string, AObject*> _letters;
   std::vector<AObject*> _word;
   std::vector< std::vector<AObject*> > _words;
+
 };
 
 #endif

@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Wed Jun 10 13:02:22 2015 Audibert Louis
+// Last update Thu Jun 11 16:17:09 2015 Nicolas Girardot
 //
 
 #include <iostream>
@@ -41,6 +41,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   _timer = 0;
   _canLaunchBomb = true;
   _isAnime = false;
+  _range = 1;
   _sound.registerSound("./resources/sounds/USAbomb.mp3", "USAbomb");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   // glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
@@ -56,9 +57,11 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   // this->scale(glm::vec3(1, 1, 1));
 }
 
+#include <unistd.h>
+
 HumanCharacter::~HumanCharacter()
 {
-  std::cout << "Im dead..." << std::endl;
+  std::cout << "Human is dead..." << std::endl;
 }
 
 bool HumanCharacter::getAlive() const
@@ -72,10 +75,10 @@ void HumanCharacter::dropBomb()
   if (_canLaunchBomb == true)
     {
       std::cout << "I droped a bomb hahah" << std::endl;
-      _canLaunchBomb = false;
       _world->dropBomb(_pos, (_id - '0'));
       _sound.playMusic("USAbomb");
       _world->setItemAtPosition(_pos, 'T');
+      _canLaunchBomb = false;
     }
 }
 
@@ -185,7 +188,7 @@ float	HumanCharacter::getAngle(e_orientation before, e_orientation after)
   return (0.0f);
 }
 
-void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
+bool	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
 {
   glm::vec3 trans(0, 1, 0);
   Position *pos;
@@ -234,7 +237,9 @@ void	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
 	  _pos = *pos;
       	  _timer = 0;
       	}
+      return true;
     }
+  return false;
 }
 
 bool	HumanCharacter::getCanLaunchBomb() const

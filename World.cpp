@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Tue Jun  9 14:59:15 2015 Antoine Garcia
+// Last update Thu Jun 11 17:01:45 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -133,16 +133,60 @@ void	World::createHumanPlayer(char id, Position &pos)
 
 void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
-  if (getHeight() >= 15);
-  else
-    this->drawBackground(clock, shader);
-  for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
+  gdl::BasicShader shadera;
+  if (_nbPlayers == 2)
     {
-      (*it)->draw(shader, clock);
+      glViewport (0, 0, 1920/2, 1080);
+      ACharacter *player = getPlayerById(1);
+      if (player == NULL);
+      else
+	{
+	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 50), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
+	  shadera = _game->getShader();
+	  shadera.bind();
+	  shadera.setUniform("view", _game->_camera->getTransformation());
+	  shadera.setUniform("projection", _game->_camera->getProjection());
+	  for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
+	    {
+	      (*it)->draw(shader, clock);
+	    }
+	  for (std::vector<ACharacter*>::iterator it = _players.begin(); it != _players.end(); ++it)
+	    {
+	      (*it)->draw(shader, clock);
+	    }
+	}
+      glViewport (1920/2, 0, 1920/2, 1080);
+      player = getPlayerById(2);
+      if (player == NULL);
+      else
+	{
+	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 50), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
+	  shadera.bind();
+	  shadera.setUniform("view", _game->_camera->getTransformation());
+	  shadera.setUniform("projection", _game->_camera->getProjection());
+	  for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
+	    {
+	      (*it)->draw(shader, clock);
+	    }
+	  for (std::vector<ACharacter*>::iterator it = _players.begin(); it != _players.end(); ++it)
+	    {
+	      (*it)->draw(shader, clock);
+	    }
+	}
     }
-  for (std::vector<ACharacter*>::iterator it = _players.begin(); it != _players.end(); ++it)
+  else
     {
-      (*it)->draw(shader, clock);
+      if (getHeight() >= 15);
+      else
+        this->drawBackground(clock, shader);
+      for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
+        {
+          (*it)->draw(shader, clock);
+        }
+      for (std::vector<ACharacter*>::iterator it = _players.begin(); it != _players.end(); ++it)
+        {
+          (*it)->draw(shader, clock);
+        }
     }
 }
 
@@ -159,17 +203,22 @@ ACharacter*	World::getPlayerById(int id)
 void	World::gameOver()
 {
   std::vector<HumanCharacter *> players;
-
+  _game->_camera->move(glm::vec3(0, 900, 0), glm::vec3(0, 0, -750));
+  _game->getShader().bind();
+  _game->getShader().setUniform("view", _game->_camera->getTransformation());
+  _game->getShader().setUniform("projection", _game->_camera->getProjection());
   players = getHumansPlayers();
   if (_players.size() == 0)
     std::cout << "GAME OVER" << std::endl;
   else if (players.size() == 1 && _players.size() == 1)
     {
+      glViewport (0, 0, 1920, 1080);
       sleep(1);
       _game->pushState(new GameOver(_game, players[0]->getId()));
     }
   else if (players.size() == 0 && _players.size() >= 1)
     {
+      glViewport (0, 0, 1920, 1080);
       sleep(1);
       _game->pushState(new GameOver(_game, 0));
     }
