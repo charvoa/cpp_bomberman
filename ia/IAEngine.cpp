@@ -327,7 +327,7 @@ bool			IAEngine::isPossibleToJoinTarget(HumanCharacter &target)
 	  std::cout << "o = " << o << std::endl;
 	  std::cout << "size = " << _routes.at(index).first.size() << std::endl;
 
-	  
+
 
 
 	  // PRINT
@@ -342,7 +342,7 @@ bool			IAEngine::isPossibleToJoinTarget(HumanCharacter &target)
 		}
 	      std::cout << std::endl;
 	      j++;
-	    } 
+	    }
 
 	  usleep(50000);
 
@@ -372,7 +372,7 @@ bool			IAEngine::isPossibleToJoinTarget(HumanCharacter &target)
 		}
 	      std::cout << std::endl;
 	      j++;
-	    } 	  
+	    }
 
 	  this->leaveThisPosition();
 	  std::cout << "ia X " << _ia->getPos()._x << "ia Y " << _ia->getPos()._y << std::endl;
@@ -392,7 +392,7 @@ bool			IAEngine::isPossibleToJoinTarget(HumanCharacter &target)
 		}
 	      std::cout << std::endl;
 	      j++;
-	    } 	  
+	    }
 	  //
 
 	  sleep(3);
@@ -453,7 +453,7 @@ bool			IAEngine::isPossibleToJoinTarget(HumanCharacter &target)
   // 	    //   std::cout << "IA can't move to ";
   // 	    // std::cout << "[" << _route.at(o).first << " : " << _route.at(o).second << "]" << " - node (" << o << ")" << std::endl;
 
-	    
+
   // 	    std::cout << _route.size() << std::endl;
   // 	    j = 0;
   // 	    while (j < _world->getHeight())

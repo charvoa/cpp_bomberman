@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Thu May 21 16:14:04 2015 Serge Heitzler
-// Last update Tue May 26 12:05:38 2015 Serge Heitzler
+// Last update Thu Jun  4 19:09:16 2015 Nicolas Charvoz
 //
 
 #include "LoadGame.hh"
@@ -51,18 +51,20 @@ std::string&	LoadGame::determineStartMap()
 }
 
 e_type	LoadGame::getPlayerType(std::string &line)
-
+{}
 
 void	LoadGame::getPlayerPosition(ACharacter *character, std::string &line)
+{
+}
 
 void	LoadGame::getPlayerHP(ACharacter *character, std::string &line)
-
+{}
 void	LoadGame::getPlayerBomb(ACharacter *character, std::string &line)
-
+{}
 void	LoadGame::getPlayerRange(ACharacter *character, std::string &line)
-
+{}
 void	LoadGame::getPlayerColor(ACharacter *character, std::string &line)
-
+{}
 
 
 std::list<ACharacter *>	LoadGame::getPlayers(std::ofstream &file)

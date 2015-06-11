@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module Command-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="179" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="56" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="0" level="0" />
+<lines_of_code_per_member_function value="********" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+<weighted_methods_per_class_unity value="19" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="5" level="0" />
+<IF4 value="0" level="0" />
+<IF4_per_member_function value="********" level="0" />
+<IF4_visible value="0" level="0" />
+<IF4_visible_per_member_function value="********" level="0" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>Command(Game *,World *,const string &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="15" />
+</extent>
+<lines_of_code value="31" level="1" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>back(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="107" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>down(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="149" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="0" />
+</member_function>
+<member_function>
+<name>down2(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="193" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="0" />
+</member_function>
+<member_function>
+<name>enter(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="204" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>exec(touche,Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="211" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>left(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="127" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="0" />
+</member_function>
+<member_function>
+<name>left2(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="171" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="0" />
+</member_function>
+<member_function>
+<name>lshift(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="66" />
+</extent>
+<lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>mute(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="85" />
+</extent>
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>no(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="49" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>pause(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="75" />
+</extent>
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>right(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="138" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="0" />
+</member_function>
+<member_function>
+<name>right2(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="182" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="0" />
+</member_function>
+<member_function>
+<name>space(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="54" />
+</extent>
+<lines_of_code value="11" level="0" />
+<McCabes_cyclomatic_complexity value="4" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>unmute(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="96" />
+</extent>
+<lines_of_code value="9" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>up(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="116" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="0" />
+</member_function>
+<member_function>
+<name>up2(Clock &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="160" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="0" />
+</member_function>
+<member_function>
+<name>~Command()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Command.cpp" line="47" />
+</extent>
+<lines_of_code value="1" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>Command</name>
+<client_module>
+</client_module>
+<supplier_module>
+<name>Clock</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="49" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="54" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="66" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="75" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="85" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="96" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="107" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="116" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="127" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="138" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="149" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="160" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="171" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="182" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="193" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="204" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="211" />
+</extent>
+<name>Game</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="15" />
+</extent>
+<name>World</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="15" />
+</extent>
+<name>string</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="15" />
+</extent>
+<name>touche</name>
+<visible>true</visible>
+<concrete>true</concrete>
+<extent>
+<description>pass by value</description>
+<source_reference file="Command.cpp" line="211" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

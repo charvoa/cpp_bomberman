@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Tue Jun  2 14:33:49 2015 Nicolas Charvoz
+// Last update Thu Jun  4 18:00:34 2015 Nicolas Charvoz
 //
 
 #ifndef RANDOMMENU_HH_
@@ -17,6 +17,10 @@
 #include "GameState.hh"
 #include "TextureManager.hh"
 #include "Letters.hh"
+#include "Command.hh"
+#include "InputManager.hh"
+
+class Command;
 
 class RandomMenu : public GameState {
 
@@ -29,13 +33,24 @@ public:
   void loadButtons();
   void drawBackground(gdl::Clock&, gdl::BasicShader&);
   void drawButtons(gdl::Clock&, gdl::BasicShader&);
-  void drawLetters(gdl::Clock&, gdl::BasicShader&, int, int);
+  void displayIA(int);
+  void displayX(int);
+  void displayY(int);
+  void getNameOfButton(gdl::Input &);
 
 private:
   static Sound& _sound;
   static TextureManager& _texManag;
+  InputManager *_inputManager;
+  Command *_command;
   AObject *_background;
-  std::map<std::string, AObject*> _letters;
+  std::vector<AObject*> _xMap;
+  std::vector<AObject*> _yMap;
+  std::vector<AObject*> _iaNb;
+  std::vector<std::vector<AObject*> > _objects;
+  int _x;
+  int _y;
+  int _ia;
 };
 
 #endif
