@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Wed Jun 10 15:19:59 2015 Nicolas Girardot
+// Last update Fri Jun 12 15:30:49 2015 Nicolas Girardot
 //
 
 #include "GameOver.hh"
@@ -56,7 +56,7 @@ void GameOver::loadBackground()
     }
   else if (_player == 1)
     {
-      _sound.playMusic("terr_win");
+      _sound.playMusic("army_win");
       background->initialize(_texManag.getTexture("Go1"));
     }
   else if (_player == 2)
