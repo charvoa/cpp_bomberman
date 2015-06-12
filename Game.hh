@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:04:52 2015 Antoine Garcia
-// Last update Thu Jun 11 15:18:43 2015 Audibert Louis
+// Last update Fri Jun 12 11:27:16 2015 Audibert Louis
 //
 
 #ifndef GAME_HH_
@@ -51,6 +51,7 @@ public:
   // ~Game();
   void	run();
   Camera		*_camera;
+  void		flushContext();
 };
 
 #endif

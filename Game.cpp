@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:05:48 2015 Antoine Garcia
-// Last update Thu Jun 11 15:22:34 2015 Audibert Louis
+// Last update Fri Jun 12 11:27:40 2015 Audibert Louis
 //
 
 #include "Game.hh"
@@ -98,4 +98,9 @@ GameState	*Game::peekState()
 gdl::BasicShader	Game::getShader()
 {
   return (_shader);
+}
+
+void	Game::flushContext()
+{
+  _context.flush();
 }
