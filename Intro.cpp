@@ -1,11 +1,11 @@
 //
 // Intro.cpp for bomberman in /home/audibe_l/rendu/cpp_bomberman
-// 
+//
 // Made by Audibert Louis
 // Login   <audibe_l@epitech.net>
-// 
+//
 // Started on  Wed Jun 10 14:53:07 2015 Audibert Louis
-// Last update Fri Jun 12 13:26:22 2015 Audibert Louis
+// Last update Fri Jun  5 01:50:08 2015 Nicolas Charvoz
 //
 
 #include "Intro.hh"
@@ -58,7 +58,6 @@ void Intro::drawBackground(gdl::Clock& clock, gdl::BasicShader& shader)
   _sound.playMusic("main", 1);
   for (std::vector<AObject*>::iterator it = _images.begin(); it != _images.end(); ++it)
     {
-      std::cout << "test" << std::endl;
       (*it)->draw(shader, clock);
       usleep(50000);
       _game->flushContext();
