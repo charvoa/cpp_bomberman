@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Fri Jun 12 14:51:45 2015 Antoine Garcia
+// Last update Fri Jun 12 16:38:26 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -136,12 +136,12 @@ void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
   gdl::BasicShader shadera;
   if (_nbPlayers == 2)
     {
-      glViewport (0, 0, 1920/2, 1080);
+      glViewport (1920/2, 0, 1920/2, 1080);
       ACharacter *player = getPlayerById(1);
       if (player == NULL);
       else
 	{
-	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 50), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
+	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 100 - 1000), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
 	  shadera = _game->getShader();
 	  shadera.bind();
 	  shadera.setUniform("view", _game->_camera->getTransformation());
@@ -155,12 +155,12 @@ void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 	      (*it)->draw(shader, clock);
 	    }
 	}
-      glViewport (1920/2, 0, 1920/2, 1080);
+      glViewport (0, 0, 1920/2, 1080);
       player = getPlayerById(2);
       if (player == NULL);
       else
 	{
-	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 50), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
+	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 100 - 1000), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
 	  shadera.bind();
 	  shadera.setUniform("view", _game->_camera->getTransformation());
 	  shadera.setUniform("projection", _game->_camera->getProjection());
