@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Mon Jun  8 15:42:50 2015 Nicolas Girardot
+// Last update Fri Jun 12 14:47:19 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -52,6 +52,7 @@ private:
   void			createHumanPlayer(char id, Position & pos);
   void			createIaPlayer();
   void			gameOver();
+  void			checkBonus(Bonus &bonus);
 public:
   World(Game *game, Map &map, int nb_players, int nb_ia);
   ~World(){};
