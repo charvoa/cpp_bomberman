@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Fri Jun 12 14:47:19 2015 Antoine Garcia
+// Last update Fri Jun 12 15:53:29 2015 Nicolas Girardot
 //
 
 #ifndef WORLD_HH__
@@ -30,6 +30,7 @@
 #include "Bomb.hh"
 #include "Bonus.hh"
 
+class	Bonus;
 class	Flame;
 class	Command;
 class	World : public GameState
