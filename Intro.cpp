@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 // 
 // Started on  Wed Jun 10 14:53:07 2015 Audibert Louis
-// Last update Fri Jun 12 11:44:31 2015 Audibert Louis
+// Last update Fri Jun 12 13:26:22 2015 Audibert Louis
 //
 
 #include "Intro.hh"
@@ -24,7 +24,7 @@ Intro::Intro(Game *game)
 {
   std::cout << "Je suis dans Intro" << std::endl;
   _game = game;
-  _sound.registerSound("./resources/sounds/menu.wav", "main");
+  _sound.registerSound("./resources/sounds/batman.mp3", "main");
   _sound.registerSound("./resources/sounds/beretta.mp3", "shot");
 
   this->loadImages();
@@ -37,13 +37,13 @@ void Intro::loadImages()
 {
   AObject *image;
   std::stringstream ss;
-  int	i = 0;
+  int	i = 1;
 
   while (i < 64)
     {
       ss.str("");
       ss.clear();
-      ss << "o_bc976e56da648c08-" << i;
+      ss << "batman" << i;
       std::cout << "file " << ss.str() << std::endl;
       _texManag.registerTexture(ss.str(), ss.str());
       image = new MenuBackground();
@@ -55,6 +55,7 @@ void Intro::loadImages()
 
 void Intro::drawBackground(gdl::Clock& clock, gdl::BasicShader& shader)
 {
+  _sound.playMusic("main", 1);
   for (std::vector<AObject*>::iterator it = _images.begin(); it != _images.end(); ++it)
     {
       std::cout << "test" << std::endl;
@@ -63,6 +64,7 @@ void Intro::drawBackground(gdl::Clock& clock, gdl::BasicShader& shader)
       _game->flushContext();
       glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
+  _sound.Pause("main");
 }
 
 void Intro::draw(gdl::Clock& clock, gdl::BasicShader& shader)
