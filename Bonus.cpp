@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Fri Jun  5 15:44:47 2015 Nicolas Girardot
-// Last update Mon Jun  8 17:22:49 2015 Nicolas Girardot
+// Last update Fri Jun 12 13:27:54 2015 Nicolas Girardot
 //
 
 #include "Bonus.hh"
@@ -45,4 +45,10 @@ void	Bonus::update(gdl::Clock const &clock, gdl::Input &input)
 void	Bonus::draw(gdl::AShader &shader, gdl::Clock const &clock)
 {
   _bonus->draw(shader, clock);
+}
+
+Position &Bonus::getPos()
+{
+  //il est beau ce GetPOS()
+  return (_pos);
 }
