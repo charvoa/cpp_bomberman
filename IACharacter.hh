@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Sat Jun 13 11:30:07 2015 Audibert Louis
+// Last update Sat Jun 13 11:34:20 2015 Audibert Louis
 //
 
 #ifndef IACHARACTER_HH_
@@ -55,7 +55,7 @@ public:
   bool move(e_orientation ori);
   float	getAngle(e_orientation before, e_orientation after);
 
-  bool setBonus(int bonus);
+  void setBonus(int bonus);
 
 private:
 

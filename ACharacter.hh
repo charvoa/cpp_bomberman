@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Sat Jun 13 11:29:38 2015 Audibert Louis
+// Last update Sat Jun 13 11:34:07 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
@@ -68,7 +68,7 @@ public:
 
   virtual bool move(e_orientation ori, gdl::Clock &clock) = 0;
 
-  virtual bool setBonus(int bonus) = 0;
+  virtual void setBonus(int bonus) = 0;
 
 protected:
 
