@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Sat Jun 13 11:35:00 2015 Audibert Louis
+// Last update Sat Jun 13 12:37:38 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -129,26 +129,6 @@ void	IACharacter::setOrientation(int orientation)
   _orientation = (e_orientation)orientation;
 }
 
-void	IACharacter::initColor()
-{
-  srand(time(NULL));
-  _color.insert(std::pair<char,int>('r', rand() % 256));
-  _color.insert(std::pair<char,int>('g', rand() % 256));
-  _color.insert(std::pair<char,int>('b', rand() % 256));
-}
-
-std::map<char, int> &IACharacter::getColor() const
-{
-  return (std::map<char, int> &) _color;
-}
-
-void	IACharacter::setColor(int r, int g, int b)
-{
-  _color.insert(std::pair<char,int>('r', r));
-  _color.insert(std::pair<char,int>('g', g));
-  _color.insert(std::pair<char,int>('b', b));
-}
-
 int	IACharacter::getType() const
 {
   return _type;
@@ -256,4 +236,5 @@ void	IACharacter::setCanLaunchBomb(bool launch)
 void	IACharacter::setBonus(int bonus)
 {
   (void) bonus;
+  std::cout << "setBonus IACharacter" << std::endl;
 }

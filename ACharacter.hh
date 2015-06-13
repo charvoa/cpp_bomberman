@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Sat Jun 13 11:34:07 2015 Audibert Louis
+// Last update Sat Jun 13 11:37:34 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
@@ -58,10 +58,6 @@ public:
   virtual void setRange(int range) = 0;
   virtual void setOrientation(int orientation) = 0;
   virtual void setCanLaunchBomb(bool launch) = 0;
-
-  virtual void initColor() = 0;
-  virtual std::map<char, int> &getColor() const = 0;
-  virtual void setColor(int r, int g, int b) = 0;
 
   virtual int getType() const = 0;
   virtual ACharacter &getCharacter() = 0;

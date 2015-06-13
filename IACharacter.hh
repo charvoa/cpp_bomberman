@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Sat Jun 13 11:34:20 2015 Audibert Louis
+// Last update Sat Jun 13 11:38:00 2015 Audibert Louis
 //
 
 #ifndef IACHARACTER_HH_
@@ -43,10 +43,6 @@ public:
   void setRange(int range);
   void setOrientation(int orientation);
   void setCanLaunchBomb(bool launch);
-
-  void initColor();
-  std::map<char, int> &getColor() const;
-  void setColor(int r, int g, int b);
 
   int	getType() const;
   ACharacter &getCharacter();

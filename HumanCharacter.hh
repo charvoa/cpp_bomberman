@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Sat Jun 13 11:34:26 2015 Audibert Louis
+// Last update Sat Jun 13 11:37:27 2015 Audibert Louis
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -41,10 +41,6 @@ public:
   void setRange(int range);
   void setOrientation(int orientation);
   void setCanLaunchBomb(bool launch);
-
-  void initColor();
-  std::map<char, int> &getColor() const;
-  void setColor(int r, int g, int b);
 
   int	getType() const;
   ACharacter &getCharacter();
