@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu Jun  4 19:22:35 2015 Nicolas Charvoz
+// Last update Sat Jun 13 13:55:04 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -20,7 +20,6 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
 {
   int save = (id - '0') % 2;
   _world = world;
-  initColor();
   std::cout << "id = " << id << std::endl;
   this->_id = id;
   this->_alive = true;
@@ -42,6 +41,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   _canLaunchBomb = true;
   _isAnime = false;
   _range = 1;
+  _score = 0;
   _sound.registerSound("./resources/sounds/USAbomb.mp3", "USAbomb");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   // glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
@@ -139,26 +139,6 @@ void	HumanCharacter::setOrientation(int orientation)
   _orientation = (e_orientation)orientation;
 }
 
-void	HumanCharacter::initColor()
-{
-  srand(time(NULL));
-  _color.insert(std::pair<char,int>('r', rand() % 256));
-  _color.insert(std::pair<char,int>('g', rand() % 256));
-  _color.insert(std::pair<char,int>('b', rand() % 256));
-}
-
-std::map<char, int> &HumanCharacter::getColor() const
-{
-  return (std::map<char, int> &) _color;
-}
-
-void	HumanCharacter::setColor(int r, int g, int b)
-{
-  _color.insert(std::pair<char,int>('r', r));
-  _color.insert(std::pair<char,int>('g', g));
-  _color.insert(std::pair<char,int>('b', b));
-}
-
 int	HumanCharacter::getType() const
 {
   return _type;
@@ -253,3 +233,21 @@ void	HumanCharacter::setCanLaunchBomb(bool launch)
   std::cout << "_canLaunchBomb at " << launch << std::endl;
   _canLaunchBomb = launch;
 }
+
+void	HumanCharacter::setBonus(int bonus)
+{
+  (void) bonus;
+  std::cout << "setBonus HumanCharacter" << std::endl;
+}
+
+int	HumanCharacter::getScore() const
+{
+  return _score;
+}
+
+void	HumanCharacter::setScore(int score)
+{
+  _score = score;
+  std::cout << "setScore HumanCharacter " << _score << std::endl;
+}
+

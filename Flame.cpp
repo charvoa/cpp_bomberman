@@ -5,16 +5,17 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Mon Jun  1 11:09:17 2015 Nicolas Girardot
-// Last update Tue Jun  2 13:36:11 2015 Antoine Garcia
+// Last update Sat Jun 13 13:42:20 2015 Audibert Louis
 //
 
 #include "Flame.hh"
 
-Flame::Flame(Position* pos, World *world)
+Flame::Flame(Position* pos, World *world, int id)
 {
   _world = world;
   _pos = pos;
   _isPosed = false;
+  _idPlayer = id;
 }
 
 Flame::~Flame() {}
@@ -66,4 +67,9 @@ bool	Flame::getStatus()
 void	Flame::onDestroy()
 {
   _isDestroyed = true;
+}
+
+int	Flame::getIdPlayer() const
+{
+  return _idPlayer;
 }

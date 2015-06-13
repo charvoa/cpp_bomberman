@@ -1,10 +1,10 @@
 BAREME
 
-Menus (0 / 1) :
+Menus (1 / 1) :
 
 Enregistrement/chargement (0 / 1) :
 
-Victoire et defaite (0 / 0.5) :
+Victoire et defaite (0.5 / 0.5) :
 
 Scores (0.5 / 0.5) :
 
@@ -26,21 +26,21 @@ Vitesse (1 / 1) :
 
 Joueurs (1.5 / 1.5) :
 
-Camera (0 / NaN) : (1 pt si unzoom)
+Camera (1 / NaN) :
 
-Items (0 / 1) :
+Items (1 / 1) :
 
 IA (0 / 1) :
 
-Spawn points (0 / 1) :
+Spawn points (1 / 1) :
 
 Scores (0 / 1) :
 
 Fonctions C (0 / 0.5) : [PAS DE FONCTIONS C]
 
-Separation (0 / 1) : [SEPARER LES GRAPHISMES ET LE CORE]
+Separation (1 / 1) : [SEPARER LES GRAPHISMES ET LE CORE]
 
-Metiers (0 / 1) :
+Metiers (1 / 1) :
 
 Manager des entites (0 / 2) : [MANAGER D'ENTITES]
 
@@ -69,11 +69,11 @@ Jouabilite (0 / 0) :
 --- BONUS ---
 Monstres (0 / 1) :
 
-Musique et sons (0 / 1) :
+Musique et sons (1 / 1) :
 
 Scripts (0 / 1.5) :
 
-Threads (0 / 2) :
+Threads (2 / 2) :
 
 Reseau (0 / 3) :
 
