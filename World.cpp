@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sat Jun 13 10:50:35 2015 Antoine Garcia
+// Last update Sat Jun 13 11:34:36 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -235,7 +235,7 @@ void	World::checkBonus(Bonus &bonus)
   for (it = _players.begin() ; it != _players.end() ; ++it)
     {
       if (bonus.getPos() == (*it)->getPos())
-	bonus.onCollect();
+	(*it)->setBonus(bonus.onCollect());
     }
 }
 
