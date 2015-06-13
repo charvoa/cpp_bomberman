@@ -39,6 +39,8 @@ SRC		+=	Button.cpp			\
 			RandomMenu.cpp			\
 			Bonus.cpp			\
 			GameOver.cpp			\
+			LoadGame.cpp			\
+			SaveGame.cpp			\
 			Intro.cpp
 
 SRC_MAIN	=	$(SRC) main.cpp
