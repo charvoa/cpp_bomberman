@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sat Jun 13 10:31:02 2015 Antoine Garcia
+// Last update Sat Jun 13 10:50:35 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -209,7 +209,11 @@ void	World::gameOver()
   _game->getShader().setUniform("projection", _game->_camera->getProjection());
   players = getHumansPlayers();
   if (_players.size() == 0)
-    std::cout << "GAME OVER" << std::endl;
+    {
+      glViewport (0, 0, 1920, 1080);
+      sleep(1);
+      _game->pushState(new GameOver(_game, 42));
+    }
   else if (players.size() == 1 && _players.size() == 1)
     {
       glViewport (0, 0, 1920, 1080);
