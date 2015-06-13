@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Sat Jun 13 12:37:38 2015 Audibert Louis
+// Last update Sat Jun 13 13:51:16 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -32,6 +32,7 @@ IACharacter::IACharacter(int id, World *world, Position& pos)
   _isAnime = false;
   _pos = pos;
   _range = 1;
+  _score = 0;
   _world->setItemAtPosition(_pos, 'I');
   _sound.registerSound("./resources/sounds/allahu_akbar.wav", "allahu");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, 0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
@@ -237,4 +238,15 @@ void	IACharacter::setBonus(int bonus)
 {
   (void) bonus;
   std::cout << "setBonus IACharacter" << std::endl;
+}
+
+int	IACharacter::getScore() const
+{
+  return _score;
+}
+
+void	IACharacter::setScore(int score)
+{
+  _score = score;
+  std::cout << "setScore IACharacter " << _score << std::endl;
 }

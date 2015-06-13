@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Sat Jun 13 11:38:00 2015 Audibert Louis
+// Last update Sat Jun 13 13:49:10 2015 Audibert Louis
 //
 
 #ifndef IACHARACTER_HH_
@@ -52,6 +52,8 @@ public:
   float	getAngle(e_orientation before, e_orientation after);
 
   void setBonus(int bonus);
+  int getScore() const;
+  void setScore(int score);
 
 private:
 

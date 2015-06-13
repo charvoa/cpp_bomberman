@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Mon Jun  1 10:58:30 2015 Nicolas Girardot
-// Last update Tue Jun  2 11:22:13 2015 Nicolas Girardot
+// Last update Sat Jun 13 13:41:55 2015 Audibert Louis
 //
 
 #ifndef FLAME_HH_
@@ -24,8 +24,10 @@ private:
   bool		_isPosed;
   double	_timer;
   bool		_isDestroyed = false;
+  int		_idPlayer;
+
 public:
-  Flame(Position *, World *);
+  Flame(Position *, World *, int);
   virtual	~Flame();
   bool	initialize(const std::string &);
   void	update(gdl::Clock const &, gdl::Input &);
@@ -34,6 +36,7 @@ public:
   bool	getStatus();
   void	onDrop();
   void	onDestroy();
+  int	getIdPlayer() const;
 };
 
 #endif

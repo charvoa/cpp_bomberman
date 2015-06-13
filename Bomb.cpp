@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Tue Jun  9 13:18:34 2015 Audibert Louis
+// Last update Sat Jun 13 13:40:38 2015 Audibert Louis
 //
 
 #include "Bomb.hh"
@@ -44,7 +44,7 @@ bool	Bomb::initialize(const std::string &tex)
     {
       if (_world->getItemAtPosition(_pos._x + i, _pos._y) == 'W')
 	break;
-      fire = new Flame(new Position(_pos._x + i, _pos._y), _world);
+      fire = new Flame(new Position(_pos._x + i, _pos._y), _world, _id);
       fire->initialize("hello");
       _flames.push_back(fire);
     }
@@ -52,7 +52,7 @@ bool	Bomb::initialize(const std::string &tex)
     {
       if (_world->getItemAtPosition(_pos._x, _pos._y - i) == 'W')
 	break;
-      fire = new Flame(new Position(_pos._x, _pos._y - i), _world);
+      fire = new Flame(new Position(_pos._x, _pos._y - i), _world, _id);
       fire->initialize("hello");
       _flames.push_back(fire);
     }
@@ -60,7 +60,7 @@ bool	Bomb::initialize(const std::string &tex)
     {
       if (_world->getItemAtPosition(_pos._x, _pos._y + i) == 'W')
 	break;
-      fire = new Flame(new Position(_pos._x, _pos._y + i), _world);
+      fire = new Flame(new Position(_pos._x, _pos._y + i), _world, _id);
       fire->initialize("hello");
       _flames.push_back(fire);
     }
@@ -68,11 +68,11 @@ bool	Bomb::initialize(const std::string &tex)
     {
       if (_world->getItemAtPosition(_pos._x - i, _pos._y) == 'W')
 	break;
-      fire = new Flame(new Position(_pos._x - i, _pos._y), _world);
+      fire = new Flame(new Position(_pos._x - i, _pos._y), _world, _id);
       fire->initialize("hello");
       _flames.push_back(fire);
     }
-  fire = new Flame(new Position(_pos._x, _pos._y), _world);
+  fire = new Flame(new Position(_pos._x, _pos._y), _world, _id);
   fire->initialize("hello");
   _flames.push_back(fire);
   return (true);

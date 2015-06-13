@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:10:12 2015 Nicolas Charvoz
-// Last update Sat Jun 13 11:37:34 2015 Audibert Louis
+// Last update Sat Jun 13 13:53:17 2015 Audibert Louis
 //
 
 #ifndef ACHARACTER_HH_
@@ -65,6 +65,8 @@ public:
   virtual bool move(e_orientation ori, gdl::Clock &clock) = 0;
 
   virtual void setBonus(int bonus) = 0;
+  virtual int getScore() const = 0;
+  virtual void setScore(int score) = 0;
 
 protected:
 
@@ -77,13 +79,13 @@ protected:
   Position		_pos;
   int			_range;
   e_orientation		_orientation;
-  std::map<char, int>	_color;
   e_type		_type;
   World			*_world;
   float			_timer;
   bool			_canLaunchBomb;
   static Sound		&_sound;
   bool			_isAnime;
+  int			_score;
 };
 
 #endif

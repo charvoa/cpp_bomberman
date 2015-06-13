@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Sat Jun 13 11:37:27 2015 Audibert Louis
+// Last update Sat Jun 13 13:47:11 2015 Audibert Louis
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -49,6 +49,9 @@ public:
   bool move(e_orientation ori, gdl::Clock &);
 
   void setBonus(int bonus);
+
+  int getScore() const;
+  void setScore(int score);
 
 private:
 

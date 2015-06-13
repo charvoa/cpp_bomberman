@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Sat Jun 13 12:38:01 2015 Audibert Louis
+// Last update Sat Jun 13 13:55:04 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -41,6 +41,7 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   _canLaunchBomb = true;
   _isAnime = false;
   _range = 1;
+  _score = 0;
   _sound.registerSound("./resources/sounds/USAbomb.mp3", "USAbomb");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   // glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
@@ -238,3 +239,15 @@ void	HumanCharacter::setBonus(int bonus)
   (void) bonus;
   std::cout << "setBonus HumanCharacter" << std::endl;
 }
+
+int	HumanCharacter::getScore() const
+{
+  return _score;
+}
+
+void	HumanCharacter::setScore(int score)
+{
+  _score = score;
+  std::cout << "setScore HumanCharacter " << _score << std::endl;
+}
+
