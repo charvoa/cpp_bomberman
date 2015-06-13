@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Fri Jun 12 16:38:26 2015 Nicolas Girardot
+// Last update Sat Jun 13 10:31:02 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -231,7 +231,7 @@ void	World::checkBonus(Bonus &bonus)
   for (it = _players.begin() ; it != _players.end() ; ++it)
     {
       if (bonus.getPos() == (*it)->getPos())
-	std::cout << "I HAVE THE BONUS" << std::endl;
+	bonus.onCollect();
     }
 }
 
@@ -241,9 +241,9 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
   Bonus	*bonus;
   for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
     {
+      (*it)->update(clock, input);
       if ((bonus = dynamic_cast<Bonus *>(*it)))
 	this->checkBonus(*bonus);
-      (*it)->update(clock, input);
       if ((*it)->getStatus() == false)
 	{
 	  delete (*it);
