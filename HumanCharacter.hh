@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Sat Jun 13 11:29:58 2015 Audibert Louis
+// Last update Sat Jun 13 11:34:26 2015 Audibert Louis
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -52,7 +52,7 @@ public:
   float getAngle(e_orientation before, e_orientation after);
   bool move(e_orientation ori, gdl::Clock &);
 
-  bool setBonus(int bonus);
+  void setBonus(int bonus);
 
 private:
 
