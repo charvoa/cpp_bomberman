@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Fri Jun 12 15:53:29 2015 Nicolas Girardot
+// Last update Sat Jun 13 15:32:57 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -29,7 +29,7 @@
 #include "Box.hh"
 #include "Bomb.hh"
 #include "Bonus.hh"
-
+#include "Scoring.hh"
 class	Bonus;
 class	Flame;
 class	Command;

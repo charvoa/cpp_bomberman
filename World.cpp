@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sat Jun 13 14:31:10 2015 Nicolas Girardot
+// Last update Sat Jun 13 15:35:59 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -204,6 +204,9 @@ void	World::gameOver()
     }
   else if (players.size() == 1 && _players.size() == 1)
     {
+      Scoring	score;
+
+      score.storeScore("Player " + std::to_string(players[0]->getId()), players[0]->getScore());
       glViewport (0, 0, 1920, 1080);
       sleep(1);
       _game->pushState(new GameOver(_game, players[0]->getId()));
