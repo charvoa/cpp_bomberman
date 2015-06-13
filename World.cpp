@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Fri Jun 12 16:38:26 2015 Nicolas Girardot
+// Last update Fri Jun 12 17:16:23 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -56,43 +56,31 @@ void	World::findWall()
 	{
 	  if (_fileMap->getItemAtPosition(x, y) == 'W')
 	    {
-	      if (x == 14 && y == 10);
-	      else
-		{
-		  wall = new Cube();
-		  wall->initialize("./images/wall.tga");
-		  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, 0,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
-		  wall->translate(trans);
-		  wall->scale(glm::vec3(100, 100, 100));
-		  _objects.push_back(wall);
-		}
+	      wall = new Cube();
+	      wall->initialize("./images/wall.tga");
+	      glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, 0,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
+	      wall->translate(trans);
+	      wall->scale(glm::vec3(100, 100, 100));
+	      _objects.push_back(wall);
 	    }
 	  if (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2')
 	    {
 	      Position pos(x, y);
-	      if (x == 14 && y == 10);
+	      if (_fileMap->getItemAtPosition(x,y) == '1')
+		this->createHumanPlayer('1', pos);
 	      else
 		{
-		  if (_fileMap->getItemAtPosition(x,y) == '1')
-		    this->createHumanPlayer('1', pos);
+		  if (_nbPlayers == 2)
+		    this->createHumanPlayer('2', pos);
 		  else
-		    {
-		      if (_nbPlayers == 2)
-			this->createHumanPlayer('2', pos);
-		      else
-			_map.at(y).at(x) = 'F';
-		    }
+		    _map.at(y).at(x) = 'F';
 		}
 	    }
 	  if (_fileMap->getItemAtPosition(x, y) == 'B')
 	    {
-	      if (x == 14 && y == 10);
-	      else
-		{
-		  wall = new Box(new Position(x, y), this);
-		  wall->initialize("hello");
+	      wall = new Box(new Position(x, y), this);
+	      wall->initialize("hello");
 		  _objects.push_back(wall);
-		}
 	    }
 	  wall = new Cube();
 	  wall->initialize("./images/floor1.tga");
