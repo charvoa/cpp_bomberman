@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Wed Jun 10 15:10:37 2015 Audibert Louis
+// Last update Sat Jun 13 11:34:20 2015 Audibert Louis
 //
 
 #ifndef IACHARACTER_HH_
@@ -54,6 +54,8 @@ public:
   bool move(e_orientation ori, gdl::Clock &clock);
   bool move(e_orientation ori);
   float	getAngle(e_orientation before, e_orientation after);
+
+  void setBonus(int bonus);
 
 private:
 

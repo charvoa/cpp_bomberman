@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu Jun  4 07:56:06 2015 Nicolas Charvoz
+// Last update Fri Jun  5 01:49:17 2015 Nicolas Charvoz
 //
 
 #include "Leaderboard.hh"
@@ -35,9 +35,9 @@ Leaderboard::Leaderboard(Game *game)
   Scoring scoring;
   _scores = scoring.highScore();
   this->getScore();
+  this->loadLetters();
   this->loadBackground();
   this->loadButtons();
-  this->loadLetters();
 }
 
 void Leaderboard::loadBackground()
@@ -135,15 +135,18 @@ void Leaderboard::loadButtons()
 void Leaderboard::getScore()
 {
   std::stringstream ss;
+  typedef std::multimap<std::string, std::string> multimap_type;
+  typedef std::reverse_iterator<multimap_type::iterator> reverse_iterator;
 
-  std::multimap<std::string, std::string>::iterator it = _scores.begin();
-  while (it != _scores.end())
+  for (auto it = _scores.rbegin(),
+	 end = _scores.rend();
+       it != end;
+       it = reverse_iterator(_scores.lower_bound(it->first)))
     {
       ss.str("");
       ss.clear();
       ss << (*it).second << ' ' << (*it).first;
       _bestScore.push_back(ss.str());
-      ++it;
     }
 }
 
@@ -160,8 +163,10 @@ void Leaderboard::buildWord(const std::string &str, int x, int y)
       ss.clear();
       ss << "fonts/";
       ss << str[i];
+      std::cout << "builWord() >> I = " << i << std::endl;
       letter = new Letters();
       letter->initialize(_texManag.getTexture(ss.str()));
+      letter->translate(glm::vec3(0, 0, 0));
       letter->translate(glm::vec3(-0.06 * (i + 1) + x * 0.01,
 				  0 + y * 0.01, 0));
       _word.push_back(letter);
@@ -203,7 +208,7 @@ void Leaderboard::drawScore(gdl::Clock& clock, gdl::BasicShader& shader)
 
 void Leaderboard::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
-  this->drawLetters(clock, shader);
+  //this->drawLetters(clock, shader);
   this->drawButtons(clock, shader);
   this->drawBackground(clock, shader);
   this->drawScore(clock, shader);

@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Fri May 22 14:48:05 2015 Nicolas Charvoz
-// Last update Wed May 27 13:33:53 2015 Nicolas Charvoz
+// Last update Thu Jun 11 15:57:02 2015 Audibert Louis
 //
 
 #ifndef MENUBACKGROUND_HH_

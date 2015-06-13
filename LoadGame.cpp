@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Thu May 21 16:14:04 2015 Serge Heitzler
-// Last update Tue May 26 12:05:38 2015 Serge Heitzler
+// Last update Thu Jun  4 19:09:16 2015 Nicolas Charvoz
 //
 
 #include "LoadGame.hh"

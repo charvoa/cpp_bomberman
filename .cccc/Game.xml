@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Detailed report on module Game-->
+<CCCC_Project>
+<module_summary>
+<lines_of_code value="72" level="0" />
+<lines_of_code_per_member_function value="******" level="0" />
+<McCabes_cyclomatic_complexity value="15" level="0" />
+<McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
+<lines_of_code value="3" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="24.000" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="5.000" level="0" />
+<weighted_methods_per_class_unity value="11" level="0" />
+<weighted_methods_per_class_visibility value="0" level="0" />
+<depth_of_inheritance_tree value="0" level="0" />
+<number_of_children value="0" level="0" />
+<coupling_between_objects value="12" level="0" />
+<IF4 value="121" level="1" />
+<IF4_per_member_function value="********" level="2" />
+<IF4_visible value="121" level="2" />
+<IF4_visible_per_member_function value="********" level="2" />
+<IF4_concrete value="0" level="0" />
+<IF4_concrete_per_member_function value="********" level="0" />
+</module_summary>
+<module_detail>
+</module_detail>
+<procedural_detail>
+<member_function>
+<name>Game()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Game.cpp" line="15" />
+</extent>
+<lines_of_code value="3" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>changeState(GameState *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Game.cpp" line="85" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>draw()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Game.cpp" line="59" />
+</extent>
+<lines_of_code value="7" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getShader()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Game.cpp" line="99" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>initialize()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Game.cpp" line="24" />
+</extent>
+<lines_of_code value="17" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="2" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>peekState()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Game.cpp" line="92" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="3" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>popState()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Game.cpp" line="79" />
+</extent>
+<lines_of_code value="5" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>pushState(GameState *)</name>
+<extent>
+<description>definition</description>
+<source_reference file="Game.cpp" line="74" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>run()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Game.cpp" line="67" />
+</extent>
+<lines_of_code value="6" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>update()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Game.cpp" line="47" />
+</extent>
+<lines_of_code value="10" level="0" />
+<McCabes_cyclomatic_complexity value="6" level="0" />
+<lines_of_comment value="1" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="6.000" level="1" />
+</member_function>
+<member_function>
+<name>~Game()</name>
+<extent>
+<description>definition</description>
+<source_reference file="Game.cpp" line="19" />
+</extent>
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+</procedural_detail>
+<structural_detail>
+<module>
+<name>Game</name>
+<client_module>
+<name>Command</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Command.cpp" line="15" />
+</extent>
+<name>Exit</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Exit.cpp" line="21" />
+</extent>
+<name>GameOver</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="GameOver.cpp" line="22" />
+</extent>
+<name>Leaderboard</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Leaderboard.cpp" line="21" />
+</extent>
+<name>Load</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Load.cpp" line="16" />
+</extent>
+<name>Menu</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Menu.cpp" line="16" />
+</extent>
+<name>Options</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Options.cpp" line="18" />
+</extent>
+<name>Pause</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Pause.cpp" line="21" />
+</extent>
+<name>RandomMenu</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="RandomMenu.cpp" line="18" />
+</extent>
+<name>SelectChar</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="SelectChar.cpp" line="21" />
+</extent>
+<name>World</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="World.cpp" line="19" />
+</extent>
+</client_module>
+<supplier_module>
+<name>GameState</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Game.cpp" line="74" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Game.cpp" line="85" />
+</extent>
+</supplier_module>
+</module>
+</structural_detail>
+</CCCC_Project>

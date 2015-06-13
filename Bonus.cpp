@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Fri Jun  5 15:44:47 2015 Nicolas Girardot
-// Last update Mon Jun  8 17:22:49 2015 Nicolas Girardot
+// Last update Fri Jun 12 16:27:11 2015 Nicolas Girardot
 //
 
 #include "Bonus.hh"
@@ -14,6 +14,7 @@ Bonus::Bonus(Position& pos, World *world)
 {
   _world = world;
   _pos = pos;
+  _isDestroyed = false;
 }
 
 Bonus::~Bonus()
@@ -45,4 +46,21 @@ void	Bonus::update(gdl::Clock const &clock, gdl::Input &input)
 void	Bonus::draw(gdl::AShader &shader, gdl::Clock const &clock)
 {
   _bonus->draw(shader, clock);
+}
+
+Position &Bonus::getPos()
+{
+  //il est beau ce GetPOS()
+  return (_pos);
+}
+
+bool	Bonus::getStatus()
+{
+  return (!_isDestroyed);
+}
+
+int	Bonus::onCollect()
+{
+  _isDestroyed = true;
+  return (rand() % 3);
 }

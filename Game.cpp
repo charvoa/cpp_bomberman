@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Mon Apr 27 05:05:48 2015 Antoine Garcia
-// Last update Wed Jun 10 15:10:50 2015 Audibert Louis
+// Last update Fri Jun 12 11:27:40 2015 Audibert Louis
 //
 
 #include "Game.hh"
@@ -39,8 +39,7 @@ bool	Game::initialize()
   _shader.setUniform("projection", _camera->getProjection());
 
   _sound.initialize();
-  // pushState(new Intro(this));
-  pushState(new Menu(this));
+  pushState(new Intro(this));
   return true;
 }
 
@@ -99,4 +98,9 @@ GameState	*Game::peekState()
 gdl::BasicShader	Game::getShader()
 {
   return (_shader);
+}
+
+void	Game::flushContext()
+{
+  _context.flush();
 }
