@@ -19,11 +19,11 @@
 class		SaveGame
 {
 public:
-  SaveGame(std::vector<std::vector<char> > map, const std::string & mapName);
+  SaveGame(World &world, const std::string & mapName);
   ~SaveGame();
 
   void		writeMapName(std::ifstream & file, const std::string & mapName);
-  void		writeMap(std::ifstream & file, std::vector<std::vector<char> > map);
+  void		writeMap(std::ifstream & file);
   std::string	writeType(e_type *type, int id);
   void		writeInfo(std::ifstream & file, std::list<ACharacter*> characters);
 

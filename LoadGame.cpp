@@ -10,9 +10,10 @@
 
 #include "LoadGame.hh"
 
-LoadGame::LoadGame(std::string &filename)
+LoadGame::LoadGame(Game *game, std::string &filename)
 {
-  ofstream	file;
+  std::ifstream	file;
+
   file.open(filename);
   this->setInitialMap(file);
   this->setPlayersInfo(file);
@@ -20,22 +21,26 @@ LoadGame::LoadGame(std::string &filename)
   file.close();
 }
 
-void		LoadGame::setInitialMap(std::ofstream &file)
+void		LoadGame::setInitialMap(std::ifstream &file)
 {
   std::string	filename;
   std::string	tmp;
 
   getline(file, tmp);
   filename = tmp.substr((tmp.find("MAP NAME ")));
-  this->_initialMap("./maps/" + filename + ".map");
+  tmp.clear();
+  tmp = "./maps/";
+  filename += (".map");
+  tmp += filename;
+  _initialMap = new Map(tmp);
 }
 
-void		LoadGame::setPlayersInfo(std::ofstream &file)
+void		LoadGame::setPlayersInfo(std::ifstream &file)
 {
-
+  (void)file;
 }
 
-std::string&	LoadGame::determineStartMap()
+void		LoadGame::determineStartMap()
 {
   int		i;
   std::string	tmp;
@@ -43,61 +48,66 @@ std::string&	LoadGame::determineStartMap()
   i = 0;
   while (i < this->_initialMap->getWidth())
     {
-      tmp << "W";
+      tmp.push_back('W');
       i++;
     }
-  tmp << std::endl;
-  return (tmp);
+  tmp.push_back('\n');
+  _startMap = tmp;
 }
 
-e_type	LoadGame::getPlayerType(std::string &line)
-
-
-void	LoadGame::getPlayerPosition(ACharacter *character, std::string &line)
-
-void	LoadGame::getPlayerHP(ACharacter *character, std::string &line)
-
-void	LoadGame::getPlayerBomb(ACharacter *character, std::string &line)
-
-void	LoadGame::getPlayerRange(ACharacter *character, std::string &line)
-
-void	LoadGame::getPlayerColor(ACharacter *character, std::string &line)
-
-
-
-std::list<ACharacter *>	LoadGame::getPlayers(std::ofstream &file)
+void	LoadGame::getPlayerType(std::string &line)
 {
-  e_type	type;
-  std::string	tmp;
-  std::string	startMap;
-  std::list<ACharacter *>	list;
+  if (line[0] == 'P')
+    _type = HUMAN;
+  else
+    _type = IA;
+  _id = stoi(line.substr(1));
+}
 
-  startMap = determineStartMap();
-  while (getline(file, tmp) != startMap)
+void	LoadGame::getPlayerPosition(std::string &line)
+{
+  _pos = Position(stoi(line.substr(line.find("POSX "), line.find("POSY") - 5)), line.find("POSY "));
+}
+
+void	LoadGame::getPlayerHP(std::string &line)
+{
+  _hp = stoi(line.substr(line.find("HP : ")));
+}
+
+void	LoadGame::getPlayerRange(std::string &line)
+{
+  _range = stoi(line.substr(line.find("RANGE : ")));
+}
+
+std::vector<ACharacter *>	LoadGame::getPlayers(std::ifstream &file)
+{
+  std::string			tmp;
+  std::string			startMap;
+  std::vector<ACharacter *>	vector;
+  ACharacter *obj;
+
+  this->determineStartMap();
+  while (getline(file, tmp) != _startMap.c_str())
     {
-      while (tmp != "*----------*" && tmp != startMap)
+      while (tmp != "*----------*" && tmp != startMap.c_str())
 	{
 	  getline(file, tmp);
-
-	  type = this->getPlayerType(tmp);
-	  if (type == HUMAN)
-	    HumanCharacter *tmp = new HumanCharacter();
-	  else
-	    IACharacter *tmp = new IACharacter();
-
-
+	  this->getPlayerType(tmp);
 	  getline(file, tmp);
 	  this->getPlayerPosition(tmp);
 	  getline(file, tmp);
 	  this->getPlayerHP(tmp);
 	  getline(file, tmp);
-	  this->getPlayerBomb(tmp);
-	  getline(file, tmp);
 	  this->getPlayerRange(tmp);
-	  getline(file, tmp);
-	  this->getPlayerColor(tmp);
+
+	  if (_type == HUMAN)
+	    obj = new HumanCharacter((char)_id, , _pos);
+	  else
+	    obj = new IACharacter(_id, , _pos);
+	  vector.push_back(obj);
 	}
     }
+  return (vector);
 }
 
 std::stringstream&			LoadGame::getBufferForMap(std::ifstream &file)
@@ -118,15 +128,15 @@ void		LoadGame::setSavedMap(std::stringstream &map)
   std::vector<char>			tmp;
 
   j = 0;
-  while (((i) * (j)) < (_width * _height))
+  while (((i) * (j)) < (_initialMap->getWidth() * _initialMap->getHeight()))
     {
       i = 0;
-      while (i < _width)
+      while (i < _initialMap->getWidth())
 	{
-	  tmp.push_back(map.str()[(j * (_width)) + i]);
+	  tmp.push_back(map.str()[(j * (_initialMap->getWidth())) + i]);
 	  i++;
 	}
-      _map.push_back(tmp);
+      _savedMap.push_back(tmp);
       tmp.clear();
       j++;
     }

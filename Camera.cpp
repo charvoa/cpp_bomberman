@@ -28,7 +28,6 @@ void	Camera::Init()
 void	Camera::move(glm::vec3 cameraP, glm::vec3 cameraS)
 {
   _transformation = glm::lookAt(cameraP, cameraS, glm::vec3(0, 1, 0));
-  std::cout << "testing" << std::endl;
 }
 
 glm::mat4 Camera::getTransformation()
