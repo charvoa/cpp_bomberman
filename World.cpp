@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Fri Jun 12 14:51:45 2015 Antoine Garcia
+// Last update Sat Jun 13 10:50:35 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -136,12 +136,12 @@ void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
   gdl::BasicShader shadera;
   if (_nbPlayers == 2)
     {
-      glViewport (0, 0, 1920/2, 1080);
+      glViewport (1920/2, 0, 1920/2, 1080);
       ACharacter *player = getPlayerById(1);
       if (player == NULL);
       else
 	{
-	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 50), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
+	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 100 - 1000), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
 	  shadera = _game->getShader();
 	  shadera.bind();
 	  shadera.setUniform("view", _game->_camera->getTransformation());
@@ -155,12 +155,12 @@ void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 	      (*it)->draw(shader, clock);
 	    }
 	}
-      glViewport (1920/2, 0, 1920/2, 1080);
+      glViewport (0, 0, 1920/2, 1080);
       player = getPlayerById(2);
       if (player == NULL);
       else
 	{
-	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 50), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
+	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 100 - 1000), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
 	  shadera.bind();
 	  shadera.setUniform("view", _game->_camera->getTransformation());
 	  shadera.setUniform("projection", _game->_camera->getProjection());
@@ -209,7 +209,11 @@ void	World::gameOver()
   _game->getShader().setUniform("projection", _game->_camera->getProjection());
   players = getHumansPlayers();
   if (_players.size() == 0)
-    std::cout << "GAME OVER" << std::endl;
+    {
+      glViewport (0, 0, 1920, 1080);
+      sleep(1);
+      _game->pushState(new GameOver(_game, 42));
+    }
   else if (players.size() == 1 && _players.size() == 1)
     {
       glViewport (0, 0, 1920, 1080);
@@ -231,7 +235,7 @@ void	World::checkBonus(Bonus &bonus)
   for (it = _players.begin() ; it != _players.end() ; ++it)
     {
       if (bonus.getPos() == (*it)->getPos())
-	std::cout << "I HAVE THE BONUS" << std::endl;
+	bonus.onCollect();
     }
 }
 
@@ -241,9 +245,9 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
   Bonus	*bonus;
   for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
     {
+      (*it)->update(clock, input);
       if ((bonus = dynamic_cast<Bonus *>(*it)))
 	this->checkBonus(*bonus);
-      (*it)->update(clock, input);
       if ((*it)->getStatus() == false)
 	{
 	  delete (*it);

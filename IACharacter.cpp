@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Wed Jun 10 15:10:24 2015 Audibert Louis
+// Last update Sat Jun 13 11:30:45 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -251,4 +251,9 @@ bool	IACharacter::getCanLaunchBomb() const
 void	IACharacter::setCanLaunchBomb(bool launch)
 {
   _canLaunchBomb = launch;
+}
+
+bool	IACharacter::setBonus(int bonus)
+{
+  return true;
 }

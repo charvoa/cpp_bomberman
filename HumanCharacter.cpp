@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Thu Jun  4 19:22:35 2015 Nicolas Charvoz
+// Last update Sat Jun 13 11:30:55 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -252,4 +252,9 @@ void	HumanCharacter::setCanLaunchBomb(bool launch)
 {
   std::cout << "_canLaunchBomb at " << launch << std::endl;
   _canLaunchBomb = launch;
+}
+
+bool	HumanCharacter::setBonus(int bonus)
+{
+  return true;
 }
