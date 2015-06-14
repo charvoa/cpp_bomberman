@@ -12,9 +12,13 @@
 
 SaveGame::SaveGame(World &world, const std::string mapName)
 {
+  std::string	root;
+
+  root = "./saves/";
+  root += mapName;
   _world = &world;
   _map = _world->getWorld();
-  std::ofstream file(mapName, std::ios::in | std::ios::trunc | std::ios::app);
+  std::ofstream file(root, std::ios::in | std::ios::trunc | std::ios::app);
 
   this->writeMapName(file, mapName);
   this->writeInfo(file, world.getPlayers());
@@ -67,6 +71,7 @@ void			SaveGame::writeInfo(std::ofstream & file, std::vector<ACharacter*> charac
       file << "HP : 1" << std::endl;
       file << "RANGE : " << characters.at(i)->getRange() << std::endl;
       file << separator << std::endl;
+      i++;
     }
 }
 
