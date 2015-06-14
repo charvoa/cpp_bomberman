@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Thu May 21 16:14:04 2015 Serge Heitzler
-// Last update Fri Jun  5 14:08:48 2015 Nicolas Charvoz
+// Last update Sun Jun 14 19:55:45 2015 Antoine Garcia
 //
 
 #include "LoadGame.hh"
@@ -61,6 +61,7 @@ void	LoadGame::getPlayerType(std::string &line)
     _type = HUMAN;
   else
     _type = IA;
+  std::cout << line << std::endl;
   _id = stoi(line.substr(1));
   if (_id == 2)
     _nbHumanPlayers = 2;
