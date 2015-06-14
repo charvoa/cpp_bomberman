@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 14:15:33 2015 Nicolas Girardot
-// Last update Sun Jun 14 12:24:25 2015 Audibert Louis
+// Last update Sun Jun 14 12:33:19 2015 Audibert Louis
 //
 
 #ifndef BOMB_HH_
@@ -23,7 +23,7 @@ class Bomb : public AObject
 {
 private:
   static Sound &_sound;
-  ACharacter	&_character;
+  int		_id;
   AObject	*_bomb;
   bool		_isPosed;
   bool		_isDestroyed = false;
@@ -36,7 +36,6 @@ private:
   std::list<Flame*>	_flames;
   bool		_isPoped = true;
 public:
-  Bomb(Position &, World *, ACharacter &);
   Bomb(Position &, World *, int);
   virtual ~Bomb();
   bool		initialize(const std::string &);

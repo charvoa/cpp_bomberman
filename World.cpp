@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sun Jun 14 12:24:30 2015 Audibert Louis
+// Last update Sun Jun 14 12:34:22 2015 Audibert Louis
 //
 
 # include <iostream>
@@ -26,7 +26,7 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
   _fileMap = &map;
   _height = _fileMap->getHeight();
   _width = _fileMap->getWidth();
-  _name = fileMap->getMapName();
+  _name = _fileMap->getMapName();
   _game->_camera->move(glm::vec3(0, 900, 0), glm::vec3(0, 0, -750));
   gdl::BasicShader shader = _game->getShader();
   shader.bind();
@@ -253,11 +253,11 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
   return true;
 }
 
-void	World::dropBomb(Position &pos, ACharacter &character)
+void	World::dropBomb(Position &pos, int id)
 {
   Bomb	*bomb;
-  std::cout << "ID IN DROP BOMB WORLD " << character.getId() << std::endl;
-  bomb = new Bomb(pos, this, character);
+  std::cout << "ID IN DROP BOMB WORLD " << id << std::endl;
+  bomb = new Bomb(pos, this, id);
   bomb->initialize("hello");
   _objects.push_back(bomb);
 }
@@ -339,7 +339,7 @@ int	World::getHeight() const
   return _height;
 }
 
-std::string&	World::getMapName() const
+const std::string&	World::getMapName() const
 {
   return _name;
 }

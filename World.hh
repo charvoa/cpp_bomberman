@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Sun Jun 14 12:19:13 2015 Audibert Louis
+// Last update Sun Jun 14 12:33:52 2015 Audibert Louis
 //
 
 #ifndef WORLD_HH__
@@ -70,11 +70,11 @@ public:
   Game		*_game;
   int		getWidth() const;
   int		getHeight() const;
-  std::string&	getMapName() const;
+  const std::string&	getMapName() const;
   void		setBonus(Position &);
   bool checkPlayerCanMove(int x, int y);
   ACharacter*		getPlayerById(int id);
-  void	dropBomb(Position &, ACharacter &);
+  void	dropBomb(Position &, int);
   Map			*_fileMap;
   const std::vector<HumanCharacter*> getHumansPlayers();
   void					checkDamages(std::list<Flame*>&);

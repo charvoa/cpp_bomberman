@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Sun Jun 14 12:21:13 2015 Audibert Louis
+// Last update Sun Jun 14 12:34:41 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -66,7 +66,7 @@ void IACharacter::dropBomb()
     {
       std::cout << "IA DROPING BOMB" << std::endl;
       std::cout << "_pos.x = " << _pos._x << " _pos.y " << _pos._y << " ori = " << _orientation << " IAid = " << _IAid << std::endl;
-      _world->dropBomb(_pos, this);
+      _world->dropBomb(_pos, _IAid);
       _sound.playMusic("allahu");
       _world->setItemAtPosition(_pos, 'T');
       _canLaunchBomb = false;

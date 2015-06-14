@@ -5,7 +5,7 @@
 // Login   <heitzl_s@epitech.net>
 //
 // Started on  Mon May 25 18:56:25 2015 Serge Heitzler
-// Last update Mon Jun  1 16:48:26 2015 Nicolas Charvoz
+// Last update Sun Jun 14 12:23:37 2015 Antoine Garcia
 //
 
 #include "Map.hh"
@@ -14,6 +14,9 @@ Map::Map(const std::string &filename)
 {
   std::ifstream file(filename, std::ios::in);
   std::string tmp;
+
+  //this->setMapName(filename);
+  _mapName = filename;
   if(file)
     {
       getline(file, tmp);
@@ -29,6 +32,11 @@ Map::Map(const std::string &filename)
 Map::~Map()
 {
 
+}
+
+const std::string&			Map::getMapName()
+{
+  return (_mapName);
 }
 
 std::stringstream&			Map::getBufferForMap(std::ifstream
