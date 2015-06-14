@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Thu May 21 16:14:32 2015 Serge Heitzler
-// Last update Tue May 26 11:28:48 2015 Serge Heitzler
+// Last update Fri Jun  5 13:05:54 2015 Nicolas Charvoz
 //
 
 #ifndef LOADGAME_HH_
@@ -24,7 +24,8 @@
 class		LoadGame
 {
 public:
-  LoadGame(Game *game,std::string &filename);
+
+  LoadGame(Game *game);
   ~LoadGame();
   void				setInitialMap(std::ifstream &file);
   void				setPlayersInfo(std::ifstream &file);
@@ -36,8 +37,11 @@ public:
   void				getPlayerPosition(std::string &line);
   void				getPlayerHP(std::string &line);
   void				getPlayerRange(std::string &line);
+  Map				&getInitialMap();
+  int				getNbHumanPlayers();
 
 private:
+  Game					*_game;
   Map					*_initialMap;
   World					*_world;
   std::vector<std::vector<char> >	_savedMap;
@@ -48,6 +52,7 @@ private:
   Position				_pos;
   int					_hp;
   int					_range;
+  int					_nbHumanPlayers;
 };
 
 #endif

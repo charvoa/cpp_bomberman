@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May  8 13:41:57 2015 Antoine Garcia
-// Last update Thu Jun 11 17:22:47 2015 Audibert Louis
+// Last update Fri Jun  5 13:02:26 2015 Nicolas Charvoz
 //
 
 #ifndef MENU_HH_
@@ -19,7 +19,6 @@
 #include "Button.hh"
 #include "Options.hh"
 #include "Leaderboard.hh"
-#include "Load.hh"
 #include "Exit.hh"
 #include <OpenGL.hh>
 #include <iostream>
@@ -28,6 +27,7 @@
 #include "MenuBackground.hh"
 #include "LittleButton.hh"
 #include "BigButton.hh"
+#include "LoadGame.hh"
 
 class	Menu: public GameState
 {

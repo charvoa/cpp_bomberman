@@ -1,15 +1,15 @@
 #ifndef IAEngine_HH_
 # define IAEngine_HH_
 
-#include <algorithm>
-#include <vector>
-#include <ctime>
-#include <utility>
-#include "../ACharacter.hh"
-#include "../IACharacter.hh"
-#include "../HumanCharacter.hh"
-#include "Math.hpp"
-#include "../IBrun.hh"
+# include <algorithm>
+# include <vector>
+# include <ctime>
+# include <utility>
+# include "../ACharacter.hh"
+# include "../IACharacter.hh"
+# include "../HumanCharacter.hh"
+# include "Math.hpp"
+# include "../IBrun.hh"
 
 class		IAEngine : IBrun
 {

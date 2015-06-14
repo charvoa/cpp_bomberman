@@ -16,20 +16,23 @@
 # include <fstream>
 # include <vector>
 # include <list>
+# include "ACharacter.hh"
+# include "World.hh"
 
 class		SaveGame
 {
 public:
-  SaveGame(World &world, const std::string & mapName);
+  SaveGame(World &world, const std::string mapName);
   ~SaveGame();
 
-  void		writeMapName(std::ifstream & file, const std::string & mapName);
-  void		writeMap(std::ifstream & file);
-  std::string	writeType(e_type *type, int id);
-  void		writeInfo(std::ifstream & file, std::list<ACharacter*> characters);
+  void		writeMapName(std::ofstream & file, const std::string & mapName);
+  void		writeMap(std::ofstream & file);
+  std::string	writeType(int type, int id);
+  void		writeInfo(std::ofstream & file, std::vector<ACharacter*> characters);
 
 private:
-
+  std::vector<std::vector<char> > _map;
+  World				  *_world;
 };
 
 #endif

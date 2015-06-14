@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Sun Jun 14 12:33:52 2015 Audibert Louis
+// Last update Sun Jun 14 17:58:49 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -57,6 +57,7 @@ private:
   void			checkBonus(Bonus &bonus);
 public:
   World(Game *game, Map &map, int nb_players, int nb_ia);
+  World(Game *game, Map &map, int nb_players);
   ~World(){};
   virtual void draw(gdl::Clock&, gdl::BasicShader&);
   virtual bool update(gdl::Clock&, gdl::Input&); //get InputKeys and update.
