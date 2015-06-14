@@ -15,10 +15,11 @@ LoadGame::LoadGame(Game *game)
   std::ifstream	file;
 
   file.open("lastgame.save");
+  _nbHumanPlayers = 1;
   this->setInitialMap(file);
   //  this->setPlayersInfo(file);
   this->setSavedMap(this->getBufferForMap(file));
-  _game->pushState(new World(_game, *_initialMap));
+  _game->pushState(new World(_game, *_initialMap, _nbHumanPlayers));
   file.close();
 }
 
@@ -63,6 +64,13 @@ void	LoadGame::getPlayerType(std::string &line)
   else
     _type = IA;
   _id = stoi(line.substr(1));
+  if (_id == 2)
+    _nbHumanPlayers = 2;
+}
+
+int		LoadGame::getNbHumanPlayers()
+{
+  return _nbHumanPlayers;
 }
 
 Map &		LoadGame::getInitialMap()
@@ -109,7 +117,7 @@ std::vector<ACharacter *>	LoadGame::getPlayers(std::ifstream &file)
 	    obj = new HumanCharacter(to_string(_id), , _pos);
 	  else
 	    obj = new IACharacter(_id, , _pos);
-	  obj->setAlive(true);
+	  //	  obj->setAlive(true);
 	  obj->setRange(_range);
 	  vector.push_back(obj);
 	}

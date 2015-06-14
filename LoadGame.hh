@@ -38,6 +38,7 @@ public:
   void				getPlayerHP(std::string &line);
   void				getPlayerRange(std::string &line);
   Map				&getInitialMap();
+  int				getNbHumanPlayers();
 
 private:
   Game					*_game;
@@ -51,6 +52,7 @@ private:
   Position				_pos;
   int					_hp;
   int					_range;
+  int					_nbHumanPlayers;
 };
 
 #endif
