@@ -21,7 +21,7 @@ SaveGame::SaveGame(World &world, const std::string mapName)
   file.open(root);
 
   this->writeMapName(file, mapName);
-  this->writeInfo(file, world.getPlayers());
+  //  this->writeInfo(file, world.getPlayers());
   this->writeMap(file);
   file.close();
   std::cout << "SaveGame << " << std::endl;
