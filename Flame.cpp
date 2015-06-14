@@ -5,7 +5,7 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Mon Jun  1 11:09:17 2015 Nicolas Girardot
-// Last update Sat Jun 13 13:42:20 2015 Audibert Louis
+// Last update Sun Jun 14 20:01:56 2015 Nicolas Girardot
 //
 
 #include "Flame.hh"
@@ -25,7 +25,7 @@ bool	Flame::initialize(const std::string &tex)
   (void) tex;
   _flame = new Cube();
   _flame->initialize("images/fire.tga");
-  glm::vec3 trans((_pos->_x * 100 - 710), 0, -750 + (_pos->_y - _world->getHeight() / 2) * 100);
+  glm::vec3 trans((_pos->_x * 100 - _world->getWidth() / 2 * 100), 0, -750 + (_pos->_y - _world->getHeight() / 2) * 100);
   _flame->translate(trans);
   _flame->scale(glm::vec3(100, 100, 100));
   _isPosed = true;
