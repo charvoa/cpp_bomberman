@@ -15,7 +15,7 @@ LoadGame::LoadGame(Game *game)
   std::ifstream	file;
 
   file.open("./saves/lastgame.save");
-  _nbHumanPlayers = 1;
+  _nbHumanPlayers = 0;
   _game = game;
   this->setInitialMap(file);
   //this->setPlayersInfo(file);
@@ -59,12 +59,14 @@ void		LoadGame::determineStartMap()
 void	LoadGame::getPlayerType(std::string &line)
 {
   if (line[0] == 'P')
-    _type = HUMAN;
+    {
+      _nbHumanPlayers++;
+      _type = HUMAN;
+    }
   else
     _type = IA;
   _id = stoi(line.substr(1));
   if (_id == 2)
-    _nbHumanPlayers = 2;
 }
 
 int		LoadGame::getNbHumanPlayers()
