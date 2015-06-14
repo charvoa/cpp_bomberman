@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Thu May 21 16:14:04 2015 Serge Heitzler
-// Last update Sun Jun 14 20:22:00 2015 Antoine Garcia
+// Last update Sun Jun 14 20:26:29 2015 Antoine Garcia
 //
 
 #include "LoadGame.hh"
@@ -79,8 +79,11 @@ Map &		LoadGame::getInitialMap()
 
 void	LoadGame::getPlayerPosition(std::string &line)
 {
+
   std::cout << line.find("POSX ") << std::endl;
-  _pos = Position(stoi(line.substr(line.find("POSX "), line.find("POSY")), line.find("POSY ")));
+  tmp = line;
+  _pos = Position(stoi(line.substr(line.find("POSX "), line.find("POSY"))), tmp.substr(tmp.find("POSY ")));
+
 }
 
 void	LoadGame::getPlayerHP(std::string &line)
