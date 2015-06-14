@@ -123,3 +123,31 @@ int	Map::getNumberOfFreeSpace() const
     }
   return nbr;
 }
+
+void	Map::mapGenerator(int width, int height, int human, int ia)
+{
+  int					i;
+  int					j;
+  Math				        math;
+
+  (void)human;
+  (void)ia;
+  math = Math();
+  math.initSRand(math.initTime(NULL));
+  j = 0;
+  while (j < height)
+    {
+      i = 0;
+      while (i < width)
+	{
+	  if (i == 0 || i == width - 1 || j == 0 || j == height - 1)
+	    _randomMap.at(j).at(i) = 'W';
+	  else
+	    _randomMap.at(j).at(i) = 'F';
+	  std::cout << _randomMap.at(j).at(i);
+	  i++;
+	}
+      std::cout << std::endl;
+      j++;
+    }
+}

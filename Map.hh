@@ -16,6 +16,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include "./ia/Math.hpp"
 
 class		Map
 {
@@ -35,6 +36,7 @@ public:
   void					setItemAtPosition(int x, int y,
 							  char c);
   int					getNumberOfFreeSpace() const;
+  void					mapGenerator(int width, int height, int human, int ia);
 
   private:
 
@@ -42,6 +44,7 @@ public:
   int					_height;
   std::vector<std::vector<char> >	_map;
   std::stringstream _bufferGetBufferForMap;
+  std::vector<std::vector<char>>	_randomMap;
 };
 
 #endif
