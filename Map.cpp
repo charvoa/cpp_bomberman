@@ -10,10 +10,12 @@
 
 #include "Map.hh"
 
-Map::Map(const std::string &filename)
+Map::Map(std::string &filename)
 {
   std::ifstream file(filename, std::ios::in);
   std::string tmp;
+
+  this->setMapName(filename);
   if(file)
     {
       getline(file, tmp);
@@ -29,6 +31,16 @@ Map::Map(const std::string &filename)
 Map::~Map()
 {
 
+}
+
+const std::string &			Map::getMapName()
+{
+  return (_mapName);
+}
+
+void					Map::setMapName(std::string &mapName)
+{
+  _mapName = mapName;
 }
 
 std::stringstream&			Map::getBufferForMap(std::ifstream

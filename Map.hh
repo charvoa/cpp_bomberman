@@ -23,7 +23,7 @@ class		Map
 
 public:
 
-  Map(const std::string &filename);
+  Map(std::string &filename);
   ~Map();
   std::stringstream&			getBufferForMap(std::ifstream &file);
   void					setMap(std::stringstream &map);
@@ -37,6 +37,8 @@ public:
 							  char c);
   int					getNumberOfFreeSpace() const;
   void					mapGenerator(int width, int height, int human, int ia);
+  const std::string &  			getMapName();
+  void		  			setMapName(std::string &mapName);
 
   private:
 
@@ -45,6 +47,7 @@ public:
   std::vector<std::vector<char> >	_map;
   std::stringstream _bufferGetBufferForMap;
   std::vector<std::vector<char>>	_randomMap;
+  const std::string &		       	_mapName;
 };
 
 #endif
