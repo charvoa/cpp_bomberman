@@ -10,25 +10,26 @@
 
 #include "SaveGame.hh"
 
-SaveGame::SaveGame(World &world, const std::string & mapName)
+SaveGame::SaveGame(World &world, const std::string mapName)
 {
-  _map = world->getWorld();
-  std::ifstream file(mapName, std::ios::in | std::ios::trunc | std::ios:app);
+  _world = &world;
+  _map = _world->getWorld();
+  std::ofstream file(mapName, std::ios::in | std::ios::trunc | std::ios::app);
 
   this->writeMapName(file, mapName);
-  this->writeInfo();
+  this->writeInfo(file, world.getPlayers());
   this->writeMap(file);
 }
 
-void		SaveGame::writeMapName(std::ifstream & file, const std::string & mapName)
+void		SaveGame::writeMapName(std::ofstream & file, const std::string & mapName)
 {
   file << "MAP NAME " << mapName << "\n";
 }
 
-void		SaveGame::writeMap(std::ifstream & file)
+void		SaveGame::writeMap(std::ofstream & file)
 {
-  int		x;
-  int		y;
+  unsigned int		x;
+  unsigned int		y;
 
   y = 0;
   while (y < _map.size())
@@ -44,26 +45,28 @@ void		SaveGame::writeMap(std::ifstream & file)
     }
 }
 
-std::string    	SaveGame::writeType(e_type *type, int id)
+std::string    	SaveGame::writeType(int type, int id)
 {
-  if (type == HUMAN)
-    return ("P" + to_string(id));
-  return ("I" + to_string(id));
+  if (type == 0)
+    return ("P" + std::to_string(id));
+  return ("I" + std::to_string(id));
 }
 
-void		SaveGame::writeInfo(std::ifstream & file, std::list<ACharacter*> characters)
+void			SaveGame::writeInfo(std::ofstream & file, std::vector<ACharacter*> characters)
 {
-  int		i;
+  unsigned int		i;
+  std::string		separator;
 
   i = 0;
-  file << "*----------*" << std::endl;
+  separator = "*----------*";
+  file << separator << std::endl;
   while (i < characters.size())
     {
-      file << this->writeType(file, characters.at(i)->getType(), characters.at(i)->getId()) << std::endl;
-      file << "POSX " << characters.at(i)->getPosX() << " POSY " << characters.at(i)->getPosY() << std::endl;
-      file << "HP : " << characters.at(i)->getHp() << std::endl;
+      file << this->writeType(characters.at(i)->getType(), characters.at(i)->getId()) << std::endl;
+      file << "POSX " << characters.at(i)->getPos()._x << " POSY " << characters.at(i)->getPos()._y << std::endl;
+      file << "HP : 1" << std::endl;
       file << "RANGE : " << characters.at(i)->getRange() << std::endl;
-      file << "*----------*" << std::endl;
+      file << separator << std::endl;
     }
 }
 

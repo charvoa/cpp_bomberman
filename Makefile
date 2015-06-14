@@ -40,7 +40,7 @@ SRC		+=	Button.cpp			\
 			Bonus.cpp			\
 			GameOver.cpp			\
 			Intro.cpp			\
-			SaveGame.cpp
+			SaveGame.cpp			\
 
 SRC_MAIN	=	$(SRC) main.cpp
 
