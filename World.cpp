@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sun Jun 14 17:57:15 2015 Antoine Garcia
+// Last update Sun Jun 14 18:06:58 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -83,7 +83,7 @@ void	World::findWall()
 	      wall->scale(glm::vec3(100, 100, 100));
 	      _objects.push_back(wall);
 	    }
-	  if (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2')
+	  if (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2' || _fileMap->getItemAtPosition(x, y) == 'T')
 	    {
 	      Position pos(x, y);
 	      if (_fileMap->getItemAtPosition(x,y) == '1')
