@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sun Jun 14 12:40:48 2015 Audibert Louis
+// Last update Sun Jun 14 17:57:15 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -37,6 +37,25 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
   this->loadBackground();
   findWall();
   createIaPlayer();
+  _command = new Command(game, this);
+}
+
+World::World(Game *game, Map &map, int nb_players)
+{
+  _game = game;
+  _nbPlayers = nb_players;
+  _fileMap = &map;
+  _height = _fileMap->getHeight();
+  _width = _fileMap->getWidth();
+  _name = _fileMap->getMapName();
+  gdl::BasicShader shader = _game->getShader();
+  shader.bind();
+  shader.setUniform("view", _game->_camera->getTransformation());
+  shader.setUniform("projection", _game->_camera->getProjection());
+  _map = _fileMap->getMap();
+  _texManag.registerTexture("backgroundInGame", "backIG");
+  this->loadBackground();
+  findWall();
   _command = new Command(game, this);
 }
 
