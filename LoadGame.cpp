@@ -159,6 +159,9 @@ void		LoadGame::setSavedMap(std::stringstream &map)
       i = 0;
       while (i < _initialMap->getWidth())
 	{
+	  if (map.str()[(j * (_initialMap->getWidth())) + i] == '1'
+	      || map.str()[(j * (_initialMap->getWidth())) + i] == '2')
+	    nbHumanPlayers++;
 	  tmp.push_back(map.str()[(j * (_initialMap->getWidth())) + i]);
 	  i++;
 	}
