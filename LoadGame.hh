@@ -45,6 +45,7 @@ private:
   Map					*_initialMap;
   World					*_world;
   std::vector<std::vector<char> >	_savedMap;
+  Map					*_mapObject;
   std::string				_startMap;
   std::stringstream			_bufferGetBufferForMap;
   e_type				_type;

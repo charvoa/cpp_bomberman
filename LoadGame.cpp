@@ -21,7 +21,8 @@ LoadGame::LoadGame(Game *game)
   //this->setPlayersInfo(file);
   //this->getPlayers(file);
   this->setSavedMap(this->getBufferForMap(file));
-  _game->pushState(new World(_game, *_initialMap, _nbHumanPlayers));
+  _mapObject = new Map(_savedMap);
+  _game->pushState(new World(_game, *_mapObject, _nbHumanPlayers));
   file.close();
 }
 
