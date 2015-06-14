@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sun Jun 14 18:06:58 2015 Antoine Garcia
+// Last update Sun Jun 14 19:56:06 2015 Nicolas Girardot
 //
 
 # include <iostream>
@@ -142,11 +142,12 @@ void	World::createHumanPlayer(char id, Position &pos)
 void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
 {
   gdl::BasicShader shadera;
+  ACharacter *player;
   if (_nbPlayers == 2)
     {
+      player = getPlayerById(1);
       glViewport (1920/2, 0, 1920/2, 1080);
-      ACharacter *player = getPlayerById(1);
-      if (player == NULL);
+       if (player == NULL);
       else
 	{
 	  _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 100 - 1000), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
@@ -184,7 +185,14 @@ void	World::draw(gdl::Clock& clock, gdl::BasicShader& shader)
     }
   else
     {
-      if (getHeight() >= 15);
+      if ((getHeight() != 15 || getWidth() != 11) && ((player = getPlayerById(1)) != NULL))
+	{
+	   _game->_camera->move(glm::vec3(((-1) * this->getWidth() / 2 * 100) + (player->getPos()._x * 100), 900, player->getPos()._y * 100 - 1000), glm::vec3(0 + (player->getPos()._x - this->getWidth() / 2) * 100, -50,  750 * (-1) + (player->getPos()._y - this->getHeight() / 2) * 100));
+	   shadera = _game->getShader();
+	   shadera.bind();
+	   shadera.setUniform("view", _game->_camera->getTransformation());
+	   shadera.setUniform("projection", _game->_camera->getProjection());
+	}
       else
         this->drawBackground(clock, shader);
       for (std::vector<AObject*>::iterator it = _objects.begin(); it != _objects.end(); ++it)
