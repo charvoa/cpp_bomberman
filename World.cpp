@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sun Jun 14 20:04:34 2015 Nicolas Girardot
+// Last update Sun Jun 14 21:49:25 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -43,6 +43,7 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
 World::World(Game *game, Map &map, int nb_players)
 {
   std::cout << "NB PLAYERS : " << nb_players << std::endl;
+  _inputManager = new InputManager();
   _game = game;
   _nbPlayers = nb_players;
   _fileMap = &map;

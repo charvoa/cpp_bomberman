@@ -5,7 +5,7 @@
 // Login   <heitzl_s@epitech.net>
 //
 // Started on  Mon May 25 18:56:25 2015 Serge Heitzler
-// Last update Sun Jun 14 19:59:39 2015 Antoine Garcia
+// Last update Sun Jun 14 21:55:22 2015 Antoine Garcia
 //
 
 #include "Map.hh"
@@ -16,6 +16,7 @@ Map::Map(const std::string &filename)
   std::string tmp;
 
   //this->setMapName(filename);
+  std::cout << filename << std::endl;
   _mapName = filename;
   if(file)
     {
@@ -31,6 +32,7 @@ Map::Map(const std::string &filename)
 
 Map::Map(std::vector<std::vector<char> > map)
 {
+  std::cout << "CONSTRUCTOR" << std::endl;
   _map = map;
   this->setHeight(map.size());
   this->setWidth(map.at(0).size());
@@ -53,7 +55,7 @@ void					Map::printMap()
       while (i < _map.at(j).size())
 	{
 	  std::cout << _map.at(j).at(i);
-	  i++
+	  i++;
 	}
       std::cout << std::endl;
       j++;
