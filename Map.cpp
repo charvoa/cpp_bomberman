@@ -5,7 +5,7 @@
 // Login   <heitzl_s@epitech.net>
 //
 // Started on  Mon May 25 18:56:25 2015 Serge Heitzler
-// Last update Sun Jun 14 21:55:22 2015 Antoine Garcia
+// Last update Sun Jun 14 22:23:19 2015 Antoine Garcia
 //
 
 #include "Map.hh"
@@ -34,7 +34,7 @@ Map::Map(std::vector<std::vector<char> > map, std::string &mapName)
 {
   std::cout << "CONSTRUCTOR" << std::endl;
   _map = map;
-  this->setMapName(mapName);
+  _mapName = mapName;
   this->setHeight(map.size());
   this->setWidth(map.at(0).size());
 }
