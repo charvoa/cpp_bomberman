@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Sun Jun 14 15:39:12 2015 Audibert Louis
+// Last update Sun Jun 14 15:46:53 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -152,6 +152,7 @@ float	HumanCharacter::getAngle(e_orientation before, e_orientation after)
 
 bool	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
 {
+  (void)clock;
   glm::vec3 trans(0, 1, 0);
   Position *pos;
   int x = 0;
@@ -209,8 +210,13 @@ void	HumanCharacter::setCanLaunchBomb(bool launch)
 
 void	HumanCharacter::setBonus(int bonus)
 {
-  (void) bonus;
-  std::cout << "setBonus HumanCharacter" << std::endl;
+  std::cout << "bonus = " << bonus << std::endl;
+  if (bonus == 0)
+    _range += 1;
+  else if (bonus == 1)
+    _canLaunchBomb = true;
+  else if (bonus == 2)
+    _score += 50;
 }
 
 int	HumanCharacter::getScore() const

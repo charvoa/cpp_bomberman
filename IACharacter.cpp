@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Sun Jun 14 15:40:17 2015 Audibert Louis
+// Last update Sun Jun 14 15:46:59 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -226,8 +226,13 @@ void	IACharacter::setCanLaunchBomb(bool launch)
 
 void	IACharacter::setBonus(int bonus)
 {
-  (void) bonus;
-  std::cout << "setBonus IACharacter" << std::endl;
+  std::cout << "bonus = " << bonus << std::endl;
+  if (bonus == 0)
+    _range += 1;
+  else if (bonus == 1)
+    _canLaunchBomb = true;
+  else if (bonus == 2)
+    _score += 50;
 }
 
 int	IACharacter::getScore() const
