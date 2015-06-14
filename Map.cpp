@@ -41,6 +41,25 @@ Map::~Map()
 
 }
 
+void					Map::printMap()
+{
+  unsigned int i;
+  unsigned int j;
+
+  j = 0;
+  while (j < _map.size())
+    {
+      i = 0;
+      while (i < _map.at(j).size())
+	{
+	  std::cout << _map.at(j).at(i);
+	  i++
+	}
+      std::cout << std::endl;
+      j++;
+    }
+}
+
 const std::string&			Map::getMapName()
 {
   return (_mapName);

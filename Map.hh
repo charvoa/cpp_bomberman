@@ -41,6 +41,7 @@ public:
   int					getNumberOfFreeSpace() const;
   const Map				&mapGenerator(int width, int height, int human, int ia);
   const std::string &  			getMapName();
+  void					printMap();
 
   private:
 
