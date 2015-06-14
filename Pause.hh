@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:17:24 2015 Nicolas Charvoz
-// Last update Wed Jun  3 12:14:06 2015 Nicolas Charvoz
+// Last update Sun Jun 14 13:38:06 2015 Nicolas Girardot
 //
 
 #ifndef PAUSE_HH_
@@ -19,6 +19,7 @@
 #include "World.hh"
 #include "Camera.hh"
 #include "GameBackground.hh"
+#include "SaveGame.hh"
 #include "InputManager.hh"
 #include "Command.hh"
 
