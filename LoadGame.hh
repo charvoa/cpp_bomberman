@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Thu May 21 16:14:32 2015 Serge Heitzler
-// Last update Fri Jun  5 13:05:54 2015 Nicolas Charvoz
+// Last update Sun Jun 14 20:09:27 2015 Antoine Garcia
 //
 
 #ifndef LOADGAME_HH_

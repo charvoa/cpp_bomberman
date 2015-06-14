@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Thu May 21 16:14:04 2015 Serge Heitzler
-// Last update Sun Jun 14 19:55:45 2015 Antoine Garcia
+// Last update Sun Jun 14 20:22:00 2015 Antoine Garcia
 //
 
 #include "LoadGame.hh"
@@ -18,7 +18,8 @@ LoadGame::LoadGame(Game *game)
   _nbHumanPlayers = 1;
   _game = game;
   this->setInitialMap(file);
-  //  this->setPlayersInfo(file);
+  //this->setPlayersInfo(file);
+  this->getPlayers(file);
   this->setSavedMap(this->getBufferForMap(file));
   _game->pushState(new World(_game, *_initialMap, _nbHumanPlayers));
   file.close();
@@ -61,7 +62,6 @@ void	LoadGame::getPlayerType(std::string &line)
     _type = HUMAN;
   else
     _type = IA;
-  std::cout << line << std::endl;
   _id = stoi(line.substr(1));
   if (_id == 2)
     _nbHumanPlayers = 2;
@@ -79,7 +79,8 @@ Map &		LoadGame::getInitialMap()
 
 void	LoadGame::getPlayerPosition(std::string &line)
 {
-  _pos = Position(stoi(line.substr(line.find("POSX "), line.find("POSY") - 5)), line.find("POSY "));
+  std::cout << line.find("POSX ") << std::endl;
+  _pos = Position(stoi(line.substr(line.find("POSX "), line.find("POSY")), line.find("POSY ")));
 }
 
 void	LoadGame::getPlayerHP(std::string &line)
@@ -104,13 +105,17 @@ std::vector<ACharacter *>	LoadGame::getPlayers(std::ifstream &file)
     {
       while (tmp != "*----------*" && tmp != startMap.c_str())
   	{
-  	  getline(file, tmp);
+  	  //getline(file, tmp);
+	  std::cout << "1 " <<  tmp << std::endl;
   	  this->getPlayerType(tmp);
   	  getline(file, tmp);
+	  std::cout << "2 " <<  tmp << std::endl;
   	  this->getPlayerPosition(tmp);
   	  getline(file, tmp);
+	  std::cout << "3 " <<  tmp << std::endl;
   	  this->getPlayerHP(tmp);
   	  getline(file, tmp);
+	  std::cout << "4 " <<  tmp << std::endl;
   	  this->getPlayerRange(tmp);
   	  // if (_type == HUMAN)
   	  //   obj = new HumanCharacter(to_string(_id), , _pos);
