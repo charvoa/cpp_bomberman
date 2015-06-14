@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Thu May 21 16:14:04 2015 Serge Heitzler
-// Last update Sun Jun 14 20:33:18 2015 Antoine Garcia
+// Last update Sun Jun 14 20:46:23 2015 Antoine Garcia
 //
 
 #include "LoadGame.hh"
@@ -19,7 +19,7 @@ LoadGame::LoadGame(Game *game)
   _game = game;
   this->setInitialMap(file);
   //this->setPlayersInfo(file);
-  this->getPlayers(file);
+  //this->getPlayers(file);
   this->setSavedMap(this->getBufferForMap(file));
   _game->pushState(new World(_game, *_initialMap, _nbHumanPlayers));
   file.close();
@@ -66,7 +66,6 @@ void	LoadGame::getPlayerType(std::string &line)
   else
     _type = IA;
   _id = stoi(line.substr(1));
-  if (_id == 2)
 }
 
 int		LoadGame::getNbHumanPlayers()
@@ -161,7 +160,7 @@ void		LoadGame::setSavedMap(std::stringstream &map)
 	{
 	  if (map.str()[(j * (_initialMap->getWidth())) + i] == '1'
 	      || map.str()[(j * (_initialMap->getWidth())) + i] == '2')
-	    nbHumanPlayers++;
+	    _nbHumanPlayers = 2;
 	  tmp.push_back(map.str()[(j * (_initialMap->getWidth())) + i]);
 	  i++;
 	}
