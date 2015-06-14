@@ -54,6 +54,7 @@ private:
   int					_hp;
   int					_range;
   int					_nbHumanPlayers;
+  std::string				_filename;
 };
 
 #endif

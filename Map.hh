@@ -24,7 +24,7 @@ class		Map
 public:
 
   Map(const std::string &filename);
-  Map(std::vector<std::vector<char>> map);
+  Map(std::vector<std::vector<char>> map, std::string &mapName);
   ~Map();
   std::stringstream&			getBufferForMap(std::ifstream &file);
   void					setMap(std::stringstream &map);

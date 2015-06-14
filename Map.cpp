@@ -29,9 +29,10 @@ Map::Map(const std::string &filename)
     std::cerr << "Impossible d'ouvrir le fichier !" << std::endl;
 }
 
-Map::Map(std::vector<std::vector<char> > map)
+Map::Map(std::vector<std::vector<char> > map, std::string &mapName)
 {
   _map = map;
+  this->setMapName(mapName);
   this->setHeight(map.size());
   this->setWidth(map.at(0).size());
 }

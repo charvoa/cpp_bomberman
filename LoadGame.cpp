@@ -21,19 +21,18 @@ LoadGame::LoadGame(Game *game)
   //this->setPlayersInfo(file);
   //this->getPlayers(file);
   this->setSavedMap(this->getBufferForMap(file));
-  _mapObject = new Map(_savedMap);
+  _mapObject = new Map(_savedMap, _filename);
   _game->pushState(new World(_game, *_mapObject, _nbHumanPlayers));
   file.close();
 }
 
 void		LoadGame::setInitialMap(std::ifstream &file)
 {
-  std::string	filename;
   std::string	tmp;
 
   getline(file, tmp);
-  filename = tmp.substr(tmp.find(":") + 1);
-  _initialMap = new Map(filename);
+  _filename = tmp.substr(tmp.find(":") + 1);
+  _initialMap = new Map(_filename);
   //_initialMap = new Map("./maps/x.map");
 }
 
