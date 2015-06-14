@@ -5,7 +5,7 @@
 ## Login   <nicolaschr@epitech.net>
 ##
 ## Started on  Fri Jun  5 08:03:55 2015 Nicolas Charvoz
-## Last update Sun Jun 14 13:38:53 2015 Nicolas Girardot
+## Last update Sun Jun 14 15:51:46 2015 Nicolas Girardot
 ##
 
 MAIN		=	bomberman

@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:36:27 2015 Nicolas Charvoz
-// Last update Fri Jun  5 02:30:31 2015 Nicolas Charvoz
+// Last update Sun Jun 14 12:46:59 2015 Audibert Louis
 //
 
 #include "Command.hh"
@@ -70,7 +70,7 @@ void Command::lshift(gdl::Clock& clock)
   (void) clock;
   if (_pause)
       return;
-  if (_twoPlayers)
+  if (_twoPlayers && _world->getPlayerById(2))
     _world->getPlayerById(2)->dropBomb();
 }
 
