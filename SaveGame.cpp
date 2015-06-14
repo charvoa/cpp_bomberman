@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Wed May 20 10:56:14 2015 Serge Heitzler
-// Last update Sun Jun 14 17:02:54 2015 Antoine Garcia
+// Last update Fri Jun  5 13:01:14 2015 Nicolas Charvoz
 //
 
 #include "SaveGame.hh"
@@ -30,6 +30,7 @@ SaveGame::SaveGame(World &world, const std::string mapName)
   this->writeMapName(file, strCopy);
   this->writeInfo(file, world.getPlayers());
   this->writeMap(file);
+  file.close();
   std::cout << "SaveGame << " << std::endl;
 }
 
@@ -81,7 +82,6 @@ void			SaveGame::writeInfo(std::ofstream & file, std::vector<ACharacter*> charac
       file << separator << std::endl;
       i++;
     }
-  file.close();
 }
 
 SaveGame::~SaveGame()
