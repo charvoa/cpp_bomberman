@@ -37,8 +37,10 @@ public:
   void				getPlayerPosition(std::string &line);
   void				getPlayerHP(std::string &line);
   void				getPlayerRange(std::string &line);
+  Map				&getInitialMap();
 
 private:
+  Game					*_game;
   Map					*_initialMap;
   World					*_world;
   std::vector<std::vector<char> >	_savedMap;

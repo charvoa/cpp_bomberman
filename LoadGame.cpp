@@ -16,8 +16,9 @@ LoadGame::LoadGame(Game *game)
 
   file.open("lastgame.save");
   this->setInitialMap(file);
-  this->setPlayersInfo(file);
+  //  this->setPlayersInfo(file);
   this->setSavedMap(this->getBufferForMap(file));
+  _game->pushState(new World(_game, *_initialMap));
   file.close();
 }
 
@@ -64,6 +65,11 @@ void	LoadGame::getPlayerType(std::string &line)
   _id = stoi(line.substr(1));
 }
 
+Map &		LoadGame::getInitialMap()
+{
+  return _initialMap;
+}
+
 void	LoadGame::getPlayerPosition(std::string &line)
 {
   _pos = Position(stoi(line.substr(line.find("POSX "), line.find("POSY") - 5)), line.find("POSY "));
@@ -84,7 +90,7 @@ std::vector<ACharacter *>	LoadGame::getPlayers(std::ifstream &file)
   std::string			tmp;
   std::string			startMap;
   std::vector<ACharacter *>	vector;
-  ACharacter *obj;
+  ACharacter			*obj;
 
   this->determineStartMap();
   while (getline(file, tmp) != _startMap.c_str())
@@ -103,7 +109,7 @@ std::vector<ACharacter *>	LoadGame::getPlayers(std::ifstream &file)
 	    obj = new HumanCharacter(to_string(_id), , _pos);
 	  else
 	    obj = new IACharacter(_id, , _pos);
-	  obj->setAlive = true;
+	  obj->setAlive(true);
 	  obj->setRange(_range);
 	  vector.push_back(obj);
 	}
