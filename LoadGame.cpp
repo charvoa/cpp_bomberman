@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Thu May 21 16:14:04 2015 Serge Heitzler
-// Last update Sun Jun 14 21:58:34 2015 Antoine Garcia
+// Last update Sun Jun 14 22:12:13 2015 Antoine Garcia
 //
 
 #include "LoadGame.hh"
@@ -161,7 +161,7 @@ void		LoadGame::setSavedMap(std::stringstream &map)
 	{
 	  if (map.str()[(j * (_initialMap->getWidth())) + i] == '1'
 	      || map.str()[(j * (_initialMap->getWidth())) + i] == '2')
-	    _nbHumanPlayers = 2;
+	    _nbHumanPlayers++;
 	  tmp.push_back(map.str()[(j * (_initialMap->getWidth())) + i]);
 	  i++;
 	}
