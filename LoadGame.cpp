@@ -79,7 +79,8 @@ Map &		LoadGame::getInitialMap()
 
 void	LoadGame::getPlayerPosition(std::string &line)
 {
-  _pos = Position(stoi(line.substr(line.find("POSX "), line.find("POSY") - 5)), line.find("POSY "));
+  tmp = line;
+  _pos = Position(stoi(line.substr(line.find("POSX "), line.find("POSY"))), tmp.substr(tmp.find("POSY ")));
 }
 
 void	LoadGame::getPlayerHP(std::string &line)
