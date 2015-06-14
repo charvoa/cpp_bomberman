@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:32:52 2015 Audibert Louis
-// Last update Sun Jun 14 12:34:41 2015 Audibert Louis
+// Last update Sun Jun 14 15:46:59 2015 Audibert Louis
 //
 
 #include "IACharacter.hh"
@@ -64,13 +64,10 @@ void IACharacter::dropBomb()
 {
   if (_canLaunchBomb == true)
     {
-      std::cout << "IA DROPING BOMB" << std::endl;
-      std::cout << "_pos.x = " << _pos._x << " _pos.y " << _pos._y << " ori = " << _orientation << " IAid = " << _IAid << std::endl;
       _world->dropBomb(_pos, _IAid);
       _sound.playMusic("allahu");
       _world->setItemAtPosition(_pos, 'T');
       _canLaunchBomb = false;
-      std::cout << "End of IF in drop bomb" << std::endl;
     }
 }
 
@@ -87,7 +84,6 @@ void IACharacter::die()
 void IACharacter::draw(gdl::AShader &shader, gdl::Clock const &clock)
 {
   (void) clock;
-  // _model->setCurrentAnim(1, true);
   _model.draw(shader, AObject::getTransformation(), 1);
 }
 
@@ -201,16 +197,10 @@ bool	IACharacter::move(e_orientation ori)
     }
   if (_world->checkPlayerCanMove(pos->_x, pos->_y) == true)
     {
-      std::cout << "OK" << std::endl;
       glm::vec3 move(x * 100, 0, y * 100);
       if (_isAnime == false)
-	{
-	  _model.setCurrentAnim(0, false);
-	  // _isAnime = true;
-	}
+	_model.setCurrentAnim(0, false);
       _timer += 1.0f;
-      std::cout << "x = " << _pos._x << "; y = " << _pos._y << std::endl;
-      std::cout << "timer = " << _timer << std::endl;
       if (_timer >= 2.0f)
       	{
 	  this->translate(move);
@@ -236,8 +226,13 @@ void	IACharacter::setCanLaunchBomb(bool launch)
 
 void	IACharacter::setBonus(int bonus)
 {
-  (void) bonus;
-  std::cout << "setBonus IACharacter" << std::endl;
+  std::cout << "bonus = " << bonus << std::endl;
+  if (bonus == 0)
+    _range += 1;
+  else if (bonus == 1)
+    _canLaunchBomb = true;
+  else if (bonus == 2)
+    _score += 50;
 }
 
 int	IACharacter::getScore() const
@@ -248,5 +243,4 @@ int	IACharacter::getScore() const
 void	IACharacter::setScore(int score)
 {
   _score = score;
-  std::cout << "setScore IACharacter " << _score << std::endl;
 }
