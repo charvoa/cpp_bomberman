@@ -13,7 +13,7 @@
 SaveGame::SaveGame(World &world, const std::string mapName)
 {
   std::string	root;
-
+  std::ofstream file;
   std::string strCopy(mapName);
 
   size_t pos = strCopy.find("./maps/");
@@ -22,16 +22,9 @@ SaveGame::SaveGame(World &world, const std::string mapName)
       strCopy.replace(pos, 7, "");
     }
 
-  std::cout << "MapName = " << strCopy << std::endl;
-  std::cout << "SaveGame >> " << std::endl;
-  root = "./saves/";
-  root += strCopy;
-  root += ".save";
+  root = "./saves/lastgame.save";
   _world = &world;
   _map = _world->getWorld();
-  std::ofstream file;//(root, std::ios::in | std::ios::trunc | std::ios::app);
-
-  // raplced mapName by strCopy
   file.open(root, std::ofstream::out | std::ofstream::trunc | std::ofstream::app);
 
   this->writeMapName(file, strCopy);

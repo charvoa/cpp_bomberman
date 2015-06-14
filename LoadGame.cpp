@@ -10,11 +10,11 @@
 
 #include "LoadGame.hh"
 
-LoadGame::LoadGame(Game *game, std::string &filename)
+LoadGame::LoadGame(Game *game)
 {
   std::ifstream	file;
 
-  file.open(filename);
+  file.open("lastgame.save");
   this->setInitialMap(file);
   this->setPlayersInfo(file);
   this->setSavedMap(this->getBufferForMap(file));

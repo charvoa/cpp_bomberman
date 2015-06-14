@@ -24,7 +24,7 @@
 class		LoadGame
 {
 public:
-  LoadGame(Game *game,std::string &filename);
+  LoadGame(Game *game);
   ~LoadGame();
   void				setInitialMap(std::ifstream &file);
   void				setPlayersInfo(std::ifstream &file);
