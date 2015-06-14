@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Thu May 21 16:14:04 2015 Serge Heitzler
-// Last update Sun Jun 14 20:26:29 2015 Antoine Garcia
+// Last update Sun Jun 14 20:33:18 2015 Antoine Garcia
 //
 
 #include "LoadGame.hh"
@@ -79,10 +79,10 @@ Map &		LoadGame::getInitialMap()
 
 void	LoadGame::getPlayerPosition(std::string &line)
 {
+  std::string tmp;
 
-  std::cout << line.find("POSX ") << std::endl;
   tmp = line;
-  _pos = Position(stoi(line.substr(line.find("POSX "), line.find("POSY"))), tmp.substr(tmp.find("POSY ")));
+  _pos = Position(stoi(line.substr(5, line.find("POSY"))), stoi(tmp.substr(tmp.find("POSY ") + 5)));
 
 }
 
@@ -93,7 +93,7 @@ void	LoadGame::getPlayerHP(std::string &line)
 
 void	LoadGame::getPlayerRange(std::string &line)
 {
-  _range = stoi(line.substr(line.find("RANGE : ")));
+  _range = stoi(line.substr(8));
 }
 
 std::vector<ACharacter *>	LoadGame::getPlayers(std::ifstream &file)
@@ -106,6 +106,7 @@ std::vector<ACharacter *>	LoadGame::getPlayers(std::ifstream &file)
   this->determineStartMap();
   while (getline(file, tmp) != _startMap.c_str())
     {
+      std::cout << "CACA" << std::endl;
       while (tmp != "*----------*" && tmp != startMap.c_str())
   	{
   	  //getline(file, tmp);
@@ -116,10 +117,11 @@ std::vector<ACharacter *>	LoadGame::getPlayers(std::ifstream &file)
   	  this->getPlayerPosition(tmp);
   	  getline(file, tmp);
 	  std::cout << "3 " <<  tmp << std::endl;
-  	  this->getPlayerHP(tmp);
+  	  //this->getPlayerHP(tmp);
   	  getline(file, tmp);
 	  std::cout << "4 " <<  tmp << std::endl;
   	  this->getPlayerRange(tmp);
+	  std::cout << "BOUDIN" << std::endl;
   	  // if (_type == HUMAN)
   	  //   obj = new HumanCharacter(to_string(_id), , _pos);
   	  // else
