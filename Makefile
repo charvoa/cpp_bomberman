@@ -1,11 +1,11 @@
 ##
 ## Makefile for  in /home/nicolaschr/Work/cpp_bomberman
-## 
+##
 ## Made by Nicolas Charvoz
 ## Login   <nicolaschr@epitech.net>
-## 
+##
 ## Started on  Fri Jun  5 08:03:55 2015 Nicolas Charvoz
-## Last update Fri Jun  5 08:04:00 2015 Nicolas Charvoz
+## Last update Sun Jun 14 13:38:53 2015 Nicolas Girardot
 ##
 
 MAIN		=	bomberman
@@ -39,8 +39,7 @@ SRC		+=	Button.cpp			\
 			RandomMenu.cpp			\
 			Bonus.cpp			\
 			GameOver.cpp			\
-			Intro.cpp			\
-			SaveGame.cpp
+			Intro.cpp
 
 SRC_MAIN	=	$(SRC) main.cpp
 
