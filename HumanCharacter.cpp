@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Sun Jun 14 12:34:57 2015 Audibert Louis
+// Last update Sun Jun 14 15:39:12 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -18,23 +18,11 @@ Sound&	ACharacter::_sound = Sound::getInstance();
 
 HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
 {
-  int save = (id - '0') % 2;
   _world = world;
   std::cout << "id = " << id << std::endl;
   this->_id = id;
   this->_alive = true;
   _pos = pos;
-  if (save == 1)
-    _model.load("./images/model/marvin.fbx");
-  else
-    _model.load("./images/model/GuardSoldier.FBX");
-  // if (save == 1)
-  //   _model.load("./images/model/thug.obj");
-  // else
-  //   _model.load("./images/model/thug2.obj");
-  // _model.load("/home/audibe_l/Downloads/marvin/War_Machine_Iron_Patriot.obj");
-  // _model.load("/home/audibe_l/Downloads/Blender/GuardSoldier.FBX");
-  // _model.load("/home/audibe_l/Downloads/marvin/joker/thug2.obj");
   _orientation = DOWN;
   _type = HUMAN;
   _timer = 0;
@@ -43,26 +31,21 @@ HumanCharacter::HumanCharacter(char id, World *world, Position& pos)
   _range = 1;
   _score = 0;
   _sound.registerSound("./resources/sounds/USAbomb.mp3", "USAbomb");
+  if ((id - '0') == 1)
+    _model.load("./images/model/marvin.fbx");
+  else
+    _model.load("./images/model/GuardSoldier.FBX");
   glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -50,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
-  // glm::vec3 trans(0 + (_pos._x - _world->getWidth() / 2) * 100, -0,  750 * (-1) + (_pos._y - _world->getHeight() / 2) * 100);
   this->translate(trans);
-  if (save == 1)
+  if ((id - '0') == 1)
     this->scale(glm::vec3(0.3, 0.3, 0.3));
   else
     this->scale(glm::vec3(2.7, 2.7, 2.7));
-  // if (save == 1)
-  //   this->scale(glm::vec3(7, 7, 7));
-  // else
-  //   this->scale(glm::vec3(1, 1, 1));
-  // this->scale(glm::vec3(1, 1, 1));
 }
-
-#include <unistd.h>
 
 HumanCharacter::~HumanCharacter()
 {
   std::cout << "Human is dead..." << std::endl;
-  //sleep(5);
 }
 
 bool HumanCharacter::getAlive() const
@@ -72,10 +55,9 @@ bool HumanCharacter::getAlive() const
 
 void HumanCharacter::dropBomb()
 {
-  // _model.setCurrentAnim(4, false);
   if (_canLaunchBomb == true)
     {
-      std::cout << "I droped a bomb hahah" << std::endl;
+      std::cout << "I droped a bomb" << std::endl;
       _world->dropBomb(_pos, (_id - '0'));
       _sound.playMusic("USAbomb");
       _world->setItemAtPosition(_pos, 'T');
@@ -101,7 +83,6 @@ void HumanCharacter::draw(gdl::AShader &shader, gdl::Clock const &clock)
 
 void HumanCharacter::update()
 {
-  // _model.update();
 }
 
 Position	&HumanCharacter::getPos() const
@@ -201,16 +182,9 @@ bool	HumanCharacter::move(e_orientation ori, gdl::Clock &clock)
   if (_world->checkPlayerCanMove(pos->_x, pos->_y) == true)
     {
       if (_isAnime == false)
-	{
-	  _model.setCurrentAnim(0, false);
-	  // _isAnime = true;
-	}
-      std::cout << "OK" << std::endl;
+	_model.setCurrentAnim(0, false);
       glm::vec3 move(x * 100, 0, y * 100);
-      std::cout << "clock.getElapsed() = " << clock.getElapsed() << std::endl;
       _timer += 1.0f;
-      std::cout << "x = " << _pos._x << "; y = " << _pos._y << std::endl;
-      std::cout << "timer = " << _timer << std::endl;
       if (_timer >= 2.0f)
       	{
 	  this->translate(move);
@@ -230,7 +204,6 @@ bool	HumanCharacter::getCanLaunchBomb() const
 
 void	HumanCharacter::setCanLaunchBomb(bool launch)
 {
-  std::cout << "_canLaunchBomb at " << launch << std::endl;
   _canLaunchBomb = launch;
 }
 
@@ -248,6 +221,5 @@ int	HumanCharacter::getScore() const
 void	HumanCharacter::setScore(int score)
 {
   _score = score;
-  std::cout << "setScore HumanCharacter " << _score << std::endl;
 }
 
