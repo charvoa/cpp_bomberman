@@ -24,6 +24,7 @@ class		Map
 public:
 
   Map(const std::string &filename);
+  Map(std::vector<std::vector<char>> map);
   ~Map();
   std::stringstream&			getBufferForMap(std::ifstream &file);
   void					setMap(std::stringstream &map);
@@ -32,6 +33,8 @@ public:
   std::vector<std::vector<char> >&	getMap();
   void					setWidth(std::string &line);
   void					setHeight(std::string &line);
+  void					setWidth(int width);
+  void					setHeight(int height);
   char					getItemAtPosition(int x, int y) const;
   void					setItemAtPosition(int x, int y,
 							  char c);

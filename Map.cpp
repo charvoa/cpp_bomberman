@@ -29,6 +29,13 @@ Map::Map(const std::string &filename)
     std::cerr << "Impossible d'ouvrir le fichier !" << std::endl;
 }
 
+Map::Map(std::vector<std::vector<char> > map)
+{
+  _map = map;
+  this->setHeight(map.size());
+  this->setWidth(map.at(0).size());
+}
+
 Map::~Map()
 {
 
@@ -100,6 +107,16 @@ void					Map::setHeight(std::string &line)
 void					Map::setWidth(std::string &line)
 {
   this->_width = stoi(line.substr((line.find("X") + 1)));
+}
+
+void					Map::setHeight(int height)
+{
+  this->_height = height;
+}
+
+void					Map::setWidth(int width)
+{
+  this->_width = width;
 }
 
 char					Map::getItemAtPosition(int x, int y) const
