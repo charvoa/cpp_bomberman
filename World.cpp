@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sun Jun 14 12:40:48 2015 Audibert Louis
+// Last update Sun Jun 14 18:06:58 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -40,6 +40,25 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
   _command = new Command(game, this);
 }
 
+World::World(Game *game, Map &map, int nb_players)
+{
+  _game = game;
+  _nbPlayers = nb_players;
+  _fileMap = &map;
+  _height = _fileMap->getHeight();
+  _width = _fileMap->getWidth();
+  _name = _fileMap->getMapName();
+  gdl::BasicShader shader = _game->getShader();
+  shader.bind();
+  shader.setUniform("view", _game->_camera->getTransformation());
+  shader.setUniform("projection", _game->_camera->getProjection());
+  _map = _fileMap->getMap();
+  _texManag.registerTexture("backgroundInGame", "backIG");
+  this->loadBackground();
+  findWall();
+  _command = new Command(game, this);
+}
+
 void	World::findWall()
 {
   AObject *wall;
@@ -64,7 +83,7 @@ void	World::findWall()
 	      wall->scale(glm::vec3(100, 100, 100));
 	      _objects.push_back(wall);
 	    }
-	  if (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2')
+	  if (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2' || _fileMap->getItemAtPosition(x, y) == 'T')
 	    {
 	      Position pos(x, y);
 	      if (_fileMap->getItemAtPosition(x,y) == '1')
