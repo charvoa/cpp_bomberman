@@ -2,13 +2,13 @@
 <!--Detailed report on module Camera-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="24" level="0" />
+<lines_of_code value="23" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
 <lines_of_code value="8" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="3.000" level="0" />
+<lines_of_code_per_line_of_comment value="2.875" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 <weighted_methods_per_class_unity value="6" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
@@ -53,7 +53,7 @@
 <name>getProjection()</name>
 <extent>
 <description>definition</description>
-<source_reference file="Camera.cpp" line="39" />
+<source_reference file="Camera.cpp" line="38" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -65,7 +65,7 @@
 <name>getTransformation()</name>
 <extent>
 <description>definition</description>
-<source_reference file="Camera.cpp" line="34" />
+<source_reference file="Camera.cpp" line="33" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -79,7 +79,7 @@
 <description>definition</description>
 <source_reference file="Camera.cpp" line="28" />
 </extent>
-<lines_of_code value="5" level="0" />
+<lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />

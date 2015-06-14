@@ -35,7 +35,19 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="105" />
+<source_reference file="LoadGame.cpp" line="24" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="LoadGame.cpp" line="38" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="LoadGame.cpp" line="82" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="LoadGame.cpp" line="113" />
 </extent>
 <name>Map</name>
 <visible>true</visible>
@@ -49,15 +61,15 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="SaveGame.cpp" line="22" />
+<source_reference file="SaveGame.cpp" line="23" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="SaveGame.cpp" line="27" />
+<source_reference file="SaveGame.cpp" line="28" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="SaveGame.cpp" line="53" />
+<source_reference file="SaveGame.cpp" line="54" />
 </extent>
 </client_module>
 <supplier_module>

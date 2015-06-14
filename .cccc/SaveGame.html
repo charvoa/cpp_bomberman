@@ -8,13 +8,13 @@ Detailed report on module SaveGame
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=70%>Metric</TH><TH BGCOLOR="AQUA" WIDTH=10%>Tag</TH><TH BGCOLOR="AQUA" WIDTH=10%>Overall</TH><TH BGCOLOR="AQUA" WIDTH=10%>Per Function</TH></TR>
 <TR>
-<TD>Lines of Code</TD><TD>LOC</TD><TD ALIGN=RIGHT>    57</TD><TD ALIGN=RIGHT>******</TD></TR>
+<TD>Lines of Code</TD><TD>LOC</TD><TD ALIGN=RIGHT>    52</TD><TD ALIGN=RIGHT>******</TD></TR>
 <TR>
 <TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
 <TR>
 <TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>     8</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 <TR>
-<TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM> 7.125</EM></TD><TD>&nbsp;</TD></TR>
+<TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT> 6.500</TD><TD>&nbsp;</TD></TR>
 <TR>
 <TD>MVG/COM</TD><TD>M_C</TD><TD ALIGN=RIGHT> 0.750</TD><TD>&nbsp;</TD></TR>
 <TR>
@@ -42,39 +42,39 @@ Detailed report on module SaveGame
 <H2><A NAME="proc">Functions</A></H2>
 <TABLE BORDER WIDTH=100%><TR>
 <TD WIDTH=50%>Function prototype</TD><TH BGCOLOR="AQUA" WIDTH=10%>LOC</TH><TH BGCOLOR="AQUA" WIDTH=10%>MVG</TH><TH BGCOLOR="AQUA" WIDTH=10%>COM</TH><TH BGCOLOR="AQUA" WIDTH=10%>L_C</TH><TH BGCOLOR="AQUA" WIDTH=10%>M_C</TH><TR>
-<TD>SaveGame( &nbsp;vector, &nbsp;const string &amp;&nbsp;)<BR>
+<TD>SaveGame( &nbsp;World &amp;, &nbsp;const string &amp;&nbsp;)<BR>
 definition &nbsp;
 <CODE><A HREF="cccc_src.html#SaveGame.cpp:        13">SaveGame.cpp:13</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>     7</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     8</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     8</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     8</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>writeInfo( &nbsp;ifstream &amp;, &nbsp;list&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#SaveGame.cpp:        53">SaveGame.cpp:53</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#SaveGame.cpp:        54">SaveGame.cpp:54</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>    20</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>******</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>    14</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
-<TD>writeMap( &nbsp;ifstream &amp;, &nbsp;vector&nbsp;)<BR>
+<TD>writeMap( &nbsp;ifstream &amp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#SaveGame.cpp:        27">SaveGame.cpp:27</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#SaveGame.cpp:        28">SaveGame.cpp:28</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>    17</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>writeMapName( &nbsp;ifstream &amp;, &nbsp;const string &amp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#SaveGame.cpp:        22">SaveGame.cpp:22</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#SaveGame.cpp:        23">SaveGame.cpp:23</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>writeType( &nbsp;e_type *, &nbsp;int&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#SaveGame.cpp:        46">SaveGame.cpp:46</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#SaveGame.cpp:        47">SaveGame.cpp:47</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>~SaveGame( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#SaveGame.cpp:        75">SaveGame.cpp:75</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#SaveGame.cpp:        70">SaveGame.cpp:70</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
@@ -87,37 +87,35 @@ definition &nbsp;
 &nbsp;
 </TD>
 <TD WIDTH=50%>
+World [V] <BR>
+pass by reference &nbsp;
+<CODE><A HREF="cccc_src.html#SaveGame.cpp:        13">SaveGame.cpp:13</A></CODE><BR>
+<BR>
+<BR>
 e_type [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#SaveGame.cpp:        46">SaveGame.cpp:46</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#SaveGame.cpp:        47">SaveGame.cpp:47</A></CODE><BR>
 <BR>
 <BR>
 ifstream [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#SaveGame.cpp:        22">SaveGame.cpp:22</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#SaveGame.cpp:        23">SaveGame.cpp:23</A></CODE><BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#SaveGame.cpp:        27">SaveGame.cpp:27</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#SaveGame.cpp:        28">SaveGame.cpp:28</A></CODE><BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#SaveGame.cpp:        53">SaveGame.cpp:53</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#SaveGame.cpp:        54">SaveGame.cpp:54</A></CODE><BR>
 <BR>
 <BR>
 list [CV] <BR>
 pass by value &nbsp;
-<CODE><A HREF="cccc_src.html#SaveGame.cpp:        53">SaveGame.cpp:53</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#SaveGame.cpp:        54">SaveGame.cpp:54</A></CODE><BR>
 <BR>
 <BR>
 string [V] <BR>
 pass by reference &nbsp;
 <CODE><A HREF="cccc_src.html#SaveGame.cpp:        13">SaveGame.cpp:13</A></CODE><BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#SaveGame.cpp:        22">SaveGame.cpp:22</A></CODE><BR>
-<BR>
-<BR>
-vector [CV] <BR>
-pass by value &nbsp;
-<CODE><A HREF="cccc_src.html#SaveGame.cpp:        13">SaveGame.cpp:13</A></CODE><BR>
-pass by value &nbsp;
-<CODE><A HREF="cccc_src.html#SaveGame.cpp:        27">SaveGame.cpp:27</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#SaveGame.cpp:        23">SaveGame.cpp:23</A></CODE><BR>
 <BR>
 <BR>
 &nbsp;

@@ -1,11 +1,11 @@
 ##
-## Makefile<2> for girard_s in /home/nicolas/rendu/PSU_2014_zappy/sources/graph
-##
-## Made by Nicolas Girardot
-## Login   <girard_s@epitech.net>
-##
-## Started on  Tue May 26 17:42:11 2015 Nicolas Girardot
-## Last update Sat Jun 13 13:57:23 2015 Audibert Louis
+## Makefile for  in /home/nicolaschr/Work/cpp_bomberman
+## 
+## Made by Nicolas Charvoz
+## Login   <nicolaschr@epitech.net>
+## 
+## Started on  Fri Jun  5 08:03:55 2015 Nicolas Charvoz
+## Last update Fri Jun  5 08:04:00 2015 Nicolas Charvoz
 ##
 
 MAIN		=	bomberman
@@ -39,9 +39,8 @@ SRC		+=	Button.cpp			\
 			RandomMenu.cpp			\
 			Bonus.cpp			\
 			GameOver.cpp			\
-			Intro.cpp
-			# LoadGame.cpp			\
-			# SaveGame.cpp			\
+			Intro.cpp			\
+			SaveGame.cpp
 
 SRC_MAIN	=	$(SRC) main.cpp
 

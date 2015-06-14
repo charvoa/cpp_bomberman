@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="2" level="0" />
+<coupling_between_objects value="1" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -40,17 +40,6 @@
 <extent>
 <description>pass by reference</description>
 <source_reference file="Leaderboard.cpp" line="89" />
-</extent>
-<name>SaveGame</name>
-<visible>true</visible>
-<concrete>true</concrete>
-<extent>
-<description>pass by value</description>
-<source_reference file="SaveGame.cpp" line="13" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="SaveGame.cpp" line="27" />
 </extent>
 </client_module>
 <supplier_module>

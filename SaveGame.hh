@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Wed May 20 10:54:39 2015 Serge Heitzler
-// Last update Tue May 26 11:07:08 2015 Serge Heitzler
+// Last update Fri Jun  5 08:16:52 2015 Nicolas Charvoz
 //
 
 #ifndef SAVEGAME_HH_
@@ -15,6 +15,7 @@
 # include <iostream>
 # include <fstream>
 # include <vector>
+# include <list>
 
 class		SaveGame
 {

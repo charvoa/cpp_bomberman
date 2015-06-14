@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Wed May 20 10:56:14 2015 Serge Heitzler
-// Last update Tue May 26 11:07:04 2015 Serge Heitzler
+// Last update Fri Jun  5 08:16:34 2015 Nicolas Charvoz
 //
 
 #include "SaveGame.hh"

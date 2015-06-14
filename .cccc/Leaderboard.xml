@@ -2,14 +2,14 @@
 <!--Detailed report on module Leaderboard-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="178" level="0" />
+<lines_of_code value="179" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="15" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="0" level="0" />
-<lines_of_code_per_member_function value="********" level="0" />
-<lines_of_code_per_line_of_comment value="******" level="2" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="2" />
+<lines_of_code value="1" level="0" />
+<lines_of_code_per_member_function value="********" level="2" />
+<lines_of_code_per_line_of_comment value="179.000" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="15.000" level="2" />
 <weighted_methods_per_class_unity value="17" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
@@ -55,7 +55,7 @@
 <description>definition</description>
 <source_reference file="Leaderboard.cpp" line="153" />
 </extent>
-<lines_of_code value="21" level="0" />
+<lines_of_code value="23" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="******" level="2" />
@@ -65,11 +65,11 @@
 <name>draw(Clock &amp;,BasicShader &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Leaderboard.cpp" line="207" />
+<source_reference file="Leaderboard.cpp" line="209" />
 </extent>
-<lines_of_code value="7" level="0" />
+<lines_of_code value="6" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
+<lines_of_comment value="1" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
@@ -77,7 +77,7 @@
 <name>drawBackground(Clock &amp;,BasicShader &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Leaderboard.cpp" line="184" />
+<source_reference file="Leaderboard.cpp" line="186" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -89,7 +89,7 @@
 <name>drawButtons(Clock &amp;,BasicShader &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Leaderboard.cpp" line="189" />
+<source_reference file="Leaderboard.cpp" line="191" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -101,7 +101,7 @@
 <name>drawLetters(Clock &amp;,BasicShader &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Leaderboard.cpp" line="176" />
+<source_reference file="Leaderboard.cpp" line="178" />
 </extent>
 <lines_of_code value="7" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -113,7 +113,7 @@
 <name>drawScore(Clock &amp;,BasicShader &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Leaderboard.cpp" line="195" />
+<source_reference file="Leaderboard.cpp" line="197" />
 </extent>
 <lines_of_code value="11" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
@@ -209,7 +209,7 @@
 <name>update(Clock &amp;,Input &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="Leaderboard.cpp" line="215" />
+<source_reference file="Leaderboard.cpp" line="217" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -221,7 +221,7 @@
 <name>~Leaderboard()</name>
 <extent>
 <description>definition</description>
-<source_reference file="Leaderboard.cpp" line="221" />
+<source_reference file="Leaderboard.cpp" line="223" />
 </extent>
 <lines_of_code value="2" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -241,50 +241,50 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="176" />
+<source_reference file="Leaderboard.cpp" line="178" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="184" />
+<source_reference file="Leaderboard.cpp" line="186" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="189" />
+<source_reference file="Leaderboard.cpp" line="191" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="195" />
+<source_reference file="Leaderboard.cpp" line="197" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="207" />
+<source_reference file="Leaderboard.cpp" line="209" />
 </extent>
 <name>Clock</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="176" />
+<source_reference file="Leaderboard.cpp" line="178" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="184" />
+<source_reference file="Leaderboard.cpp" line="186" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="189" />
+<source_reference file="Leaderboard.cpp" line="191" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="195" />
+<source_reference file="Leaderboard.cpp" line="197" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="207" />
+<source_reference file="Leaderboard.cpp" line="209" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="215" />
+<source_reference file="Leaderboard.cpp" line="217" />
 </extent>
 <name>Game</name>
 <visible>true</visible>
@@ -298,7 +298,7 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="215" />
+<source_reference file="Leaderboard.cpp" line="217" />
 </extent>
 <name>string</name>
 <visible>true</visible>

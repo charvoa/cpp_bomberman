@@ -8,17 +8,17 @@ Detailed report on module World
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=70%>Metric</TH><TH BGCOLOR="AQUA" WIDTH=10%>Tag</TH><TH BGCOLOR="AQUA" WIDTH=10%>Overall</TH><TH BGCOLOR="AQUA" WIDTH=10%>Per Function</TH></TR>
 <TR>
-<TD>Lines of Code</TD><TD>LOC</TD><TD ALIGN=RIGHT>   303</TD><TD ALIGN=RIGHT>******</TD></TR>
+<TD>Lines of Code</TD><TD>LOC</TD><TD ALIGN=RIGHT>   351</TD><TD ALIGN=RIGHT>******</TD></TR>
 <TR>
-<TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>    61</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
+<TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>    69</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
 <TR>
-<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>    27</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
+<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>    11</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 <TR>
-<TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>11.222</EM></TD><TD>&nbsp;</TD></TR>
+<TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>31.909</STRONG></TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>MVG/COM</TD><TD>M_C</TD><TD ALIGN=RIGHT> 2.259</TD><TD>&nbsp;</TD></TR>
+<TD>MVG/COM</TD><TD>M_C</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM> 6.273</EM></TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>Weighted Methods per Class ( &nbsp;weighting = unity&nbsp;)</TD><TD>WMC1</TD><TD ALIGN=RIGHT>    23</TD><TD>&nbsp;</TD></TR>
+<TD>Weighted Methods per Class ( &nbsp;weighting = unity&nbsp;)</TD><TD>WMC1</TD><TD ALIGN=RIGHT>    24</TD><TD>&nbsp;</TD></TR>
 <TR>
 <TD>Weighted Methods per Class ( &nbsp;weighting = visible&nbsp;)</TD><TD>WMCv</TD><TD ALIGN=RIGHT>     0</TD><TD>&nbsp;</TD></TR>
 <TR>
@@ -26,11 +26,11 @@ Detailed report on module World
 <TR>
 <TD>Number of Children</TD><TD>NOC</TD><TD ALIGN=RIGHT>     0</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>Coupling between objects</TD><TD>CBO</TD><TD ALIGN=RIGHT>    16</TD><TD>&nbsp;</TD></TR>
+<TD>Coupling between objects</TD><TD>CBO</TD><TD ALIGN=RIGHT>    18</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>Information Flow measure ( &nbsp;inclusive&nbsp;)</TD><TD>IF4</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>  4096</STRONG></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
+<TD>Information Flow measure ( &nbsp;inclusive&nbsp;)</TD><TD>IF4</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>  6561</STRONG></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 <TR>
-<TD>Information Flow measure ( &nbsp;visible&nbsp;)</TD><TD>IF4v</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>  4096</STRONG></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
+<TD>Information Flow measure ( &nbsp;visible&nbsp;)</TD><TD>IF4v</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>  6561</STRONG></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 <TR>
 <TD>Information Flow measure ( &nbsp;concrete&nbsp;)</TD><TD>IF4c</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>********</TD></TR>
 </TABLE>
@@ -48,57 +48,63 @@ definition &nbsp;
 <BR>
 </TD><TD ALIGN=RIGHT>    22</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
+<TD>checkBonus( &nbsp;Bonus &amp;&nbsp;)<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#World.cpp:       222">World.cpp:222</A></CODE><BR>
+<BR>
+</TD><TD ALIGN=RIGHT>     9</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
 <TD>checkDamages( &nbsp;list &amp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       337">World.cpp:337</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       366">World.cpp:366</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     9</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>checkDestroyBoxes( &nbsp;Flame &amp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       364">World.cpp:364</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       396">World.cpp:396</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>    16</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>    19</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>******</TD></TR>
 <TR>
 <TD>checkPlayerCanMove( &nbsp;int, &nbsp;int&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       284">World.cpp:284</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       313">World.cpp:313</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>    16</TD><TD ALIGN=RIGHT>     8</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
 <TR>
 <TD>checkPlayersDeath( &nbsp;Flame &amp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       348">World.cpp:348</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       377">World.cpp:377</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>    15</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>    18</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
 <TR>
 <TD>createHumanPlayer( &nbsp;char, &nbsp;Position &amp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       126">World.cpp:126</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       114">World.cpp:114</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>createIaPlayer( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       109">World.cpp:109</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:        97">World.cpp:97</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>    11</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>    10</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>draw( &nbsp;Clock &amp;, &nbsp;BasicShader &amp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       134">World.cpp:134</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       122">World.cpp:122</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>    14</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>    24</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>    58</EM></TD><TD ALIGN=RIGHT>    10</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
 <TR>
 <TD>drawBackground( &nbsp;Clock &amp;, &nbsp;BasicShader &amp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       243">World.cpp:243</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       272">World.cpp:272</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>dropBomb( &nbsp;Position &amp;, &nbsp;int&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       226">World.cpp:226</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       255">World.cpp:255</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     8</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
@@ -106,79 +112,79 @@ definition &nbsp;
 definition &nbsp;
 <CODE><A HREF="cccc_src.html#World.cpp:        42">World.cpp:42</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>    66</EM></TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>    14</EM></TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
+</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>    54</EM></TD><TD ALIGN=RIGHT>     8</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
 <TR>
 <TD>gameOver( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       183">World.cpp:183</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       191">World.cpp:191</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>    23</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD><TD ALIGN=RIGHT>******</TD></TR>
+</TD><TD ALIGN=RIGHT>    29</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD><TD ALIGN=RIGHT>******</TD></TR>
 <TR>
 <TD>getHeight( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       307">World.cpp:307</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       336">World.cpp:336</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>getHumansPlayers( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       323">World.cpp:323</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       352">World.cpp:352</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>    12</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>getItemAtPosition( &nbsp;int, &nbsp;int&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       279">World.cpp:279</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       308">World.cpp:308</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>getPlayerById( &nbsp;int&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       173">World.cpp:173</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       181">World.cpp:181</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     9</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>getPlayers( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       318">World.cpp:318</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       347">World.cpp:347</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>getWidth( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       302">World.cpp:302</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       331">World.cpp:331</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>getWorld( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       312">World.cpp:312</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       341">World.cpp:341</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>loadBackground( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       235">World.cpp:235</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       264">World.cpp:264</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>setBonus( &nbsp;Position &amp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       271">World.cpp:271</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       300">World.cpp:300</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     7</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>setItemAtPosition( &nbsp;Position &amp;, &nbsp;char&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       248">World.cpp:248</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       277">World.cpp:277</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>    22</TD><TD ALIGN=RIGHT>     7</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
 <TR>
 <TD>update( &nbsp;Clock &amp;, &nbsp;Input &amp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       207">World.cpp:207</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       233">World.cpp:233</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>    17</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>    20</TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>20.000</TD><TD ALIGN=RIGHT> 5.000</TD></TR>
 <TR><TD HEIGHT=12 COLSPAN=6></TD></TR>
 </TR></TABLE>
 <H2><A NAME="structdet">Relationships</A></H2>
@@ -226,30 +232,40 @@ pass by reference &nbsp;
 <CODE><A HREF="cccc_src.html#Pause.cpp:        21">Pause.cpp:21</A></CODE><BR>
 <BR>
 <BR>
+SaveGame [V] <BR>
+pass by reference &nbsp;
+<CODE><A HREF="cccc_src.html#SaveGame.cpp:        13">SaveGame.cpp:13</A></CODE><BR>
+<BR>
+<BR>
 &nbsp;
 </TD>
 <TD WIDTH=50%>
 BasicShader [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       134">World.cpp:134</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       122">World.cpp:122</A></CODE><BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       243">World.cpp:243</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       272">World.cpp:272</A></CODE><BR>
+<BR>
+<BR>
+Bonus [V] <BR>
+pass by reference &nbsp;
+<CODE><A HREF="cccc_src.html#World.cpp:       222">World.cpp:222</A></CODE><BR>
 <BR>
 <BR>
 Clock [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       134">World.cpp:134</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       122">World.cpp:122</A></CODE><BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       207">World.cpp:207</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       233">World.cpp:233</A></CODE><BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       243">World.cpp:243</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       272">World.cpp:272</A></CODE><BR>
 <BR>
 <BR>
 Flame [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       348">World.cpp:348</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       377">World.cpp:377</A></CODE><BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       364">World.cpp:364</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       396">World.cpp:396</A></CODE><BR>
 <BR>
 <BR>
 Game [V] <BR>
@@ -259,7 +275,7 @@ pass by reference &nbsp;
 <BR>
 Input [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       207">World.cpp:207</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       233">World.cpp:233</A></CODE><BR>
 <BR>
 <BR>
 Map [V] <BR>
@@ -269,18 +285,18 @@ pass by reference &nbsp;
 <BR>
 Position [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       126">World.cpp:126</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       114">World.cpp:114</A></CODE><BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       226">World.cpp:226</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       255">World.cpp:255</A></CODE><BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       248">World.cpp:248</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       277">World.cpp:277</A></CODE><BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       271">World.cpp:271</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       300">World.cpp:300</A></CODE><BR>
 <BR>
 <BR>
 list [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#World.cpp:       337">World.cpp:337</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#World.cpp:       366">World.cpp:366</A></CODE><BR>
 <BR>
 <BR>
 &nbsp;

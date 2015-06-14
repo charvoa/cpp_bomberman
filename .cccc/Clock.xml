@@ -14,7 +14,7 @@
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="13" level="0" />
+<coupling_between_objects value="14" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -35,71 +35,71 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="49" />
+<source_reference file="Command.cpp" line="51" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="54" />
+<source_reference file="Command.cpp" line="56" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="66" />
+<source_reference file="Command.cpp" line="68" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="75" />
+<source_reference file="Command.cpp" line="77" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="85" />
+<source_reference file="Command.cpp" line="87" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="96" />
+<source_reference file="Command.cpp" line="98" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="107" />
+<source_reference file="Command.cpp" line="109" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="116" />
+<source_reference file="Command.cpp" line="120" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="127" />
+<source_reference file="Command.cpp" line="131" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="138" />
+<source_reference file="Command.cpp" line="142" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="149" />
+<source_reference file="Command.cpp" line="153" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="160" />
+<source_reference file="Command.cpp" line="164" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="171" />
+<source_reference file="Command.cpp" line="175" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="182" />
+<source_reference file="Command.cpp" line="186" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="193" />
+<source_reference file="Command.cpp" line="197" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="204" />
+<source_reference file="Command.cpp" line="208" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Command.cpp" line="211" />
+<source_reference file="Command.cpp" line="215" />
 </extent>
 <name>Exit</name>
 <visible>true</visible>
@@ -144,41 +144,56 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="HumanCharacter.cpp" line="192" />
+<source_reference file="HumanCharacter.cpp" line="172" />
 </extent>
 <name>IACharacter</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="IACharacter.cpp" line="182" />
+<source_reference file="IACharacter.cpp" line="163" />
+</extent>
+<name>Intro</name>
+<visible>true</visible>
+<concrete>false</concrete>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Intro.cpp" line="55" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Intro.cpp" line="68" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="Intro.cpp" line="75" />
 </extent>
 <name>Leaderboard</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="176" />
+<source_reference file="Leaderboard.cpp" line="178" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="184" />
+<source_reference file="Leaderboard.cpp" line="186" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="189" />
+<source_reference file="Leaderboard.cpp" line="191" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="195" />
+<source_reference file="Leaderboard.cpp" line="197" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="207" />
+<source_reference file="Leaderboard.cpp" line="209" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="Leaderboard.cpp" line="215" />
+<source_reference file="Leaderboard.cpp" line="217" />
 </extent>
 <name>Load</name>
 <visible>true</visible>
@@ -311,15 +326,15 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="World.cpp" line="134" />
+<source_reference file="World.cpp" line="122" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="World.cpp" line="207" />
+<source_reference file="World.cpp" line="233" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="World.cpp" line="243" />
+<source_reference file="World.cpp" line="272" />
 </extent>
 </client_module>
 <supplier_module>

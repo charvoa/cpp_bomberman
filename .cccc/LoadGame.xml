@@ -2,19 +2,19 @@
 <!--Detailed report on module LoadGame-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="107" level="0" />
+<lines_of_code value="117" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
-<McCabes_cyclomatic_complexity value="10" level="0" />
+<McCabes_cyclomatic_complexity value="11" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
 <lines_of_code value="8" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="13.375" level="1" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="1.250" level="0" />
-<weighted_methods_per_class_unity value="14" level="0" />
+<lines_of_code_per_line_of_comment value="14.625" level="1" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="1.375" level="0" />
+<weighted_methods_per_class_unity value="12" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
 <number_of_children value="0" level="0" />
-<coupling_between_objects value="5" level="0" />
+<coupling_between_objects value="4" level="0" />
 <IF4 value="0" level="0" />
 <IF4_per_member_function value="********" level="0" />
 <IF4_visible value="0" level="0" />
@@ -26,7 +26,7 @@
 </module_detail>
 <procedural_detail>
 <member_function>
-<name>LoadGame(string &amp;)</name>
+<name>LoadGame(Game *,string &amp;)</name>
 <extent>
 <description>definition</description>
 <source_reference file="LoadGame.cpp" line="13" />
@@ -41,10 +41,10 @@
 <name>determineStartMap()</name>
 <extent>
 <description>definition</description>
-<source_reference file="LoadGame.cpp" line="38" />
+<source_reference file="LoadGame.cpp" line="43" />
 </extent>
 <lines_of_code value="13" level="0" />
-<McCabes_cyclomatic_complexity value="2" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
@@ -53,7 +53,7 @@
 <name>getBufferForMap(ifstream &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="LoadGame.cpp" line="105" />
+<source_reference file="LoadGame.cpp" line="113" />
 </extent>
 <lines_of_code value="9" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
@@ -62,60 +62,36 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>getPlayerBomb(ACharacter *,string &amp;)</name>
+<name>getPlayerHP(string &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="LoadGame.cpp" line="62" />
+<source_reference file="LoadGame.cpp" line="72" />
 </extent>
-<lines_of_code value="2" level="0" />
+<lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>getPlayerColor(ACharacter *,string &amp;)</name>
+<name>getPlayerPosition(string &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="LoadGame.cpp" line="66" />
+<source_reference file="LoadGame.cpp" line="67" />
 </extent>
-<lines_of_code value="2" level="0" />
+<lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>getPlayerHP(ACharacter *,string &amp;)</name>
+<name>getPlayerRange(string &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="LoadGame.cpp" line="60" />
+<source_reference file="LoadGame.cpp" line="77" />
 </extent>
-<lines_of_code value="2" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>getPlayerPosition(ACharacter *,string &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="LoadGame.cpp" line="56" />
-</extent>
-<lines_of_code value="3" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>getPlayerRange(ACharacter *,string &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="LoadGame.cpp" line="64" />
-</extent>
-<lines_of_code value="2" level="0" />
+<lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -125,45 +101,45 @@
 <name>getPlayerType(string &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="LoadGame.cpp" line="53" />
-</extent>
-<lines_of_code value="2" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>getPlayers(ofstream &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="LoadGame.cpp" line="70" />
-</extent>
-<lines_of_code value="30" level="0" />
-<McCabes_cyclomatic_complexity value="4" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="******" level="2" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>setInitialMap(ofstream &amp;)</name>
-<extent>
-<description>definition</description>
-<source_reference file="LoadGame.cpp" line="23" />
+<source_reference file="LoadGame.cpp" line="58" />
 </extent>
 <lines_of_code value="8" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>getPlayers(ifstream &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="LoadGame.cpp" line="82" />
+</extent>
+<lines_of_code value="28" level="0" />
+<McCabes_cyclomatic_complexity value="5" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="******" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="******" level="0" />
+</member_function>
+<member_function>
+<name>setInitialMap(ifstream &amp;)</name>
+<extent>
+<description>definition</description>
+<source_reference file="LoadGame.cpp" line="24" />
+</extent>
+<lines_of_code value="12" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>setPlayersInfo(ofstream &amp;)</name>
+<name>setPlayersInfo(ifstream &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="LoadGame.cpp" line="33" />
+<source_reference file="LoadGame.cpp" line="38" />
 </extent>
-<lines_of_code value="3" level="0" />
+<lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -173,7 +149,7 @@
 <name>setSavedMap(stringstream &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="LoadGame.cpp" line="116" />
+<source_reference file="LoadGame.cpp" line="124" />
 </extent>
 <lines_of_code value="19" level="0" />
 <McCabes_cyclomatic_complexity value="2" level="0" />
@@ -185,7 +161,7 @@
 <name>~LoadGame()</name>
 <extent>
 <description>definition</description>
-<source_reference file="LoadGame.cpp" line="137" />
+<source_reference file="LoadGame.cpp" line="145" />
 </extent>
 <lines_of_code value="3" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -200,50 +176,31 @@
 <client_module>
 </client_module>
 <supplier_module>
-<name>ACharacter</name>
+<name>Game</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="56" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="60" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="62" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="64" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="66" />
+<source_reference file="LoadGame.cpp" line="13" />
 </extent>
 <name>ifstream</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="105" />
-</extent>
-<name>ofstream</name>
-<visible>true</visible>
-<concrete>false</concrete>
-<extent>
-<description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="23" />
+<source_reference file="LoadGame.cpp" line="24" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="33" />
+<source_reference file="LoadGame.cpp" line="38" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="70" />
+<source_reference file="LoadGame.cpp" line="82" />
+</extent>
+<extent>
+<description>pass by reference</description>
+<source_reference file="LoadGame.cpp" line="113" />
 </extent>
 <name>string</name>
 <visible>true</visible>
@@ -254,34 +211,26 @@
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="53" />
+<source_reference file="LoadGame.cpp" line="58" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="56" />
+<source_reference file="LoadGame.cpp" line="67" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="60" />
+<source_reference file="LoadGame.cpp" line="72" />
 </extent>
 <extent>
 <description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="62" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="64" />
-</extent>
-<extent>
-<description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="66" />
+<source_reference file="LoadGame.cpp" line="77" />
 </extent>
 <name>stringstream</name>
 <visible>true</visible>
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="LoadGame.cpp" line="116" />
+<source_reference file="LoadGame.cpp" line="124" />
 </extent>
 </supplier_module>
 </module>

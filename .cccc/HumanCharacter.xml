@@ -2,13 +2,13 @@
 <!--Detailed report on module HumanCharacter-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="194" level="0" />
+<lines_of_code value="191" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="49" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
 <lines_of_code value="17" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="11.412" level="1" />
+<lines_of_code_per_line_of_comment value="11.235" level="1" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="2.882" level="0" />
 <weighted_methods_per_class_unity value="24" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
@@ -89,7 +89,7 @@
 <name>getAngle(e_orientation,e_orientation)</name>
 <extent>
 <description>definition</description>
-<source_reference file="HumanCharacter.cpp" line="172" />
+<source_reference file="HumanCharacter.cpp" line="152" />
 </extent>
 <lines_of_code value="19" level="0" />
 <McCabes_cyclomatic_complexity value="28" level="1" />
@@ -101,7 +101,7 @@
 <name>getCanLaunchBomb()</name>
 <extent>
 <description>definition</description>
-<source_reference file="HumanCharacter.cpp" line="246" />
+<source_reference file="HumanCharacter.cpp" line="226" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -113,19 +113,7 @@
 <name>getCharacter()</name>
 <extent>
 <description>definition</description>
-<source_reference file="HumanCharacter.cpp" line="167" />
-</extent>
-<lines_of_code value="4" level="0" />
-<McCabes_cyclomatic_complexity value="1" level="0" />
-<lines_of_comment value="0" level="0" />
-<lines_of_code_per_line_of_comment value="------" level="0" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
-</member_function>
-<member_function>
-<name>getColor()</name>
-<extent>
-<description>definition</description>
-<source_reference file="HumanCharacter.cpp" line="150" />
+<source_reference file="HumanCharacter.cpp" line="147" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -182,10 +170,10 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>getType()</name>
+<name>getScore()</name>
 <extent>
 <description>definition</description>
-<source_reference file="HumanCharacter.cpp" line="162" />
+<source_reference file="HumanCharacter.cpp" line="243" />
 </extent>
 <lines_of_code value="4" level="0" />
 <McCabes_cyclomatic_complexity value="1" level="0" />
@@ -194,13 +182,13 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>initColor()</name>
+<name>getType()</name>
 <extent>
 <description>definition</description>
 <source_reference file="HumanCharacter.cpp" line="142" />
 </extent>
-<lines_of_code value="7" level="0" />
-<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="1" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
@@ -209,7 +197,7 @@
 <name>move(e_orientation,Clock &amp;)</name>
 <extent>
 <description>definition</description>
-<source_reference file="HumanCharacter.cpp" line="192" />
+<source_reference file="HumanCharacter.cpp" line="172" />
 </extent>
 <lines_of_code value="51" level="1" />
 <McCabes_cyclomatic_complexity value="9" level="0" />
@@ -218,10 +206,10 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="9.000" level="1" />
 </member_function>
 <member_function>
-<name>setCanLaunchBomb(bool)</name>
+<name>setBonus(int)</name>
 <extent>
 <description>definition</description>
-<source_reference file="HumanCharacter.cpp" line="251" />
+<source_reference file="HumanCharacter.cpp" line="237" />
 </extent>
 <lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
@@ -230,12 +218,12 @@
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>
 <member_function>
-<name>setColor(int,int,int)</name>
+<name>setCanLaunchBomb(bool)</name>
 <extent>
 <description>definition</description>
-<source_reference file="HumanCharacter.cpp" line="155" />
+<source_reference file="HumanCharacter.cpp" line="231" />
 </extent>
-<lines_of_code value="6" level="0" />
+<lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -272,6 +260,18 @@
 <source_reference file="HumanCharacter.cpp" line="132" />
 </extent>
 <lines_of_code value="4" level="0" />
+<McCabes_cyclomatic_complexity value="0" level="0" />
+<lines_of_comment value="0" level="0" />
+<lines_of_code_per_line_of_comment value="------" level="0" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
+</member_function>
+<member_function>
+<name>setScore(int)</name>
+<extent>
+<description>definition</description>
+<source_reference file="HumanCharacter.cpp" line="248" />
+</extent>
+<lines_of_code value="5" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
 <lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
@@ -332,7 +332,7 @@
 <concrete>false</concrete>
 <extent>
 <description>pass by reference</description>
-<source_reference file="HumanCharacter.cpp" line="192" />
+<source_reference file="HumanCharacter.cpp" line="172" />
 </extent>
 <name>Position</name>
 <visible>true</visible>
@@ -357,22 +357,22 @@
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="HumanCharacter.cpp" line="251" />
+<source_reference file="HumanCharacter.cpp" line="231" />
 </extent>
 <name>e_orientation</name>
 <visible>true</visible>
 <concrete>true</concrete>
 <extent>
 <description>pass by value</description>
-<source_reference file="HumanCharacter.cpp" line="172" />
+<source_reference file="HumanCharacter.cpp" line="152" />
+</extent>
+<extent>
+<description>pass by value</description>
+<source_reference file="HumanCharacter.cpp" line="152" />
 </extent>
 <extent>
 <description>pass by value</description>
 <source_reference file="HumanCharacter.cpp" line="172" />
-</extent>
-<extent>
-<description>pass by value</description>
-<source_reference file="HumanCharacter.cpp" line="192" />
 </extent>
 </supplier_module>
 </module>

@@ -2,14 +2,14 @@
 <!--Detailed report on module Pause-->
 <CCCC_Project>
 <module_summary>
-<lines_of_code value="59" level="0" />
+<lines_of_code value="64" level="0" />
 <lines_of_code_per_member_function value="******" level="0" />
 <McCabes_cyclomatic_complexity value="14" level="0" />
 <McCabes_cyclomatic_complexity_per_member_function value="******" level="2" />
-<lines_of_code value="6" level="0" />
+<lines_of_code value="1" level="0" />
 <lines_of_code_per_member_function value="********" level="2" />
-<lines_of_code_per_line_of_comment value="9.833" level="1" />
-<McCabes_cyclomatic_complexity_per_line_of_comment value="2.333" level="0" />
+<lines_of_code_per_line_of_comment value="64.000" level="2" />
+<McCabes_cyclomatic_complexity_per_line_of_comment value="14.000" level="2" />
 <weighted_methods_per_class_unity value="9" level="0" />
 <weighted_methods_per_class_visibility value="0" level="0" />
 <depth_of_inheritance_tree value="0" level="0" />
@@ -31,9 +31,9 @@
 <description>definition</description>
 <source_reference file="Pause.cpp" line="21" />
 </extent>
-<lines_of_code value="11" level="0" />
+<lines_of_code value="16" level="0" />
 <McCabes_cyclomatic_complexity value="0" level="0" />
-<lines_of_comment value="5" level="0" />
+<lines_of_comment value="0" level="0" />
 <lines_of_code_per_line_of_comment value="------" level="0" />
 <McCabes_cyclomatic_complexity_per_line_of_comment value="------" level="0" />
 </member_function>

@@ -8,17 +8,17 @@ Detailed report on module Game
 <TR>
 <TH BGCOLOR="AQUA" WIDTH=70%>Metric</TH><TH BGCOLOR="AQUA" WIDTH=10%>Tag</TH><TH BGCOLOR="AQUA" WIDTH=10%>Overall</TH><TH BGCOLOR="AQUA" WIDTH=10%>Per Function</TH></TR>
 <TR>
-<TD>Lines of Code</TD><TD>LOC</TD><TD ALIGN=RIGHT>    72</TD><TD ALIGN=RIGHT>******</TD></TR>
+<TD>Lines of Code</TD><TD>LOC</TD><TD ALIGN=RIGHT>    76</TD><TD ALIGN=RIGHT>******</TD></TR>
 <TR>
 <TD>McCabe's Cyclomatic Number</TD><TD>MVG</TD><TD ALIGN=RIGHT>    15</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>******</STRONG></TD></TR>
 <TR>
-<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
+<TD>Lines of Comment</TD><TD>COM</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 <TR>
-<TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>24.000</EM></TD><TD>&nbsp;</TD></TR>
+<TD>LOC/COM</TD><TD>L_C</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>38.000</STRONG></TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>MVG/COM</TD><TD>M_C</TD><TD ALIGN=RIGHT> 5.000</TD><TD>&nbsp;</TD></TR>
+<TD>MVG/COM</TD><TD>M_C</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM> 7.500</EM></TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>Weighted Methods per Class ( &nbsp;weighting = unity&nbsp;)</TD><TD>WMC1</TD><TD ALIGN=RIGHT>    11</TD><TD>&nbsp;</TD></TR>
+<TD>Weighted Methods per Class ( &nbsp;weighting = unity&nbsp;)</TD><TD>WMC1</TD><TD ALIGN=RIGHT>    12</TD><TD>&nbsp;</TD></TR>
 <TR>
 <TD>Weighted Methods per Class ( &nbsp;weighting = visible&nbsp;)</TD><TD>WMCv</TD><TD ALIGN=RIGHT>     0</TD><TD>&nbsp;</TD></TR>
 <TR>
@@ -26,11 +26,11 @@ Detailed report on module Game
 <TR>
 <TD>Number of Children</TD><TD>NOC</TD><TD ALIGN=RIGHT>     0</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>Coupling between objects</TD><TD>CBO</TD><TD ALIGN=RIGHT>    12</TD><TD>&nbsp;</TD></TR>
+<TD>Coupling between objects</TD><TD>CBO</TD><TD ALIGN=RIGHT>    14</TD><TD>&nbsp;</TD></TR>
 <TR>
-<TD>Information Flow measure ( &nbsp;inclusive&nbsp;)</TD><TD>IF4</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>   121</EM></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
+<TD>Information Flow measure ( &nbsp;inclusive&nbsp;)</TD><TD>IF4</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM>   169</EM></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 <TR>
-<TD>Information Flow measure ( &nbsp;visible&nbsp;)</TD><TD>IF4v</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>   121</STRONG></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
+<TD>Information Flow measure ( &nbsp;visible&nbsp;)</TD><TD>IF4v</TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>   169</STRONG></TD><TD ALIGN=RIGHT BGCOLOR="RED"><STRONG>********</STRONG></TD></TR>
 <TR>
 <TD>Information Flow measure ( &nbsp;concrete&nbsp;)</TD><TD>IF4c</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>********</TD></TR>
 </TABLE>
@@ -50,19 +50,25 @@ definition &nbsp;
 <TR>
 <TD>changeState( &nbsp;GameState *&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#Game.cpp:        85">Game.cpp:85</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#Game.cpp:        84">Game.cpp:84</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>draw( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#Game.cpp:        59">Game.cpp:59</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#Game.cpp:        58">Game.cpp:58</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     7</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
+<TD>flushContext( &nbsp;&nbsp;)<BR>
+definition &nbsp;
+<CODE><A HREF="cccc_src.html#Game.cpp:       103">Game.cpp:103</A></CODE><BR>
+<BR>
+</TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+<TR>
 <TD>getShader( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#Game.cpp:        99">Game.cpp:99</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#Game.cpp:        98">Game.cpp:98</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
@@ -70,35 +76,35 @@ definition &nbsp;
 definition &nbsp;
 <CODE><A HREF="cccc_src.html#Game.cpp:        24">Game.cpp:24</A></CODE><BR>
 <BR>
-</TD><TD ALIGN=RIGHT>    17</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     2</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
+</TD><TD ALIGN=RIGHT>    17</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>peekState( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#Game.cpp:        92">Game.cpp:92</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#Game.cpp:        91">Game.cpp:91</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     3</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>popState( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#Game.cpp:        79">Game.cpp:79</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#Game.cpp:        78">Game.cpp:78</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     5</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>pushState( &nbsp;GameState *&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#Game.cpp:        74">Game.cpp:74</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#Game.cpp:        73">Game.cpp:73</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     4</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>run( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#Game.cpp:        67">Game.cpp:67</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#Game.cpp:        66">Game.cpp:66</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>     0</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT>------</TD></TR>
 <TR>
 <TD>update( &nbsp;&nbsp;)<BR>
 definition &nbsp;
-<CODE><A HREF="cccc_src.html#Game.cpp:        47">Game.cpp:47</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#Game.cpp:        46">Game.cpp:46</A></CODE><BR>
 <BR>
 </TD><TD ALIGN=RIGHT>    10</TD><TD ALIGN=RIGHT>     6</TD><TD ALIGN=RIGHT>     1</TD><TD ALIGN=RIGHT>------</TD><TD ALIGN=RIGHT BGCOLOR="YELLOW"><EM> 6.000</EM></TD></TR>
 <TR>
@@ -129,6 +135,11 @@ pass by reference &nbsp;
 <CODE><A HREF="cccc_src.html#GameOver.cpp:        22">GameOver.cpp:22</A></CODE><BR>
 <BR>
 <BR>
+Intro [V] <BR>
+pass by reference &nbsp;
+<CODE><A HREF="cccc_src.html#Intro.cpp:        23">Intro.cpp:23</A></CODE><BR>
+<BR>
+<BR>
 Leaderboard [V] <BR>
 pass by reference &nbsp;
 <CODE><A HREF="cccc_src.html#Leaderboard.cpp:        21">Leaderboard.cpp:21</A></CODE><BR>
@@ -137,6 +148,11 @@ pass by reference &nbsp;
 Load [V] <BR>
 pass by reference &nbsp;
 <CODE><A HREF="cccc_src.html#Load.cpp:        16">Load.cpp:16</A></CODE><BR>
+<BR>
+<BR>
+LoadGame [V] <BR>
+pass by reference &nbsp;
+<CODE><A HREF="cccc_src.html#LoadGame.cpp:        13">LoadGame.cpp:13</A></CODE><BR>
 <BR>
 <BR>
 Menu [V] <BR>
@@ -174,9 +190,9 @@ pass by reference &nbsp;
 <TD WIDTH=50%>
 GameState [V] <BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#Game.cpp:        74">Game.cpp:74</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#Game.cpp:        73">Game.cpp:73</A></CODE><BR>
 pass by reference &nbsp;
-<CODE><A HREF="cccc_src.html#Game.cpp:        85">Game.cpp:85</A></CODE><BR>
+<CODE><A HREF="cccc_src.html#Game.cpp:        84">Game.cpp:84</A></CODE><BR>
 <BR>
 <BR>
 &nbsp;
