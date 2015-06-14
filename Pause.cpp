@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Fri Jun  5 07:59:30 2015 Nicolas Charvoz
+// Last update Fri Jun  5 10:01:00 2015 Nicolas Charvoz
 //
 
 #include "Pause.hh"
