@@ -99,11 +99,12 @@ std::vector<ACharacter *>	LoadGame::getPlayers(std::ifstream &file)
 	  this->getPlayerHP(tmp);
 	  getline(file, tmp);
 	  this->getPlayerRange(tmp);
-
 	  if (_type == HUMAN)
-	    obj = new HumanCharacter((char)_id, , _pos);
+	    obj = new HumanCharacter(to_string(_id), , _pos);
 	  else
 	    obj = new IACharacter(_id, , _pos);
+	  obj->setAlive = true;
+	  obj->setRange(_range);
 	  vector.push_back(obj);
 	}
     }
