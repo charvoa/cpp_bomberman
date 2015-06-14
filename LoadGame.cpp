@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Thu May 21 16:14:04 2015 Serge Heitzler
-// Last update Sun Jun 14 18:18:00 2015 Antoine Garcia
+// Last update Sun Jun 14 19:55:45 2015 Antoine Garcia
 //
 
 #include "LoadGame.hh"
@@ -14,7 +14,7 @@ LoadGame::LoadGame(Game *game)
 {
   std::ifstream	file;
 
-  file.open("lastgame.save");
+  file.open("./saves/lastgame.save");
   _nbHumanPlayers = 1;
   _game = game;
   this->setInitialMap(file);
@@ -30,8 +30,9 @@ void		LoadGame::setInitialMap(std::ifstream &file)
   std::string	tmp;
 
   getline(file, tmp);
-  filename = tmp.substr((tmp.find("MAP NAME ")));
+  filename = tmp.substr(tmp.find(":") + 1);
   _initialMap = new Map(filename);
+  //_initialMap = new Map("./maps/x.map");
 }
 
 void		LoadGame::setPlayersInfo(std::ifstream &file)
@@ -60,6 +61,7 @@ void	LoadGame::getPlayerType(std::string &line)
     _type = HUMAN;
   else
     _type = IA;
+  std::cout << line << std::endl;
   _id = stoi(line.substr(1));
   if (_id == 2)
     _nbHumanPlayers = 2;

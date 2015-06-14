@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Thu Jun  4 18:58:39 2015 Nicolas Charvoz
+// Last update Fri Jun  5 13:27:39 2015 Nicolas Charvoz
 //
 
 #include "RandomMenu.hh"
@@ -230,6 +230,8 @@ void RandomMenu::getNameOfButton(gdl::Input &input)
   if (mouse.x >= 1568 && mouse.x <= 1910 && mouse.y >= 949 && mouse.y <= 1037)
     {
       std::cout << "PLAY RANDOM" << std::endl;
+      // Check if value are Ok
+      // Call Generateur with IA Value, X and Y Value .
     }
 }
 

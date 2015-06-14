@@ -1,3 +1,13 @@
+//
+// IAEngine.hh for  in /home/nicolaschr/Work/cpp_bomberman
+//
+// Made by Nicolas Charvoz
+// Login   <nicolaschr@epitech.net>
+//
+// Started on  Fri Jun  5 13:13:41 2015 Nicolas Charvoz
+// Last update Fri Jun  5 13:13:42 2015 Nicolas Charvoz
+//
+
 #ifndef IAEngine_HH_
 # define IAEngine_HH_
 
