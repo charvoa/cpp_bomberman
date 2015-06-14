@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Sun Jun 14 12:06:54 2015 Antoine Garcia
+// Last update Sun Jun 14 12:21:30 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -70,7 +70,7 @@ public:
   Game		*_game;
   int		getWidth() const;
   int		getHeight() const;
-  std::string&	getMapName() const;
+  const std::string&	getMapName() const;
   void		setBonus(Position &);
   bool checkPlayerCanMove(int x, int y);
   ACharacter*		getPlayerById(int id);

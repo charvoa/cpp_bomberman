@@ -5,7 +5,7 @@
 // Login   <heitzls@epitech.net>
 //
 // Started on  Sat May 16 10:19:32 2015 Serge Heitzler
-// Last update Mon Jun  1 16:48:47 2015 Nicolas Charvoz
+// Last update Sun Jun 14 12:23:24 2015 Antoine Garcia
 //
 
 #ifndef MAP_HH_
@@ -23,7 +23,7 @@ class		Map
 
 public:
 
-  Map(std::string &filename);
+  Map(const std::string &filename);
   ~Map();
   std::stringstream&			getBufferForMap(std::ifstream &file);
   void					setMap(std::stringstream &map);
@@ -38,7 +38,6 @@ public:
   int					getNumberOfFreeSpace() const;
   void					mapGenerator(int width, int height, int human, int ia);
   const std::string &  			getMapName();
-  void		  			setMapName(std::string &mapName);
 
   private:
 
@@ -47,7 +46,7 @@ public:
   std::vector<std::vector<char> >	_map;
   std::stringstream _bufferGetBufferForMap;
   std::vector<std::vector<char>>	_randomMap;
-  const std::string &		       	_mapName;
+  std::string		       	_mapName;
 };
 
 #endif
