@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Fri Jun  5 06:30:04 2015 Nicolas Charvoz
+// Last update Sun Jun 14 12:07:16 2015 Antoine Garcia
 //
 
 # include <iostream>
@@ -26,6 +26,7 @@ World::World(Game *game, Map &map, int nb_players, int nb_ia)
   _fileMap = &map;
   _height = _fileMap->getHeight();
   _width = _fileMap->getWidth();
+  _name = fileMap->getMapName();
   _game->_camera->move(glm::vec3(0, 900, 0), glm::vec3(0, 0, -750));
   gdl::BasicShader shader = _game->getShader();
   shader.bind();
@@ -336,6 +337,11 @@ int	World::getWidth() const
 int	World::getHeight() const
 {
   return _height;
+}
+
+std::string&	World::getMapName() const
+{
+  return _name;
 }
 
 const std::vector<std::vector<char> >&	World::getWorld() const

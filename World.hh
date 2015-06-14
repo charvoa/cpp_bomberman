@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Fri May 22 10:10:43 2015 Antoine Garcia
-// Last update Sat Jun 13 15:32:57 2015 Antoine Garcia
+// Last update Sun Jun 14 12:06:54 2015 Antoine Garcia
 //
 
 #ifndef WORLD_HH__
@@ -43,6 +43,7 @@ private:
   int			_nbIa;
   int			_height;
   int			_width;
+  std::string		_name;
   //Graphical Attributes
   static TextureManager &_texManag;
   AObject		*_background;
@@ -69,6 +70,7 @@ public:
   Game		*_game;
   int		getWidth() const;
   int		getHeight() const;
+  std::string&	getMapName() const;
   void		setBonus(Position &);
   bool checkPlayerCanMove(int x, int y);
   ACharacter*		getPlayerById(int id);
