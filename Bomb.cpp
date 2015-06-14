@@ -5,16 +5,25 @@
 // Login   <girard_s@epitech.net>
 //
 // Started on  Wed May 27 15:01:37 2015 Nicolas Girardot
-// Last update Sat Jun 13 13:40:38 2015 Audibert Louis
+// Last update Sun Jun 14 12:26:26 2015 Audibert Louis
 //
 
 #include "Bomb.hh"
 
 Sound&	Bomb::_sound = Sound::getInstance();
 
-Bomb::Bomb(Position& pos, World *world, int id)
+Bomb::Bomb(Position& pos, World *world, ACharacter &character)
 {
-  _id = id;
+  _character = character;
+  _world = world;
+  _pos = pos;
+  _isPosed = false;
+  _sound.registerSound("./resources/sounds/explosion.wav", "boum");
+}
+
+Bomb::Bomb(Position &pos, World *world, int id)
+{
+  (void) id;
   _world = world;
   _pos = pos;
   _isPosed = false;

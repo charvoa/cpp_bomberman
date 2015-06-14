@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:55:01 2015 Nicolas Charvoz
-// Last update Sat Jun 13 13:55:04 2015 Audibert Louis
+// Last update Sun Jun 14 12:21:47 2015 Audibert Louis
 //
 
 #include <iostream>
@@ -76,7 +76,7 @@ void HumanCharacter::dropBomb()
   if (_canLaunchBomb == true)
     {
       std::cout << "I droped a bomb hahah" << std::endl;
-      _world->dropBomb(_pos, (_id - '0'));
+      _world->dropBomb(_pos, *this);
       _sound.playMusic("USAbomb");
       _world->setItemAtPosition(_pos, 'T');
       _canLaunchBomb = false;

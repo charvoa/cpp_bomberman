@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sun Jun 14 12:07:16 2015 Antoine Garcia
+// Last update Sun Jun 14 12:24:30 2015 Audibert Louis
 //
 
 # include <iostream>
@@ -253,11 +253,11 @@ bool	World::update(gdl::Clock& clock, gdl::Input& input)
   return true;
 }
 
-void	World::dropBomb(Position &pos, int id)
+void	World::dropBomb(Position &pos, ACharacter &character)
 {
   Bomb	*bomb;
-  std::cout << "ID IN DROP BOMB WORLD " << id << std::endl;
-  bomb = new Bomb(pos, this, id);
+  std::cout << "ID IN DROP BOMB WORLD " << character.getId() << std::endl;
+  bomb = new Bomb(pos, this, character);
   bomb->initialize("hello");
   _objects.push_back(bomb);
 }
