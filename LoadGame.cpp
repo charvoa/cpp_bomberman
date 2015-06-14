@@ -91,37 +91,37 @@ void	LoadGame::getPlayerRange(std::string &line)
   _range = stoi(line.substr(line.find("RANGE : ")));
 }
 
-// std::vector<ACharacter *>	LoadGame::getPlayers(std::ifstream &file)
-// {
-//   std::string			tmp;
-//   std::string			startMap;
-//   std::vector<ACharacter *>	vector;
-//   ACharacter			*obj;
+std::vector<ACharacter *>	LoadGame::getPlayers(std::ifstream &file)
+{
+  std::string			tmp;
+  std::string			startMap;
+  std::vector<ACharacter *>	vector;
+  //  ACharacter			*obj;
 
-//   this->determineStartMap();
-//   while (getline(file, tmp) != _startMap.c_str())
-//     {
-//       while (tmp != "*----------*" && tmp != startMap.c_str())
-//   	{
-//   	  getline(file, tmp);
-//   	  this->getPlayerType(tmp);
-//   	  getline(file, tmp);
-//   	  this->getPlayerPosition(tmp);
-//   	  getline(file, tmp);
-//   	  this->getPlayerHP(tmp);
-//   	  getline(file, tmp);
-//   	  this->getPlayerRange(tmp);
-//   	  if (_type == HUMAN)
-//   	    obj = new HumanCharacter(to_string(_id), , _pos);
-//   	  else
-//   	    obj = new IACharacter(_id, , _pos);
-//   	  //	  obj->setAlive(true);
-//   	  obj->setRange(_range);
-//   	  vector.push_back(obj);
-//   	}
-//     }
-//   return (vector);
-// }
+  this->determineStartMap();
+  while (getline(file, tmp) != _startMap.c_str())
+    {
+      while (tmp != "*----------*" && tmp != startMap.c_str())
+  	{
+  	  getline(file, tmp);
+  	  this->getPlayerType(tmp);
+  	  getline(file, tmp);
+  	  this->getPlayerPosition(tmp);
+  	  getline(file, tmp);
+  	  this->getPlayerHP(tmp);
+  	  getline(file, tmp);
+  	  this->getPlayerRange(tmp);
+  	  // if (_type == HUMAN)
+  	  //   obj = new HumanCharacter(to_string(_id), , _pos);
+  	  // else
+  	  //   obj = new IACharacter(_id, , _pos);
+  	  // //	  obj->setAlive(true);
+  	  // obj->setRange(_range);
+  	  // vector.push_back(obj);
+  	}
+    }
+  return (vector);
+}
 
 std::stringstream&			LoadGame::getBufferForMap(std::ifstream &file)
 {
