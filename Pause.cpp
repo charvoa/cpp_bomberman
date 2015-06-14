@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Sat May 16 15:18:59 2015 Nicolas Charvoz
-// Last update Wed Jun  3 12:41:56 2015 Nicolas Charvoz
+// Last update Sat Jun 13 14:30:09 2015 Nicolas Girardot
 //
 
 #include "Pause.hh"
@@ -26,11 +26,11 @@ Pause::Pause(Game *game, World *world)
   _texManag.registerTexture("backgroundPause", "backPause");
   this->loadBackground();
   this->loadButtons();
-  // _game->_camera->move(glm::vec3(0, 0, -0.0001), glm::vec3(0, 0, 0));
-  // gdl::BasicShader shader = _game->getShader();
-  // shader.bind();
-  // shader.setUniform("view", _game->_camera->getTransformation());
-  // shader.setUniform("projection", _game->_camera->getProjection());
+  glViewport(0, 0, 1920, 1080);
+  _game->_camera->move(glm::vec3(0, 900, 0), glm::vec3(0, 0, -750));
+  _game->getShader().bind();
+  _game->getShader().setUniform("view", _game->_camera->getTransformation());
+  _game->getShader().setUniform("projection", _game->_camera->getProjection());
   _inputManager = new InputManager();
   _command = new Command(_game, NULL, "PAUSE");
 }

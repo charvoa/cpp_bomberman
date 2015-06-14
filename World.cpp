@@ -5,7 +5,7 @@
 // Login   <antgar@epitech.net>
 //
 // Started on  Sat May 23 18:46:16 2015 Antoine Garcia
-// Last update Sat Jun 13 11:34:36 2015 Antoine Garcia
+// Last update Fri Jun  5 06:30:04 2015 Nicolas Charvoz
 //
 
 # include <iostream>
@@ -47,7 +47,7 @@ void	World::findWall()
   Position p = Position(1, 1);
   wall = new Bomb(p, this, 5);
   wall->initialize("hh");
-  wall = new Flame(new Position(1, 1), this);
+  wall = new Flame(new Position(0, 0), this, 0);
   wall->initialize("hh");
   while(y < _fileMap->getHeight())
     {
@@ -56,43 +56,31 @@ void	World::findWall()
 	{
 	  if (_fileMap->getItemAtPosition(x, y) == 'W')
 	    {
-	      if (x == 14 && y == 10);
-	      else
-		{
-		  wall = new Cube();
-		  wall->initialize("./images/wall.tga");
-		  glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, 0,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
-		  wall->translate(trans);
-		  wall->scale(glm::vec3(100, 100, 100));
-		  _objects.push_back(wall);
-		}
+	      wall = new Cube();
+	      wall->initialize("./images/wall.tga");
+	      glm::vec3 trans(0 + (x - _fileMap->getWidth() / 2) * 100, 0,  750 * (-1) + (y - _fileMap->getHeight() / 2) * 100);
+	      wall->translate(trans);
+	      wall->scale(glm::vec3(100, 100, 100));
+	      _objects.push_back(wall);
 	    }
 	  if (_fileMap->getItemAtPosition(x, y) == '1' || _fileMap->getItemAtPosition(x, y) == '2')
 	    {
 	      Position pos(x, y);
-	      if (x == 14 && y == 10);
+	      if (_fileMap->getItemAtPosition(x,y) == '1')
+		this->createHumanPlayer('1', pos);
 	      else
 		{
-		  if (_fileMap->getItemAtPosition(x,y) == '1')
-		    this->createHumanPlayer('1', pos);
+		  if (_nbPlayers == 2)
+		    this->createHumanPlayer('2', pos);
 		  else
-		    {
-		      if (_nbPlayers == 2)
-			this->createHumanPlayer('2', pos);
-		      else
-			_map.at(y).at(x) = 'F';
-		    }
+		    _map.at(y).at(x) = 'F';
 		}
 	    }
 	  if (_fileMap->getItemAtPosition(x, y) == 'B')
 	    {
-	      if (x == 14 && y == 10);
-	      else
-		{
-		  wall = new Box(new Position(x, y), this);
-		  wall->initialize("hello");
+	      wall = new Box(new Position(x, y), this);
+	      wall->initialize("hello");
 		  _objects.push_back(wall);
-		}
 	    }
 	  wall = new Cube();
 	  wall->initialize("./images/floor1.tga");
@@ -216,6 +204,9 @@ void	World::gameOver()
     }
   else if (players.size() == 1 && _players.size() == 1)
     {
+      Scoring	score;
+
+      score.storeScore("Player" + std::to_string(players[0]->getId()), players[0]->getScore());
       glViewport (0, 0, 1920, 1080);
       sleep(1);
       _game->pushState(new GameOver(_game, players[0]->getId()));
@@ -390,6 +381,9 @@ void			World::checkPlayersDeath(Flame& flame)
     {
       if ((*it)->getPos() == flame.getPos())
   	{
+	  if (!getPlayerById(flame.getIdPlayer()))
+	    break;
+	  getPlayerById(flame.getIdPlayer())->setScore(getPlayerById(flame.getIdPlayer())->getScore() + 100);
 	  delete *it;
 	  it = _players.erase(it);
 	  _map.at(flame.getPos()._y).at(flame.getPos()._x) = 'F';
@@ -410,6 +404,9 @@ void		World::checkDestroyBoxes(Flame& flame)
 	{
 	  if (box->getPosition() == flame.getPos())
 	    {
+	      if (!getPlayerById(flame.getIdPlayer()))
+		break;
+	      getPlayerById(flame.getIdPlayer())->setScore(getPlayerById(flame.getIdPlayer())->getScore() + 10);
 	      box->onDestroy();
 	      _map.at(flame.getPos()._y).at(flame.getPos()._x) = 'F';
 	    }

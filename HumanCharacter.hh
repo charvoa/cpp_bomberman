@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Tue May 19 11:50:38 2015 Nicolas Charvoz
-// Last update Sat Jun 13 11:34:26 2015 Audibert Louis
+// Last update Sat Jun 13 13:47:11 2015 Audibert Louis
 //
 
 #ifndef HUMANCHARACTER_HH_
@@ -42,10 +42,6 @@ public:
   void setOrientation(int orientation);
   void setCanLaunchBomb(bool launch);
 
-  void initColor();
-  std::map<char, int> &getColor() const;
-  void setColor(int r, int g, int b);
-
   int	getType() const;
   ACharacter &getCharacter();
 
@@ -53,6 +49,9 @@ public:
   bool move(e_orientation ori, gdl::Clock &);
 
   void setBonus(int bonus);
+
+  int getScore() const;
+  void setScore(int score);
 
 private:
 

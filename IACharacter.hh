@@ -5,7 +5,7 @@
 // Login   <audibe_l@epitech.net>
 //
 // Started on  Wed May 27 14:28:02 2015 Audibert Louis
-// Last update Sat Jun 13 11:34:20 2015 Audibert Louis
+// Last update Sat Jun 13 13:49:10 2015 Audibert Louis
 //
 
 #ifndef IACHARACTER_HH_
@@ -44,10 +44,6 @@ public:
   void setOrientation(int orientation);
   void setCanLaunchBomb(bool launch);
 
-  void initColor();
-  std::map<char, int> &getColor() const;
-  void setColor(int r, int g, int b);
-
   int	getType() const;
   ACharacter &getCharacter();
 
@@ -56,6 +52,8 @@ public:
   float	getAngle(e_orientation before, e_orientation after);
 
   void setBonus(int bonus);
+  int getScore() const;
+  void setScore(int score);
 
 private:
 

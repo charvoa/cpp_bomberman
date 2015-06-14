@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:36:27 2015 Nicolas Charvoz
-// Last update Wed Jun  3 12:13:30 2015 Nicolas Charvoz
+// Last update Fri Jun  5 02:30:31 2015 Nicolas Charvoz
 //
 
 #include "Command.hh"
@@ -40,6 +40,8 @@ Command::Command(Game *game, World *world, const std::string& str)
     _pause = true;
   else if (str == "SELECTCHAR")
     _selectChar = true;
+  else if (str == "GAMEOVER")
+    _gameOver = true;
   if ( _world && _world->getHumansPlayers().size() > 1)
     _twoPlayers = true;
 }
@@ -109,6 +111,8 @@ void Command::back(gdl::Clock& clock)
   (void) clock;
 
   _pause = false;
+  if (_gameOver)
+    return;
   if (!_world)
     _game->popState();
 }

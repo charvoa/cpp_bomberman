@@ -5,7 +5,7 @@
 // Login   <nicolaschr@epitech.net>
 //
 // Started on  Wed May 27 15:34:46 2015 Nicolas Charvoz
-// Last update Mon Jun  1 23:51:16 2015 Nicolas Charvoz
+// Last update Fri Jun  5 02:29:44 2015 Nicolas Charvoz
 //
 
 #ifndef COMMAND_HH_
@@ -35,6 +35,7 @@ private:
   bool _twoPlayers;
   bool _pause;
   bool _selectChar;
+  bool _gameOver;
   Game *_game;
   World *_world;
 
